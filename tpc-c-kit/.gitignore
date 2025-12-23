@@ -1,0 +1,11 @@
+build
+dist
+results
+service_data
+/bin/
+/target/
+.classpath
+.project
+.settings
+__pycache__
+.DS_Store
