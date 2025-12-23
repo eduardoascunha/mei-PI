@@ -1,0 +1,6 @@
+This query finds the most important subset of suppliers' stock in a given nation.
+The Important Stock Identification Query finds, from scanning the available stock of suppliers in a given nation, all the parts that represent a significant 
+percentage of the  total value of all available parts. The query displays the part number and the value of those parts in descending order of value.
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. NATION is randomly selected within the list of values defined for N_NAME in Clause 4.2.3; In this case assume NATION 'UNITED STATES'
+2. FRACTION is chosen as 0.0001 / SF. In this case assume FRACTION 0.0001000000

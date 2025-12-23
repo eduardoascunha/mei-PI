@@ -1,0 +1,5 @@
+This query determines how much profit is made on a given line of parts, broken out by supplier nation and year.
+The Product Type Profit Measure Query finds, for each nation and each year, the profit for all parts ordered in that year that contain a specified substring in their names and that were filled by a supplier in that nation. The profit is defined as the  sum of [(l_extendedprice*(1-l_discount))  -  (ps_supplycost  * l_quantity)] for all lineitems describing parts in the specified line. The query lists the nations in ascending alphabetical order and, for each nation, the  year 
+and profit in descending order by year (most recent first).
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. COLOR is randomly selected within the list of values defined for the generation of P_NAME in Clause 4.2.3. In this case assume COLOR '%red%'

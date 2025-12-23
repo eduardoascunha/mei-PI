@@ -1,0 +1,7 @@
+CREATE VIEW
+ s_suppkey |          s_name           |           s_address            |     s_phone     | total_revenue 
+-----------+---------------------------+--------------------------------+-----------------+---------------
+       434 | Supplier#000000434        | endL6N 85uU0NemLv4L3mSEH4LT2BF | 15-763-277-6054 |  1781228.1332
+(1 row)
+
+DROP VIEW

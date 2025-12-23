@@ -1,0 +1,10 @@
+This query determines whether selecting less expensive modes of shipping is negatively affecting the critical-priority orders by causing more parts to be received by customers after the committed date.
+The Shipping Modes and Order Priority Query counts, by ship mode, for lineitems actually received by customers in 
+a given year, the number of lineitems belonging to orders for which the l_receiptdate exceeds the l_commitdate for 
+two  different  specified  ship  modes.  Only  lineitems  that  were  actually  shipped  before  the  l_commitdate  are  con-
+sidered. The late lineitems are partitioned into two groups, those with priority URGENT or HIGH, and those with a 
+priority other than URGENT.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. SHIPMODE1 is randomly selected within the list of values defined for Modes in Clause 4.2.2.13; In this case assume SHIPMODE1 'FOB'
+2. SHIPMODE2 is randomly selected within the list of values defined for Modes in  Clause  4.2.2.13 and must be different from the value selected for SHIPMODE1 in item 1; In this case assume SHIPMODE2 'MAIL'
+3. DATE is the first of January of a randomly selected year within [1993 .. 1997]. In this case assume DATE '1996-01-01'

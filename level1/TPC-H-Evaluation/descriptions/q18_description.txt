@@ -1,0 +1,4 @@
+The  Large  Volume  Customer  Query  ranks  customers  based  on  their  having  placed  a  large  quantity  order.  Large quantity orders are defined as those orders whose total quantity is above a certain level.
+The Large Volume Customer Query finds a list of the top 100 customers who have ever placed large quantity orders. The query lists the customer name, customer key, the order key, date and total price and the quantity for the order. 
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. QUANTITY is randomly selected within [312..315]. In this case assume QUANTITY = 14

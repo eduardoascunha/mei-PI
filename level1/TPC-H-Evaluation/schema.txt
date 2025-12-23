@@ -1,0 +1,8 @@
+Table customer(c_custkey integer, c_name character varying, c_address character varying, c_nationkey integer, c_phone character, c_acctbal numeric, c_mktsegment character, c_comment character varying)
+Table lineitem(l_orderkey integer, l_partkey integer, l_suppkey integer, l_linenumber integer, l_quantity numeric, l_extendedprice numeric, l_discount numeric, l_tax numeric, l_returnflag character, l_linestatus character, l_shipdate date, l_commitdate date, l_receiptdate date, l_shipinstruct character, l_shipmode character, l_comment character varying)
+Table nation(n_nationkey integer, n_name character, n_regionkey integer, n_comment character varying)
+Table orders(o_orderkey integer, o_custkey integer, o_orderstatus character, o_totalprice numeric, o_orderdate date, o_orderpriority character, o_clerk character, o_shippriority integer, o_comment character varying)
+Table part(p_partkey integer, p_name character varying, p_mfgr character, p_brand character, p_type character varying, p_size integer, p_container character, p_retailprice numeric, p_comment character varying)
+Table partsupp(ps_partkey integer, ps_suppkey integer, ps_availqty integer, ps_supplycost numeric, ps_comment character varying)
+Table region(r_regionkey integer, r_name character, r_comment character varying)
+Table supplier(s_suppkey integer, s_name character, s_address character varying, s_nationkey integer, s_phone character, s_acctbal numeric, s_comment character varying)

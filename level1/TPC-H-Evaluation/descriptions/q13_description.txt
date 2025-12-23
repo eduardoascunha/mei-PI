@@ -1,0 +1,5 @@
+This query seeks relationships between customers and the size of their orders. 
+This query determines  the  distribution of customers by  the  number of orders they have  made, including customers who have no record of orders, past or present. It counts and reports how many customers have no orders, how many have 1, 2, 3, etc. A check is made to ensure that the orders counted do not fall into one of several special categories of orders. Special categories are identified in the order comment column by looking for a particular pattern. 
+Substitution Parameters:
+1. WORD1 is randomly selected from 4 possible values: special, pending, unusual, express. In this case assume WORD1 unusual
+2. WORD2 is randomly selected from 4 possible values: packages, requests, accounts, deposits. In this case assume WORD2 accounts

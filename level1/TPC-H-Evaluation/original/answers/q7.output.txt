@@ -1,0 +1,8 @@
+        supp_nation        |        cust_nation        | l_year |    revenue    
+---------------------------+---------------------------+--------+---------------
+ ARGENTINA                 | KENYA                     |   1995 | 53316902.3513
+ ARGENTINA                 | KENYA                     |   1996 | 53439867.8608
+ KENYA                     | ARGENTINA                 |   1995 | 52210771.7859
+ KENYA                     | ARGENTINA                 |   1996 | 50225442.7776
+(4 rows)
+

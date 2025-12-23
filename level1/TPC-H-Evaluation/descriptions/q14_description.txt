@@ -1,0 +1,4 @@
+This query monitors the market response to a promotion such as TV advertisements or a special campaign.
+The Promotion Effect Query determines what percentage of the revenue in a given year and month was derived from promotional parts. The query considers only parts actually shipped in that month and gives the percentage. Revenue is defined as (l_extendedprice * (1-l_discount)). 
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. DATE is the first day of a month randomly selected from a random year within [1993 .. 1997]. In this case assume DATE '1996-04-01'
