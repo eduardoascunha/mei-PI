@@ -1,0 +1,2207 @@
+{
+  "transaction_type": "new_order",
+  "num_executions": 8,
+  "executions": [
+    {
+      "execution_number": 1,
+      "input_params": {
+        "in_w_id": 5,
+        "in_d_id": 6,
+        "in_c_id": 458,
+        "in_ol_supply_w_id": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "in_ol_i_id": [
+          6824,
+          38072,
+          3414,
+          87686,
+          65395,
+          80169,
+          20962,
+          31354,
+          41986,
+          71687
+        ],
+        "in_ol_quantity": [
+          10,
+          7,
+          4,
+          1,
+          10,
+          3,
+          5,
+          9,
+          5,
+          10
+        ]
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "out_w_tax": "0.1019",
+          "out_d_tax": "0.1096",
+          "out_o_id": 3001,
+          "out_o_entry_d": "2025-11-27 19:35:08.859679",
+          "out_ol_cnt": 10,
+          "out_ol_amount": [
+            "474.60",
+            "100.10",
+            "76.92",
+            "80.63",
+            "355.70",
+            "117.12",
+            "196.90",
+            "526.86",
+            "414.50",
+            "259.40"
+          ],
+          "out_total_amount": "1796.07",
+          "out_c_last": "PRESESECALLY",
+          "out_c_credit": "GC",
+          "out_c_discount": "0.4304",
+          "out_i_name": [
+            "AYTBkITQagLklk",
+            "arwycWxWc8EuZNxYuzjAW",
+            "u30gsbJdwDl5NhUjLg3eD0",
+            "f9RRmsDsGAST1pLe3",
+            "OBah7v3T0kM2Ff",
+            "tdbdI0WwutE3Nls4BzAD",
+            "OBah7v3T0kM2Ff",
+            "qpK4kwDzxZhHjbpklmYCjjp",
+            "VsIfkOG5JtfPwxuf",
+            "f4cJvcjCvvmioEx04Y2Crj9"
+          ],
+          "out_i_price": [
+            "47.46",
+            "14.30",
+            "19.23",
+            "80.63",
+            "35.57",
+            "39.04",
+            "39.38",
+            "58.54",
+            "82.90",
+            "25.94"
+          ],
+          "out_s_quantity": [
+            34,
+            38,
+            93,
+            23,
+            25,
+            46,
+            70,
+            64,
+            13,
+            42
+          ],
+          "out_brand_generic": [
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G"
+          ]
+        },
+        "db_state": {
+          "district": {
+            "d_next_o_id": 3002,
+            "d_tax": "0.1096"
+          },
+          "order": {
+            "o_w_id": 5,
+            "o_d_id": 6,
+            "o_id": 3001,
+            "o_c_id": 458,
+            "o_carrier_id": null,
+            "o_ol_cnt": 10,
+            "o_all_local": 1,
+            "o_entry_d": "2025-11-27 19:35:08.859679"
+          },
+          "new_order": {
+            "no_w_id": 5,
+            "no_d_id": 6,
+            "no_o_id": 3001
+          },
+          "order_lines": [
+            {
+              "ol_w_id": 5,
+              "ol_d_id": 6,
+              "ol_o_id": 3001,
+              "ol_number": 1,
+              "ol_i_id": 6824,
+              "ol_delivery_d": null,
+              "ol_amount": "474.60",
+              "ol_supply_w_id": 5,
+              "ol_quantity": 10,
+              "ol_dist_info": "OqdRUpSCpVsBIHFJp2EKzBBA"
+            },
+            {
+              "ol_w_id": 5,
+              "ol_d_id": 6,
+              "ol_o_id": 3001,
+              "ol_number": 2,
+              "ol_i_id": 38072,
+              "ol_delivery_d": null,
+              "ol_amount": "100.10",
+              "ol_supply_w_id": 5,
+              "ol_quantity": 7,
+              "ol_dist_info": "S1B10G6CeA8dItght4gNkC8J"
+            },
+            {
+              "ol_w_id": 5,
+              "ol_d_id": 6,
+              "ol_o_id": 3001,
+              "ol_number": 3,
+              "ol_i_id": 3414,
+              "ol_delivery_d": null,
+              "ol_amount": "76.92",
+              "ol_supply_w_id": 5,
+              "ol_quantity": 4,
+              "ol_dist_info": "MH7n7og64ZTy5cTiinSGhYp8"
+            },
+            {
+              "ol_w_id": 5,
+              "ol_d_id": 6,
+              "ol_o_id": 3001,
+              "ol_number": 4,
+              "ol_i_id": 87686,
+              "ol_delivery_d": null,
+              "ol_amount": "80.63",
+              "ol_supply_w_id": 5,
+              "ol_quantity": 1,
+              "ol_dist_info": "bOFVjLsi2GizJoDf9SufrOh3"
+            },
+            {
+              "ol_w_id": 5,
+              "ol_d_id": 6,
+              "ol_o_id": 3001,
+              "ol_number": 5,
+              "ol_i_id": 65395,
+              "ol_delivery_d": null,
+              "ol_amount": "355.70",
+              "ol_supply_w_id": 5,
+              "ol_quantity": 10,
+              "ol_dist_info": "GVaeEERNWqCgohQGJSZi5nr8"
+            },
+            {
+              "ol_w_id": 5,
+              "ol_d_id": 6,
+              "ol_o_id": 3001,
+              "ol_number": 6,
+              "ol_i_id": 80169,
+              "ol_delivery_d": null,
+              "ol_amount": "117.12",
+              "ol_supply_w_id": 5,
+              "ol_quantity": 3,
+              "ol_dist_info": "jy7vkEOizzUVp2DdZDHF9jIG"
+            },
+            {
+              "ol_w_id": 5,
+              "ol_d_id": 6,
+              "ol_o_id": 3001,
+              "ol_number": 7,
+              "ol_i_id": 20962,
+              "ol_delivery_d": null,
+              "ol_amount": "196.90",
+              "ol_supply_w_id": 5,
+              "ol_quantity": 5,
+              "ol_dist_info": "dbUxibmH97oxUQ2oR47wJ2nl"
+            },
+            {
+              "ol_w_id": 5,
+              "ol_d_id": 6,
+              "ol_o_id": 3001,
+              "ol_number": 8,
+              "ol_i_id": 31354,
+              "ol_delivery_d": null,
+              "ol_amount": "526.86",
+              "ol_supply_w_id": 5,
+              "ol_quantity": 9,
+              "ol_dist_info": "v8Cy1d7Rf4CHinGt6HDjVPzM"
+            },
+            {
+              "ol_w_id": 5,
+              "ol_d_id": 6,
+              "ol_o_id": 3001,
+              "ol_number": 9,
+              "ol_i_id": 41986,
+              "ol_delivery_d": null,
+              "ol_amount": "414.50",
+              "ol_supply_w_id": 5,
+              "ol_quantity": 5,
+              "ol_dist_info": "gb4jxoD65wHNpsnakDtd0x1S"
+            },
+            {
+              "ol_w_id": 5,
+              "ol_d_id": 6,
+              "ol_o_id": 3001,
+              "ol_number": 10,
+              "ol_i_id": 71687,
+              "ol_delivery_d": null,
+              "ol_amount": "259.40",
+              "ol_supply_w_id": 5,
+              "ol_quantity": 10,
+              "ol_dist_info": "DEJYxwUsTnhXyQi5Ehn7XBhX"
+            }
+          ],
+          "stock_records": [
+            {
+              "s_i_id": 6824,
+              "s_w_id": 5,
+              "s_quantity": 24,
+              "s_ytd": 10,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 38072,
+              "s_w_id": 5,
+              "s_quantity": 31,
+              "s_ytd": 7,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 3414,
+              "s_w_id": 5,
+              "s_quantity": 89,
+              "s_ytd": 4,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 87686,
+              "s_w_id": 5,
+              "s_quantity": 22,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 65395,
+              "s_w_id": 5,
+              "s_quantity": 15,
+              "s_ytd": 10,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 80169,
+              "s_w_id": 5,
+              "s_quantity": 43,
+              "s_ytd": 3,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 20962,
+              "s_w_id": 5,
+              "s_quantity": 65,
+              "s_ytd": 5,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 31354,
+              "s_w_id": 5,
+              "s_quantity": 55,
+              "s_ytd": 9,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 41986,
+              "s_w_id": 5,
+              "s_quantity": 99,
+              "s_ytd": 5,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 71687,
+              "s_w_id": 5,
+              "s_quantity": 32,
+              "s_ytd": 10,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_district"
+          ],
+          "actual_modified": [
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_district"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 2,
+      "input_params": {
+        "in_w_id": 3,
+        "in_d_id": 4,
+        "in_c_id": 1636,
+        "in_ol_supply_w_id": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "in_ol_i_id": [
+          85665,
+          91884,
+          29265,
+          45849,
+          14848,
+          17815,
+          43807,
+          10547,
+          19157,
+          47016,
+          9030,
+          98400
+        ],
+        "in_ol_quantity": [
+          3,
+          3,
+          6,
+          10,
+          9,
+          4,
+          1,
+          7,
+          10,
+          9,
+          10,
+          3
+        ]
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "out_w_tax": "0.1240",
+          "out_d_tax": "0.0701",
+          "out_o_id": 3001,
+          "out_o_entry_d": "2025-11-27 19:35:34.698393",
+          "out_ol_cnt": 12,
+          "out_ol_amount": [
+            "180.93",
+            "278.22",
+            "254.94",
+            "820.60",
+            "210.60",
+            "106.36",
+            "69.80",
+            "408.45",
+            "760.60",
+            "152.55",
+            "725.30",
+            "151.86"
+          ],
+          "out_total_amount": "4422.04",
+          "out_c_last": "ATIONBAREING",
+          "out_c_credit": "GC",
+          "out_c_discount": "0.1012",
+          "out_i_name": [
+            "l6eiKteTTmWcbpVcQY",
+            "gxg94pQdVpmhaXCr59MbJ",
+            "J9Nfj2EGIpha3XinbZnUQVbe",
+            "A3ZSmWsEzNF3xsZVjAtO3K9",
+            "WRn4QScB2xQfY3SN",
+            "D9MfJH5Er2iWlZs4BzAD",
+            "RBy87zU2lCIPyYGCb5ij1OUL",
+            "q1JGW0s5lrgbD2w",
+            "Ksc7zBZN5HIQKqC",
+            "arwycWxWc8EuZNCD5",
+            "X7cc6VGLSgtFaPA1nC",
+            "X6k1JRDI2jvW4UkDeUIc6Px"
+          ],
+          "out_i_price": [
+            "60.31",
+            "92.74",
+            "42.49",
+            "82.06",
+            "23.40",
+            "26.59",
+            "69.80",
+            "58.35",
+            "76.06",
+            "16.95",
+            "72.53",
+            "50.62"
+          ],
+          "out_s_quantity": [
+            25,
+            57,
+            19,
+            88,
+            98,
+            54,
+            22,
+            77,
+            88,
+            64,
+            72,
+            22
+          ],
+          "out_brand_generic": [
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G"
+          ]
+        },
+        "db_state": {
+          "district": {
+            "d_next_o_id": 3002,
+            "d_tax": "0.0701"
+          },
+          "order": {
+            "o_w_id": 3,
+            "o_d_id": 4,
+            "o_id": 3001,
+            "o_c_id": 1636,
+            "o_carrier_id": null,
+            "o_ol_cnt": 12,
+            "o_all_local": 1,
+            "o_entry_d": "2025-11-27 19:35:34.698393"
+          },
+          "new_order": {
+            "no_w_id": 3,
+            "no_d_id": 4,
+            "no_o_id": 3001
+          },
+          "order_lines": [
+            {
+              "ol_w_id": 3,
+              "ol_d_id": 4,
+              "ol_o_id": 3001,
+              "ol_number": 1,
+              "ol_i_id": 85665,
+              "ol_delivery_d": null,
+              "ol_amount": "180.93",
+              "ol_supply_w_id": 3,
+              "ol_quantity": 3,
+              "ol_dist_info": "VUlU1dGx9MAAu65r7j6PY8yl"
+            },
+            {
+              "ol_w_id": 3,
+              "ol_d_id": 4,
+              "ol_o_id": 3001,
+              "ol_number": 2,
+              "ol_i_id": 91884,
+              "ol_delivery_d": null,
+              "ol_amount": "278.22",
+              "ol_supply_w_id": 3,
+              "ol_quantity": 3,
+              "ol_dist_info": "PHAev6k6G9G0YzL1c4EBUQTS"
+            },
+            {
+              "ol_w_id": 3,
+              "ol_d_id": 4,
+              "ol_o_id": 3001,
+              "ol_number": 3,
+              "ol_i_id": 29265,
+              "ol_delivery_d": null,
+              "ol_amount": "254.94",
+              "ol_supply_w_id": 3,
+              "ol_quantity": 6,
+              "ol_dist_info": "zLGQKvdoTBZcStYzSDU4G8PC"
+            },
+            {
+              "ol_w_id": 3,
+              "ol_d_id": 4,
+              "ol_o_id": 3001,
+              "ol_number": 4,
+              "ol_i_id": 45849,
+              "ol_delivery_d": null,
+              "ol_amount": "820.60",
+              "ol_supply_w_id": 3,
+              "ol_quantity": 10,
+              "ol_dist_info": "W4rsjPsAYcROCRwQ0HgAg3NF"
+            },
+            {
+              "ol_w_id": 3,
+              "ol_d_id": 4,
+              "ol_o_id": 3001,
+              "ol_number": 5,
+              "ol_i_id": 14848,
+              "ol_delivery_d": null,
+              "ol_amount": "210.60",
+              "ol_supply_w_id": 3,
+              "ol_quantity": 9,
+              "ol_dist_info": "Z5802aV9Bk3RW8yyt1F8bKRc"
+            },
+            {
+              "ol_w_id": 3,
+              "ol_d_id": 4,
+              "ol_o_id": 3001,
+              "ol_number": 6,
+              "ol_i_id": 17815,
+              "ol_delivery_d": null,
+              "ol_amount": "106.36",
+              "ol_supply_w_id": 3,
+              "ol_quantity": 4,
+              "ol_dist_info": "fSxqbV4y2GfKD9EHzqjLk3v7"
+            },
+            {
+              "ol_w_id": 3,
+              "ol_d_id": 4,
+              "ol_o_id": 3001,
+              "ol_number": 7,
+              "ol_i_id": 43807,
+              "ol_delivery_d": null,
+              "ol_amount": "69.80",
+              "ol_supply_w_id": 3,
+              "ol_quantity": 1,
+              "ol_dist_info": "mwIjQp3yC2koIeZGJyTJ9VCz"
+            },
+            {
+              "ol_w_id": 3,
+              "ol_d_id": 4,
+              "ol_o_id": 3001,
+              "ol_number": 8,
+              "ol_i_id": 10547,
+              "ol_delivery_d": null,
+              "ol_amount": "408.45",
+              "ol_supply_w_id": 3,
+              "ol_quantity": 7,
+              "ol_dist_info": "peb31roZA4zPWZsZOybi2W76"
+            },
+            {
+              "ol_w_id": 3,
+              "ol_d_id": 4,
+              "ol_o_id": 3001,
+              "ol_number": 9,
+              "ol_i_id": 19157,
+              "ol_delivery_d": null,
+              "ol_amount": "760.60",
+              "ol_supply_w_id": 3,
+              "ol_quantity": 10,
+              "ol_dist_info": "ahUhr1fL354mD3ytDu9q7SNH"
+            },
+            {
+              "ol_w_id": 3,
+              "ol_d_id": 4,
+              "ol_o_id": 3001,
+              "ol_number": 10,
+              "ol_i_id": 47016,
+              "ol_delivery_d": null,
+              "ol_amount": "152.55",
+              "ol_supply_w_id": 3,
+              "ol_quantity": 9,
+              "ol_dist_info": "PRgH005BY1voSRPmE3PQh3Go"
+            },
+            {
+              "ol_w_id": 3,
+              "ol_d_id": 4,
+              "ol_o_id": 3001,
+              "ol_number": 11,
+              "ol_i_id": 9030,
+              "ol_delivery_d": null,
+              "ol_amount": "725.30",
+              "ol_supply_w_id": 3,
+              "ol_quantity": 10,
+              "ol_dist_info": "ZrELxoHfXyg2zs1wxcBhzBCX"
+            },
+            {
+              "ol_w_id": 3,
+              "ol_d_id": 4,
+              "ol_o_id": 3001,
+              "ol_number": 12,
+              "ol_i_id": 98400,
+              "ol_delivery_d": null,
+              "ol_amount": "151.86",
+              "ol_supply_w_id": 3,
+              "ol_quantity": 3,
+              "ol_dist_info": "Gkr75SH6WqZjxiHC1qyTOQXg"
+            }
+          ],
+          "stock_records": [
+            {
+              "s_i_id": 85665,
+              "s_w_id": 3,
+              "s_quantity": 22,
+              "s_ytd": 3,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 91884,
+              "s_w_id": 3,
+              "s_quantity": 54,
+              "s_ytd": 3,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 29265,
+              "s_w_id": 3,
+              "s_quantity": 13,
+              "s_ytd": 6,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 45849,
+              "s_w_id": 3,
+              "s_quantity": 78,
+              "s_ytd": 10,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 14848,
+              "s_w_id": 3,
+              "s_quantity": 89,
+              "s_ytd": 9,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 17815,
+              "s_w_id": 3,
+              "s_quantity": 50,
+              "s_ytd": 4,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 43807,
+              "s_w_id": 3,
+              "s_quantity": 21,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 10547,
+              "s_w_id": 3,
+              "s_quantity": 70,
+              "s_ytd": 7,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 19157,
+              "s_w_id": 3,
+              "s_quantity": 78,
+              "s_ytd": 10,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 47016,
+              "s_w_id": 3,
+              "s_quantity": 55,
+              "s_ytd": 9,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 9030,
+              "s_w_id": 3,
+              "s_quantity": 62,
+              "s_ytd": 10,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 98400,
+              "s_w_id": 3,
+              "s_quantity": 19,
+              "s_ytd": 3,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_district"
+          ],
+          "actual_modified": [
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_district"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 3,
+      "input_params": {
+        "in_w_id": 2,
+        "in_d_id": 1,
+        "in_c_id": 2660,
+        "in_ol_supply_w_id": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "in_ol_i_id": [
+          14663,
+          45142,
+          20446,
+          14986,
+          26267
+        ],
+        "in_ol_quantity": [
+          8,
+          5,
+          6,
+          5,
+          3
+        ]
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "out_w_tax": "0.0600",
+          "out_d_tax": "0.1390",
+          "out_o_id": 3001,
+          "out_o_entry_d": "2025-11-27 19:35:58.506633",
+          "out_ol_cnt": 5,
+          "out_ol_amount": [
+            "333.12",
+            "243.25",
+            "242.64",
+            "120.85",
+            "222.57"
+          ],
+          "out_total_amount": "1128.94",
+          "out_c_last": "OUGHTABLEPRES",
+          "out_c_credit": "GC",
+          "out_c_discount": "0.1900",
+          "out_i_name": [
+            "AGCAPrLyjQh0TajyCClp7n",
+            "ZY7y03dZXr7oWhu1WoWe96mT",
+            "wLzYjOcXvynJrYN8",
+            "gugznikYqDnufs",
+            "TZtEc4wKpqdyU2qj0433"
+          ],
+          "out_i_price": [
+            "41.64",
+            "48.65",
+            "40.44",
+            "24.17",
+            "74.19"
+          ],
+          "out_s_quantity": [
+            84,
+            40,
+            63,
+            33,
+            77
+          ],
+          "out_brand_generic": [
+            "G",
+            "G",
+            "G",
+            "G",
+            "G"
+          ]
+        },
+        "db_state": {
+          "district": {
+            "d_next_o_id": 3002,
+            "d_tax": "0.1390"
+          },
+          "order": {
+            "o_w_id": 2,
+            "o_d_id": 1,
+            "o_id": 3001,
+            "o_c_id": 2660,
+            "o_carrier_id": null,
+            "o_ol_cnt": 5,
+            "o_all_local": 1,
+            "o_entry_d": "2025-11-27 19:35:58.506633"
+          },
+          "new_order": {
+            "no_w_id": 2,
+            "no_d_id": 1,
+            "no_o_id": 3001
+          },
+          "order_lines": [
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3001,
+              "ol_number": 1,
+              "ol_i_id": 14663,
+              "ol_delivery_d": null,
+              "ol_amount": "333.12",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 8,
+              "ol_dist_info": "lx3w0vC11zU4exx0Lz20vKRm"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3001,
+              "ol_number": 2,
+              "ol_i_id": 45142,
+              "ol_delivery_d": null,
+              "ol_amount": "243.25",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 5,
+              "ol_dist_info": "Sj7sgfZqMjV4nMjbc2PAhBS1"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3001,
+              "ol_number": 3,
+              "ol_i_id": 20446,
+              "ol_delivery_d": null,
+              "ol_amount": "242.64",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 6,
+              "ol_dist_info": "qPt9vNWrD0rDpyTN8FIeNa8b"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3001,
+              "ol_number": 4,
+              "ol_i_id": 14986,
+              "ol_delivery_d": null,
+              "ol_amount": "120.85",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 5,
+              "ol_dist_info": "vCeyiT1xDM6l0W6NLpyrkNnh"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3001,
+              "ol_number": 5,
+              "ol_i_id": 26267,
+              "ol_delivery_d": null,
+              "ol_amount": "222.57",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 3,
+              "ol_dist_info": "aABwrlBpeE44qjsv3mbnVLSW"
+            }
+          ],
+          "stock_records": [
+            {
+              "s_i_id": 14663,
+              "s_w_id": 2,
+              "s_quantity": 76,
+              "s_ytd": 8,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 45142,
+              "s_w_id": 2,
+              "s_quantity": 35,
+              "s_ytd": 5,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 20446,
+              "s_w_id": 2,
+              "s_quantity": 57,
+              "s_ytd": 6,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 14986,
+              "s_w_id": 2,
+              "s_quantity": 28,
+              "s_ytd": 5,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 26267,
+              "s_w_id": 2,
+              "s_quantity": 74,
+              "s_ytd": 3,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_district"
+          ],
+          "actual_modified": [
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_district"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 4,
+      "input_params": {
+        "in_w_id": 1,
+        "in_d_id": 8,
+        "in_c_id": 2666,
+        "in_ol_supply_w_id": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "in_ol_i_id": [
+          38898,
+          1259,
+          30457,
+          77835,
+          71400,
+          73219
+        ],
+        "in_ol_quantity": [
+          3,
+          8,
+          10,
+          8,
+          5,
+          5
+        ]
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "out_w_tax": "0.0049",
+          "out_d_tax": "0.0436",
+          "out_o_id": 3001,
+          "out_o_entry_d": "2025-11-27 19:36:24.926078",
+          "out_ol_cnt": 6,
+          "out_ol_amount": [
+            "38.82",
+            "214.64",
+            "772.10",
+            "26.00",
+            "109.90",
+            "182.45"
+          ],
+          "out_total_amount": "1109.94",
+          "out_c_last": "PRESPRIEING",
+          "out_c_credit": "GC",
+          "out_c_discount": "0.2123",
+          "out_i_name": [
+            "q1JGW0s5lrgbD2sIeN",
+            "k2U9ZEkR434Mv8s4BzAD",
+            "arwycWxWc8EuZNANd0fzMK5",
+            "FUgEpQ585cYZ3k",
+            "arwycWxWc8EuZNzT",
+            "R7alRYreWTmmo3s5U0qzf0"
+          ],
+          "out_i_price": [
+            "12.94",
+            "26.83",
+            "77.21",
+            "3.25",
+            "21.98",
+            "36.49"
+          ],
+          "out_s_quantity": [
+            29,
+            50,
+            90,
+            30,
+            39,
+            81
+          ],
+          "out_brand_generic": [
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G"
+          ]
+        },
+        "db_state": {
+          "district": {
+            "d_next_o_id": 3002,
+            "d_tax": "0.0436"
+          },
+          "order": {
+            "o_w_id": 1,
+            "o_d_id": 8,
+            "o_id": 3001,
+            "o_c_id": 2666,
+            "o_carrier_id": null,
+            "o_ol_cnt": 6,
+            "o_all_local": 1,
+            "o_entry_d": "2025-11-27 19:36:24.926078"
+          },
+          "new_order": {
+            "no_w_id": 1,
+            "no_d_id": 8,
+            "no_o_id": 3001
+          },
+          "order_lines": [
+            {
+              "ol_w_id": 1,
+              "ol_d_id": 8,
+              "ol_o_id": 3001,
+              "ol_number": 1,
+              "ol_i_id": 38898,
+              "ol_delivery_d": null,
+              "ol_amount": "38.82",
+              "ol_supply_w_id": 1,
+              "ol_quantity": 3,
+              "ol_dist_info": "PoT20yzIxSIoUu1RtdVzcJHp"
+            },
+            {
+              "ol_w_id": 1,
+              "ol_d_id": 8,
+              "ol_o_id": 3001,
+              "ol_number": 2,
+              "ol_i_id": 1259,
+              "ol_delivery_d": null,
+              "ol_amount": "214.64",
+              "ol_supply_w_id": 1,
+              "ol_quantity": 8,
+              "ol_dist_info": "k6X0gZMqSanRKAMJSxkkj6xr"
+            },
+            {
+              "ol_w_id": 1,
+              "ol_d_id": 8,
+              "ol_o_id": 3001,
+              "ol_number": 3,
+              "ol_i_id": 30457,
+              "ol_delivery_d": null,
+              "ol_amount": "772.10",
+              "ol_supply_w_id": 1,
+              "ol_quantity": 10,
+              "ol_dist_info": "qjGptaY7sgT1zrEaVkvxf63K"
+            },
+            {
+              "ol_w_id": 1,
+              "ol_d_id": 8,
+              "ol_o_id": 3001,
+              "ol_number": 4,
+              "ol_i_id": 77835,
+              "ol_delivery_d": null,
+              "ol_amount": "26.00",
+              "ol_supply_w_id": 1,
+              "ol_quantity": 8,
+              "ol_dist_info": "RfDcr1CPzrhe1lXV7aQWTtfv"
+            },
+            {
+              "ol_w_id": 1,
+              "ol_d_id": 8,
+              "ol_o_id": 3001,
+              "ol_number": 5,
+              "ol_i_id": 71400,
+              "ol_delivery_d": null,
+              "ol_amount": "109.90",
+              "ol_supply_w_id": 1,
+              "ol_quantity": 5,
+              "ol_dist_info": "a2TEyxq4wKvWA4vYtK5zmiiK"
+            },
+            {
+              "ol_w_id": 1,
+              "ol_d_id": 8,
+              "ol_o_id": 3001,
+              "ol_number": 6,
+              "ol_i_id": 73219,
+              "ol_delivery_d": null,
+              "ol_amount": "182.45",
+              "ol_supply_w_id": 1,
+              "ol_quantity": 5,
+              "ol_dist_info": "Wofs7QHExakScPn8O1fbOorC"
+            }
+          ],
+          "stock_records": [
+            {
+              "s_i_id": 38898,
+              "s_w_id": 1,
+              "s_quantity": 26,
+              "s_ytd": 3,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 1259,
+              "s_w_id": 1,
+              "s_quantity": 42,
+              "s_ytd": 8,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 30457,
+              "s_w_id": 1,
+              "s_quantity": 80,
+              "s_ytd": 10,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 77835,
+              "s_w_id": 1,
+              "s_quantity": 22,
+              "s_ytd": 8,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 71400,
+              "s_w_id": 1,
+              "s_quantity": 34,
+              "s_ytd": 5,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 73219,
+              "s_w_id": 1,
+              "s_quantity": 76,
+              "s_ytd": 5,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_district"
+          ],
+          "actual_modified": [
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_district"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 5,
+      "input_params": {
+        "in_w_id": 2,
+        "in_d_id": 1,
+        "in_c_id": 325,
+        "in_ol_supply_w_id": [
+          2
+        ],
+        "in_ol_i_id": [
+          999999
+        ],
+        "in_ol_quantity": [
+          5
+        ]
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "Item number 999999 is not valid; order id 3002\nCONTEXT:  PL/pgSQL function bmsql_proc_new_order(integer,integer,integer,integer[],integer[],integer[]) line 95 at RAISE\n"
+      }
+    },
+    {
+      "execution_number": 6,
+      "input_params": {
+        "in_w_id": 2,
+        "in_d_id": 1,
+        "in_c_id": 325,
+        "in_ol_supply_w_id": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "in_ol_i_id": [
+          40750,
+          17713,
+          52370,
+          6338,
+          21218,
+          89060,
+          16097,
+          27003,
+          93857,
+          7651,
+          13522,
+          85846,
+          56723,
+          5997,
+          85661
+        ],
+        "in_ol_quantity": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "out_w_tax": "0.0600",
+          "out_d_tax": "0.1390",
+          "out_o_id": 3002,
+          "out_o_entry_d": "2025-11-27 19:37:04.244759",
+          "out_ol_cnt": 15,
+          "out_ol_amount": [
+            "60.72",
+            "61.57",
+            "29.80",
+            "30.96",
+            "28.90",
+            "63.82",
+            "26.26",
+            "75.08",
+            "45.13",
+            "32.39",
+            "69.82",
+            "56.01",
+            "36.09",
+            "19.56",
+            "67.35"
+          ],
+          "out_total_amount": "735.74",
+          "out_c_last": "PRIABLEPRES",
+          "out_c_credit": "GC",
+          "out_c_discount": "0.1277",
+          "out_i_name": [
+            "LauFrRL9sh9SLhv",
+            "m5zPFzbfMqg5owP5Zhx",
+            "n79QhW0flhyd4SgoXc",
+            "SWNPQsvOgzCThDC",
+            "OBah7v3T0kM2Ffuf",
+            "YKFIuKItl9JXaI",
+            "ukOUIs4ZBzJILnB",
+            "K7Z0vogFDnU1ZkzT",
+            "FUgEpQ585cYZ3ksDcSm",
+            "rao4UARo3PdwllAWbV",
+            "gxg94pQdVpmhaXv",
+            "k2U9ZEkR434Mv8GYw",
+            "wgvtIUeWXuV95zsza",
+            "l9P37n6D0vP5nWqdDUV",
+            "CMRe9GY0MctJbouBBQl"
+          ],
+          "out_i_price": [
+            "60.72",
+            "61.57",
+            "29.80",
+            "30.96",
+            "28.90",
+            "63.82",
+            "26.26",
+            "75.08",
+            "45.13",
+            "32.39",
+            "69.82",
+            "56.01",
+            "36.09",
+            "19.56",
+            "67.35"
+          ],
+          "out_s_quantity": [
+            95,
+            30,
+            96,
+            50,
+            74,
+            40,
+            14,
+            85,
+            90,
+            20,
+            28,
+            30,
+            41,
+            97,
+            72
+          ],
+          "out_brand_generic": [
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G",
+            "G"
+          ]
+        },
+        "db_state": {
+          "district": {
+            "d_next_o_id": 3003,
+            "d_tax": "0.1390"
+          },
+          "order": {
+            "o_w_id": 2,
+            "o_d_id": 1,
+            "o_id": 3002,
+            "o_c_id": 325,
+            "o_carrier_id": null,
+            "o_ol_cnt": 15,
+            "o_all_local": 1,
+            "o_entry_d": "2025-11-27 19:37:04.244759"
+          },
+          "new_order": {
+            "no_w_id": 2,
+            "no_d_id": 1,
+            "no_o_id": 3002
+          },
+          "order_lines": [
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 1,
+              "ol_i_id": 40750,
+              "ol_delivery_d": null,
+              "ol_amount": "60.72",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "JuWZ9CDeJ36CDdkJBLs9GSYS"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 2,
+              "ol_i_id": 17713,
+              "ol_delivery_d": null,
+              "ol_amount": "61.57",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "AQO0HvltyogBuYswhSYFZznD"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 3,
+              "ol_i_id": 52370,
+              "ol_delivery_d": null,
+              "ol_amount": "29.80",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "AQO0HvltyogBuYswhSYFZznD"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 4,
+              "ol_i_id": 6338,
+              "ol_delivery_d": null,
+              "ol_amount": "30.96",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "qvlIkkOXtAWJCMNaP7DIFHq8"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 5,
+              "ol_i_id": 21218,
+              "ol_delivery_d": null,
+              "ol_amount": "28.90",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "cLTxDIJ1oZY5xFhChG7vsmrU"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 6,
+              "ol_i_id": 89060,
+              "ol_delivery_d": null,
+              "ol_amount": "63.82",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "cLTxDIJ1oZY5xFhChG7vsmrU"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 7,
+              "ol_i_id": 16097,
+              "ol_delivery_d": null,
+              "ol_amount": "26.26",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "tZ9F4FU0XRM6hfjo0rLh78EH"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 8,
+              "ol_i_id": 27003,
+              "ol_delivery_d": null,
+              "ol_amount": "75.08",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "pj0kjPwyQOLjU1oLweLcQu7L"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 9,
+              "ol_i_id": 93857,
+              "ol_delivery_d": null,
+              "ol_amount": "45.13",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "PLmAX4VIV8Ja7D17NkzNvqLO"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 10,
+              "ol_i_id": 7651,
+              "ol_delivery_d": null,
+              "ol_amount": "32.39",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "vCeyiT1xDM6l0W6NLpyrkNnh"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 11,
+              "ol_i_id": 13522,
+              "ol_delivery_d": null,
+              "ol_amount": "69.82",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "BAUdsGWuEnCq9V208JHDyE2y"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 12,
+              "ol_i_id": 85846,
+              "ol_delivery_d": null,
+              "ol_amount": "56.01",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "tZ9F4FU0XRM6hfjo0rLh78EH"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 13,
+              "ol_i_id": 56723,
+              "ol_delivery_d": null,
+              "ol_amount": "36.09",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "IuSmHRAncrtFRVakwAUMGimP"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 14,
+              "ol_i_id": 5997,
+              "ol_delivery_d": null,
+              "ol_amount": "19.56",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "WRjEQJrZfBDbWC1D39ZIYPui"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3002,
+              "ol_number": 15,
+              "ol_i_id": 85661,
+              "ol_delivery_d": null,
+              "ol_amount": "67.35",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 1,
+              "ol_dist_info": "tZ9F4FU0XRM6hfjo0rLh78EH"
+            }
+          ],
+          "stock_records": [
+            {
+              "s_i_id": 40750,
+              "s_w_id": 2,
+              "s_quantity": 94,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 17713,
+              "s_w_id": 2,
+              "s_quantity": 29,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 52370,
+              "s_w_id": 2,
+              "s_quantity": 95,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 6338,
+              "s_w_id": 2,
+              "s_quantity": 49,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 21218,
+              "s_w_id": 2,
+              "s_quantity": 73,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 89060,
+              "s_w_id": 2,
+              "s_quantity": 39,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 16097,
+              "s_w_id": 2,
+              "s_quantity": 13,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 27003,
+              "s_w_id": 2,
+              "s_quantity": 84,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 93857,
+              "s_w_id": 2,
+              "s_quantity": 89,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 7651,
+              "s_w_id": 2,
+              "s_quantity": 19,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 13522,
+              "s_w_id": 2,
+              "s_quantity": 27,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 85846,
+              "s_w_id": 2,
+              "s_quantity": 29,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 56723,
+              "s_w_id": 2,
+              "s_quantity": 40,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 5997,
+              "s_w_id": 2,
+              "s_quantity": 96,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 85661,
+              "s_w_id": 2,
+              "s_quantity": 71,
+              "s_ytd": 1,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 0
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_district"
+          ],
+          "actual_modified": [
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_district"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 7,
+      "input_params": {
+        "in_w_id": 2,
+        "in_d_id": 1,
+        "in_c_id": 325,
+        "in_ol_supply_w_id": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "in_ol_i_id": [
+          40750,
+          17713,
+          52370,
+          6338,
+          21218
+        ],
+        "in_ol_quantity": [
+          10,
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "out_w_tax": "0.0600",
+          "out_d_tax": "0.1390",
+          "out_o_id": 3003,
+          "out_o_entry_d": "2025-11-27 19:37:29.525964",
+          "out_ol_cnt": 5,
+          "out_ol_amount": [
+            "607.20",
+            "615.70",
+            "298.00",
+            "309.60",
+            "289.00"
+          ],
+          "out_total_amount": "2216.76",
+          "out_c_last": "PRIABLEPRES",
+          "out_c_credit": "GC",
+          "out_c_discount": "0.1277",
+          "out_i_name": [
+            "LauFrRL9sh9SLhv",
+            "m5zPFzbfMqg5owP5Zhx",
+            "n79QhW0flhyd4SgoXc",
+            "SWNPQsvOgzCThDC",
+            "OBah7v3T0kM2Ffuf"
+          ],
+          "out_i_price": [
+            "60.72",
+            "61.57",
+            "29.80",
+            "30.96",
+            "28.90"
+          ],
+          "out_s_quantity": [
+            94,
+            29,
+            95,
+            49,
+            73
+          ],
+          "out_brand_generic": [
+            "G",
+            "G",
+            "G",
+            "G",
+            "G"
+          ]
+        },
+        "db_state": {
+          "district": {
+            "d_next_o_id": 3004,
+            "d_tax": "0.1390"
+          },
+          "order": {
+            "o_w_id": 2,
+            "o_d_id": 1,
+            "o_id": 3003,
+            "o_c_id": 325,
+            "o_carrier_id": null,
+            "o_ol_cnt": 5,
+            "o_all_local": 1,
+            "o_entry_d": "2025-11-27 19:37:29.525964"
+          },
+          "new_order": {
+            "no_w_id": 2,
+            "no_d_id": 1,
+            "no_o_id": 3003
+          },
+          "order_lines": [
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3003,
+              "ol_number": 1,
+              "ol_i_id": 40750,
+              "ol_delivery_d": null,
+              "ol_amount": "607.20",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 10,
+              "ol_dist_info": "JuWZ9CDeJ36CDdkJBLs9GSYS"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3003,
+              "ol_number": 2,
+              "ol_i_id": 17713,
+              "ol_delivery_d": null,
+              "ol_amount": "615.70",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 10,
+              "ol_dist_info": "AQO0HvltyogBuYswhSYFZznD"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3003,
+              "ol_number": 3,
+              "ol_i_id": 52370,
+              "ol_delivery_d": null,
+              "ol_amount": "298.00",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 10,
+              "ol_dist_info": "AQO0HvltyogBuYswhSYFZznD"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3003,
+              "ol_number": 4,
+              "ol_i_id": 6338,
+              "ol_delivery_d": null,
+              "ol_amount": "309.60",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 10,
+              "ol_dist_info": "qvlIkkOXtAWJCMNaP7DIFHq8"
+            },
+            {
+              "ol_w_id": 2,
+              "ol_d_id": 1,
+              "ol_o_id": 3003,
+              "ol_number": 5,
+              "ol_i_id": 21218,
+              "ol_delivery_d": null,
+              "ol_amount": "289.00",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 10,
+              "ol_dist_info": "cLTxDIJ1oZY5xFhChG7vsmrU"
+            }
+          ],
+          "stock_records": [
+            {
+              "s_i_id": 40750,
+              "s_w_id": 2,
+              "s_quantity": 84,
+              "s_ytd": 11,
+              "s_order_cnt": 2,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 17713,
+              "s_w_id": 2,
+              "s_quantity": 19,
+              "s_ytd": 11,
+              "s_order_cnt": 2,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 52370,
+              "s_w_id": 2,
+              "s_quantity": 85,
+              "s_ytd": 11,
+              "s_order_cnt": 2,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 6338,
+              "s_w_id": 2,
+              "s_quantity": 39,
+              "s_ytd": 11,
+              "s_order_cnt": 2,
+              "s_remote_cnt": 0
+            },
+            {
+              "s_i_id": 21218,
+              "s_w_id": 2,
+              "s_quantity": 63,
+              "s_ytd": 11,
+              "s_order_cnt": 2,
+              "s_remote_cnt": 0
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_district"
+          ],
+          "actual_modified": [
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_district"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 8,
+      "input_params": {
+        "in_w_id": 1,
+        "in_d_id": 1,
+        "in_c_id": 325,
+        "in_ol_supply_w_id": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "in_ol_i_id": [
+          40750,
+          17713,
+          52370,
+          6338
+        ],
+        "in_ol_quantity": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "out_w_tax": "0.0049",
+          "out_d_tax": "0.1435",
+          "out_o_id": 3001,
+          "out_o_entry_d": "2025-11-27 19:37:54.772676",
+          "out_ol_cnt": 4,
+          "out_ol_amount": [
+            "303.60",
+            "307.85",
+            "149.00",
+            "154.80"
+          ],
+          "out_total_amount": "894.46",
+          "out_c_last": "PRIABLEPRES",
+          "out_c_credit": "GC",
+          "out_c_discount": "0.1490",
+          "out_i_name": [
+            "LauFrRL9sh9SLhv",
+            "m5zPFzbfMqg5owP5Zhx",
+            "n79QhW0flhyd4SgoXc",
+            "SWNPQsvOgzCThDC"
+          ],
+          "out_i_price": [
+            "60.72",
+            "61.57",
+            "29.80",
+            "30.96"
+          ],
+          "out_s_quantity": [
+            84,
+            56,
+            15,
+            48
+          ],
+          "out_brand_generic": [
+            "G",
+            "G",
+            "G",
+            "G"
+          ]
+        },
+        "db_state": {
+          "district": {
+            "d_next_o_id": 3002,
+            "d_tax": "0.1435"
+          },
+          "order": {
+            "o_w_id": 1,
+            "o_d_id": 1,
+            "o_id": 3001,
+            "o_c_id": 325,
+            "o_carrier_id": null,
+            "o_ol_cnt": 4,
+            "o_all_local": 0,
+            "o_entry_d": "2025-11-27 19:37:54.772676"
+          },
+          "new_order": {
+            "no_w_id": 1,
+            "no_d_id": 1,
+            "no_o_id": 3001
+          },
+          "order_lines": [
+            {
+              "ol_w_id": 1,
+              "ol_d_id": 1,
+              "ol_o_id": 3001,
+              "ol_number": 1,
+              "ol_i_id": 40750,
+              "ol_delivery_d": null,
+              "ol_amount": "303.60",
+              "ol_supply_w_id": 2,
+              "ol_quantity": 5,
+              "ol_dist_info": "JuWZ9CDeJ36CDdkJBLs9GSYS"
+            },
+            {
+              "ol_w_id": 1,
+              "ol_d_id": 1,
+              "ol_o_id": 3001,
+              "ol_number": 2,
+              "ol_i_id": 17713,
+              "ol_delivery_d": null,
+              "ol_amount": "307.85",
+              "ol_supply_w_id": 3,
+              "ol_quantity": 5,
+              "ol_dist_info": "ioNvA7PUg2T3EYekug9DH2oR"
+            },
+            {
+              "ol_w_id": 1,
+              "ol_d_id": 1,
+              "ol_o_id": 3001,
+              "ol_number": 3,
+              "ol_i_id": 52370,
+              "ol_delivery_d": null,
+              "ol_amount": "149.00",
+              "ol_supply_w_id": 4,
+              "ol_quantity": 5,
+              "ol_dist_info": "KpSvEZqZfcg0eDeDmjwcfyP9"
+            },
+            {
+              "ol_w_id": 1,
+              "ol_d_id": 1,
+              "ol_o_id": 3001,
+              "ol_number": 4,
+              "ol_i_id": 6338,
+              "ol_delivery_d": null,
+              "ol_amount": "154.80",
+              "ol_supply_w_id": 5,
+              "ol_quantity": 5,
+              "ol_dist_info": "kIH4GKaMB6qWhOr7492LEDLO"
+            }
+          ],
+          "stock_records": [
+            {
+              "s_i_id": 40750,
+              "s_w_id": 2,
+              "s_quantity": 79,
+              "s_ytd": 16,
+              "s_order_cnt": 3,
+              "s_remote_cnt": 1
+            },
+            {
+              "s_i_id": 17713,
+              "s_w_id": 3,
+              "s_quantity": 51,
+              "s_ytd": 5,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 1
+            },
+            {
+              "s_i_id": 52370,
+              "s_w_id": 4,
+              "s_quantity": 101,
+              "s_ytd": 5,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 1
+            },
+            {
+              "s_i_id": 6338,
+              "s_w_id": 5,
+              "s_quantity": 43,
+              "s_ytd": 5,
+              "s_order_cnt": 1,
+              "s_remote_cnt": 1
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_district"
+          ],
+          "actual_modified": [
+            "bmsql_stock",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_order_line",
+            "bmsql_district"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    }
+  ]
+}

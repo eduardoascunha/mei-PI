@@ -1,0 +1,537 @@
+
+You are a PostgreSQL expert specializing in transactional workloads.
+Using the database schema and the transaction description provided, generate a valid PostgreSQL stored function that implements the transaction.
+The examples below show SQL patterns, but DO NOT copy them literally.
+Analyze the current question independently and create the most appropriate transaction.
+
+
+Requirements:
+- Create a PostgreSQL function using CREATE OR REPLACE FUNCTION syntax
+- Include all necessary input and output parameters
+- Implement the complete transaction logic as described
+- Use RETURNS TABLE(...) ONLY when returning multiple rows of data
+- NEVER mix OUT parameters with non-table return types
+- Always qualify column names with table aliases in JOINs (e.g., w.w_name, not just w_name)
+- Avoid ambiguous column references
+- Use PL/pgSQL language
+- Return ONLY the SQL code without any markdown formatting or explanations
+- The function should be ready to execute in PostgreSQL
+- RESPECT THE INPUTS AND OUTPUTS PARAMETERS, RESPECT FOREIGN KEY CONSTRAINTS, CAREFUL WITH AMBIGUOUS REFERENCES FOR COLUMNS AND TABLES
+
+Format: Return the complete CREATE OR REPLACE FUNCTION statement.
+
+
+DATABASE SCHEMA:
+create table bmsql_config (
+  cfg_name    varchar(30) primary key,
+  cfg_value   varchar(50)
+);
+
+create table bmsql_warehouse (
+  w_id        integer   not null,
+  w_ytd       decimal(12,2),
+  w_tax       decimal(4,4),
+  w_name      varchar(10),
+  w_street_1  varchar(20),
+  w_street_2  varchar(20),
+  w_city      varchar(20),
+  w_state     char(2),
+  w_zip       char(9)
+);
+
+create table bmsql_district (
+  d_w_id       integer       not null,
+  d_id         integer       not null,
+  d_ytd        decimal(12,2),
+  d_tax        decimal(4,4),
+  d_next_o_id  integer,
+  d_name       varchar(10),
+  d_street_1   varchar(20),
+  d_street_2   varchar(20),
+  d_city       varchar(20),
+  d_state      char(2),
+  d_zip        char(9)
+);
+
+create table bmsql_customer (
+  c_w_id         integer        not null,
+  c_d_id         integer        not null,
+  c_id           integer        not null,
+  c_discount     decimal(4,4),
+  c_credit       char(2),
+  c_last         varchar(16),
+  c_first        varchar(16),
+  c_credit_lim   decimal(12,2),
+  c_balance      decimal(12,2),
+  c_ytd_payment  decimal(12,2),
+  c_payment_cnt  integer,
+  c_delivery_cnt integer,
+  c_street_1     varchar(20),
+  c_street_2     varchar(20),
+  c_city         varchar(20),
+  c_state        char(2),
+  c_zip          char(9),
+  c_phone        char(16),
+  c_since        timestamp,
+  c_middle       char(2),
+  c_data         varchar(500)
+);
+
+create table bmsql_history (
+  h_c_id   integer,
+  h_c_d_id integer,
+  h_c_w_id integer,
+  h_d_id   integer,
+  h_w_id   integer,
+  h_date   timestamp,
+  h_amount decimal(6,2),
+  h_data   varchar(24)
+);
+
+create table bmsql_new_order (
+  no_w_id  integer   not null,
+  no_d_id  integer   not null,
+  no_o_id  integer   not null
+);
+
+create table bmsql_oorder (
+  o_w_id       integer      not null,
+  o_d_id       integer      not null,
+  o_id         integer      not null,
+  o_c_id       integer,
+  o_carrier_id integer,
+  o_ol_cnt     integer,
+  o_all_local  integer,
+  o_entry_d    timestamp
+);
+
+create table bmsql_order_line (
+  ol_w_id         integer   not null,
+  ol_d_id         integer   not null,
+  ol_o_id         integer   not null,
+  ol_number       integer   not null,
+  ol_i_id         integer   not null,
+  ol_delivery_d   timestamp,
+  ol_amount       decimal(6,2),
+  ol_supply_w_id  integer,
+  ol_quantity     integer,
+  ol_dist_info    char(24)
+);
+
+create table bmsql_item (
+  i_id     integer      not null,
+  i_name   varchar(24),
+  i_price  decimal(5,2),
+  i_data   varchar(50),
+  i_im_id  integer
+);
+
+create table bmsql_stock (
+  s_w_id       integer       not null,
+  s_i_id       integer       not null,
+  s_quantity   integer,
+  s_ytd        integer,
+  s_order_cnt  integer,
+  s_remote_cnt integer,
+  s_data       varchar(50),
+  s_dist_01    char(24),
+  s_dist_02    char(24),
+  s_dist_03    char(24),
+  s_dist_04    char(24),
+  s_dist_05    char(24),
+  s_dist_06    char(24),
+  s_dist_07    char(24),
+  s_dist_08    char(24),
+  s_dist_09    char(24),
+  s_dist_10    char(24)
+);
+
+
+Here are some examples of questions and their corresponding SQL queries:
+
+--- Example 1 ---
+QUESTION:
+= The Order-Status Transaction
+The Order-Status business transaction queries the status of a customer's last order. It represents a mid -weight read - only database transaction with a low frequency of execution and response time requirement to satisfy on -line users. In addition, this table includes non -primary key access to the CUSTOMER table.
+
+== Input Data Generation
+    -> For any given terminal, the home warehouse number (W_ID) is constant over the whole measurement interval.
+    -> The district number (D_ID) is randomly selected within [1 ..10] from the home warehouse. The customer is randomly selected 60% of the time by last name (C_W_ID, C_D_ID, C_LAST) and 40% of the time by number (C_W_ID, C_D_ID, C_ID) from the selected district (C_D_ID = D_ID) and the home warehouse number (C_W_ID = W_ID). This can be implemented by generating a random number y within [1 .. 100];
+        • If y <= 60 a customer last name (C_LAST) is generated from a non-uniform random value using the NURand(255,0,999) function. The customer is using his/ her last name and is one of the, possibly several, customers with that last name.
+        Comment: This case illustrates the situation when a customer does not use his/ her unique customer number.
+        • If y > 60 a non-uniform random customer number (C_ID) is selected using the NURand (1023,1,3000) function. The customer is using his/ her customer number.
+    -> Inputs: (W_ID integer, D_ID integer, C_ID integer, C_LAST varchar(16))
+    -> Outputs: (C_ID integer, C_FIRST varchar(16), C_MIDDLE char(2), C_BALANCE decimal(12,2), O_ID integer, O_ENTRY_D varchar(24), O_CARRIER_ID integer, OL_SUPPLY_W_ID integer[], OL_I_ID integer[], OL_QUANTITY integer[], OL_AMOUNT decimal(12,2)[], OL_DELIVERY_D timestamp[])
+    -> NOTE: If an order contains fewer than 15 items, the output arrays must be padded to 15 elements with default values (0 for integer arrays, 0.0 for decimal arrays, and NULL for timestamp arrays) to accommodate the maximum displayable order lines 
+    
+== Transaction Profile
+    -> Querying for the status of an order is done in a single database transaction with the following steps:
+        1. Find the customer and his/ her last order, comprised of:
+            Case 1, the customer is selected based on customer number:
+                2 row selections with data retrieval.,
+            Case 2, the customer is selected based on customer last name:
+            4 row selections (on average) with data retrieval.
+        2. Check status (delivery date) of each item on the order (average items-per-order = 10), comprised of: (1 * items-per-order) row selections with data retrieval.
+    Note: The above summary is provided for information only. The actual requirement is defined by the detailed transaction profile below.
+
+    -> For a given customer number (C_W_ID , C_D_ID , C_ ID):
+        • The input data are communicated to the SUT.
+        • A database transaction is started.
+        • Case 1, the customer is selected based on customer number: the row in the CUSTOMER table with matching C_W_ID, C_D_ID, and C_ID is selected and C_BALAN CE, C_FIRST, C_MIDDLE, and C_LAST are retrieved. 
+        Case 2, the customer is selected based on customer last name: all rows in the CUSTOMER table with matching C_W_ID, C_D_ID and C_LAST are selected sorted by C_FIRST in ascending order. Let n be the number of rows selected. C_BALANCE, C_FIRST, C_MIDDLE, and C_LAST are retrieved from the row at position n/ 2 rounded up in the sorted set of selected rows from the CUSTOMER table.
+        • The row in the ORDER table with matching O_W_ID (equals C_W_ID), O_D_ID (equals C_D_ID), O_C_ID (equals C_ID), and with the largest existing O_ID, is selected. This is the most recent order placed by that customer. O_ID, O_ENTRY_D, and O_CARRIER_ID are retrieved.
+        • All rows in the ORDER-LINE table with matching OL_W_ID (equals O_W_ID), OL_D_ID (equals O_D_ID), and OL_O_ID (equals O_ID) are selected and the corresponding sets of OL_I_ID, OL_SUPPLY_W_ID, OL_QUANTITY, OL_AMOUNT, and OL_DELIVERY_D are retrieved.
+        • The database transaction is committed .
+            Comment: a commit is not required as long as all ACID properties are satisfied.
+        • The output data are communicated to the terminal.
+
+== Terminal I/O
+    -> For each transaction the originating terminal must display the follow ing input/ output screen with all input and output field s cleared (with either spaces or zeros) except for the Warehouse field which has not changed and must display the fixed W_ID value associated with that terminal.
+    -> The emulated user must enter, in the appropriate field of the input/ output screen, the required input
+    data which is organized as the distinct fields: D_ID and either C_ID or C_LAST.
+    -> The emulated terminal must display, in the approp riate fields of the input/ output screen, all input data and the output data resulting from the execution of the transaction. The display field s are divided in two groups as follows:
+        • One non-repeating group of fields: W_ID, D_ID, C_ID, C_FIRST, C_MIDDLE, C_LAST, C_BALANCE, O_ID, O_ENTRY_D, and O_CARRIER_ID;
+        • One repeating group of fields: OL_SUPPLY_W_ID, OL_I_ID, OL_QUANTITY, OL_AMOUNT, and OL_DELIVERY_D. The group is repeated O_OL_CNT times (once per item in the order).
+    Comment 1: The order of items shown on the Order-Status screen does not need to match the order in which the items were entered in its corresponding New -Order screen.
+    Comment 2: If OL_DELIVERY_D is null (i.e., the order has not been delivered), the terminal must display an implementation specific null date representation (e.g., blanks, 99-99-9999, etc.). The chosen null date representation must not change during the test.
+    Comment 3: If an order contains fewer than 15 items, the output arrays must be padded to 15 elements with default values (0 for integer arrays, 0.0 for decimal arrays, and NULL for timestamp arrays) to accommodate the maximum displayable order lines (rows 8-22 on the terminal screen).
+
+    -> The following table summarizes the terminal I/ O requirements for the Order-Status transaction:
+        Enter Display Coordinates
+        Row/ Column
+        Non-repeating Group W_ID 2/ 12
+        D_ID D_ID 2/ 29
+        C_ID 1 C_ID 3/ 11
+        C_FIRST 3/ 24
+        C_MIDDLE 3/ 41
+        C_LAST 2 C_LAST 3/ 44
+        C_BALANCE 4/ 16
+        O_ID 6/ 15
+        O_ENTRY_D 6/ 38
+        O_CARRIER_ID 6/ 76
+        Repeating Group OL_SUPPLY_W_ID 8-22/ 3
+        OL_I_ID 8-22/ 14
+        OL_QUANTITY 8-22/ 25
+        OL_AMOUNT 8-22/ 33
+        OL_DELIVERY_D 8-22/ 47
+        1 Enter only for query by customer number. 2
+        Enter only for query by customer last name.
+
+SQL QUERY:
+CREATE OR REPLACE FUNCTION bmsql_proc_order_status(
+    IN in_w_id integer,
+    IN in_d_id integer,
+    INOUT in_c_id integer,
+    IN in_c_last varchar(16),
+    OUT out_c_first varchar(16),
+    OUT out_c_middle char(2),
+    OUT out_c_balance decimal(12,2),
+    OUT out_o_id integer,
+    OUT out_o_entry_d varchar(24),
+    OUT out_o_carrier_id integer,
+    OUT out_ol_supply_w_id integer[],
+    OUT out_ol_i_id integer[],
+    OUT out_ol_quantity integer[],
+    OUT out_ol_amount decimal(12,2)[],
+    OUT out_ol_delivery_d timestamp[]
+) AS
+$$
+DECLARE
+	v_order_line	record;
+	v_ol_idx		integer := 1;
+BEGIN
+    --If C_LAST is given instead of C_ID (60%), determine the C_ID.
+    IF in_c_last IS NOT NULL THEN
+		in_c_id = bmsql_cid_from_clast(in_w_id, in_d_id, in_c_last);
+    END IF;
+
+    --Select the CUSTOMER
+    SELECT INTO out_c_first, out_c_middle, in_c_last, out_c_balance
+			c_first, c_middle, c_last, c_balance
+		FROM bmsql_customer
+		WHERE c_w_id=in_w_id AND c_d_id=in_d_id AND c_id = in_c_id;
+
+    --Select the last ORDER for this customer.
+    SELECT INTO out_o_id, out_o_entry_d, out_o_carrier_id
+			o_id, o_entry_d, coalesce(o_carrier_id, -1)
+		FROM bmsql_oorder
+		WHERE o_w_id = in_w_id AND o_d_id = in_d_id AND o_c_id = in_c_id
+		AND o_id = (
+			SELECT max(o_id)
+				FROM bmsql_oorder
+				WHERE o_w_id = in_w_id AND o_d_id = in_d_id AND o_c_id = in_c_id
+			);
+
+	FOR v_order_line IN SELECT ol_i_id, ol_supply_w_id, ol_quantity,
+				ol_amount, ol_delivery_d
+			FROM bmsql_order_line
+			WHERE ol_w_id = in_w_id AND ol_d_id = in_d_id AND ol_o_id = out_o_id
+			ORDER BY ol_w_id, ol_d_id, ol_o_id, ol_number
+			LOOP
+	    out_ol_i_id[v_ol_idx] = v_order_line.ol_i_id;
+	    out_ol_supply_w_id[v_ol_idx] = v_order_line.ol_supply_w_id;
+	    out_ol_quantity[v_ol_idx] = v_order_line.ol_quantity;
+	    out_ol_amount[v_ol_idx] = v_order_line.ol_amount;
+	    out_ol_delivery_d[v_ol_idx] = v_order_line.ol_delivery_d;
+		v_ol_idx = v_ol_idx + 1;
+	END LOOP;
+
+    WHILE v_ol_idx < 16 LOOP
+		out_ol_i_id[v_ol_idx] = 0;
+		out_ol_supply_w_id[v_ol_idx] = 0;
+		out_ol_quantity[v_ol_idx] = 0;
+		out_ol_amount[v_ol_idx] = 0.0;
+		out_ol_delivery_d[v_ol_idx] = NULL;
+		v_ol_idx = v_ol_idx +1;
+    END LOOP;
+END;
+$$
+Language plpgsql;
+
+--- Example 2 ---
+QUESTION:
+= The Delivery Transaction
+The Delivery business transaction consists of processing a batch of 10 new (not yet delivered) orders. Each order is processed (delivered) in full within the scope of a read -write database transaction. The number of orders delivered as a group (or batched) within the same database transaction is implementation specific. The business transaction, comprised of one or more (up to 10) database transactions, has a low frequency of execution and must complete within a relaxed response time requirement.
+The Delivery transaction is intended to be executed in deferred mode through a queuing mechanism, rather than interactively, with terminal response indicating transaction completion. The result of the deferred execution is recorded into a result file.
+
+== Input Data Generation
+    -> For any given terminal, the home warehouse number (W_ID) is constant over the whole measurement interval.
+    -> The carrier number (O_CARRIER_ID) is random ly selected within [1 .. 10].
+    -> The delivery date (OL_DELIVERY_D).
+    -> Inputs: (w_id_in, o_carrier_id, ol_delivery_d)
+    -> Output: (delivered_o_id integer[])
+
+== Deferred Execution
+    -> Unlike the other transactions in this benchmark, the Delivery transaction must be executed in deferred mode. This mode of execution is primarily characterized by queuing the transaction for defe rred execution, returning control to the originating terminal independently from the completion of the transaction, and recording execution information into a result file.
+    -> Deferred execution of the Delivery transaction must adhere to the following rules:
+        1. The business transaction is queued for deferred execution as a result of entering the last input character.
+        2. The deferred execution of the business transaction must follow the profile with the input data as entered through the input/ output screen and communicated to the deferred execution queue.
+        3. At least 90% of the business transaction s must complete within 80 seconds of their being queued for execution.
+        4. Upon completion of the business transaction , the following information must have been recorded into a result file:
+            • The time at which the business transaction was queued.
+            • The warehouse number (W_ID) and the carried number (O_CARRIER_ID) associated with the business transaction.
+            • The district number (D_ID) and the order number (O_ID) of each order delivered by the business transaction.
+            • The time at which the business transaction completed.
+    -> The result file associated with the deferred execution of the Delivery business transaction is only for the purpose of recording information about that transaction and is not relevant to the business function being performed. The result file must adhere to the following rules:
+        1. All events must be completed before the related information is recorded (e.g., the recording of a district and order number must be done after the database transaction , within which this order was delivered, has been committed );
+        2. No ACID property is required (e.g., the recording of a district and order number is not required to be atomic with the actual delivery of that order) as the result file is used for benchmarking purposes only.
+        3. During the measurement interval the result file must be located either on a durable medium or in the internal memory of the SUT. In this last case, the result file m ust be transferred onto a durable medium after the last measurement interval of the test run.
+
+== Terminal I/O
+    -> For each transaction the originating terminal must display the following input/ output screen with all input and output field s cleared (with either spaces or zeros) except for the Warehouse field which has not changed and must display the fixed W_ID value associated with that terminal.
+    -> The emulated user must enter, in the appropriate input field of the input/ output screen, the required input data which is organized as one distinct field: O_CARRIER_ID.
+    -> The emulated terminal must display, in the appropriate output field of the input/ output screen, all input data and the output data which results from the queuing of the transaction. The following fields are displayed: W_ID, O_CARRIER_ID, and the status message "Delivery has been queued".
+
+    -> The following table summarizes the terminal I/ O requirements for the Delivery transaction :
+        Enter Display Coordinates
+        Row/ Column
+        Non-repeating Group W_ID 2/ 12
+        O_CARRIER_ID O_CARRIER_ID 4/ 17
+        "Delivery has been queued" 6/ 19
+
+== Transaction Profile
+    -> The deferred execution of the Delivery transaction delivers one outstanding order (average items-perorder = 10) for each one of the 10 districts of the selected warehouse using one or more (up to 10) database transactions. Delivering each order is done in the following steps:
+        1. Process the order, comprised of:
+            1 row selection with data retrieval,
+            (1 + items-per-order) row selections with data retrieval and update.
+        2. Update the customer's balance, comprised of:
+            1 row selections with data update.
+        3. Remove the order from the new-order list, comprised of:
+            1 row deletion.
+    Comment: This business transaction can be done within a single database transaction or broken down into up to 10 database transactions to allow the test sponsor the flexibility to implement the business transaction with the most efficient number of database transactions. Note: The above summary is provided for information only. The actual requirement is defined by the detailed transaction profile below.
+
+    -> For a given warehouse number (W_ID), for each of the 10 districts (D_W_ID , D_ID) within that warehouse, and for a given carrier number (O_CARRIER_ID):
+        • The input data are retrieved from the deferred execution queue.
+        • A database transaction is started unless a database transaction is already active from being started as part of the delivery of a previous order (i.e., more than one order is delivered within the same database transaction).
+        • The row in the NEW-ORDER table with matching NO_W_ID (equals W_ID) and NO_D_ID (equals D_ID) and with the lowest NO_O_ID value is selected. This is the oldest undelivered order of that district. NO_O_ID, the order number, is retrieved. If no matching row is found, then the delivery of an order for this district is skipped. The condition in which no outstandin g order is present at a given district must be handled by skipping the delivery of an order for that district only and resuming the delivery of an order from all remaining districts of the selected warehouse. If this condition occurs in more than 1%, or in more than one, whichever is greater, of the business transaction s, it must be reported. The result file must be organized in such a way that the percentage of skipped deliveries and skipped districts can be determined.
+        • The selected row in the NEW-ORDER table is deleted.
+        • The row in the ORDER table with matching O_W_ID (equals W_ ID), O_D_ID (equals D_ID), and O_ID (equals NO_O_ID) is selected, O_C_ID, the customer number, is retrieved, and O_CARRIER_ID is updated.
+        • All rows in the ORDER-LINE table with matching OL_W_ID (equals O_W_ID), OL_D_ID (equals O_D_ID), and OL_O_ID (equals O_ID) are selected. All OL_DELIVERY_D, the delivery dates, are updated to the current system time as returned by the operating system and the sum of all OL_AMOUNT is retrieved.
+        • The row in the CUSTOMER table with matching C_W_ID (equals W_ID), C_D_ID (equals D_ID), and C_ID (equals O_C_ID) is selected and C_BALANCE is increased by the sum of all order-line amounts (OL_AMOUNT) previously retrieved. C_DELIVERY_CNT is incremented by 1.
+        • The database transaction is committed unless more ord ers will be delivered within this database transaction.
+        • Information about the delivered order is recorded into the result file.
+
+SQL QUERY:
+CREATE OR REPLACE FUNCTION bmsql_proc_delivery_bg(
+	IN in_w_id integer,
+	IN in_o_carrier_id integer,
+	IN in_ol_delivery_d timestamp,
+	OUT out_delivered_o_id integer[]
+) AS
+$$
+DECLARE
+	var_d_id integer;
+	var_o_id integer;
+	var_c_id integer;
+	var_sum_ol_amount decimal(12, 2);
+BEGIN
+	FOR var_d_id IN 1..10 LOOP
+		var_o_id = -1;
+		/*
+		 * Try to find the oldest undelivered order for this
+		 * DISTRICT. There may not be one, which is a case
+		 * that needs to be reported.
+		*/
+		WHILE var_o_id < 0 LOOP
+			SELECT INTO var_o_id
+					no_o_id
+				FROM bmsql_new_order
+			WHERE no_w_id = in_w_id AND no_d_id = var_d_id
+			ORDER BY no_o_id ASC;
+			IF NOT FOUND THEN
+			    var_o_id = -1;
+				EXIT;
+			END IF;
+
+			DELETE FROM bmsql_new_order
+				WHERE no_w_id = in_w_id AND no_d_id = var_d_id
+				  AND no_o_id = var_o_id;
+			IF NOT FOUND THEN
+			    var_o_id = -1;
+			END IF;
+		END LOOP;
+
+		IF var_o_id < 0 THEN
+			-- No undelivered NEW_ORDER found for this District.
+			var_d_id = var_d_id + 1;
+			CONTINUE;
+		END IF;
+
+		/*
+		 * We found out oldert undelivered order for this DISTRICT
+		 * and the NEW_ORDER line has been deleted. Process the
+		 * rest of the DELIVERY_BG.
+		*/
+
+		-- Update the ORDER setting the o_carrier_id.
+		UPDATE bmsql_oorder
+			SET o_carrier_id = in_o_carrier_id
+			WHERE o_w_id = in_w_id AND o_d_id = var_d_id AND o_id = var_o_id;
+
+		-- Get the o_c_id from the ORDER.
+		SELECT INTO var_c_id
+				o_c_id
+			FROM bmsql_oorder
+			WHERE o_w_id = in_w_id AND o_d_id = var_d_id AND o_id = var_o_id;
+
+		-- Update ORDER_LINE setting the ol_delivery_d.
+		UPDATE bmsql_order_line
+			SET ol_delivery_d = in_ol_delivery_d
+			WHERE ol_w_id = in_w_id AND ol_d_id = var_d_id
+			  AND ol_o_id = var_o_id;
+
+		-- SELECT the sum(ol_amount) from ORDER_LINE.
+		SELECT INTO var_sum_ol_amount
+				sum(ol_amount) AS sum_ol_amount
+			FROM bmsql_order_line
+			WHERE ol_w_id = in_w_id AND ol_d_id = var_d_id
+			  AND ol_o_id = var_o_id;
+
+		-- Update the CUSTOMER.
+		UPDATE bmsql_customer
+			SET c_balance = c_balance + var_sum_ol_amount,
+				c_delivery_cnt = c_delivery_cnt + 1
+			WHERE c_w_id = in_w_id AND c_d_id = var_d_id and c_id = var_c_id;
+
+		out_delivered_o_id[var_d_id] = var_o_id;
+
+		var_d_id = var_d_id +1 ;
+	END LOOP;
+END;
+$$
+LANGUAGE plpgsql;
+
+--- Your Task ---
+QUESTION:
+= The Payment Transaction
+The Payment business transaction updates the customer's balance and reflects the payment on the district and warehouse sales statistics. It represents a light-weight, read -write transaction with a high frequency of execution and stringent response time requirements to satisfy on -line users. In addition, this transaction includes non-primary key access to the CUSTOMER table.
+
+== Input Data Generation
+    -> For any given terminal, the home warehouse number (W_ID) is constant over the whole measurement interval.
+    -> The district number (D_ID) is randomly selected within [1 ..10] from the home warehouse (D_W_ID) = W_ID). The customer is randomly selected 60% of the time by last name (C_W_ID , C_D_ID, C_LAST) and 40% of the time by number (C_W_ID , C_D_ID , C_ID). Independent of the mode of selection, the customer resident warehouse is the home warehouse 85% of the time and is a randomly selected remote warehouse 15% of the time. This can be implemented by generating two random numbers x and y within [1 .. 100];
+        • If x <= 85 a customer is selected from the selected district number (C_D_ID = D_ID) and the home warehouse number (C_W_ID = W_ID). The customer is paying through h is/ her own warehouse.
+        • If x > 85 a customer is selected from a random district number (C_D_ID is randomly selected within [1 .. 10]), and a random remote warehouse number (C_W_ID is randomly selected within the range of act ive warehouses, and C_W_ID ≠ W_ID). The customer is paying through a warehouse and a district other than his/ her own.
+        • If y <= 60 a customer last name (C_LAST) is generated according  from a non-uniform random value using the NURand (255,0,999) function. The customer is using his/ her last name and is one of the possibly several customers with that last name.
+        Comment: This case illustrates the situation when a customer does not use his/ her unique customer number.
+        • If y > 60 a non-uniform random customer number (C_ID) is selected using the NURand (1023,1,3000) function. The customer is using his/ her customer number. Comment: If the system is configured for a single warehouse, then all customers are selected from that single home warehouse.
+
+    -> The payment amount (H_AMOUNT) is random ly selected within [1.00 .. 5,000.00].
+    -> The payment date (H_DATE) in generated within the SUT by using the current system date and time.
+    -> A Payment transaction is said to be home if the customer belongs to the warehouse from which the payment is entered (when C_W_ID = W_ID).
+    -> A Payment transaction is said to be remote if the warehouse from which the payment is entered is not the one to which the customer belongs (when C_W_ID does not equal W_ID).
+    -> Inputs: (W_ID integer, D_ID integer, C_ID integer, C_D_ID integer, C_W_ID integer, C_LAST varchar(16), H_AMOUNT decimal(6,2))
+    -> Outputs: (C_ID integer, W_NAME varchar(10), W_STREET_1 varchar(20), W_STREET_2 varchar(20), W_CITY varchar(20), W_STATE char(2), W_ZIP char(9), D_NAME varchar(10), D_STREET_1 varchar(20), D_STREET_2 varchar(20), D_CITY varchar(20), D_STATE char(2), D_ZIP char(9), C_FIRST varchar(16), C_MIDDLE char(2), C_STREET_1 varchar(20), C_STREET_2 varchar(20), C_CITY varchar(20), C_STATE char(2), C_ZIP char(9), C_PHONE char(16), C_SINCE timestamp, C_CREDIT char(2), C_CREDIT_LIM decimal(12,2), C_DISCOUNT decimal(4,4), C_BALANCE decimal(12,2), C_DATA varchar(500), H_DATE timestamp)
+    -> The c_data field is only updated for customers with "BC" (Bad Credit). For customers with "GC", the procedure returns an empty string and does not modify the history in the c_data field of the bmsql_customer table.
+    
+== Transaction Profile
+    -> The Payment transaction enters a customer's paym ent with a single database transaction and is comprised of: 
+    Case 1, the customer is selected based on customer number:
+        3 row selections with data retrieval and update,
+        1 row insertion.
+    Case 2, the customer is selected based on customer last name:
+        2 row selections (on average) with data retrieval,
+        3 row selections with data retrieval and update,
+        1 row insertion.
+
+    Note: The above summary is provided for information only. The actual requirement is defined by the detailed transaction profile below.
+
+    -> For a given warehouse number (W_ID), district number (D_W_ID , D_ID), customer numbe r (C_W_ID , C_D_ID , C_ ID) or customer last name (C_W_ID , C_D_ID , C_LAST), and payment amount (H_AMOUNT):
+        • The input data are communicated to the SUT.
+        • A database transaction is started.
+        • The row in the WAREHOUSE table with matching W_ID is selected. W_NAME, W_STREET_1, W_STREET_2, W_CITY, W_STATE, and W_ZIP are retrieved and W_YTD, the warehouse's year-to-date balance, is increased by H_ AMOUNT.
+        • The row in the DISTRICT table with matching D_W_ID and D_ID is selected. D_NAME, D_STREET_1, D_STREET_2, D_CITY, D_STATE, and D_ZIP are retrieved and D_YTD, the district's year-to-date balance, is increased by H_AMOUNT.
+        • Case 1, the customer is selected based on customer number: the row in the CUSTOMER table with matching C_W_ID, C_D_ID and C_ID is selected. C_FIRST, C_MIDDLE, C_LAST, C_STREET_1, C_STREET_2, C_CITY, C_STATE, C_ZIP, C_PHONE, C_SINCE, C_CREDIT, C_CREDIT_LIM, C_DISCOUNT, and C_BALAN CE are retrieved. C_BALANCE is decreased by H_AMOUNT. C_YTD_PAYMENT is increased by H_AMOUNT. C_PAYMENT_CNT is incremented by 1.
+        Case 2, the customer is selected based on customer last name: all rows in the CUSTOMER table with matching C_W_ID, C_D_ID and C_LAST are selected sorted by C_FIRST in ascending order. Let n be the number of rows selected. C_ID, C_FIRST, C_MIDDLE, C_STREET_1, C_STREET_2, C_CITY, C_STATE, C_ZIP, C_PHONE, C_SINCE, C_CREDIT, C_CREDIT_LIM, C_DISCOUNT, and C_BALAN CE are retrieved from the row at position (n/ 2 rounded up to the next integer) in the sorted set of selected rows from the CUSTOMER table. C_BALANCE is decreased by H_AMOUNT. C_YTD_PAYMENT is increased by H_AMOUNT. C_PAYMENT_CNT is incremented by 1.
+        • If the value of C_CREDIT is equal to "BC", then C_DATA is also retrieved from the selected customer and the following history information: C_ID, C_D_ID, C_W_ID, D_ID, W_ID, and H_AMOUNT, are inserted at the left of the C_DATA field by shifting the existing content of C_DATA to the right by an equal number of bytes and by discarding the bytes that are shifted out of the right side of the C_DATA field. The content of the C_DATA field never exceeds 500 characters. The selected customer is updated with the new C_DATA field. If C_DATA is implemented as two field s, they must be treated and operated on as one single field.
+        Comment: The format used to store the history information must be such that its display on the input/ output screen is in a readable format. (e.g. the W_ID portion of C_DATA must use the same display format as the output field W_ID).
+        • H_DATA is built by concatenating W_NAME and D_NAME separated by 4 spaces.
+        • A new row is inserted into the HISTORY table with H_C_ID = C_ID, H_C_D_ID = C_D_ID, H_C_W_ID = C_W_ID, H_D_ID = D_ID, and H_W_ID = W_ID.
+        • The database transaction is committed .
+        • The output data are communicated to the terminal.
+
+== Terminal I/O
+    -> For each transaction the originating terminal must display the following input/ output screen with all input and output field s cleared (with either spaces or zeros) except for the Warehouse field which has not changed and must display the fixed W_ID value associated with that terminal. In addition, all address fields (i.e., W_STREET_1, W_STREET_2, W_CITY, W_STATE, and W_ZIP) of the warehouse may display the fixed values for these fields if these values were already retrieved in a previous transaction.
+    -> The emulated user must enter, in the appropriate fields of the input/ output screen, the required input data which is organized as the distinct fields: D_ID, C_ID or C_LAST, C_D_ID, C_W_ID, and H_AMOUNT. 
+    Comment: In order to maintain a reasonable amount of keyed input, the custom er warehouse field must be filled in even when it is the same as the home warehouse.
+    -> The emulated terminal must display, in the appropriate fields of the input/ output screen, all input data and the output data resulting from the execution of the transaction. The following fields are displayed: W_ID, D_ID, C_ID, C_D_ID, C_W_ID, W_STREET_1, W_STREET_2, W_CITY, W_STATE, W_ZIP, D_STREET_1, D_STREET_2, D_CITY, D_STATE, D_ZIP, C_FIRST, C_MIDDLE, C_LAST, C_STREET_1, C_STREET_2, C_CITY, C_STATE, C_ZIP, C_PHONE, C_SINCE, C_CREDIT, C_CREDIT_LIM, C_DISCOUNT, C_BALAN CE, the first 200 characters of C_DATA (only if C_CREDIT = "BC"), H_AMOUNT, and H_DATE.    
+
+    -> The following table summarizes the terminal I/ O requirements for the Payment transaction :
+        Enter Display Coordinates
+        Row/ Column
+        Non-repeating Group W_ID 4/ 12
+        D_ID D_ID 4/ 52
+        C_ID 1 C_ID 9/ 11
+        C_D_ID C_D_ID 9/ 54
+        C_W_ID C_W_ID 9/ 33
+        H_AMOUNT H_AMOUNT 15/ 24
+        H_DATE 2/ 7
+        W_STREET_1 5/ 1
+        W_STREET_2 6/ 1
+        W_CITY 7/ 1
+        W_STATE 7/ 22
+        W_ZIP 7/ 25
+        D_STREET_1 5/ 42
+        D_STREET_2 6/ 42
+        D_CITY 7/ 42
+        D_STATE 7/ 63
+        D_ZIP 7/ 66
+        C_FIRST 10/ 9
+        C_MIDDLE 10/ 26
+        C_LAST 2 C_LAST 10/ 29
+        C_STREET_1 11/ 9
+        C_STREET_2 12/ 9
+        C_CITY 13/ 9
+        C_STATE 13/ 30
+        C_ZIP 13/ 33
+        C_PHONE 13/ 58
+        C_SINCE 10/ 58
+        C_CREDIT 11/ 58
+        C_CREDIT_LIM 16/ 18
+        C_DISCOUNT 12/ 58
+        C_BALANCE 15/ 56
+        C_DATA 3 18-21/ 12
+        1 Enter only for payment by customer number 2
+        Enter only for payment by customer last name 3
+        Display the first 200 characters only if C_CREDIT = "BC
+
+SQL QUERY:

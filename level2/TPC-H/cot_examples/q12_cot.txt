@@ -1,0 +1,53 @@
+QUESTION:
+This query determines whether selecting less expensive modes of shipping is negatively affecting the critical-priority orders by causing more parts to be received by customers after the committed date.
+The Shipping Modes and Order Priority Query counts, by ship mode, for lineitems actually received by customers in 
+a given year, the number of lineitems belonging to orders for which the l_receiptdate exceeds the l_commitdate for 
+two  different  specified  ship  modes.  Only  lineitems  that  were  actually  shipped  before  the  l_commitdate  are  con-
+sidered. The late lineitems are partitioned into two groups, those with priority URGENT or HIGH, and those with a 
+priority other than URGENT.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. SHIPMODE1 is randomly selected within the list of values defined for Modes in Clause 4.2.2.13; In this case assume SHIPMODE1 'FOB'
+2. SHIPMODE2 is randomly selected within the list of values defined for Modes in  Clause  4.2.2.13 and must be different from the value selected for SHIPMODE1 in item 1; In this case assume SHIPMODE2 'MAIL'
+3. DATE is the first of January of a randomly selected year within [1993 .. 1997]. In this case assume DATE '1996-01-01'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "belonging to orders for", columns [orders.o_orderkey] may be used.
+According to "for lineitems actually received", columns [lineitem.l_shipdate] may be used.
+According to "l_commitdate for", columns [lineitem.l_commitdate] may be used.
+According to "l_receiptdate exceeds the", columns [lineitem.l_receiptdate] may be used.
+According to "lineitems belonging to orders", columns [lineitem.l_orderkey] may be used.
+According to "order priority query", columns [orders.o_orderpriority] may be used.
+According to "ship mode for lineitems", columns [lineitem.l_shipmode] may be used.
+Values [1, 1-URGENT, 1996-01-01, 2-HIGH, FOB, MAIL] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	l_shipmode,
+	sum(case
+		when o_orderpriority = '1-URGENT'
+			or o_orderpriority = '2-HIGH'
+			then 1
+		else 0
+	end) as high_line_count,
+	sum(case
+		when o_orderpriority <> '1-URGENT'
+			and o_orderpriority <> '2-HIGH'
+			then 1
+		else 0
+	end) as low_line_count
+from
+	orders,
+	lineitem
+where
+	o_orderkey = l_orderkey
+	and l_shipmode in ('FOB', 'MAIL')
+	and l_commitdate < l_receiptdate
+	and l_shipdate < l_commitdate
+	and l_receiptdate >= date '1996-01-01'
+	and l_receiptdate < date '1996-01-01' + interval '1' year
+group by
+	l_shipmode
+order by
+	l_shipmode;

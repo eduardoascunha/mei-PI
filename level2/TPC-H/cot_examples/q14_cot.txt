@@ -1,0 +1,29 @@
+QUESTION:
+This query monitors the market response to a promotion such as TV advertisements or a special campaign.
+The Promotion Effect Query determines what percentage of the revenue in a given year and month was derived from promotional parts. The query considers only parts actually shipped in that month and gives the percentage. Revenue is defined as (l_extendedprice * (1-l_discount)). 
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. DATE is the first day of a month randomly selected from a random year within [1993 .. 1997]. In this case assume DATE '1996-04-01'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "as l_extendedprice", columns [lineitem.l_extendedprice] may be used.
+According to "l_extendedprice 1 l_discount", columns [lineitem.l_discount] may be used.
+According to "parts the", columns [part.p_partkey, part.p_type] may be used.
+According to "shipped in that month", columns [lineitem.l_shipdate] may be used.
+Values [1, 100.00, 1996-04-01, PROMO%] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	100.00 * sum(case
+		when p_type like 'PROMO%'
+			then l_extendedprice * (1 - l_discount)
+		else 0
+	end) / sum(l_extendedprice * (1 - l_discount)) as promo_revenue
+from
+	lineitem,
+	part
+where
+	l_partkey = p_partkey
+	and l_shipdate >= date '1996-04-01'
+	and l_shipdate < date '1996-04-01' + interval '1' month;

@@ -1,0 +1,3 @@
+psql:chatgpt/results_FS5E_COT_04/queries/q21.sql:36: ERROR:  syntax error at or near "SQL"
+LINE 1: SQL QUERY:
+        ^

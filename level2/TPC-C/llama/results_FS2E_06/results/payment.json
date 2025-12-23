@@ -1,0 +1,158 @@
+{
+  "transaction_type": "payment",
+  "num_executions": 8,
+  "executions": [
+    {
+      "execution_number": 1,
+      "input_params": {
+        "in_w_id": 2,
+        "in_d_id": 7,
+        "in_c_id": 1220,
+        "in_c_d_id": 7,
+        "in_c_w_id": 2,
+        "in_c_last": null,
+        "in_h_amount": 4319.59
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column \"out_c_w_id\" does not exist\nLINE 7:                         out_c_w_id || ' ' || out_c_d_id || '...\n                                ^\nQUERY:  UPDATE bmsql_customer\n        SET c_balance = c_balance - in_h_amount,\n            c_ytd_payment = c_ytd_payment + in_h_amount,\n            c_payment_cnt = c_payment_cnt + 1,\n            c_data = CASE WHEN c_credit = 'BC' THEN\n                    substr(in_h_amount || ' ' || in_w_id || ' ' || in_d_id || ' ' ||\n                        out_c_w_id || ' ' || out_c_d_id || ' ' || out_c_id || ' ' ||\n                        out_c_data, 1, 500)\n                ELSE c_data END\n        WHERE c_w_id = in_c_w_id AND c_d_id = in_c_d_id AND c_id = out_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_payment(integer,integer,integer,integer,integer,character varying,numeric) line 41 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 2,
+      "input_params": {
+        "in_w_id": 7,
+        "in_d_id": 5,
+        "in_c_id": null,
+        "in_c_d_id": 5,
+        "in_c_w_id": 7,
+        "in_c_last": "OUGHTBARESE",
+        "in_h_amount": 1981.0
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column \"out_c_w_id\" does not exist\nLINE 7:                         out_c_w_id || ' ' || out_c_d_id || '...\n                                ^\nQUERY:  UPDATE bmsql_customer\n        SET c_balance = c_balance - in_h_amount,\n            c_ytd_payment = c_ytd_payment + in_h_amount,\n            c_payment_cnt = c_payment_cnt + 1,\n            c_data = CASE WHEN c_credit = 'BC' THEN\n                    substr(in_h_amount || ' ' || in_w_id || ' ' || in_d_id || ' ' ||\n                        out_c_w_id || ' ' || out_c_d_id || ' ' || out_c_id || ' ' ||\n                        out_c_data, 1, 500)\n                ELSE c_data END\n        WHERE c_w_id = in_c_w_id AND c_d_id = in_c_d_id AND c_id = out_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_payment(integer,integer,integer,integer,integer,character varying,numeric) line 41 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 3,
+      "input_params": {
+        "in_w_id": 8,
+        "in_d_id": 8,
+        "in_c_id": 142,
+        "in_c_d_id": 8,
+        "in_c_w_id": 8,
+        "in_c_last": null,
+        "in_h_amount": 1564.03
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column \"out_c_w_id\" does not exist\nLINE 7:                         out_c_w_id || ' ' || out_c_d_id || '...\n                                ^\nQUERY:  UPDATE bmsql_customer\n        SET c_balance = c_balance - in_h_amount,\n            c_ytd_payment = c_ytd_payment + in_h_amount,\n            c_payment_cnt = c_payment_cnt + 1,\n            c_data = CASE WHEN c_credit = 'BC' THEN\n                    substr(in_h_amount || ' ' || in_w_id || ' ' || in_d_id || ' ' ||\n                        out_c_w_id || ' ' || out_c_d_id || ' ' || out_c_id || ' ' ||\n                        out_c_data, 1, 500)\n                ELSE c_data END\n        WHERE c_w_id = in_c_w_id AND c_d_id = in_c_d_id AND c_id = out_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_payment(integer,integer,integer,integer,integer,character varying,numeric) line 41 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 4,
+      "input_params": {
+        "in_w_id": 9,
+        "in_d_id": 1,
+        "in_c_id": 2588,
+        "in_c_d_id": 5,
+        "in_c_w_id": 2,
+        "in_c_last": null,
+        "in_h_amount": 2561.78
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column \"out_c_w_id\" does not exist\nLINE 7:                         out_c_w_id || ' ' || out_c_d_id || '...\n                                ^\nQUERY:  UPDATE bmsql_customer\n        SET c_balance = c_balance - in_h_amount,\n            c_ytd_payment = c_ytd_payment + in_h_amount,\n            c_payment_cnt = c_payment_cnt + 1,\n            c_data = CASE WHEN c_credit = 'BC' THEN\n                    substr(in_h_amount || ' ' || in_w_id || ' ' || in_d_id || ' ' ||\n                        out_c_w_id || ' ' || out_c_d_id || ' ' || out_c_id || ' ' ||\n                        out_c_data, 1, 500)\n                ELSE c_data END\n        WHERE c_w_id = in_c_w_id AND c_d_id = in_c_d_id AND c_id = out_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_payment(integer,integer,integer,integer,integer,character varying,numeric) line 41 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 5,
+      "input_params": {
+        "in_w_id": 1,
+        "in_d_id": 5,
+        "in_c_id": 1653,
+        "in_c_d_id": 5,
+        "in_c_w_id": 1,
+        "in_c_last": null,
+        "in_h_amount": 1.0
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column \"out_c_w_id\" does not exist\nLINE 7:                         out_c_w_id || ' ' || out_c_d_id || '...\n                                ^\nQUERY:  UPDATE bmsql_customer\n        SET c_balance = c_balance - in_h_amount,\n            c_ytd_payment = c_ytd_payment + in_h_amount,\n            c_payment_cnt = c_payment_cnt + 1,\n            c_data = CASE WHEN c_credit = 'BC' THEN\n                    substr(in_h_amount || ' ' || in_w_id || ' ' || in_d_id || ' ' ||\n                        out_c_w_id || ' ' || out_c_d_id || ' ' || out_c_id || ' ' ||\n                        out_c_data, 1, 500)\n                ELSE c_data END\n        WHERE c_w_id = in_c_w_id AND c_d_id = in_c_d_id AND c_id = out_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_payment(integer,integer,integer,integer,integer,character varying,numeric) line 41 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 6,
+      "input_params": {
+        "in_w_id": 1,
+        "in_d_id": 5,
+        "in_c_id": 1653,
+        "in_c_d_id": 5,
+        "in_c_w_id": 1,
+        "in_c_last": null,
+        "in_h_amount": 5000.0
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column \"out_c_w_id\" does not exist\nLINE 7:                         out_c_w_id || ' ' || out_c_d_id || '...\n                                ^\nQUERY:  UPDATE bmsql_customer\n        SET c_balance = c_balance - in_h_amount,\n            c_ytd_payment = c_ytd_payment + in_h_amount,\n            c_payment_cnt = c_payment_cnt + 1,\n            c_data = CASE WHEN c_credit = 'BC' THEN\n                    substr(in_h_amount || ' ' || in_w_id || ' ' || in_d_id || ' ' ||\n                        out_c_w_id || ' ' || out_c_d_id || ' ' || out_c_id || ' ' ||\n                        out_c_data, 1, 500)\n                ELSE c_data END\n        WHERE c_w_id = in_c_w_id AND c_d_id = in_c_d_id AND c_id = out_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_payment(integer,integer,integer,integer,integer,character varying,numeric) line 41 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 7,
+      "input_params": {
+        "in_w_id": 1,
+        "in_d_id": 5,
+        "in_c_id": 2119,
+        "in_c_d_id": 6,
+        "in_c_w_id": 3,
+        "in_c_last": null,
+        "in_h_amount": 1000.0
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column \"out_c_w_id\" does not exist\nLINE 7:                         out_c_w_id || ' ' || out_c_d_id || '...\n                                ^\nQUERY:  UPDATE bmsql_customer\n        SET c_balance = c_balance - in_h_amount,\n            c_ytd_payment = c_ytd_payment + in_h_amount,\n            c_payment_cnt = c_payment_cnt + 1,\n            c_data = CASE WHEN c_credit = 'BC' THEN\n                    substr(in_h_amount || ' ' || in_w_id || ' ' || in_d_id || ' ' ||\n                        out_c_w_id || ' ' || out_c_d_id || ' ' || out_c_id || ' ' ||\n                        out_c_data, 1, 500)\n                ELSE c_data END\n        WHERE c_w_id = in_c_w_id AND c_d_id = in_c_d_id AND c_id = out_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_payment(integer,integer,integer,integer,integer,character varying,numeric) line 41 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 8,
+      "input_params": {
+        "in_w_id": 1,
+        "in_d_id": 5,
+        "in_c_id": null,
+        "in_c_d_id": 5,
+        "in_c_w_id": 1,
+        "in_c_last": "NONEXISTENT",
+        "in_h_amount": 100.0
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "Customer(s) for C_W_ID=1 C_D_ID=5 C_LAST=NONEXISTENT not found\nCONTEXT:  PL/pgSQL function bmsql_cid_from_clast(integer,integer,character varying) line 22 at RAISE\nPL/pgSQL function bmsql_proc_payment(integer,integer,integer,integer,integer,character varying,numeric) line 7 at assignment\n"
+      }
+    }
+  ]
+}

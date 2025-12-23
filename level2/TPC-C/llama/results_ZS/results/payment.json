@@ -1,0 +1,158 @@
+{
+  "transaction_type": "payment",
+  "num_executions": 8,
+  "executions": [
+    {
+      "execution_number": 1,
+      "input_params": {
+        "in_w_id": 2,
+        "in_d_id": 7,
+        "in_c_id": 1220,
+        "in_c_d_id": 7,
+        "in_c_w_id": 2,
+        "in_c_last": null,
+        "in_h_amount": 4319.59
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"w_name\" is ambiguous\nLINE 4:     RETURNING w_name, w_street_1, w_street_2, w_city, w_stat...\n                      ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_warehouse \n    SET w_ytd = w_ytd + p_h_amount \n    WHERE w_id = p_w_id \n    RETURNING w_name, w_street_1, w_street_2, w_city, w_state, w_zip\nCONTEXT:  PL/pgSQL function payment_transaction(integer,integer,integer,integer,integer,character varying,numeric) line 38 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 2,
+      "input_params": {
+        "in_w_id": 7,
+        "in_d_id": 5,
+        "in_c_id": null,
+        "in_c_d_id": 5,
+        "in_c_w_id": 7,
+        "in_c_last": "OUGHTBARESE",
+        "in_h_amount": 1981.0
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"w_name\" is ambiguous\nLINE 4:     RETURNING w_name, w_street_1, w_street_2, w_city, w_stat...\n                      ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_warehouse \n    SET w_ytd = w_ytd + p_h_amount \n    WHERE w_id = p_w_id \n    RETURNING w_name, w_street_1, w_street_2, w_city, w_state, w_zip\nCONTEXT:  PL/pgSQL function payment_transaction(integer,integer,integer,integer,integer,character varying,numeric) line 38 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 3,
+      "input_params": {
+        "in_w_id": 8,
+        "in_d_id": 8,
+        "in_c_id": 142,
+        "in_c_d_id": 8,
+        "in_c_w_id": 8,
+        "in_c_last": null,
+        "in_h_amount": 1564.03
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"w_name\" is ambiguous\nLINE 4:     RETURNING w_name, w_street_1, w_street_2, w_city, w_stat...\n                      ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_warehouse \n    SET w_ytd = w_ytd + p_h_amount \n    WHERE w_id = p_w_id \n    RETURNING w_name, w_street_1, w_street_2, w_city, w_state, w_zip\nCONTEXT:  PL/pgSQL function payment_transaction(integer,integer,integer,integer,integer,character varying,numeric) line 38 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 4,
+      "input_params": {
+        "in_w_id": 9,
+        "in_d_id": 1,
+        "in_c_id": 2588,
+        "in_c_d_id": 5,
+        "in_c_w_id": 2,
+        "in_c_last": null,
+        "in_h_amount": 2561.78
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"w_name\" is ambiguous\nLINE 4:     RETURNING w_name, w_street_1, w_street_2, w_city, w_stat...\n                      ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_warehouse \n    SET w_ytd = w_ytd + p_h_amount \n    WHERE w_id = p_w_id \n    RETURNING w_name, w_street_1, w_street_2, w_city, w_state, w_zip\nCONTEXT:  PL/pgSQL function payment_transaction(integer,integer,integer,integer,integer,character varying,numeric) line 38 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 5,
+      "input_params": {
+        "in_w_id": 1,
+        "in_d_id": 5,
+        "in_c_id": 1653,
+        "in_c_d_id": 5,
+        "in_c_w_id": 1,
+        "in_c_last": null,
+        "in_h_amount": 1.0
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"w_name\" is ambiguous\nLINE 4:     RETURNING w_name, w_street_1, w_street_2, w_city, w_stat...\n                      ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_warehouse \n    SET w_ytd = w_ytd + p_h_amount \n    WHERE w_id = p_w_id \n    RETURNING w_name, w_street_1, w_street_2, w_city, w_state, w_zip\nCONTEXT:  PL/pgSQL function payment_transaction(integer,integer,integer,integer,integer,character varying,numeric) line 38 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 6,
+      "input_params": {
+        "in_w_id": 1,
+        "in_d_id": 5,
+        "in_c_id": 1653,
+        "in_c_d_id": 5,
+        "in_c_w_id": 1,
+        "in_c_last": null,
+        "in_h_amount": 5000.0
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"w_name\" is ambiguous\nLINE 4:     RETURNING w_name, w_street_1, w_street_2, w_city, w_stat...\n                      ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_warehouse \n    SET w_ytd = w_ytd + p_h_amount \n    WHERE w_id = p_w_id \n    RETURNING w_name, w_street_1, w_street_2, w_city, w_state, w_zip\nCONTEXT:  PL/pgSQL function payment_transaction(integer,integer,integer,integer,integer,character varying,numeric) line 38 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 7,
+      "input_params": {
+        "in_w_id": 1,
+        "in_d_id": 5,
+        "in_c_id": 2119,
+        "in_c_d_id": 6,
+        "in_c_w_id": 3,
+        "in_c_last": null,
+        "in_h_amount": 1000.0
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"w_name\" is ambiguous\nLINE 4:     RETURNING w_name, w_street_1, w_street_2, w_city, w_stat...\n                      ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_warehouse \n    SET w_ytd = w_ytd + p_h_amount \n    WHERE w_id = p_w_id \n    RETURNING w_name, w_street_1, w_street_2, w_city, w_state, w_zip\nCONTEXT:  PL/pgSQL function payment_transaction(integer,integer,integer,integer,integer,character varying,numeric) line 38 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 8,
+      "input_params": {
+        "in_w_id": 1,
+        "in_d_id": 5,
+        "in_c_id": null,
+        "in_c_d_id": 5,
+        "in_c_w_id": 1,
+        "in_c_last": "NONEXISTENT",
+        "in_h_amount": 100.0
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"w_name\" is ambiguous\nLINE 4:     RETURNING w_name, w_street_1, w_street_2, w_city, w_stat...\n                      ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_warehouse \n    SET w_ytd = w_ytd + p_h_amount \n    WHERE w_id = p_w_id \n    RETURNING w_name, w_street_1, w_street_2, w_city, w_state, w_zip\nCONTEXT:  PL/pgSQL function payment_transaction(integer,integer,integer,integer,integer,character varying,numeric) line 38 at SQL statement\n"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+psql:chatgpt/results_FS2E_COT_06/queries/q8.sql:64: ERROR:  column reference "o_year" is ambiguous
+LINE 2: o_year,
+        ^

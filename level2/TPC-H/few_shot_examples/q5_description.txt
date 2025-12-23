@@ -1,0 +1,5 @@
+This query lists the revenue volume done through local suppliers.
+The Local Supplier Volume Query lists for each nation in a region the revenue  volume that resulted from lineitem transactions  in  which  the  customer  ordering  parts  and  the  supplier  filling  them  were  both  within  that  nation.  The query is run in order to determine whether to institute local distribution centers in a given region. The query considers only parts ordered in a given  year. The  query displays  the  nations and revenue  volume  in descending order by revenue. Revenue volume for all qualifying lineitems in a particular nation is defined as sum(l_extendedprice * (1  - l_discount)).
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. REGION is randomly selected within the list of values defined for R_NAME in C;aise 4.2.3; In this case assume REGION 'EUROPE'
+2. DATE is the first of January of a randomly selected year within [1993 .. 1997]. In this case assume 1994-01-01'

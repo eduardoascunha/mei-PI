@@ -1,0 +1,11 @@
+  shipmode  | num_orders 
+------------+------------
+ SHIP       |       1168
+ TRUCK      |       1115
+ AIR        |       1125
+ MAIL       |       1105
+ RAIL       |       1096
+ REG AIR    |       1045
+ FOB        |       1087
+(7 rows)
+

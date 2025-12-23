@@ -1,0 +1,254 @@
+{
+  "transaction_type": "payment",
+  "num_executions": 3,
+  "executions": [
+    {
+      "execution_number": 1,
+      "input_params": {
+        "in_w_id": 9,
+        "in_d_id": 6,
+        "in_c_id": null,
+        "in_c_d_id": 6,
+        "in_c_w_id": 9,
+        "in_c_last": "ESEANTIBAR",
+        "in_h_amount": 3850.54
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "out_w_name": null,
+          "out_w_street_1": null,
+          "out_w_street_2": null,
+          "out_w_city": null,
+          "out_w_state": null,
+          "out_w_zip": null,
+          "out_d_name": null,
+          "out_d_street_1": null,
+          "out_d_street_2": null,
+          "out_d_city": null,
+          "out_d_state": null,
+          "out_d_zip": null,
+          "out_c_first": null,
+          "out_c_middle": null,
+          "out_c_last": null,
+          "out_c_street_1": null,
+          "out_c_street_2": null,
+          "out_c_city": null,
+          "out_c_state": null,
+          "out_c_zip": null,
+          "out_c_phone": null,
+          "out_c_since": null,
+          "out_c_credit": null,
+          "out_c_credit_lim": null,
+          "out_c_discount": null,
+          "out_c_balance": null,
+          "out_c_data": "",
+          "out_h_data": null,
+          "out_h_date": "2025-11-25 12:41:36.921773"
+        },
+        "db_state": {
+          "customer": null,
+          "warehouse": {
+            "w_id": 9,
+            "w_ytd": null
+          },
+          "district": {
+            "d_id": 6,
+            "d_w_id": 9,
+            "d_ytd": null
+          },
+          "history_record": null
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_customer",
+            "bmsql_warehouse",
+            "bmsql_district",
+            "bmsql_history"
+          ],
+          "actual_modified": [
+            "bmsql_customer",
+            "bmsql_warehouse",
+            "bmsql_district",
+            "bmsql_history"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 2,
+      "input_params": {
+        "in_w_id": 4,
+        "in_d_id": 7,
+        "in_c_id": 2679,
+        "in_c_d_id": 7,
+        "in_c_w_id": 4,
+        "in_c_last": null,
+        "in_h_amount": 1742.68
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "out_w_name": null,
+          "out_w_street_1": null,
+          "out_w_street_2": null,
+          "out_w_city": null,
+          "out_w_state": null,
+          "out_w_zip": null,
+          "out_d_name": null,
+          "out_d_street_1": null,
+          "out_d_street_2": null,
+          "out_d_city": null,
+          "out_d_state": null,
+          "out_d_zip": null,
+          "out_c_first": null,
+          "out_c_middle": null,
+          "out_c_last": null,
+          "out_c_street_1": null,
+          "out_c_street_2": null,
+          "out_c_city": null,
+          "out_c_state": null,
+          "out_c_zip": null,
+          "out_c_phone": null,
+          "out_c_since": null,
+          "out_c_credit": null,
+          "out_c_credit_lim": null,
+          "out_c_discount": null,
+          "out_c_balance": null,
+          "out_c_data": "",
+          "out_h_data": null,
+          "out_h_date": "2025-11-25 12:42:11.042413"
+        },
+        "db_state": {
+          "customer": {
+            "c_id": 2679,
+            "c_d_id": 7,
+            "c_w_id": 4,
+            "c_balance": null,
+            "c_ytd_payment": null,
+            "c_payment_cnt": null,
+            "c_data": ""
+          },
+          "warehouse": {
+            "w_id": 4,
+            "w_ytd": null
+          },
+          "district": {
+            "d_id": 7,
+            "d_w_id": 4,
+            "d_ytd": null
+          },
+          "history_record": {
+            "h_c_id": 2679,
+            "h_c_d_id": 7,
+            "h_c_w_id": 4,
+            "h_d_id": 7,
+            "h_w_id": 4,
+            "h_date": "2025-11-25 12:42:11.042413",
+            "h_amount": "1742.68",
+            "h_data": null
+          }
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_customer",
+            "bmsql_warehouse",
+            "bmsql_district",
+            "bmsql_history"
+          ],
+          "actual_modified": [
+            "bmsql_customer",
+            "bmsql_warehouse",
+            "bmsql_district",
+            "bmsql_history"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 3,
+      "input_params": {
+        "in_w_id": 3,
+        "in_d_id": 2,
+        "in_c_id": null,
+        "in_c_d_id": 8,
+        "in_c_w_id": 4,
+        "in_c_last": "OUGHTCALLYABLE",
+        "in_h_amount": 4451.38
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "out_w_name": null,
+          "out_w_street_1": null,
+          "out_w_street_2": null,
+          "out_w_city": null,
+          "out_w_state": null,
+          "out_w_zip": null,
+          "out_d_name": null,
+          "out_d_street_1": null,
+          "out_d_street_2": null,
+          "out_d_city": null,
+          "out_d_state": null,
+          "out_d_zip": null,
+          "out_c_first": null,
+          "out_c_middle": null,
+          "out_c_last": null,
+          "out_c_street_1": null,
+          "out_c_street_2": null,
+          "out_c_city": null,
+          "out_c_state": null,
+          "out_c_zip": null,
+          "out_c_phone": null,
+          "out_c_since": null,
+          "out_c_credit": null,
+          "out_c_credit_lim": null,
+          "out_c_discount": null,
+          "out_c_balance": null,
+          "out_c_data": "",
+          "out_h_data": null,
+          "out_h_date": "2025-11-25 12:42:43.769460"
+        },
+        "db_state": {
+          "customer": null,
+          "warehouse": {
+            "w_id": 3,
+            "w_ytd": null
+          },
+          "district": {
+            "d_id": 2,
+            "d_w_id": 3,
+            "d_ytd": null
+          },
+          "history_record": null
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_customer",
+            "bmsql_warehouse",
+            "bmsql_district",
+            "bmsql_history"
+          ],
+          "actual_modified": [
+            "bmsql_customer",
+            "bmsql_warehouse",
+            "bmsql_district",
+            "bmsql_history"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    }
+  ]
+}

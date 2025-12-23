@@ -1,0 +1,52 @@
+QUESTION:
+The  Large  Volume  Customer  Query  ranks  customers  based  on  their  having  placed  a  large  quantity  order.  Large quantity orders are defined as those orders whose total quantity is above a certain level.
+The Large Volume Customer Query finds a list of the top 100 customers who have ever placed large quantity orders. The query lists the customer name, customer key, the order key, date and total price and the quantity for the order. 
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. QUANTITY is randomly selected within [312..315]. In this case assume QUANTITY = 314
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "customer key the", columns [customer.c_custkey] may be used.
+According to "customer name customer", columns [customer.c_name] may be used.
+According to "key the order key", columns [lineitem.l_orderkey] may be used.
+According to "order key", columns [orders.o_custkey, orders.o_orderkey] may be used.
+According to "order key date", columns [orders.o_orderdate] may be used.
+According to "orders whose total", columns [orders.o_totalprice] may be used.
+According to "text 1 quantity is", columns [lineitem.l_quantity] may be used.
+Values [314] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	c_name,
+	c_custkey,
+	o_orderkey,
+	o_orderdate,
+	o_totalprice,
+	sum(l_quantity)
+from
+	customer,
+	orders,
+	lineitem
+where
+	o_orderkey in (
+		select
+			l_orderkey
+		from
+			lineitem
+		group by
+			l_orderkey having
+				sum(l_quantity) > 314
+	)
+	and c_custkey = o_custkey
+	and o_orderkey = l_orderkey
+group by
+	c_name,
+	c_custkey,
+	o_orderkey,
+	o_orderdate,
+	o_totalprice
+order by
+	o_totalprice desc,
+	o_orderdate
+limit 100;

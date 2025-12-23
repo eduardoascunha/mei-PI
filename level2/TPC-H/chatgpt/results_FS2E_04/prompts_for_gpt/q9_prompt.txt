@@ -1,0 +1,186 @@
+
+You are a SQL expert.
+The examples below show SQL patterns, but DO NOT copy them literally.
+Analyze the current question independently and create the most appropriate query.
+Use example patterns only as inspiration, not as templates.
+Return ONLY the SQL code without markdown formatting or explanations.
+
+
+DATABASE SCHEMA:
+Table customer(
+  c_custkey integer,
+  c_name character varying,
+  c_address character varying,
+  c_nationkey integer,
+  c_phone character,
+  c_acctbal numeric,
+  c_mktsegment character,  -- Possible values: 'AUTOMOBILE', 'BUILDING', 'FURNITURE', 'MACHINERY', 'HOUSEHOLD'
+  c_comment character varying
+)
+
+Table lineitem(
+  l_orderkey integer,
+  l_partkey integer,
+  l_suppkey integer,
+  l_linenumber integer,
+  l_quantity numeric,
+  l_extendedprice numeric,
+  l_discount numeric,
+  l_tax numeric,
+  l_returnflag character,  -- Possible values: 'R' (Return), 'A' (Accept), 'N' (No return)
+  l_linestatus character,  -- Possible values: 'O' (Open), 'F' (Filled)
+  l_shipdate date,
+  l_commitdate date,
+  l_receiptdate date,
+  l_shipinstruct character,  -- Possible values: 'DELIVER IN PERSON', 'COLLECT COD', 'NONE', 'TAKE BACK RETURN'
+  l_shipmode character,  -- Possible values: 'AIR REG', 'AIR', 'RAIL', 'SHIP', 'TRUCK', 'MAIL', 'FOB'
+  l_comment character varying
+)
+
+Table nation(
+  n_nationkey integer,
+  n_name character,   -- examples: 'ALGERIA', 'BRAZIL', 'CANADA', 'JAPAN', etc.
+  n_regionkey integer,
+  n_comment character varying
+)
+
+Table orders(
+  o_orderkey integer,
+  o_custkey integer,
+  o_orderstatus character,  -- Possible values: 'O' (Open), 'F' (Filled), 'P' (Partial)
+  o_totalprice numeric,
+  o_orderdate date,
+  o_orderpriority character,  -- Possible values: '1-URGENT', '2-HIGH', '3-MEDIUM', '4-NOT SPECIFIED', '5-LOW'
+  o_clerk character,
+  o_shippriority integer,
+  o_comment character varying
+)
+
+Table part(
+  p_partkey integer,
+  p_name character varying,
+  p_mfgr character,  
+  p_brand character,  
+  p_type character varying,  
+  p_size integer,
+  p_container character, 
+  p_retailprice numeric,
+  p_comment character varying
+)
+
+Table partsupp(
+  ps_partkey integer,
+  ps_suppkey integer,
+  ps_availqty integer,
+  ps_supplycost numeric,
+  ps_comment character varying
+)
+
+Table region(
+  r_regionkey integer,
+  r_name character,  -- Possible values: 'AFRICA', 'AMERICA', 'ASIA', 'EUROPE', 'MIDDLE EAST'
+  r_comment character varying
+)
+
+Table supplier(
+  s_suppkey integer,
+  s_name character varying,
+  s_address character varying,
+  s_nationkey integer,
+  s_phone character,
+  s_acctbal numeric,
+  s_comment character varying
+)
+
+Here are some examples of questions and their corresponding SQL queries:
+
+--- Example 1 ---
+QUESTION:
+This query determines how the market share of a given nation within a given region has changed over two years  for a given part type.
+The  market  share  for  a  given  nation  within  a  given  region  is  defined  as  the  fraction  of  the  revenue,  the  sum  of [l_extendedprice * (1-l_discount)], from the products of a specified type in that region that was supplied by suppliers from the given nation. The query determines this for the years 1995 and 1996 presented in this order.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. NATION is randomly selected within the list of values defined for N_NAME in Clause 4.2.3; In this case assume NATION 'KENYA'
+2. REGION is the value defined in Clause 4.2.3 for R_NAME where R_REGIONKEY corresponds to N_REGIONKEY for the selected NATION in item 1 above; In this case assume REGION 'AFRICA'
+3. TYPE is randomly selected within the list of 3-syllable strings defined for Types in Clause 4.2.2.13. In this case assume TYPE 'ECONOMY PLATED BRASS'
+
+SQL QUERY:
+select
+	o_year,
+	sum(case
+		when nation = 'KENYA' then volume
+		else 0
+	end) / sum(volume) as mkt_share
+from
+	(
+		select
+			extract(year from o_orderdate) as o_year,
+			l_extendedprice * (1 - l_discount) as volume,
+			n2.n_name as nation
+		from
+			part,
+			supplier,
+			lineitem,
+			orders,
+			customer,
+			nation n1,
+			nation n2,
+			region
+		where
+			p_partkey = l_partkey
+			and s_suppkey = l_suppkey
+			and l_orderkey = o_orderkey
+			and o_custkey = c_custkey
+			and c_nationkey = n1.n_nationkey
+			and n1.n_regionkey = r_regionkey
+			and r_name = 'AFRICA'
+			and s_nationkey = n2.n_nationkey
+			and o_orderdate between date '1995-01-01' and date '1996-12-31'
+			and p_type = 'ECONOMY PLATED BRASS'
+	) as all_nations
+group by
+	o_year
+order by
+	o_year;
+
+--- Example 2 ---
+QUESTION:
+This query retrieves the 10 unshipped orders with the highest value.
+The Shipping Priority Query retrieves the shipping priority and potential revenue, defined as the sum of l_extendedprice * (1-l_discount), of the orders having the largest revenue among those that had not been shipped as of a given date. Orders are listed in decreasing order of revenue. If more than 10 unshipped orders exist, only the 10 orders with the largest revenue are listed.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. SEGMENT is randomly selected within the list of values defined for Segments in Clause 4.2.2.13; In this case assume segment 'FURNITURE'
+2. DATE is a randomly selected day within [1995-03-01 .. 1995-03-31]. In this case assume dates '1995-03-27', '1995-03-27'
+
+SQL QUERY:
+select
+	l_orderkey,
+	sum(l_extendedprice * (1 - l_discount)) as revenue,
+	o_orderdate,
+	o_shippriority
+from
+	customer,
+	orders,
+	lineitem
+where
+	c_mktsegment = 'FURNITURE'
+	and c_custkey = o_custkey
+	and l_orderkey = o_orderkey
+	and o_orderdate < date '1995-03-27'
+	and l_shipdate > date '1995-03-27'
+group by
+	l_orderkey,
+	o_orderdate,
+	o_shippriority
+order by
+	revenue desc,
+	o_orderdate
+limit 10;
+
+--- Your Task ---
+QUESTION:
+This query determines how much profit is made on a given line of parts, broken out by supplier nation and year.
+The Product Type Profit Measure Query finds, for each nation and each year, the profit for all parts ordered in that year that contain a specified substring in their names and that were filled by a supplier in that nation. The profit is defined as the  sum of [(l_extendedprice*(1-l_discount))  -  (ps_supplycost  * l_quantity)] for all lineitems describing parts in the specified line. The query lists the nations in ascending alphabetical order and, for each nation, the  year 
+and profit in descending order by year (most recent first).
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. COLOR is randomly selected within the list of values defined for the generation of P_NAME in Clause 4.2.3. In this case assume COLOR '%red%'
+
+SQL QUERY:

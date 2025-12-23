@@ -1,0 +1,348 @@
+{
+  "transaction_type": "new_order",
+  "num_executions": 8,
+  "executions": [
+    {
+      "execution_number": 1,
+      "input_params": {
+        "in_w_id": 5,
+        "in_d_id": 6,
+        "in_c_id": 458,
+        "in_ol_supply_w_id": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "in_ol_i_id": [
+          6824,
+          38072,
+          3414,
+          87686,
+          65395,
+          80169,
+          20962,
+          31354,
+          41986,
+          71687
+        ],
+        "in_ol_quantity": [
+          10,
+          7,
+          4,
+          1,
+          10,
+          3,
+          5,
+          9,
+          5,
+          10
+        ]
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"i\" is ambiguous\nLINE 2:         WHERE i.i_id = in_ol_i_id[i]\n                                          ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  SELECT i.i_price, i.i_name, i.i_data                                             FROM bmsql_item i \n        WHERE i.i_id = in_ol_i_id[i]\nCONTEXT:  PL/pgSQL function new_order_transaction(integer,integer,integer,integer[],integer[],integer[]) line 71 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 2,
+      "input_params": {
+        "in_w_id": 3,
+        "in_d_id": 4,
+        "in_c_id": 1636,
+        "in_ol_supply_w_id": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "in_ol_i_id": [
+          85665,
+          91884,
+          29265,
+          45849,
+          14848,
+          17815,
+          43807,
+          10547,
+          19157,
+          47016,
+          9030,
+          98400
+        ],
+        "in_ol_quantity": [
+          3,
+          3,
+          6,
+          10,
+          9,
+          4,
+          1,
+          7,
+          10,
+          9,
+          10,
+          3
+        ]
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"i\" is ambiguous\nLINE 2:         WHERE i.i_id = in_ol_i_id[i]\n                                          ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  SELECT i.i_price, i.i_name, i.i_data                                             FROM bmsql_item i \n        WHERE i.i_id = in_ol_i_id[i]\nCONTEXT:  PL/pgSQL function new_order_transaction(integer,integer,integer,integer[],integer[],integer[]) line 71 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 3,
+      "input_params": {
+        "in_w_id": 2,
+        "in_d_id": 1,
+        "in_c_id": 2660,
+        "in_ol_supply_w_id": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "in_ol_i_id": [
+          14663,
+          45142,
+          20446,
+          14986,
+          26267
+        ],
+        "in_ol_quantity": [
+          8,
+          5,
+          6,
+          5,
+          3
+        ]
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"i\" is ambiguous\nLINE 2:         WHERE i.i_id = in_ol_i_id[i]\n                                          ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  SELECT i.i_price, i.i_name, i.i_data                                             FROM bmsql_item i \n        WHERE i.i_id = in_ol_i_id[i]\nCONTEXT:  PL/pgSQL function new_order_transaction(integer,integer,integer,integer[],integer[],integer[]) line 71 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 4,
+      "input_params": {
+        "in_w_id": 1,
+        "in_d_id": 8,
+        "in_c_id": 2666,
+        "in_ol_supply_w_id": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "in_ol_i_id": [
+          38898,
+          1259,
+          30457,
+          77835,
+          71400,
+          73219
+        ],
+        "in_ol_quantity": [
+          3,
+          8,
+          10,
+          8,
+          5,
+          5
+        ]
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"i\" is ambiguous\nLINE 2:         WHERE i.i_id = in_ol_i_id[i]\n                                          ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  SELECT i.i_price, i.i_name, i.i_data                                             FROM bmsql_item i \n        WHERE i.i_id = in_ol_i_id[i]\nCONTEXT:  PL/pgSQL function new_order_transaction(integer,integer,integer,integer[],integer[],integer[]) line 71 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 5,
+      "input_params": {
+        "in_w_id": 2,
+        "in_d_id": 1,
+        "in_c_id": 325,
+        "in_ol_supply_w_id": [
+          2
+        ],
+        "in_ol_i_id": [
+          999999
+        ],
+        "in_ol_quantity": [
+          5
+        ]
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"i\" is ambiguous\nLINE 2:         WHERE i.i_id = in_ol_i_id[i]\n                                          ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  SELECT i.i_price, i.i_name, i.i_data                                             FROM bmsql_item i \n        WHERE i.i_id = in_ol_i_id[i]\nCONTEXT:  PL/pgSQL function new_order_transaction(integer,integer,integer,integer[],integer[],integer[]) line 71 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 6,
+      "input_params": {
+        "in_w_id": 2,
+        "in_d_id": 1,
+        "in_c_id": 325,
+        "in_ol_supply_w_id": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "in_ol_i_id": [
+          40750,
+          17713,
+          52370,
+          6338,
+          21218,
+          89060,
+          16097,
+          27003,
+          93857,
+          7651,
+          13522,
+          85846,
+          56723,
+          5997,
+          85661
+        ],
+        "in_ol_quantity": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"i\" is ambiguous\nLINE 2:         WHERE i.i_id = in_ol_i_id[i]\n                                          ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  SELECT i.i_price, i.i_name, i.i_data                                             FROM bmsql_item i \n        WHERE i.i_id = in_ol_i_id[i]\nCONTEXT:  PL/pgSQL function new_order_transaction(integer,integer,integer,integer[],integer[],integer[]) line 71 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 7,
+      "input_params": {
+        "in_w_id": 2,
+        "in_d_id": 1,
+        "in_c_id": 325,
+        "in_ol_supply_w_id": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "in_ol_i_id": [
+          40750,
+          17713,
+          52370,
+          6338,
+          21218
+        ],
+        "in_ol_quantity": [
+          10,
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"i\" is ambiguous\nLINE 2:         WHERE i.i_id = in_ol_i_id[i]\n                                          ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  SELECT i.i_price, i.i_name, i.i_data                                             FROM bmsql_item i \n        WHERE i.i_id = in_ol_i_id[i]\nCONTEXT:  PL/pgSQL function new_order_transaction(integer,integer,integer,integer[],integer[],integer[]) line 71 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 8,
+      "input_params": {
+        "in_w_id": 1,
+        "in_d_id": 1,
+        "in_c_id": 325,
+        "in_ol_supply_w_id": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "in_ol_i_id": [
+          40750,
+          17713,
+          52370,
+          6338
+        ],
+        "in_ol_quantity": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"i\" is ambiguous\nLINE 2:         WHERE i.i_id = in_ol_i_id[i]\n                                          ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  SELECT i.i_price, i.i_name, i.i_data                                             FROM bmsql_item i \n        WHERE i.i_id = in_ol_i_id[i]\nCONTEXT:  PL/pgSQL function new_order_transaction(integer,integer,integer,integer[],integer[],integer[]) line 71 at SQL statement\n"
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+QUESTION:
+This query identifies certain suppliers who were not able to ship required parts in a timely manner.
+The Suppliers Who Kept Orders Waiting query identifies suppliers, for a given nation, whose product was part of a multi-supplier order (with current status of 'F') where they were the only supplier who failed to meet the committed delivery date.
+Return the first 100 selected rows
+Substitution Parameters: 
+1. NATION is randomly selected within the list of values defined for N_NAME in Clause 4.2.3. In this case assume NATION 'ETHIOPIA'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "1 nation", columns [nation.n_nationkey] may be used.
+According to "date return", columns [lineitem.l_receiptdate] may be used.
+According to "given nation", columns [nation.n_name] may be used.
+According to "identifies suppliers for a", columns [supplier.s_name] may be used.
+According to "order with", columns [lineitem.l_orderkey, orders.o_orderkey] may be used.
+According to "order with current status", columns [orders.o_orderstatus] may be used.
+According to "supplier who", columns [supplier.s_nationkey, supplier.s_suppkey] may be used.
+Values [ETHIOPIA, F] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	s_name,
+	count(*) as numwait
+from
+	supplier,
+	lineitem l1,
+	orders,
+	nation
+where
+	s_suppkey = l1.l_suppkey
+	and o_orderkey = l1.l_orderkey
+	and o_orderstatus = 'F'
+	and l1.l_receiptdate > l1.l_commitdate
+	and exists (
+		select
+			*
+		from
+			lineitem l2
+		where
+			l2.l_orderkey = l1.l_orderkey
+			and l2.l_suppkey <> l1.l_suppkey
+	)
+	and not exists (
+		select
+			*
+		from
+			lineitem l3
+		where
+			l3.l_orderkey = l1.l_orderkey
+			and l3.l_suppkey <> l1.l_suppkey
+			and l3.l_receiptdate > l3.l_commitdate
+	)
+	and s_nationkey = n_nationkey
+	and n_name = 'ETHIOPIA'
+group by
+	s_name
+order by
+	numwait desc,
+	s_name
+limit 100;

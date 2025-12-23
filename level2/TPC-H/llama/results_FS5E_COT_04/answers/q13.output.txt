@@ -1,0 +1,29 @@
+ count 
+-------
+     0
+(1 row)
+
+psql:llama/results_FS5E_COT_04/q13.sql:18: ERROR:  syntax error at or near "```"
+LINE 1: ```
+        ^
+psql:llama/results_FS5E_COT_04/q13.sql:68: ERROR:  syntax error at or near "```"
+LINE 1: ```
+        ^
+psql:llama/results_FS5E_COT_04/q13.sql:75: ERROR:  syntax error at or near "```"
+LINE 1: ```
+        ^
+psql:llama/results_FS5E_COT_04/q13.sql:83: ERROR:  syntax error at or near "```"
+LINE 1: ```
+        ^
+psql:llama/results_FS5E_COT_04/q13.sql:91: ERROR:  syntax error at or near "```"
+LINE 1: ```
+        ^
+psql:llama/results_FS5E_COT_04/q13.sql:98: ERROR:  syntax error at or near "```"
+LINE 1: ```
+        ^
+psql:llama/results_FS5E_COT_04/q13.sql:114: ERROR:  syntax error at or near "```"
+LINE 1: ```
+        ^
+psql:llama/results_FS5E_COT_04/q13.sql:129: ERROR:  syntax error at or near "```"
+LINE 1: ```
+        ^

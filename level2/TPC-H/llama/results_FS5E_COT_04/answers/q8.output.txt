@@ -1,0 +1,4 @@
+psql:llama/results_FS5E_COT_04/q8.sql:33: ERROR:  column "c_custkey" does not exist
+LINE 17:  and o_custkey = c_custkey
+                          ^
+HINT:  Perhaps you meant to reference the column "orders.o_custkey".

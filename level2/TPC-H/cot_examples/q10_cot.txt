@@ -1,0 +1,53 @@
+QUESTION:
+The query identifies customers who might be having problems with the parts that are shipped to them.
+The Returned Item Reporting Query finds the top 20 customers, in terms of their effect on lost revenue for a given quarter,  who  have  returned  parts.  The  query  considers  only  parts  that  were  ordered  in  the  specified  quarter.  The query lists the customer's name, address, nation, phone number, account balance, comment information and revenue lost. The customers are listed in descending order of lost revenue. Revenue lost is defined as sum(l_extendedprice*(1-l_discount)) for all qualifying lineitems.
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text:
+1. DATE is the first day of a randomly selected month from the second month of 1993 to the first month of 1995. In this case assume DATE '1993-08-01'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "address nation", columns [nation.n_nationkey] may be used.
+According to "comment information and", columns [customer.c_comment] may be used.
+According to "customer s name", columns [customer.c_name, customer.c_phone] may be used.
+According to "customer s name address", columns [customer.c_acctbal, customer.c_address, customer.c_custkey] may be used.
+According to "l_discount for", columns [lineitem.l_discount] may be used.
+According to "l_extendedprice 1", columns [lineitem.l_extendedprice] may be used.
+According to "lineitems substitution", columns [lineitem.l_orderkey, lineitem.l_returnflag] may be used.
+According to "name address nation", columns [customer.c_nationkey, nation.n_name] may be used.
+According to "order of", columns [orders.o_custkey, orders.o_orderdate, orders.o_orderkey] may be used.
+Values [1993-08-01, 3, R] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	c_custkey,
+	c_name,
+	sum(l_extendedprice * (1 - l_discount)) as revenue,
+	c_acctbal,
+	n_name,
+	c_address,
+	c_phone,
+	c_comment
+from
+	customer,
+	orders,
+	lineitem,
+	nation
+where
+	c_custkey = o_custkey
+	and l_orderkey = o_orderkey
+	and o_orderdate >= date '1993-08-01'
+	and o_orderdate < date '1993-08-01' + interval '3' month
+	and l_returnflag = 'R'
+	and c_nationkey = n_nationkey
+group by
+	c_custkey,
+	c_name,
+	c_acctbal,
+	c_phone,
+	n_name,
+	c_address,
+	c_comment
+order by
+	revenue desc
+limit 20;

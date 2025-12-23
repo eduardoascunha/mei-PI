@@ -1,0 +1,3 @@
+psql:llama/results_FS2E_04/q10.sql:23: ERROR:  column "customer.c_name" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 2:  c_name,
+         ^

@@ -1,0 +1,4 @@
+This query determines how well the order priority system is working and gives an assessment of customer satisfaction.
+The Order Priority Checking Query counts the number of orders ordered in a given quarter of a given year in which at least one lineitem  was received by the  customer later than its committed date. The  query lists the  count of such orders for each order priority sorted in ascending priority order.
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. DATE  is  the  first  day  of  a  randomly  selected  month  between  the  first  month  of  1993  and  the  10th  month  of 1997. In this case assume date '1997-01-01'

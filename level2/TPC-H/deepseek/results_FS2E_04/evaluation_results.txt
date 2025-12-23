@@ -1,0 +1,144 @@
+================================================================================
+TEXT-TO-SQL EVALUATION REPORT
+================================================================================
+
+Total queries: 21
+Correct (PASS): 10 (47.62%)
+  - Exact match: 10
+  - With extra columns: 0
+Incorrect (FAIL): 11
+Not found (MISSING): 0
+
+================================================================================
+DETAILS PER QUERY
+================================================================================
+
+Query: q1.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q2.output.txt
+Status: FAIL
+Details:
+    LLM has 1 extra column(s) AND data mismatch
+    Different dimensions: (100, 8) vs (100, 9)
+    Rows only in original (100): [(59124.0, 9901.58, '31-671-456-4156', 'giecermeugoigrkmsz', 'manufacturer#4', 'ongside of the furiously final', 'supplier#000001432', 'vietnam'), (22779.0, 5098.67, '22-964-969-2212', 'dxbxqbr5cbx50lke0a9nr5pkkrrt7sp', 'ests. slyly silent ideas lose', 'japan', 'manufacturer#4', 'supplier#000001051'), (19920.0, 4980.7, '31-596-125-8311', 'manufacturer#1', 'qycr2zfzeq f59zkogjcshg3j10e9haqzw', 's nag slyly ironic pinto beans. blithely silent ideas besides the instructions serve quickly bl', 'supplier#000002677', 'vietnam')]
+    Rows only in LLM (100): [(-336.14, 33521.0, 58.63, '18-355-956-2843', 'india', 'jolgruixisvwk', 'manufacturer#1', 'supplier#000000522', 'tect slyly final instructions. fluffily ironic ideas after the final, fina'), (30852.0, 509.16, 7958.64, '18-197-961-1832', 'india', 'le furiously about the regular, express theodolites. quickly even accoun', 'manufacturer#4', 'supplier#000001613', 'u5z9ugwdfelp,hrwtpfj9lsrvggnhve'), (-499.69, 145.59, 8574.0, '31-192-614-9741', 'lly doggedly final instructions. regular packages wake boldly slyly ironic dependencies. qu', 'lyl93qb9cakggri6gtthli', 'manufacturer#4', 'supplier#000002575', 'vietnam')]
+--------------------------------------------------------------------------------
+
+Query: q3.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (10, 4) vs (10, 2)
+    Rows only in original (10): [(0.0, 303360.0, 340431.2577, '1995-03-14'), (0.0, 339527.8788, 852101.0, '1995-03-17'), (0.0, 24871.0, 321725.3507, '1995-03-24')]
+    Rows only in LLM (10): [(330090.0905, '3-medium'), (351235.9929, '3-medium'), (339527.8788, '5-low')]
+--------------------------------------------------------------------------------
+
+Query: q4.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q5.output.txt
+Status: FAIL
+Details:
+    Rows only in original (5): [(12248028.4038, 'romania'), (15558778.44, 'russia'), (13733315.5439, 'united kingdom')]
+    Rows only in LLM (5): [(17593531.5562, 'germany'), (12492942.0144, 'united kingdom'), (15621845.8187, 'russia')]
+--------------------------------------------------------------------------------
+
+Query: q6.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q7.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q8.output.txt
+Status: FAIL
+Details:
+    LLM has 3 extra column(s) AND data mismatch
+    Different dimensions: (2, 2) vs (2, 5)
+    Rows only in original (2): [(0.038668, 1996.0), (0.052353, 1995.0)]
+    Rows only in LLM (2): [(1.0, 1996.0, 2215738.0639, 'africa', 'kenya'), (1.0, 1995.0, 2296460.6982, 'africa', 'kenya')]
+--------------------------------------------------------------------------------
+
+Query: q9.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q10.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (20, 8) vs (20, 7)
+    Rows only in original (20): [(3692.0, 569717.6682, 93.27, '24-584-374-9329', 'customer#000003692', 'ending requests poach furiously after the blithely quick foxes. f', 'kenya', 'tbh,q9q8cwc2u,yxu'), (2937.77, 464649.6114, 5422.0, '33-771-746-1448', '7rdcblow7iojwexnymgsixp0uowjg8roll', 'customer#000005422', 'hely ironic deposits. carefully ironic deposits are. instructions haggle wh', 'united kingdom'), (17266.0, 2166.16, 474044.1399, '22-697-745-9127', 'customer#000017266', 'japan', 'refully across the carefully blithe accounts. permanently bold', 'supjqky67sjpvqetobfmjp0rgh')]
+    Rows only in LLM (20): [(469549.8449, 4997.51, '27-156-724-8786', 'a wahr5zcjddyhxm4', 'customer#000012112', 'peru', 'refully regular deposits run carefully ir'), (594352.3344, 7894.24, '18-527-677-6583', 'customer#000009388', 'ftrqnszl3gnxx,ve yu', 'india', 'unusual pinto beans cajole? bravely even theodolites sleep furiously around the regular, do'), (535942.1455, 9106.19, '30-290-670-9014', 'customer#000016201', 'e after the ironic dolphins. slyly even instructions alongside of the regular instr', 'qbbuqlrthqznlz', 'saudi arabia')]
+--------------------------------------------------------------------------------
+
+Query: q11.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q12.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q13.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (41, 2) vs (2, 1)
+    Rows only in original (41): [(24.0, 814.0), (24.0, 33.0), (1945.0, 9.0)]
+    Rows only in LLM (2): [('^',), ('line 2:     order_count_bucket,',)]
+--------------------------------------------------------------------------------
+
+Query: q14.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q15.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (1, 5) vs (1, 3)
+    Rows only in original (1): [(1482109.8042, 2516.0, '14-642-300-7682', '4m wg67rdqpzzcajcxepnqhdbong6e60b gky', 'supplier#000002516')]
+    Rows only in LLM (1): [(1482109.8042, 2516.0, 'supplier#000002516')]
+--------------------------------------------------------------------------------
+
+Query: q16.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q17.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(98562.575714,)]
+    Rows only in LLM (1): [(24412.435143,)]
+--------------------------------------------------------------------------------
+
+Query: q18.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q19.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(1042188.9074,)]
+    Rows only in LLM (1): [(3616894.6103,)]
+--------------------------------------------------------------------------------
+
+Query: q21.output.txt
+Status: FAIL
+Details:
+    LLM has 3 extra column(s) AND data mismatch
+    Different dimensions: (100, 2) vs (100, 5)
+    Rows only in original (100): [(11.0, 'supplier#000001304'), (11.0, 'supplier#000001780'), (10.0, 'supplier#000000464')]
+    Rows only in LLM (100): [(9036.79, '15-446-447-2944', 'atelets. regular, ironic gifts eat furiously across the permanently silent instructions. reg', 'id7ef,uwqxxpcaftmdxyv7n', 'supplier#000000224'), (3509.03, '15-552-400-9891', 'counts. ironic deposits haggle', 'supplier#000001250', 'uum91lnpiza9yv3z imxbf7tyylwpyi1apcytx'), (1018.79, '15-207-965-2975', 'after the even platelets. final ideas wake about the care', 'supplier#000001550', 'wbdqra nxzqjz4e74')]
+--------------------------------------------------------------------------------
+
+Query: q22.output.txt
+Status: FAIL
+Details:
+    LLM has 1 extra column(s) AND data mismatch
+    Different dimensions: (7, 3) vs (7, 4)
+    Rows only in original (7): [(2079950.63, 279.0, 33.0), (1965469.24, 269.0, 31.0), (2093651.25, 280.0, 30.0)]
+    Rows only in LLM (7): [(28.0, 6231797.88, 7517.247141, 829.0), (31.0, 5978626.44, 7417.65067, 806.0), (33.0, 5854334.05, 7438.79803, 787.0)]
+--------------------------------------------------------------------------------
+

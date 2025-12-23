@@ -1,0 +1,514 @@
+
+You are a PostgreSQL expert specializing in transactional workloads.
+Using the database schema and the transaction description provided, generate a valid PostgreSQL stored function that implements the transaction.
+The examples below show reasoning patterns and SQL queries.
+Follow the same step-by-step thinking approach for the new question.
+
+
+Requirements:
+- Create a PostgreSQL function using CREATE OR REPLACE FUNCTION syntax
+- Include all necessary input and output parameters
+- Implement the complete transaction logic as described
+- Use RETURNS TABLE(...) ONLY when returning multiple rows of data
+- NEVER mix OUT parameters with non-table return types
+- Always qualify column names with table aliases in JOINs (e.g., w.w_name, not just w_name)
+- Avoid ambiguous column references
+- Use PL/pgSQL language
+- Return ONLY the SQL code without any markdown formatting or explanations
+- The function should be ready to execute in PostgreSQL
+- RESPECT THE INPUTS AND OUTPUTS PARAMETERS, RESPECT FOREIGN KEY CONSTRAINTS, CAREFUL WITH AMBIGUOUS REFERENCES FOR COLUMNS AND TABLES
+- Implement proper locking and process operations in a consistent order to prevent deadlocks in high-concurrency environments.
+
+Format: Return the complete CREATE OR REPLACE FUNCTION statement.
+
+
+DATABASE SCHEMA:
+create table bmsql_config (
+  cfg_name    varchar(30) primary key,
+  cfg_value   varchar(50)
+);
+
+create table bmsql_warehouse (
+  w_id        integer   not null,
+  w_ytd       decimal(12,2),
+  w_tax       decimal(4,4),
+  w_name      varchar(10),
+  w_street_1  varchar(20),
+  w_street_2  varchar(20),
+  w_city      varchar(20),
+  w_state     char(2),
+  w_zip       char(9)
+);
+
+create table bmsql_district (
+  d_w_id       integer       not null,
+  d_id         integer       not null,
+  d_ytd        decimal(12,2),
+  d_tax        decimal(4,4),
+  d_next_o_id  integer,
+  d_name       varchar(10),
+  d_street_1   varchar(20),
+  d_street_2   varchar(20),
+  d_city       varchar(20),
+  d_state      char(2),
+  d_zip        char(9)
+);
+
+create table bmsql_customer (
+  c_w_id         integer        not null,
+  c_d_id         integer        not null,
+  c_id           integer        not null,
+  c_discount     decimal(4,4),
+  c_credit       char(2),
+  c_last         varchar(16),
+  c_first        varchar(16),
+  c_credit_lim   decimal(12,2),
+  c_balance      decimal(12,2),
+  c_ytd_payment  decimal(12,2),
+  c_payment_cnt  integer,
+  c_delivery_cnt integer,
+  c_street_1     varchar(20),
+  c_street_2     varchar(20),
+  c_city         varchar(20),
+  c_state        char(2),
+  c_zip          char(9),
+  c_phone        char(16),
+  c_since        timestamp,
+  c_middle       char(2),
+  c_data         varchar(500)
+);
+
+create table bmsql_history (
+  h_c_id   integer,
+  h_c_d_id integer,
+  h_c_w_id integer,
+  h_d_id   integer,
+  h_w_id   integer,
+  h_date   timestamp,
+  h_amount decimal(6,2),
+  h_data   varchar(24)
+);
+
+create table bmsql_new_order (
+  no_w_id  integer   not null,
+  no_d_id  integer   not null,
+  no_o_id  integer   not null
+);
+
+create table bmsql_oorder (
+  o_w_id       integer      not null,
+  o_d_id       integer      not null,
+  o_id         integer      not null,
+  o_c_id       integer,
+  o_carrier_id integer,
+  o_ol_cnt     integer,
+  o_all_local  integer,
+  o_entry_d    timestamp
+);
+
+create table bmsql_order_line (
+  ol_w_id         integer   not null,
+  ol_d_id         integer   not null,
+  ol_o_id         integer   not null,
+  ol_number       integer   not null,
+  ol_i_id         integer   not null,
+  ol_delivery_d   timestamp,
+  ol_amount       decimal(6,2),
+  ol_supply_w_id  integer,
+  ol_quantity     integer,
+  ol_dist_info    char(24)
+);
+
+create table bmsql_item (
+  i_id     integer      not null,
+  i_name   varchar(24),
+  i_price  decimal(5,2),
+  i_data   varchar(50),
+  i_im_id  integer
+);
+
+create table bmsql_stock (
+  s_w_id       integer       not null,
+  s_i_id       integer       not null,
+  s_quantity   integer,
+  s_ytd        integer,
+  s_order_cnt  integer,
+  s_remote_cnt integer,
+  s_data       varchar(50),
+  s_dist_01    char(24),
+  s_dist_02    char(24),
+  s_dist_03    char(24),
+  s_dist_04    char(24),
+  s_dist_05    char(24),
+  s_dist_06    char(24),
+  s_dist_07    char(24),
+  s_dist_08    char(24),
+  s_dist_09    char(24),
+  s_dist_10    char(24)
+);
+
+
+Here are some examples of questions with chain-of-thought reasoning and their SQL queries:
+
+--- Example 1 ---
+QUESTION:
+= The Order-Status Transaction
+The Order-Status business transaction queries the status of a customer's last order. It represents a mid -weight read - only database transaction with a low frequency of execution and response time requirement to satisfy on -line users. In addition, this table includes non -primary key access to the CUSTOMER table.
+
+== Input Data Generation
+    -> For any given terminal, the home warehouse number (W_ID) is constant over the whole measurement interval.
+    -> The district number (D_ID) is randomly selected within [1 ..10] from the home warehouse. The customer is randomly selected 60% of the time by last name (C_W_ID, C_D_ID, C_LAST) and 40% of the time by number (C_W_ID, C_D_ID, C_ID) from the selected district (C_D_ID = D_ID) and the home warehouse number (C_W_ID = W_ID). This can be implemented by generating a random number y within [1 .. 100];
+        • If y <= 60 a customer last name (C_LAST) is generated from a non-uniform random value using the NURand(255,0,999) function. The customer is using his/ her last name and is one of the, possibly several, customers with that last name.
+        Comment: This case illustrates the situation when a customer does not use his/ her unique customer number.
+        • If y > 60 a non-uniform random customer number (C_ID) is selected using the NURand (1023,1,3000) function. The customer is using his/ her customer number.
+    -> Inputs: (W_ID integer, D_ID integer, C_ID integer, C_LAST varchar(16))
+    -> Outputs: (C_ID integer, C_FIRST varchar(16), C_MIDDLE char(2), C_BALANCE decimal(12,2), O_ID integer, O_ENTRY_D varchar(24), O_CARRIER_ID integer, OL_SUPPLY_W_ID integer[], OL_I_ID integer[], OL_QUANTITY integer[], OL_AMOUNT decimal(12,2)[], OL_DELIVERY_D timestamp[])
+    -> NOTE: If an order contains fewer than 15 items, the output arrays must be padded to 15 elements with default values (0 for integer arrays, 0.0 for decimal arrays, and NULL for timestamp arrays) to accommodate the maximum displayable order lines 
+    
+== Transaction Profile
+    -> Querying for the status of an order is done in a single database transaction with the following steps:
+        1. Find the customer and his/ her last order, comprised of:
+            Case 1, the customer is selected based on customer number:
+                2 row selections with data retrieval.,
+            Case 2, the customer is selected based on customer last name:
+            4 row selections (on average) with data retrieval.
+        2. Check status (delivery date) of each item on the order (average items-per-order = 10), comprised of: (1 * items-per-order) row selections with data retrieval.
+    Note: The above summary is provided for information only. The actual requirement is defined by the detailed transaction profile below.
+
+    -> For a given customer number (C_W_ID , C_D_ID , C_ ID):
+        • The input data are communicated to the SUT.
+        • A database transaction is started.
+        • Case 1, the customer is selected based on customer number: the row in the CUSTOMER table with matching C_W_ID, C_D_ID, and C_ID is selected and C_BALAN CE, C_FIRST, C_MIDDLE, and C_LAST are retrieved. 
+        Case 2, the customer is selected based on customer last name: all rows in the CUSTOMER table with matching C_W_ID, C_D_ID and C_LAST are selected sorted by C_FIRST in ascending order. Let n be the number of rows selected. C_BALANCE, C_FIRST, C_MIDDLE, and C_LAST are retrieved from the row at position n/ 2 rounded up in the sorted set of selected rows from the CUSTOMER table.
+        • The row in the ORDER table with matching O_W_ID (equals C_W_ID), O_D_ID (equals C_D_ID), O_C_ID (equals C_ID), and with the largest existing O_ID, is selected. This is the most recent order placed by that customer. O_ID, O_ENTRY_D, and O_CARRIER_ID are retrieved.
+        • All rows in the ORDER-LINE table with matching OL_W_ID (equals O_W_ID), OL_D_ID (equals O_D_ID), and OL_O_ID (equals O_ID) are selected and the corresponding sets of OL_I_ID, OL_SUPPLY_W_ID, OL_QUANTITY, OL_AMOUNT, and OL_DELIVERY_D are retrieved.
+        • The database transaction is committed .
+            Comment: a commit is not required as long as all ACID properties are satisfied.
+        • The output data are communicated to the terminal.
+
+== Terminal I/O
+    -> For each transaction the originating terminal must display the follow ing input/ output screen with all input and output field s cleared (with either spaces or zeros) except for the Warehouse field which has not changed and must display the fixed W_ID value associated with that terminal.
+    -> The emulated user must enter, in the appropriate field of the input/ output screen, the required input
+    data which is organized as the distinct fields: D_ID and either C_ID or C_LAST.
+    -> The emulated terminal must display, in the approp riate fields of the input/ output screen, all input data and the output data resulting from the execution of the transaction. The display field s are divided in two groups as follows:
+        • One non-repeating group of fields: W_ID, D_ID, C_ID, C_FIRST, C_MIDDLE, C_LAST, C_BALANCE, O_ID, O_ENTRY_D, and O_CARRIER_ID;
+        • One repeating group of fields: OL_SUPPLY_W_ID, OL_I_ID, OL_QUANTITY, OL_AMOUNT, and OL_DELIVERY_D. The group is repeated O_OL_CNT times (once per item in the order).
+    Comment 1: The order of items shown on the Order-Status screen does not need to match the order in which the items were entered in its corresponding New -Order screen.
+    Comment 2: If OL_DELIVERY_D is null (i.e., the order has not been delivered), the terminal must display an implementation specific null date representation (e.g., blanks, 99-99-9999, etc.). The chosen null date representation must not change during the test.
+    Comment 3: If an order contains fewer than 15 items, the output arrays must be padded to 15 elements with default values (0 for integer arrays, 0.0 for decimal arrays, and NULL for timestamp arrays) to accommodate the maximum displayable order lines (rows 8-22 on the terminal screen).
+
+    -> The following table summarizes the terminal I/ O requirements for the Order-Status transaction:
+        Enter Display Coordinates
+        Row/ Column
+        Non-repeating Group W_ID 2/ 12
+        D_ID D_ID 2/ 29
+        C_ID 1 C_ID 3/ 11
+        C_FIRST 3/ 24
+        C_MIDDLE 3/ 41
+        C_LAST 2 C_LAST 3/ 44
+        C_BALANCE 4/ 16
+        O_ID 6/ 15
+        O_ENTRY_D 6/ 38
+        O_CARRIER_ID 6/ 76
+        Repeating Group OL_SUPPLY_W_ID 8-22/ 3
+        OL_I_ID 8-22/ 14
+        OL_QUANTITY 8-22/ 25
+        OL_AMOUNT 8-22/ 33
+        OL_DELIVERY_D 8-22/ 47
+        1 Enter only for query by customer number. 2
+        Enter only for query by customer last name.
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "c_balance o_id", columns [bmsql_customer.c_balance] may be used.
+According to "customer number c_id", columns [bmsql_customer.c_d_id, bmsql_customer.c_first, bmsql_customer.c_id, bmsql_customer.c_middle] may be used.
+According to "customer number c_w_id", columns [bmsql_customer.c_w_id] may be used.
+According to "o_carrier_id integer", columns [bmsql_oorder.o_carrier_id] may be used.
+According to "o_id integer o_entry_d", columns [bmsql_oorder.o_c_id, bmsql_oorder.o_d_id, bmsql_oorder.o_entry_d, bmsql_oorder.o_id, bmsql_oorder.o_w_id] may be used.
+According to "ol_amount decimal", columns [bmsql_order_line.ol_amount] may be used.
+According to "ol_delivery_d are retrieved the", columns [bmsql_order_line.ol_delivery_d] may be used.
+According to "ol_supply_w_id ol_quantity", columns [bmsql_order_line.ol_quantity, bmsql_order_line.ol_supply_w_id] may be used.
+According to "order line", columns [bmsql_order_line.ol_d_id, bmsql_order_line.ol_o_id, bmsql_order_line.ol_w_id] may be used.
+According to "order line table", columns [bmsql_order_line.ol_i_id, bmsql_order_line.ol_number] may be used.
+According to "query by customer last", columns [bmsql_customer.c_last] may be used.
+Values [60] may be used.
+So the final answer is:
+
+SQL QUERY:
+CREATE OR REPLACE FUNCTION bmsql_proc_order_status(
+    IN in_w_id integer,
+    IN in_d_id integer,
+    INOUT in_c_id integer,
+    IN in_c_last varchar(16),
+    OUT out_c_first varchar(16),
+    OUT out_c_middle char(2),
+    OUT out_c_balance decimal(12,2),
+    OUT out_o_id integer,
+    OUT out_o_entry_d varchar(24),
+    OUT out_o_carrier_id integer,
+    OUT out_ol_supply_w_id integer[],
+    OUT out_ol_i_id integer[],
+    OUT out_ol_quantity integer[],
+    OUT out_ol_amount decimal(12,2)[],
+    OUT out_ol_delivery_d timestamp[]
+) AS
+$$
+DECLARE
+	v_order_line	record;
+	v_ol_idx		integer := 1;
+BEGIN
+    --If C_LAST is given instead of C_ID (60%), determine the C_ID.
+    IF in_c_last IS NOT NULL THEN
+		in_c_id = bmsql_cid_from_clast(in_w_id, in_d_id, in_c_last);
+    END IF;
+
+    --Select the CUSTOMER
+    SELECT INTO out_c_first, out_c_middle, in_c_last, out_c_balance
+			c_first, c_middle, c_last, c_balance
+		FROM bmsql_customer
+		WHERE c_w_id=in_w_id AND c_d_id=in_d_id AND c_id = in_c_id;
+
+    --Select the last ORDER for this customer.
+    SELECT INTO out_o_id, out_o_entry_d, out_o_carrier_id
+			o_id, o_entry_d, coalesce(o_carrier_id, -1)
+		FROM bmsql_oorder
+		WHERE o_w_id = in_w_id AND o_d_id = in_d_id AND o_c_id = in_c_id
+		AND o_id = (
+			SELECT max(o_id)
+				FROM bmsql_oorder
+				WHERE o_w_id = in_w_id AND o_d_id = in_d_id AND o_c_id = in_c_id
+			);
+
+	FOR v_order_line IN SELECT ol_i_id, ol_supply_w_id, ol_quantity,
+				ol_amount, ol_delivery_d
+			FROM bmsql_order_line
+			WHERE ol_w_id = in_w_id AND ol_d_id = in_d_id AND ol_o_id = out_o_id
+			ORDER BY ol_w_id, ol_d_id, ol_o_id, ol_number
+			LOOP
+	    out_ol_i_id[v_ol_idx] = v_order_line.ol_i_id;
+	    out_ol_supply_w_id[v_ol_idx] = v_order_line.ol_supply_w_id;
+	    out_ol_quantity[v_ol_idx] = v_order_line.ol_quantity;
+	    out_ol_amount[v_ol_idx] = v_order_line.ol_amount;
+	    out_ol_delivery_d[v_ol_idx] = v_order_line.ol_delivery_d;
+		v_ol_idx = v_ol_idx + 1;
+	END LOOP;
+
+    WHILE v_ol_idx < 16 LOOP
+		out_ol_i_id[v_ol_idx] = 0;
+		out_ol_supply_w_id[v_ol_idx] = 0;
+		out_ol_quantity[v_ol_idx] = 0;
+		out_ol_amount[v_ol_idx] = 0.0;
+		out_ol_delivery_d[v_ol_idx] = NULL;
+		v_ol_idx = v_ol_idx +1;
+    END LOOP;
+END;
+$$
+Language plpgsql;
+
+--- Example 2 ---
+QUESTION:
+= The Stock-Level Transaction
+The Stock-Level business transaction determines the number of recently sold items that have a stock level below a specified threshold. It represents a heavy read -only database transaction with a low frequency of execution, a relaxed response time requirement, and relaxed consistency requirements.
+
+== Input Data Generation
+-> Each terminal must use a unique value of (W_ID, D_ID) that is constant over the whole measurement, i.e., D_IDs cannot be re-used within a warehouse.
+-> The threshold of minimum quantity in stock (threshold ) is selected at random within [10 .. 20].
+-> Inputs: (W_ID integer, D_ID integer, threshold integer)
+-> Output: (low_stock integer)
+
+== Transaction Profile
+    -> Examining the level of stock for items on the last 20 orders is done in one or more database transactions with the following steps:
+        1. Examine the next available order number, comprised of:
+            1 row selection with data retrieval.
+        2. Examine all items on the last 20 orders (average items-per-order = 10) for the district, comprised of: (20 * items-per-order) row selections with data retrieval.
+        3. Examine, for each distinct item selected, if the level of stock available at the home warehouse is be low the threshold, comprised of:
+        At most (20 * items-per-order) row selections with data retrieval.
+        Note: The above summary is provided for information only. The actual requirement is defined by the detailed transaction profile below.
+    -> For a given warehouse number (W_ID), district num ber (D_W_ID , D_ID), and stock level threshold (threshold):
+        • The input data are communicated to the SUT.
+        • A database transaction is started.
+        • The row in the DISTRICT table with matching D_W_ID and D_ID is selected and D_NEXT_O_ID is retrieved. 
+        • All rows in the ORDER-LINE table with matching OL_W_ID (equals W_ID), OL_D_ID (equals D_ID), and OL_O_ID (lower than D_NEXT_O_ID and greater than or equal to D_NEXT_O_ID minus 20) are selected. They are the items for 20 recent orders of the district.
+        • All rows in the STOCK table with matching S_I_ID (equals OL_I_ID) and S_W_ID (equals W_ID) from the list of distinct item numbers and with S_QUANTITY lower than threshold are counted (giving low_stock). 
+        Comment: Stocks must be counted only for distinct items. Thus, items that have been ordered more than once in the 20 selected orders must be aggregated into a single summary count for t hat item.
+        • The current database transaction is committed.
+        Comment: A commit is not needed as long as all the required ACID properties are satisfied.
+        • The output data are communicated to the terminal.
+    -> Full serializability and repeatable reads are not required for the Stock -Level business transaction. All data read must be committed and no older than the most recently committed d ata prior to the time this business transaction was initiated. All other ACID properties must be maintained.
+    Comment: This clause allows the business transaction to be broken down into more than one database transaction.
+
+==  Terminal I/O
+    -> For each transaction the originating terminal must display the following input/ output screen with all input and output field s cleared (with either spaces or zeros) except for the Warehouse and District fields which have not changed and must display the fixed W_ID and D_ID values associated with that terminal.
+    -> The emulated user must enter, in the appropriate field of the input/ output screen, the required input data which is organized as the distinct field: threshold. 
+    -> The emulated terminal must display, in the appropriate field of the input/ output screen, all input data and the output data which results from the execution of the transaction. The following fields are displayed: W_ID, D_ID, threshold, and low_stock.
+
+    -> The following table summarizes the terminal I/ O requirements for the Stock-Level transaction:
+        Enter Display Coordinates
+        Row/ Column
+        Non-repeating Group W_ID 2/ 12
+        D_ID 2/ 29
+        threshold threshold 4/ 24
+        low_stock 6/ 12
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "d_id and stock", columns [bmsql_stock.s_i_id, bmsql_stock.s_w_id] may be used.
+According to "d_next_o_id and", columns [bmsql_district.d_next_o_id] may be used.
+According to "order line", columns [bmsql_order_line.ol_d_id, bmsql_order_line.ol_o_id, bmsql_order_line.ol_w_id] may be used.
+According to "order line table", columns [bmsql_order_line.ol_i_id] may be used.
+According to "quantity in stock", columns [bmsql_stock.s_quantity] may be used.
+According to "w_id district", columns [bmsql_district.d_id, bmsql_district.d_w_id] may be used.
+Values [20] may be used.
+So the final answer is:
+
+SQL QUERY:
+CREATE OR REPLACE FUNCTION bmsql_proc_stock_level(
+    IN in_w_id integer,
+    IN in_d_id integer,
+    IN in_threshold integer,
+    OUT out_low_stock integer
+) AS
+$$
+BEGIN
+    SELECT INTO out_low_stock
+			count(*) AS low_stock
+		FROM (
+			SELECT s_w_id, s_i_id, s_quantity
+			FROM bmsql_stock
+			WHERE s_w_id = in_w_id AND s_quantity < in_threshold
+			  AND s_i_id IN (
+				SELECT ol_i_id
+					FROM bmsql_district
+					JOIN bmsql_order_line ON ol_w_id = d_w_id
+					 AND ol_d_id = d_id
+					 AND ol_o_id >= d_next_o_id - 20
+					 AND ol_o_id < d_next_o_id
+					WHERE d_w_id = in_w_id AND d_id = in_d_id
+				)
+			) AS L;
+END;
+$$
+LANGUAGE plpgsql;
+
+--- Your Task ---
+QUESTION:
+= The New-Order Transaction
+The New-Order business transaction consists of entering a complete order through a single database transaction . It represents a mid-weight, read -write transaction with a high frequency of execution and stringent response time requirements to satisfy on -line users. This transaction is the backbone of the workload. It is designed to place a variable load on the system to reflect on -line database activity as typically found in production environments.
+
+== Input Data Generation
+    -> For any given terminal, the home warehouse number (W_ID) is constant over the whole measurement interval.
+    -> The district number (D_ID) is randomly selected within [1 .. 10] from the home warehouse (D_W_ID = W_ID). The non-uniform random customer number (C_ID) is selected using the NURand (1023,1,3000) function from the selected district number (C_D_ID = D_ID) and the home warehouse number (C_W_ID = W_ID).
+    -> The number of items in the order (ol_cnt) is randomly selected within [5 .. 15] (an average of 10). This field is not entered. It is generated by the terminal emulator to determine the size of the order. O_OL_CNT is later displayed after being computed by the SUT.
+    -> A fixed 1% of the New-Order transactions are chosen at random to simulate user data entry errors and exercise the performance of rolling back update transactions. This must be implemented by generating a random number rbk within [1 .. 100].
+    Comment: All New-Order transactions must have ind ependently generated input data. The input data from a rolled back transaction cannot be used for a subsequent transaction.
+
+    -> For each of the ol_cnt items on the order:
+        1. A non-uniform random item number (OL_I_ID) is selected using the NURand (8191,1,100000) function. If this is the last item on the order and rbk = 1, then the item number is set to an unused value.Comment: An unused value for an item number is a value not found in the database such that its use will produce a "not-found" condition within the application program. This condition should result in rolling back the current database transaction.
+
+        2. A supplying warehouse number (OL_SUPPLY_W_ID) is selected as the home warehouse 99% of the time and as a remote warehouse 1% of the time. This can be implemented by generating a random number x within [1.. 100];
+        - If x > 1, the item is supplied from the home warehouse (OL_SUPPLY_W_ID = W_ID).
+        - If x = 1, the item is supplied from a remote warehouse (OL_SUPPLY_W_ID is random ly selected within the range of active warehouses other than W_ID). 
+        
+        Comment 1: With an average of 10 items per order, approximately 90% of all orders can be supplied in full by stocks from the home warehouse. 
+        Comment 2: If the system is configured for a single warehouse, then all items are supplied from that single home warehouse.
+
+        3. A quantity (OL_QUANTITY) is randomly selected within [1 .. 10].
+
+    -> The order entry date (O_ENTRY_D) is generated within the SUT by using the current system date and time.
+    -> An order-line is said to be home if it is supplied by the home warehouse (i.e., when OL_SUPPLY_W_ID equals O_W_ID).
+    -> An order-line is said to be remote when it is supplied by a remote warehouse (i.e., when OL_SUPPLY_W_ID does not equal O_W_ID).
+    -> Inputs (W_ID integer, D_ID integer, C_ID integer, OL_SUPPLY_W_ID integer[], OL_I_ID integer[], OL_QUANTITY integer[])
+    -> Outputs(W_TAX decimal(4, 4), D_TAX decimal(4, 4), O_ID integer, O_ENTRY_D timestamp, ol_cnt integer, OL_AMOUNT decimal(12, 2)[], total_amount decimal(12,2), C_LAST varchar(16), C_CREDIT char(2), C_DISCOUNT decimal(4,4), I_NAME varchar(24)[], I_PRICE decimal(5,2)[] , S_QUANTITY integer[], brand_generic char[])
+    Note: It should return the values of S_QUANTITY before the update (original stock value).
+    NOTE: **Array Processing:**
+        - When processing input arrays (e.g., item arrays), ALWAYS filter out NULL and zero values before processing
+        - Count only valid items (NOT NULL AND value > 0) to determine the actual item count
+        - Skip NULL or zero entries during iteration using CONTINUE
+    -> - Implement proper locking and process operations in a consistent order to prevent deadlocks in high-concurrency environments.
+        
+== Transaction Profile
+    -> Entering a new order is done in a single database transaction with the following steps:
+        1. Create an order header, comprised of: 
+            2 row selections with data retrieval, 
+            1 row selection with data retrieval and update,
+            2 row insertions.
+        2. Order a variable number of items (average ol_cnt = 10), comprised of:
+            (1 * ol_cnt) row selections with data retrieval,
+            (1 * ol_cnt) row selections with data retrieval and update,
+            (1 * ol_cnt) row insertions.
+
+    Note: The above summary is provided for information only. The actual requirement is defined by the detailed transaction profile below.
+
+    -> For a given warehouse number (W_ID), district number (D_W_ID , D_ID), customer number (C_W_ID, C_D_ID , C_ ID), count of items (ol_cnt, not communicated to the SUT), and for a given set of items (OL_I_ID), supplying warehouses (OL_SUPPLY_W_ID), and quantities (OL_QUANTITY):
+        • The input data are communicated to the SUT.
+        • A database transaction is started.
+        • The row in the WAREHOUSE table with matching W_ID is selected and W_TAX, the warehouse tax r ate, is retrieved.
+        • The row in the DISTRICT table with matching D_W_ID and D_ ID is selected, D_TAX, the district tax rate, is retrieved, and D_NEXT_O_ID, the next available order number for the district, is retrieved and incremented by one.
+        • The row in the CUSTOMER table with matching C_W_ID, C_D_ID, and C_ID is selected and C_DISCOUNT, the customer's discount rate, C_LAST, the customer's last name, and C_CREDIT, the customer's credit status, are retrieved.
+        • A new row is inserted into both the NEW-ORDER table and the ORDER table to reflect the creation of the new order. O_CARRIER_ID is set to a null value. If the order includes only home order-lines, then O_ALL_LOCAL is set to 1, otherwise O_ALL_LOCAL is set to 0.
+        • The number of items, O_OL_CNT, is computed to match ol_cnt.
+        • For each O_OL_CNT item on the order:
+            - The row in the ITEM table with matching I_ID (equals OL_I_ID) is selected and I_PRICE, the pri ce of the item, I_NAME, the name of the item, and I_DATA are retrieved. If I_ID has an unused value, a "not-found" condition is signaled, resulting in a rollback of the database transaction.
+            - The row in the STOCK table with matching S_I_ID (equals OL_I_ID) and S_W_ID (equals OL_SUPPLY_W_ID) is selected. S_QUANTITY, the quantity in stock, S_DIST_xx, where xx represents the district number, and S_DATA are retrieved. If the retrieved value for S_QUANTITY exceeds OL_QUANTITY by 10 or more, then S_QUANTITY is decreased by OL_QUANTITY; otherwise S_QUANTITY is updated to (S_QUANTITY - OL_QUANTITY)+91. S_YTD is increased by OL_QUANTITY and S_ORDER_CNT is incremented by 1. If the ord er-line is remote, then S_REMOTE_CNT is incremented by 1.
+            - The amount for the item in the order (OL_AMOUNT) is computed as: OL_QUANTITY * I_PRICE
+            - The strings in I_DATA and S_DATA are examined. If they both include the string "ORIGINAL", the brandgeneric field for that item is set to "B", otherwise, the brand-generic field is set to "G".
+            - A new row is inserted into the ORDER-LINE table to reflect the item on the order. OL_DELIVERY_D is setto a null value, OL_NUMBER is set to a unique value within all the ORDER-LINE rows that have the same OL_O_ID value, and OL_DIST_INFO is set to the content of S_DIST_xx, where xx represents the district number (OL_D_ID)
+
+        • The total-amount for the complete order is computed as: sum(OL_AMOUNT) * (1 - C_DISCOUNT) * (1 + W_TAX + D_TAX)
+        • The database transaction is committed , unless it has been rolled back as a result of an unused value for the last item number.
+        • The output data are communicated to the terminal.
+
+    -> For transactions that rollback as a result of an unused item number, the complete transaction profile must be executed with the exception that the following steps need not be done:
+        • Selecting and retrieving the row in the STOCK table with S_I_ID matching the unused item number.
+        • Examining the strings I_DATA and S_DATA for the unused item.
+        • Inserting a new row into the ORDER-LINE table for the unused item.
+        • Adding the amount for the unused item to the sum of all OL_AMOUNT.
+    The transaction is not committed . Instead, the transaction is rolled back.
+
+    Comment 1: The intent of this clause is to ensure that within the New -Order transaction all valid items are processed prior to processing the unused item. Knowledge that an item is unused, resulting in rolling back the transaction, can only be used to skip execution of the above steps. No other op timization can result from this knowled ge (e.g., skipping other steps, changing the execution of other steps, using a different type of transaction, etc.)
+    Comment 2: The order of data manipulation s prior to signaling a "not found" condition is immaterial.
+
+== Terminal I/O
+    -> For each transaction the originating terminal must display the following input/ output screen with all input and output field s cleared (with either spaces or zeros) except for the Warehouse field which has not changed and must display the fixed W_ID value associated with that terminal.
+
+    -> The emulated user must enter, in the appropriate fields of the input/ output screen, th e required input data which is divided in two groups and organized as follows:
+        • Two fields: D_ID and C_ID.
+        Comment: The value for ol_cnt cannot be entered, but must be determined by the application upon processing of the input data.
+        • One repeating group of fields: OL_I_ID, OL_SUPPLY_W_ID and OL_QUANTITY. The group is repeated ol_cnt times (once per item in the order). 
+        Comment: In order to maintain a reasonable amount of keyed input, the supply warehouse fields must be filled in for each item, even when the supply warehouse is the home warehouse.
+
+    -> The emulated terminal must display, in the appropriate fields of the input/ output screen, all input data and the output data resulting from the execution of the transaction. The display field s are divided in two groups as follows:
+        • One non-repeating group of fields: W_ID, D_ID, C_ID, O_ID, O_OL_CNT, C_LAST, C_CREDIT, C_DISCOUNT, W_TAX, D_TAX, O_ENTRY_D, total_amount, and an optional execution status message other than "Item number is not valid".
+        • One repeating group of fields: OL_SUPPLY_W_ID, OL_I_ID, I_NAME, OL_QUANTITY, S_QUANTITY,
+        brand_generic, I_PRICE, and OL_AMOUNT. The group is repeated O_OL_CNT times (once per item in the order), equal to the computed value of ol_cnt.
+
+    -> For transactions that are rolled back as a result of an unused item number (1% of all New -Order transactions), the emulated terminal must display in the appropriate fields of the input/ output screen the fields: W_ID, D_ID, C_ID, C_LAST, C_CREDIT, O_ID, and the execution status message "Item number is not valid". Note that no execution status message is required for successfully committed transactions. However, this field may not display "Item number is not valid" if the transaction is successful.
+    Comment: The number of the rolled back order, O_ID, must be displayed to verify that part of t he transaction was processed.
+
+    -> The following table summarizes the terminal I/ O requirements for the New-Order transaction:
+        Enter Display Display Coordinates
+        After rollback Row/ Column
+        Non-repeating W_ID W_ID 2/ 12
+        Group D_ID D_ID D_ID 2/ 29
+        C_ID C_ID C_ID 3/ 12
+        C_LAST C_LAST 3/ 25
+        C_CREDIT C_CREDIT 3/ 52
+        C_DISCOUNT 3/ 64
+        W_TAX 4/ 51
+        D_TAX 4/ 67
+        O_OL_CNT 4/ 42
+        O_ID O_ID 4/ 15
+        O_ENTRY_D 2/ 61
+        total-amount 22/ 71
+        "Item number 22/ 19
+        is not valid"
+        Repeating Group OL_SUPPLY_W_ID OL_SUPPLY_W_ID 7-22/ 3
+        OL_I_ID OL_I_ID 7-22/ 10
+        I_NAME 7-22/ 20
+        OL_QUANTITY OL_QUANTITY 7-22/ 45
+        S_QUANTITY 7-22/ 51
+        brand-generic 7-22/ 58
+        I_PRICE 7-22/ 63
+        OL_AMOUNT 7-22/ 72
+
+Think step by step and then return ONLY the SQL query:

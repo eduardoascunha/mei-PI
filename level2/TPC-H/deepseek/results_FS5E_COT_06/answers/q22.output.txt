@@ -1,0 +1,3 @@
+psql:deepseek/results_FS5E_COT_06/q22.sql:30: ERROR:  syntax error at or near "year"
+LINE 25: ... and o_orderdate >= date_add(current_date, interval -7 year)
+                                                                   ^

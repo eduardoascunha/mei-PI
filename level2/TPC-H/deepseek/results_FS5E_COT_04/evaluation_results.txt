@@ -1,0 +1,135 @@
+================================================================================
+TEXT-TO-SQL EVALUATION REPORT
+================================================================================
+
+Total queries: 21
+Correct (PASS): 11 (52.38%)
+  - Exact match: 11
+  - With extra columns: 0
+Incorrect (FAIL): 9
+Not found (MISSING): 1
+
+================================================================================
+DETAILS PER QUERY
+================================================================================
+
+Query: q1.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q2.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q3.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q4.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q5.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q6.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q7.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (4, 4) vs (3, 1)
+    Rows only in original (4): [(14829230.337, 1996.0, 'argentina', 'kenya'), (15968215.735, 1996.0, 'argentina', 'kenya'), (13331202.777, 1995.0, 'argentina', 'kenya')]
+    Rows only in LLM (3): [('hint:  perhaps you meant to reference the column "supplier.s_nationkey".',), ('^',), ('line 2:  s_nation,',)]
+--------------------------------------------------------------------------------
+
+Query: q8.output.txt
+Status: FAIL
+Details:
+    Rows only in original (2): [(0.038668, 1996.0), (0.052353, 1995.0)]
+    Rows only in LLM (2): [(0.384659, 1995.0), (0.180119, 1996.0)]
+--------------------------------------------------------------------------------
+
+Query: q9.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q10.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (20, 8) vs (20, 3)
+    Rows only in original (20): [(2587.87, 36236.0, 455807.0378, '28-865-546-1902', '9j mfpdj5s5wiumw,roiip3vzwop', 'al packages. special ideas along the carefully regular packages wake a', 'china', 'customer#000036236'), (16201.0, 535942.1455, 9106.19, '30-290-670-9014', 'customer#000016201', 'e after the ironic dolphins. slyly even instructions alongside of the regular instr', 'qbbuqlrthqznlz', 'saudi arabia'), (3692.0, 569717.6682, 93.27, '24-584-374-9329', 'customer#000003692', 'ending requests poach furiously after the blithely quick foxes. f', 'kenya', 'tbh,q9q8cwc2u,yxu')]
+    Rows only in LLM (20): [(12112.0, 469549.8449, 'customer#000012112'), (477620.9049, 7630.0, 'customer#000007630'), (594352.3344, 9388.0, 'customer#000009388')]
+--------------------------------------------------------------------------------
+
+Query: q11.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (3874, 2) vs (3, 1)
+    Rows only in original (3874): [(27860.0, 5220535.88), (25565.0, 5061625.84), (42624.0, 4684247.36)]
+    Rows only in LLM (3): [('line 2:  p_partkey,',), ('^',), ('hint:  perhaps you meant to reference the column "partsupp.ps_partkey".',)]
+--------------------------------------------------------------------------------
+
+Query: q12.output.txt
+Status: MISSING
+Details:
+    File not found in LLM directory
+--------------------------------------------------------------------------------
+
+Query: q13.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q14.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q15.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(1482109.8042, 2516.0, '14-642-300-7682', '4m wg67rdqpzzcajcxepnqhdbong6e60b gky', 'supplier#000002516')]
+    Rows only in LLM (1): [(1524222.4765, 2990.0, '30-201-740-7249', 's 3hzdjj0mbu9w7n11z,', 'supplier#000002990')]
+--------------------------------------------------------------------------------
+
+Query: q16.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q17.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(98562.575714,)]
+    Rows only in LLM (1): [(122062.175714,)]
+--------------------------------------------------------------------------------
+
+Query: q18.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q19.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(1042188.9074,)]
+    Rows only in LLM (1): [(68742970.4374,)]
+--------------------------------------------------------------------------------
+
+Query: q21.output.txt
+Status: FAIL
+Details:
+    LLM has 3 extra column(s) AND data mismatch
+    Different dimensions: (100, 2) vs (100, 5)
+    Rows only in original (100): [(12.0, 'supplier#000002509'), (9.0, 'supplier#000001737'), (8.0, 'supplier#000001975')]
+    Rows only in LLM (100): [(193.0, 9095.64, '15-872-804-8448', 'packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly', 'supplier#000000193'), (2353.0, 5015.22, '15-175-686-8133', 'supplier#000002353', 'to the slyly even platelets. bli'), (2554.0, 8245.77, '15-739-167-4541', 'supplier#000002554', 'the ironically unusual patterns. blithely express foxes poach slyly carefully iro')]
+--------------------------------------------------------------------------------
+
+Query: q22.output.txt
+Status: FAIL
+Details:
+    LLM has 4 extra column(s) AND data mismatch
+    Different dimensions: (7, 3) vs (5664, 7)
+    Rows only in original (7): [(2079950.63, 279.0, 33.0), (1965469.24, 269.0, 31.0), (2093651.25, 280.0, 30.0)]
+    Rows only in LLM (5664): [(28.0, 41656.0, 5325.1, '28-260-175-7128', 'customer#000041656', 'jp4ctigwne18hvbsgccn', 'ole. slyly final deposits integrate slyly according to the packages. quickly sly braids use'), (21.0, 2794.0, 9474.41, '21-992-633-6389', 'customer#000002794', 'out the excuses. fluffily final ideas nag about the blithely final asymptotes. express, e', 'rbl3 hn8vd8u7x8wlrdzc'), (10246.0, 33.0, 8531.02, '33-161-573-9871', '99yptt8cngd', 'customer#000010246', 'riously silent theodolites wake slyly across the express,')]
+--------------------------------------------------------------------------------
+

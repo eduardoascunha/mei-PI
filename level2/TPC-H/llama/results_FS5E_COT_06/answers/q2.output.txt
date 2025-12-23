@@ -1,0 +1,4 @@
+ s_name | s_nationkey | s_acctbal | s_phone | n_name 
+--------+-------------+-----------+---------+--------
+(0 rows)
+

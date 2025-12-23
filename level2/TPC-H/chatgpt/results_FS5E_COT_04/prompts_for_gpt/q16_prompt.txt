@@ -1,0 +1,391 @@
+
+You are a SQL expert.
+The examples below show reasoning patterns and SQL queries.
+Follow the same step-by-step thinking approach for the new question.
+Return ONLY the SQL code without markdown formatting or explanations.
+
+
+DATABASE SCHEMA:
+Table customer(
+  c_custkey integer,
+  c_name character varying,
+  c_address character varying,
+  c_nationkey integer,
+  c_phone character,
+  c_acctbal numeric,
+  c_mktsegment character,  -- Possible values: 'AUTOMOBILE', 'BUILDING', 'FURNITURE', 'MACHINERY', 'HOUSEHOLD'
+  c_comment character varying
+)
+
+Table lineitem(
+  l_orderkey integer,
+  l_partkey integer,
+  l_suppkey integer,
+  l_linenumber integer,
+  l_quantity numeric,
+  l_extendedprice numeric,
+  l_discount numeric,
+  l_tax numeric,
+  l_returnflag character,  -- Possible values: 'R' (Return), 'A' (Accept), 'N' (No return)
+  l_linestatus character,  -- Possible values: 'O' (Open), 'F' (Filled)
+  l_shipdate date,
+  l_commitdate date,
+  l_receiptdate date,
+  l_shipinstruct character,  -- Possible values: 'DELIVER IN PERSON', 'COLLECT COD', 'NONE', 'TAKE BACK RETURN'
+  l_shipmode character,  -- Possible values: 'AIR REG', 'AIR', 'RAIL', 'SHIP', 'TRUCK', 'MAIL', 'FOB'
+  l_comment character varying
+)
+
+Table nation(
+  n_nationkey integer,
+  n_name character,   -- examples: 'ALGERIA', 'BRAZIL', 'CANADA', 'JAPAN', etc.
+  n_regionkey integer,
+  n_comment character varying
+)
+
+Table orders(
+  o_orderkey integer,
+  o_custkey integer,
+  o_orderstatus character,  -- Possible values: 'O' (Open), 'F' (Filled), 'P' (Partial)
+  o_totalprice numeric,
+  o_orderdate date,
+  o_orderpriority character,  -- Possible values: '1-URGENT', '2-HIGH', '3-MEDIUM', '4-NOT SPECIFIED', '5-LOW'
+  o_clerk character,
+  o_shippriority integer,
+  o_comment character varying
+)
+
+Table part(
+  p_partkey integer,
+  p_name character varying,
+  p_mfgr character,  
+  p_brand character,  
+  p_type character varying,  
+  p_size integer,
+  p_container character, 
+  p_retailprice numeric,
+  p_comment character varying
+)
+
+Table partsupp(
+  ps_partkey integer,
+  ps_suppkey integer,
+  ps_availqty integer,
+  ps_supplycost numeric,
+  ps_comment character varying
+)
+
+Table region(
+  r_regionkey integer,
+  r_name character,  -- Possible values: 'AFRICA', 'AMERICA', 'ASIA', 'EUROPE', 'MIDDLE EAST'
+  r_comment character varying
+)
+
+Table supplier(
+  s_suppkey integer,
+  s_name character varying,
+  s_address character varying,
+  s_nationkey integer,
+  s_phone character,
+  s_acctbal numeric,
+  s_comment character varying
+)
+
+Here are some examples of questions with chain-of-thought reasoning and their SQL queries:
+
+--- Example 1 ---
+QUESTION:
+This query finds which supplier should be selected to place an order for a given part in a given region.
+The Minimum Cost Supplier Query finds, in a given region, for each part of a certain type and size, the supplier who can  supply  it  at  minimum  cost.  If  several  suppliers  in  that  region  offer  the  desired  part  type  and  size  at  the  same (minimum)  cost,  the  query  lists  the  parts  from  suppliers  with  the  100  highest  account  balances.  For  each  supplier, the  query  lists  the  supplier's  account  balance,  name  and  nation;  the  part's  number  and  manufacturer;  the  supplier's address, phone number and comment information.
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text:
+1. SIZE is randomly selected within [1. 50]; In this case assume SIZE 2
+2. TYPE is randomly selected within the list Syllable 3 defined for Types in Clause 4.2.2.13; In this case assume type '%TIN'
+3. REGION is randomly selected within the list of values defined for R_NAME in 4.2.3. In this case assume REGION 'ASIA'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "cost supplier query finds", columns [partsupp.ps_supplycost] may be used.
+According to "nation the", columns [nation.n_name, nation.n_nationkey] may be used.
+According to "part in", columns [part.p_partkey, partsupp.ps_partkey] may be used.
+According to "part s number", columns [part.p_mfgr, partsupp.ps_suppkey] may be used.
+According to "part type", columns [part.p_type] may be used.
+According to "part type and size", columns [part.p_size] may be used.
+According to "region for", columns [nation.n_regionkey, region.r_name] may be used.
+According to "region the", columns [region.r_regionkey] may be used.
+According to "supplier s", columns [supplier.s_acctbal, supplier.s_comment, supplier.s_name, supplier.s_nationkey, supplier.s_suppkey] may be used.
+According to "supplier s address", columns [supplier.s_address] may be used.
+According to "supplier s address phone", columns [supplier.s_phone] may be used.
+Values [%TIN, 2, ASIA] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	s_acctbal,
+	s_name,
+	n_name,
+	p_partkey,
+	p_mfgr,
+	s_address,
+	s_phone,
+	s_comment
+from
+	part,
+	supplier,
+	partsupp,
+	nation,
+	region
+where
+	p_partkey = ps_partkey
+	and s_suppkey = ps_suppkey
+	and p_size = 2
+	and p_type like '%TIN'
+	and s_nationkey = n_nationkey
+	and n_regionkey = r_regionkey
+	and r_name = 'ASIA'
+	and ps_supplycost = (
+		select
+			min(ps_supplycost)
+		from
+			partsupp,
+			supplier,
+			nation,
+			region
+		where
+			p_partkey = ps_partkey
+			and s_suppkey = ps_suppkey
+			and s_nationkey = n_nationkey
+			and n_regionkey = r_regionkey
+			and r_name = 'ASIA'
+	)
+order by
+	s_acctbal desc,
+	n_name,
+	s_name,
+	p_partkey
+limit 100;
+
+--- Example 2 ---
+QUESTION:
+This query seeks relationships between customers and the size of their orders. 
+This query determines  the  distribution of customers by  the  number of orders they have  made, including customers who have no record of orders, past or present. It counts and reports how many customers have no orders, how many have 1, 2, 3, etc. A check is made to ensure that the orders counted do not fall into one of several special categories of orders. Special categories are identified in the order comment column by looking for a particular pattern. 
+Substitution Parameters:
+1. WORD1 is randomly selected from 4 possible values: special, pending, unusual, express. In this case assume WORD1 unusual
+2. WORD2 is randomly selected from 4 possible values: packages, requests, accounts, deposits. In this case assume WORD2 accounts
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "customers who", columns [customer.c_custkey] may be used.
+According to "order comment", columns [orders.o_comment] may be used.
+According to "orders how", columns [orders.o_orderkey] may be used.
+According to "orders special", columns [orders.o_custkey] may be used.
+Values [%unusual%accounts%] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	c_count,
+	count(*) as custdist
+from
+	(
+		select
+			c_custkey,
+			count(o_orderkey)
+		from
+			customer left outer join orders on
+				c_custkey = o_custkey
+				and o_comment not like '%unusual%accounts%'
+		group by
+			c_custkey
+	) as c_orders (c_custkey, c_count)
+group by
+	c_count
+order by
+	custdist desc,
+	c_count desc;
+
+--- Example 3 ---
+QUESTION:
+The  Large  Volume  Customer  Query  ranks  customers  based  on  their  having  placed  a  large  quantity  order.  Large quantity orders are defined as those orders whose total quantity is above a certain level.
+The Large Volume Customer Query finds a list of the top 100 customers who have ever placed large quantity orders. The query lists the customer name, customer key, the order key, date and total price and the quantity for the order. 
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. QUANTITY is randomly selected within [312..315]. In this case assume QUANTITY = 314
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "customer key the", columns [customer.c_custkey] may be used.
+According to "customer name customer", columns [customer.c_name] may be used.
+According to "key the order key", columns [lineitem.l_orderkey] may be used.
+According to "order key", columns [orders.o_custkey, orders.o_orderkey] may be used.
+According to "order key date", columns [orders.o_orderdate] may be used.
+According to "orders whose total", columns [orders.o_totalprice] may be used.
+According to "text 1 quantity is", columns [lineitem.l_quantity] may be used.
+Values [314] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	c_name,
+	c_custkey,
+	o_orderkey,
+	o_orderdate,
+	o_totalprice,
+	sum(l_quantity)
+from
+	customer,
+	orders,
+	lineitem
+where
+	o_orderkey in (
+		select
+			l_orderkey
+		from
+			lineitem
+		group by
+			l_orderkey having
+				sum(l_quantity) > 314
+	)
+	and c_custkey = o_custkey
+	and o_orderkey = l_orderkey
+group by
+	c_name,
+	c_custkey,
+	o_orderkey,
+	o_orderdate,
+	o_totalprice
+order by
+	o_totalprice desc,
+	o_orderdate
+limit 100;
+
+--- Example 4 ---
+QUESTION:
+The Discounted Revenue Query reports the gross discounted revenue attributed to the sale of selected parts handled in  a  particular  manner. This  query  is  an  example  of  code  such  as  might be  produced  programmatically  by  a  data mining tool.
+The  Discounted  Revenue  query  finds  the  gross  discounted  revenue  for  all  orders  for three  different  types  of  parts that  were  shipped by air  and  delivered in person. Parts are selected based on the  combination of specific brands, a list of containers, and a range of sizes.
+Substitution Parameters:
+1. QUANTITY1 is randomly selected within [1..10]. In this case assume QUANTITY1 = 4
+2. QUANTITY2 is randomly selected within [10..20]. In this case assume QUANTITY2 = 16
+3. QUANTITY3 is randomly selected within [20..30]. In this case assume QUANTITY3 = 29
+4. BRAND1, BRAND2, BRAND3 = 'Brand#MN' where each MN is a two character string representing two numbers randomly and independently selected within [1 .. 5]. In this case assume BRAND1 = 'Brand#11' , BRAND2 = 'Brand#25' , BRAND3 = 'Brand#54'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "brand 25 brand3", columns [part.p_brand] may be used.
+According to "containers and", columns [part.p_container] may be used.
+According to "discounted revenue query finds", columns [lineitem.l_discount] may be used.
+According to "parts are selected based", columns [part.p_partkey] may be used.
+According to "quantity1 is", columns [lineitem.l_quantity] may be used.
+According to "selected parts handled in", columns [lineitem.l_partkey] may be used.
+According to "sizes substitution parameters 1", columns [part.p_size] may be used.
+Values [10, 15, 16, 29, 4, 5, AIR, AIR REG, Brand#11, Brand#25, Brand#54, DELIVER IN PERSON, LG BOX, LG CASE, LG PACK, LG PKG, MED BAG, MED BOX, MED PACK, MED PKG, SM BOX, SM CASE, SM PACK, SM PKG] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	sum(l_extendedprice* (1 - l_discount)) as revenue
+from
+	lineitem,
+	part
+where
+	(
+		p_partkey = l_partkey
+		and p_brand = 'Brand#11'
+		and p_container in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+		and l_quantity >= 4 and l_quantity <= 4 + 10
+		and p_size between 1 and 5
+		and l_shipmode in ('AIR', 'AIR REG')
+		and l_shipinstruct = 'DELIVER IN PERSON'
+	)
+	or
+	(
+		p_partkey = l_partkey
+		and p_brand = 'Brand#25'
+		and p_container in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+		and l_quantity >= 16 and l_quantity <= 16 + 10
+		and p_size between 1 and 10
+		and l_shipmode in ('AIR', 'AIR REG')
+		and l_shipinstruct = 'DELIVER IN PERSON'
+	)
+	or
+	(
+		p_partkey = l_partkey
+		and p_brand = 'Brand#54'
+		and p_container in ('LG CASE', 'LG BOX', 'LG PACK', 'LG PKG')
+		and l_quantity >= 29 and l_quantity <= 29 + 10
+		and p_size between 1 and 15
+		and l_shipmode in ('AIR', 'AIR REG')
+		and l_shipinstruct = 'DELIVER IN PERSON'
+	);
+
+--- Example 5 ---
+QUESTION:
+This query determines whether selecting less expensive modes of shipping is negatively affecting the critical-priority orders by causing more parts to be received by customers after the committed date.
+The Shipping Modes and Order Priority Query counts, by ship mode, for lineitems actually received by customers in 
+a given year, the number of lineitems belonging to orders for which the l_receiptdate exceeds the l_commitdate for 
+two  different  specified  ship  modes.  Only  lineitems  that  were  actually  shipped  before  the  l_commitdate  are  con-
+sidered. The late lineitems are partitioned into two groups, those with priority URGENT or HIGH, and those with a 
+priority other than URGENT.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. SHIPMODE1 is randomly selected within the list of values defined for Modes in Clause 4.2.2.13; In this case assume SHIPMODE1 'FOB'
+2. SHIPMODE2 is randomly selected within the list of values defined for Modes in  Clause  4.2.2.13 and must be different from the value selected for SHIPMODE1 in item 1; In this case assume SHIPMODE2 'MAIL'
+3. DATE is the first of January of a randomly selected year within [1993 .. 1997]. In this case assume DATE '1996-01-01'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "belonging to orders for", columns [orders.o_orderkey] may be used.
+According to "for lineitems actually received", columns [lineitem.l_shipdate] may be used.
+According to "l_commitdate for", columns [lineitem.l_commitdate] may be used.
+According to "l_receiptdate exceeds the", columns [lineitem.l_receiptdate] may be used.
+According to "lineitems belonging to orders", columns [lineitem.l_orderkey] may be used.
+According to "order priority query", columns [orders.o_orderpriority] may be used.
+According to "ship mode for lineitems", columns [lineitem.l_shipmode] may be used.
+Values [1, 1-URGENT, 1996-01-01, 2-HIGH, FOB, MAIL] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	l_shipmode,
+	sum(case
+		when o_orderpriority = '1-URGENT'
+			or o_orderpriority = '2-HIGH'
+			then 1
+		else 0
+	end) as high_line_count,
+	sum(case
+		when o_orderpriority <> '1-URGENT'
+			and o_orderpriority <> '2-HIGH'
+			then 1
+		else 0
+	end) as low_line_count
+from
+	orders,
+	lineitem
+where
+	o_orderkey = l_orderkey
+	and l_shipmode in ('FOB', 'MAIL')
+	and l_commitdate < l_receiptdate
+	and l_shipdate < l_commitdate
+	and l_receiptdate >= date '1996-01-01'
+	and l_receiptdate < date '1996-01-01' + interval '1' year
+group by
+	l_shipmode
+order by
+	l_shipmode;
+
+--- Your Task ---
+QUESTION:
+This  query  finds  out  how  many  suppliers  can  supply  parts  with  given  attributes.  It  might  be  used,  for  example,  to 
+determine whether there is a sufficient number of suppliers for heavily ordered parts. 
+The Parts/Supplier Relationship Query counts the number of suppliers who can supply parts that satisfy a particular customer's requirements. The customer is interested in parts of eight different sizes as long as they are not of a given type, not of a given brand, and not from a supplier who has had complaints registered at the Better Business Bureau. Results must be presented in descending count and ascending brand, type, and size.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. BRAND = Brand#MN where M and N are two single character strings representing two numbers randomly and independently selected within [1 .. 5]; In this case assume BRAND 'Brand#42'
+2. TYPE is made of the  first 2 syllables of a string randomly selected within the list of 3-syllable strings defined for Types in Clause 4.2.2.13; In this case assume TYPE 'LARGE PLATED%'
+3. SIZE1 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE1 = 9
+4. SIZE2 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE2 = 7
+5. SIZE3 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE3 = 14
+6. SIZE4 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE4 = 41
+7. SIZE5 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE5 = 43
+8. SIZE6 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE6 = 38
+9. SIZE7 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE7 = 23
+10. SIZE8 is randomly selected as a set of eight different values within [1 .. 50]. In this case assume SIZE8 = 34
+
+Think step by step and then return ONLY the SQL query:

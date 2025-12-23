@@ -1,0 +1,27 @@
+QUESTION:
+This  query  quantifies  the  amount  of  revenue  increase  that  would  have  resulted  from  eliminating  certain  company-wide discounts in a given percentage range in a given year. Asking this type of "what if" query can be used to look for ways to increase revenues.
+The Forecasting Revenue Change Query considers all the lineitems shipped in a given year with discounts between DISCOUNT-0.01  and  DISCOUNT+0.01.  The  query  lists  the  amount  by  which  the  total  revenue  would  have increased  if  these  discounts  had  been  eliminated  for  lineitems  with  l_quantity  less  than  quantity.  Note  that  the potential revenue increase is equal to the sum of [l_extendedprice * l_discount] for all lineitems with discounts and quantities in the qualifying range.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. DATE is the first of January of a randomly selected year within [1993 .. 1997]; In this case assume DATE '1994-01-01'
+2. DISCOUNT is randomly selected within [0.02 .. 0.09]; In this case assume DISCOUNT 0.02
+3. QUANTITY is randomly selected within [24 .. 25]. In this case assume QUANTITY 25
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "l_discount for all lineitems", columns [lineitem.l_discount] may be used.
+According to "lineitems shipped in", columns [lineitem.l_shipdate] may be used.
+According to "lineitems with l_quantity", columns [lineitem.l_quantity] may be used.
+According to "of l_extendedprice", columns [lineitem.l_extendedprice] may be used.
+Values [0.01, 0.02, 1, 1994-01-01, 25] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	sum(l_extendedprice * l_discount) as revenue
+from
+	lineitem
+where
+	l_shipdate >= date '1994-01-01'
+	and l_shipdate < date '1994-01-01' + interval '1' year
+	and l_discount between 0.02 - 0.01 and 0.02 + 0.01
+	and l_quantity < 25;

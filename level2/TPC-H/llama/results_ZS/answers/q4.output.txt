@@ -1,0 +1,3 @@
+psql:llama/results_ZS/q4.sql:8: ERROR:  invalid input syntax for type interval: "1997-01-01"
+LINE 4: WHERE o.o_orderdate >= '1997-01-01' - INTERVAL '3 month' 
+                               ^

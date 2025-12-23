@@ -1,0 +1,39 @@
+QUESTION:
+This query determines how well the order priority system is working and gives an assessment of customer satisfaction.
+The Order Priority Checking Query counts the number of orders ordered in a given quarter of a given year in which at least one lineitem  was received by the  customer later than its committed date. The  query lists the  count of such orders for each order priority sorted in ascending priority order.
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. DATE  is  the  first  day  of  a  randomly  selected  month  between  the  first  month  of  1993  and  the  10th  month  of 1997. In this case assume date '1997-01-01'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "lineitem was", columns [lineitem.l_commitdate] may be used.
+According to "lineitem was received by", columns [lineitem.l_receiptdate] may be used.
+According to "of orders ordered", columns [orders.o_orderdate] may be used.
+According to "of orders ordered in", columns [orders.o_orderpriority] may be used.
+According to "one lineitem", columns [lineitem.l_orderkey] may be used.
+According to "orders ordered in a", columns [orders.o_orderkey] may be used.
+Values [1997-01-01, 3] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	o_orderpriority,
+	count(*) as order_count
+from
+	orders
+where
+	o_orderdate >= date '1997-01-01'
+	and o_orderdate < date '1997-01-01' + interval '3' month
+	and exists (
+		select
+			*
+		from
+			lineitem
+		where
+			l_orderkey = o_orderkey
+			and l_commitdate < l_receiptdate
+	)
+group by
+	o_orderpriority
+order by
+	o_orderpriority;

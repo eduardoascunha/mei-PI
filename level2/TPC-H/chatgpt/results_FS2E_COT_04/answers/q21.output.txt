@@ -1,0 +1,104 @@
+ s_acctbal |          s_name           |          n_name           |               s_address                |     s_phone     |                                              s_comment                                               
+-----------+---------------------------+---------------------------+----------------------------------------+-----------------+------------------------------------------------------------------------------------------------------
+   9888.26 | Supplier#000002580        | ETHIOPIA                  | qrs2ub3wSjbzv1kc0a4k                   | 15-284-495-3109 | sias. carefully even orbits wake blithe
+   9780.74 | Supplier#000000156        | ETHIOPIA                  | ,KXbCcjqZNjmyHzeqaL4                   | 15-106-692-4998 | sits cajole carefully instead of the final, ironic requests. furiously ironic deposits abo
+   9581.63 | Supplier#000001780        | ETHIOPIA                  | 5VXXjHsRuGrU HNS2xdoUCPw5LMlrJVcUOd5ED | 15-148-378-4534 | counts are boldly furiously even instruction
+   9522.03 | Supplier#000000434        | ETHIOPIA                  | endL6N 85uU0NemLv4L3mSEH4LT2BF         | 15-763-277-6054 | n, final packages. furiously pending c
+   9497.29 | Supplier#000000462        | ETHIOPIA                  | Bg,C2gIsljPAG                          | 15-387-146-3147 | uriously unusual courts. blithely express deposits could run
+   9442.87 | Supplier#000001820        | ETHIOPIA                  | KpXwAkf9mJGAhkUcJUmWO7ggW3lI           | 15-664-895-4843 | lithely ruthless ideas. regular instructions wake. fluffily furious orbits was slyly acro
+   9418.87 | Supplier#000002551        | ETHIOPIA                  | VXntNh4UX,Z8dJ                         | 15-457-583-6333 | excuses cajole requests. ironic, ironic waters use
+   9287.33 | Supplier#000000231        | ETHIOPIA                  | uZfFnyAs9oFJ0No97rtQ OIV1AOYi          | 15-551-432-9958 | mptotes sleep above the regular dep
+   9095.64 | Supplier#000000193        | ETHIOPIA                  | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+   9071.54 | Supplier#000002973        | ETHIOPIA                  | x95AAV25GHIAYU yhQsM                   | 15-295-459-7347 | o kindle regular pinto beans. ironic packages nag quickly. ironic realms sleep carefully foxes.
+   9036.79 | Supplier#000000224        | ETHIOPIA                  | iD7eF,uwQxxPCAFTmdXYV7N                | 15-446-447-2944 | atelets. regular, ironic gifts eat furiously across the permanently silent instructions. reg
+   9014.90 | Supplier#000002084        | ETHIOPIA                  | ,zeVVYFb6hYoWyJ4kjqm8hT5lzLlW          | 15-241-499-4185 |  deposits haggle doggedly among the furiously even packages. d
+   8878.97 | Supplier#000001593        | ETHIOPIA                  | nyrNd0vqtRsA2mB8 N0B WGupWrAy9WK3l     | 15-528-294-8640 | s breach blithely. slyly ironic ideas above the furiously final packages nag slyly along the b
+   8867.03 | Supplier#000002635        | ETHIOPIA                  | QWtNr1h9jyotgBhsFgHlZ4QbqV             | 15-141-516-7435 | cording to the quickly unusual accounts. ironic theodolites use blithely. regular deposits
+   8794.09 | Supplier#000001463        | ETHIOPIA                  | yD5,1wUkwuvV4gWRloVVudgeUpO03et0       | 15-484-394-3837 | xpress excuses use about the fluffily
+   8543.83 | Supplier#000002985        | ETHIOPIA                  | XcGrON6iJDJ4Nki                        | 15-653-433-7716 | coys alongside of the asymptotes haggle
+   8480.34 | Supplier#000001237        | ETHIOPIA                  | KskDRrC5imTdN0DCTm3BykGJWZzsNumC       | 15-830-628-9526 | er the fluffily express deposits. ironic requests poach blithely
+   8476.39 | Supplier#000001029        | ETHIOPIA                  | 6quaw3pjSuzrj5d                        | 15-507-720-2035 | ly fluffily even pinto beans. bold packages across the doggedly unusual deposits slee
+   8245.77 | Supplier#000002554        | ETHIOPIA                  | tFdJFJR46eF3X tG0xnfsTQ                | 15-739-167-4541 |  the ironically unusual patterns. blithely express foxes poach slyly carefully iro
+   8153.16 | Supplier#000002087        | ETHIOPIA                  | HGgxYKF0 EkGjGK                        | 15-542-152-7965 | ven sheaves serve slyly agains
+   8142.81 | Supplier#000000542        | ETHIOPIA                  | 3yWRklEDbAvfVuidQPgOOe,x7f,4 J5lSp4v   | 15-378-700-5884 | g requests believe carefully dolphins. quickly pending
+   8082.42 | Supplier#000001386        | ETHIOPIA                  | iNxyxvmqmNB                            | 15-186-107-2835 | nstructions nag among the unusual theodol
+   7708.98 | Supplier#000001975        | ETHIOPIA                  | nBmdXXmMEmKhYwO2PWWjQur                | 15-516-365-1831 | instructions. blithely ironic dependencies alongside of the pinto beans use
+   7705.03 | Supplier#000001970        | ETHIOPIA                  | QqyXDIxLNM,fwA8qP1TLxQBA9v             | 15-350-889-1064 |  slyly at the slyly regular pinto beans. regular, special deposits affix carefully pending asymptote
+   7454.46 | Supplier#000001817        | ETHIOPIA                  | ,te1RWRzZWqPEVE                        | 15-103-734-9639 | thless theodolites haggle.
+   7448.35 | Supplier#000001792        | ETHIOPIA                  | YbJ7B5b4NQ6UTAJEKm,vkRSI               | 15-820-745-6527 |  quickly regular packages. slyly final pint
+   7445.36 | Supplier#000001655        | ETHIOPIA                  | S4coCIhdb1y,xbBL4NbuTjXaDgB6 hchz0     | 15-449-908-4417 | oxes-- bold deposits alongside of the slyly ironic pinto beans run furiously slyly even
+   7322.08 | Supplier#000002485        | ETHIOPIA                  | k5ho3Qa8Jpuigzwu                       | 15-819-144-9617 | hins. blithely final excuses boost carefully. slyly ironic accounts accordi
+   7260.83 | Supplier#000002461        | ETHIOPIA                  | 3AxwmIx6iSzuXKNRqSNcSMDS13zWQU         | 15-442-573-5761 | eas-- even attainments will cajole at the ironic pinto beans. regular, regular pinto b
+   7253.77 | Supplier#000001068        | ETHIOPIA                  | ,yIRtm8YNahsojbY4zSe57Bs               | 15-332-440-7893 | iously ironic packages can haggle fluffily special deposits? carefully regular pains are careful
+   7233.12 | Supplier#000002275        | ETHIOPIA                  | n95 s1Gp37NuIaefRHIuSolsOtRLPlazF8jLS  | 15-209-306-1486 | aggle carefully according to the fina
+   7146.03 | Supplier#000002186        | ETHIOPIA                  | VKhSL06Ul4kHi4hBkK8Zm3                 | 15-655-903-2294 | de of the furiously ironic
+   7075.81 | Supplier#000002414        | ETHIOPIA                  | W6uBF44GHsJFPwnG,VBH8a e               | 15-728-678-4300 | ep furiously slyly express theodolites. carefully ironic asymp
+   7055.81 | Supplier#000002510        | ETHIOPIA                  | J3xtZTxnkUrG0KjE 9ru76PJGpGINiciqU31   | 15-761-995-7298 | ly final accounts around the final a
+   6981.07 | Supplier#000001627        | ETHIOPIA                  | 74kMjyK1cWzXBtjZK u4n5I4UP             | 15-112-462-8537 | uickly special pains. express asymptotes wake even pearls. blithely even p
+   6748.10 | Supplier#000002770        | ETHIOPIA                  | Y4O7cs1mRjv5ih 0nt RFI2qwNK            | 15-931-941-9457 | ts are. blithely final theodolites across the furiously special packages haggle outside the blit
+   6721.22 | Supplier#000001759        | ETHIOPIA                  | IMUk7aHEg2sS8PyUqj4FsZS7gR8HX3Ix       | 15-110-929-1862 | y express packages across the sl
+   6714.90 | Supplier#000002382        | ETHIOPIA                  | otBPUYXGv LZifYiBq1XPTVKn7d            | 15-391-167-3113 | s boost after the quickly pendin
+   6686.84 | Supplier#000000393        | ETHIOPIA                  | hxGMP2tFry WHEeI5cmEFVF027E            | 15-120-912-1594 | t the furiously regular deposits. excuses about the ruthless, regular 
+   6505.84 | Supplier#000001580        | ETHIOPIA                  | gqwJchO919h1NPd8IBWvNahMtg             | 15-814-392-7616 | equests cajole slyly along the furiously pending pinto beans. slyly unusual reques
+   6500.60 | Supplier#000001847        | ETHIOPIA                  | 0GAs3udWD8IfclOsoK22YxTDtHj            | 15-843-949-5894 | the fluffily bold asymptotes. s
+   6068.43 | Supplier#000001230        | ETHIOPIA                  | YTNwF6K9kaxyH8NGGrD9G                  | 15-922-198-8652 | y final instructions. regular platelets hang bl
+   6008.19 | Supplier#000002498        | ETHIOPIA                  | VvpYr7G6OozCvtkIW6qdEZBi3918Vb         | 15-815-470-5030 | sits. slyly bold accounts are
+   5997.41 | Supplier#000002760        | ETHIOPIA                  | JwaOuD8jdeWmVr6SEnVbF,KpdO6            | 15-554-965-5719 | aggle carefully final deposits. furiously ironic pinto be
+   5825.44 | Supplier#000001132        | ETHIOPIA                  | 0rxuQ74Sqy                             | 15-583-125-3480 | eans-- pinto beans wake above the sly
+   5742.03 | Supplier#000000063        | ETHIOPIA                  | NlV0OQyIoPvPkw5AYuWGomX,hgqm1          | 15-781-401-3047 | ar deposits. blithely bold accounts against the slyly final pinto beans sleep about the exp
+   5616.71 | Supplier#000002509        | ETHIOPIA                  | TV cQFJuOUUaJaZGSG                     | 15-163-414-7176 | c packages. special instructions sleep carefully about the furiously final foxes. blithely special
+   5390.32 | Supplier#000002878        | ETHIOPIA                  | jGbfUqUk32LrI                          | 15-888-304-8960 | cial waters across the pending, enticing waters are carefully according to the quickly regula
+   5302.65 | Supplier#000002964        | ETHIOPIA                  | yJHDv1tHUT3zS8S                        | 15-812-632-8371 | ep final, regular accounts. slyly bold a
+   5154.37 | Supplier#000000456        | ETHIOPIA                  | iSqve6KC7t69,jX6,HF B8Hbat11O          | 15-951-880-7133 | e along the slyly bold theodolites. packages detect. regular requests sleep furiously b
+   5015.22 | Supplier#000002353        | ETHIOPIA                  | tJfE2O3Jwt                             | 15-175-686-8133 | to the slyly even platelets. bli
+   4956.01 | Supplier#000000360        | ETHIOPIA                  | 3avxIDL4YPrZVHie4rOiPrK8Z IJwEPqZaioHK | 15-671-472-7761 | uickly regular asymptotes. packages ar
+   4915.16 | Supplier#000001737        | ETHIOPIA                  | PYmhWHl0BbjFYyExQIJsL ,6LFobxXaOQPH    | 15-199-724-3432 |  wake blithely across the slyly express accounts. ideas haggle 
+   4903.11 | Supplier#000002347        | ETHIOPIA                  | iZjD85P4li3H4zs6,9 ZJYnV81afGp,Yd      | 15-381-519-4927 | nal requests according to the carefully express deposits are slyly along the ironic, specia
+   4763.20 | Supplier#000000910        | ETHIOPIA                  | 0X S 2E55,maqch                        | 15-960-448-6633 | arefully unusual deposits. 
+   4418.65 | Supplier#000001026        | ETHIOPIA                  | rggfDIM7RY1sdPft                       | 15-655-974-9432 | fluffily slow requests. accounts grow slyly. carefully final acc
+   4301.53 | Supplier#000002958        | ETHIOPIA                  | XNcxw,EjCJrTOqk3                       | 15-451-727-3089 | slyly ironic packages haggle ideas. silent theodolites integrate blithely. theodolites against the e
+   4284.04 | Supplier#000001354        | ETHIOPIA                  | Z3rwfjGIybZu399XSQMDDVMVTzcoakpx5oMfe  | 15-626-165-4902 | foxes. regular asymptotes x-ray carefully regular, bold request
+   4196.26 | Supplier#000000700        | ETHIOPIA                  | K5l3kvvjnRQJJ,                         | 15-648-846-4789 | es haggle quickly. slyly bold ideas serve at the regular attai
+   4161.22 | Supplier#000000150        | ETHIOPIA                  | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+   4089.61 | Supplier#000000864        | ETHIOPIA                  | D95VTylwusz7OYesg,                     | 15-293-129-4196 | ites. quickly even ideas wake always express requests. express theodolites are. carefu
+   4082.86 | Supplier#000002219        | ETHIOPIA                  | ShNYaJlJuC                             | 15-855-925-7829 | inst the packages affix furiously according to the stealthy
+   4049.06 | Supplier#000000819        | ETHIOPIA                  | n1YA v3IWFGmIP tZr                     | 15-492-900-7246 | s use blithely. blithely regular ideas according to the pending theodolites haggle above t
+   4032.68 | Supplier#000000002        | ETHIOPIA                  | 89eJ5ksX3ImxJQBvxObC,                  | 15-679-861-2259 |  slyly bold instructions. idle dependen
+   3921.11 | Supplier#000001978        | ETHIOPIA                  | qnOvcc36FOHCHqO0VEWCD                  | 15-541-919-6147 | l accounts. pinto beans against the blithely special accounts nag slyly even, b
+   3839.44 | Supplier#000000749        | ETHIOPIA                  | KxSfaofVZcFWnLsjaNszI5GTrlyAW,         | 15-131-224-8530 | gular pinto beans. blithely even accounts wake blithely accounts. careful
+   3755.77 | Supplier#000002109        | ETHIOPIA                  | deW6ISdcFQkhbJqqbHhk9,ADM1SCfrdsvHzSvB | 15-125-731-1831 | al instructions nag slyly above the deposits; blith
+   3714.48 | Supplier#000001850        | ETHIOPIA                  | u8APqIJf3BcRLnul4AsNH7ha               | 15-547-277-5192 |  beans. carefully unusual accounts sleep blithely about the careful ins
+   3589.64 | Supplier#000000339        | ETHIOPIA                  |  ESOHA53rEW5G7Z75w5hJ                  | 15-967-506-6094 | ts snooze carefully express accounts. foxes nag carefully 
+   3509.03 | Supplier#000001250        | ETHIOPIA                  | uum91lnpIZa9Yv3Z IMXbf7TyYlwPYI1ApCYtx | 15-552-400-9891 | counts. ironic deposits haggle
+   3477.18 | Supplier#000000526        | ETHIOPIA                  | x8r7,jgpBRjq6Ns                        | 15-539-980-8303 | as kindle ideas. blithely bold requests 
+   3309.30 | Supplier#000001114        | ETHIOPIA                  | f,UYBv5a7bpz E4v08Z0i                  | 15-513-472-2380 | quests along the quickly ironic deposits are carefully about the ironic package
+   3138.29 | Supplier#000002592        | ETHIOPIA                  | 2  ZDHmKO7y9Io 57xTjfk6                | 15-482-126-8688 | ffily final theodolites. pendi
+   3117.73 | Supplier#000000723        | ETHIOPIA                  | ZFI9Pb HTy,8e,mY0mqP6ThbN              | 15-714-811-1747 | ests around the deposits cajole enticingly among the slyly express deposits. quick
+   3025.60 | Supplier#000002732        | ETHIOPIA                  | IAizS6WFBkDb3iSwzx1ASIJiO9EaF          | 15-270-948-2546 | blithely ironic patterns wake. slowly express accounts haggle slyly special acc
+   2975.60 | Supplier#000002153        | ETHIOPIA                  | fvGJKuSkubeTJU8wOG5M                   | 15-747-316-6887 | ests. special pinto beans unwind furiously above the regular accounts? even, even ideas are bl
+   2709.83 | Supplier#000002979        | ETHIOPIA                  | l YrwL2c5fBzytrU1                      | 15-910-777-6663 | its. regular, silent instructions boost carefully special pinto beans. carefully fi
+   2656.11 | Supplier#000002150        | ETHIOPIA                  | 4BB8gg2kf3OSmmFn2kglleRYJ              | 15-313-570-1950 |  haggle slyly. blithely regular ideas sleep quickly perma
+   2475.73 | Supplier#000002404        | ETHIOPIA                  | g4LXlcHDN4z6DrdiBb0iCyLA               | 15-366-436-2694 |  blithely regular requests integrate quickly
+   2468.90 | Supplier#000002182        | ETHIOPIA                  | nF,UVhLaYj0B7j bhbKoaf9T               | 15-415-986-8042 | ven foxes sleep according to the regular requests. ideas cajole furiously alo
+   2441.49 | Supplier#000001531        | ETHIOPIA                  | SRV0tsqpwsgBHM,0LJRj9NWJ9SBDl4PSL      | 15-945-324-4201 | detect quickly alongside of
+   2278.04 | Supplier#000002346        | ETHIOPIA                  | tzwxlyYXGiMe1mk099ty6vn                | 15-308-126-9449 | e. slyly permanent hockey players along the ironic, regular deposits solve asymptotes:
+   2272.18 | Supplier#000001935        | ETHIOPIA                  | lxfvnpWQ dvSWd6mSA Q1tDjspDq CP7y      | 15-134-339-9047 | kly even pains sleep against the regularly express pinto beans. fur
+   2124.86 | Supplier#000000487        | ETHIOPIA                  | BvDBcJa,jQPslM                         | 15-551-730-1265 | ly about the requests. accounts could use blithely? furiously pending accounts nag regular, even ide
+   2108.30 | Supplier#000000447        | ETHIOPIA                  | UHeJiRfImFw1r4MTrBk0vcwUx9             | 15-104-804-3139 | deas thrash blithely. unusual packages in
+   2094.94 | Supplier#000000751        | ETHIOPIA                  | 20kEocUg39iam9T EzquK P7grgp,QD        | 15-773-726-6594 | carefully special instructions cajole slow re
+   2090.98 | Supplier#000002384        | ETHIOPIA                  | LvwNYrJKOqS 4VajSC7ot9CQU2izWIa        | 15-204-993-2671 | the slyly final deposits-- pending deposits above the slyly pending packages
+   2002.17 | Supplier#000000637        | ETHIOPIA                  | V6AMGzXQ7Eqs                           | 15-832-253-5581 | rses haggle blithely about the carefully silent deposits. slyly pending packages th
+   1944.08 | Supplier#000002217        | ETHIOPIA                  | OKKxE,bL1tm2olSlad                     | 15-801-159-5004 | t across the carefully regular pinto beans. carefully ironic requests sleep. ironic cou
+   1448.94 | Supplier#000000464        | ETHIOPIA                  | XwZyuXCVeO5wb5izvhfeX                  | 15-653-204-7643 | ly. ideas are slyly after the ironic, regular accounts. platelets among t
+   1357.16 | Supplier#000002822        | ETHIOPIA                  | ,aZy8lMNPn5HP0                         | 15-438-209-6013 |  pending packages haggle after the regular, bold packages. regular, even accounts wake
+   1353.00 | Supplier#000002595        | ETHIOPIA                  | k5XWWSZmvUScjcqYMk6k7L                 | 15-858-185-9462 | arefully even deposits are quickly above the blithely regular deposits. regular, 
+   1311.15 | Supplier#000000372        | ETHIOPIA                  | Bdhu5NV4VfPYBxsCmK,YnkoHIaW            | 15-246-325-3001 | ltipliers. blithely regular deposits was above the furiously even accounts. q
+   1191.31 | Supplier#000002233        | ETHIOPIA                  | pyKMeYFHVDx61EeR                       | 15-509-673-3425 | pending packages are carefully silent accounts. special ideas print. silently iron
+   1159.28 | Supplier#000002023        | ETHIOPIA                  | qofT29jef,Wu4PR75k5 0T8sKKyCu6         | 15-826-899-7652 | -- slyly silent foxes cajole quickly. doggedly even depths cajole sometimes. final, ir
+   1062.49 | Supplier#000001538        | ETHIOPIA                  | pB38h5flEq7qC7sFqTYjhMuFvJxoRc6eY      | 15-344-384-1691 | hely sly ideas according to th
+   1044.10 | Supplier#000000078        | ETHIOPIA                  | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+   1018.79 | Supplier#000001550        | ETHIOPIA                  | WbdqrA NXZqJz4e74                      | 15-207-965-2975 | after the even platelets. final ideas wake about the care
+    914.43 | Supplier#000002858        | ETHIOPIA                  | O kR3oe7lJ5pdsFx0N0mZ3 cCVrdikn,n6     | 15-284-893-1446 | ully regular excuses cajole slyly regular packages. even theodolites affix furiously packages. b
+    711.47 | Supplier#000002147        | ETHIOPIA                  | ZuMql8hTTEer                           | 15-600-322-9441 | deposits. requests are furiously unusual pinto beans. ironic gifts sleep blithely final 
+(100 rows)
+

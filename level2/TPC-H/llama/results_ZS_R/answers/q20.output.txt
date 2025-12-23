@@ -1,0 +1,3 @@
+psql:llama/results_ZS_R/q20.sql:32: ERROR:  missing FROM-clause entry for table "ps"
+LINE 27: SELECT s.s_name, p.p_name, ps.ps_availqty, ps.ps_supplycost 
+                                    ^

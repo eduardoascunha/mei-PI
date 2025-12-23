@@ -1,0 +1,135 @@
+================================================================================
+TEXT-TO-SQL EVALUATION REPORT
+================================================================================
+
+Total queries: 21
+Correct (PASS): 11 (52.38%)
+  - Exact match: 11
+  - With extra columns: 0
+Incorrect (FAIL): 10
+Not found (MISSING): 0
+
+================================================================================
+DETAILS PER QUERY
+================================================================================
+
+Query: q1.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q2.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q3.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q4.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q5.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q6.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q7.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q8.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (2, 2) vs (3, 1)
+    Rows only in original (2): [(0.038668, 1996.0), (0.052353, 1995.0)]
+    Rows only in LLM (3): [('^',), ('line 21:    and o_custkey = c_custkey',), ('hint:  perhaps you meant to reference the column "orders.o_custkey".',)]
+--------------------------------------------------------------------------------
+
+Query: q9.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (175, 3) vs (2, 1)
+    Rows only in original (175): [(1998.0, 8084118.2638, 'india'), (14461699.617, 1995.0, 'argentina'), (11706056.3075, 1992.0, 'morocco')]
+    Rows only in LLM (2): [('^',), ('line 3:   n_name,',)]
+--------------------------------------------------------------------------------
+
+Query: q10.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (20, 8) vs (20, 7)
+    Rows only in original (20): [(18988.0, 477500.2538, 484.23, '20-213-232-3626', 'carefully. ironic, unusual deposits cajole furiously. accounts nag blithely above the care', 'customer#000018988', 'hsrtghxb5hztaspef1u2tow7riq', 'iran'), (1017.31, 23902.0, 505502.941, '30-691-568-6088', '4dbiz6q28jhi2v', 'customer#000023902', 'final requests. carefully regular platelets boost quickly about the ironic theodolites. bold accounts are', 'saudi arabia'), (35386.0, 4151.85, 464162.6788, '22-580-709-9154', '7ktkbbyq,rhmni7b5wamlrhbiylqlzl0ulrjx', 'atelets. slyly pending theodolites sleep blithely bold gifts. slowly final packages alongside of the careful', 'customer#000035386', 'japan')]
+    Rows only in LLM (20): [(1666.61, 479863.6886, '33-884-373-9171', 'customer#000041356', 'quickly against the ironic requests. never unusual excuses', 'united kingdom', 'ypsqh1nnv46brzevcq4sagrednegm7w24mj'), (477500.2538, 484.23, '20-213-232-3626', 'carefully. ironic, unusual deposits cajole furiously. accounts nag blithely above the care', 'customer#000018988', 'hsrtghxb5hztaspef1u2tow7riq', 'iran'), (569717.6682, 93.27, '24-584-374-9329', 'customer#000003692', 'ending requests poach furiously after the blithely quick foxes. f', 'kenya', 'tbh,q9q8cwc2u,yxu')]
+--------------------------------------------------------------------------------
+
+Query: q11.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q12.output.txt
+Status: FAIL
+Details:
+    Rows only in original (2): [(1858.0, 2856.0, 'fob'), (1880.0, 2826.0, 'mail')]
+    Rows only in LLM (2): [(1898.0, 2831.0, 'mail'), (1832.0, 2859.0, 'fob')]
+--------------------------------------------------------------------------------
+
+Query: q13.output.txt
+Status: FAIL
+Details:
+    One of the DataFrames is None
+--------------------------------------------------------------------------------
+
+Query: q14.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q15.output.txt
+Status: FAIL
+Details:
+    LLM has 1 extra column(s) AND data mismatch
+    Different dimensions: (1, 5) vs (1, 6)
+    Rows only in original (1): [(1482109.8042, 2516.0, '14-642-300-7682', '4m wg67rdqpzzcajcxepnqhdbong6e60b gky', 'supplier#000002516')]
+    Rows only in LLM (1): [(2522.0, 9997.04, '26-228-116-5164', 'ans are blithely alongside of the waters. express pinto beans above the theodolites affix blit', 'n7zcn1iwbfuwrx49i6e', 'supplier#000002522')]
+--------------------------------------------------------------------------------
+
+Query: q16.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (7653, 4) vs (24, 4)
+    Rows only in original (7653): [(43.0, 8.0, 'brand#25', 'promo brushed brass'), (41.0, 8.0, 'brand#31', 'standard plated steel'), (38.0, 4.0, 'brand#14', 'standard polished steel')]
+    Rows only in LLM (24): [(1.0, 23.0, 'brand#25', 'economy burnished steel'), (1.0, 43.0, 'brand#13', 'standard burnished steel'), (1.0, 34.0, 'brand#14', 'standard brushed copper')]
+--------------------------------------------------------------------------------
+
+Query: q17.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(98562.575714,)]
+    Rows only in LLM (1): [(4315.329444,)]
+--------------------------------------------------------------------------------
+
+Query: q18.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q19.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(1042188.9074,)]
+    Rows only in LLM (1): [(3231353.0731,)]
+--------------------------------------------------------------------------------
+
+Query: q21.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q22.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (7, 3) vs (1, 2)
+    Rows only in original (7): [(2079950.63, 279.0, 33.0), (1965469.24, 269.0, 31.0), (2093651.25, 280.0, 30.0)]
+    Rows only in LLM (1): [(42454469.46, 5664.0)]
+--------------------------------------------------------------------------------
+

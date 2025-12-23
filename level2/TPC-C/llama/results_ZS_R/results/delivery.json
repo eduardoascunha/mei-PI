@@ -1,0 +1,51 @@
+{
+  "transaction_type": "delivery",
+  "num_executions": 3,
+  "executions": [
+    {
+      "execution_number": 1,
+      "input_params": {
+        "in_w_id": 6,
+        "in_o_carrier_id": 3,
+        "in_ol_delivery_d": "2025-11-21T16:47:43.923999"
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "invalid transaction termination\nCONTEXT:  PL/pgSQL function delivery_transaction(integer,integer,timestamp without time zone) line 52 at ROLLBACK\n"
+      }
+    },
+    {
+      "execution_number": 2,
+      "input_params": {
+        "in_w_id": 3,
+        "in_o_carrier_id": 3,
+        "in_ol_delivery_d": "2025-11-21T16:47:43.924019"
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "invalid transaction termination\nCONTEXT:  PL/pgSQL function delivery_transaction(integer,integer,timestamp without time zone) line 52 at ROLLBACK\n"
+      }
+    },
+    {
+      "execution_number": 3,
+      "input_params": {
+        "in_w_id": 4,
+        "in_o_carrier_id": 10,
+        "in_ol_delivery_d": "2025-11-21T16:47:43.924024"
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "invalid transaction termination\nCONTEXT:  PL/pgSQL function delivery_transaction(integer,integer,timestamp without time zone) line 52 at ROLLBACK\n"
+      }
+    }
+  ]
+}

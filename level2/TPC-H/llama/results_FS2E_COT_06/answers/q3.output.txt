@@ -1,0 +1,3 @@
+psql:llama/results_FS2E_COT_06/q3.sql:17: ERROR:  column "c_mktsegment" does not exist
+LINE 11:  and c_mktsegment = 'FURNITURE'
+              ^

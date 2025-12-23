@@ -1,0 +1,5 @@
+ s_suppkey |          s_name           |      s_address      |     s_phone     | s_acctbal |                                           s_comment                                            
+-----------+---------------------------+---------------------+-----------------+-----------+------------------------------------------------------------------------------------------------
+      2522 | Supplier#000002522        | n7Zcn1iWbfuwRX49I6e | 26-228-116-5164 |   9997.04 | ans are blithely alongside of the waters. express pinto beans above the theodolites affix blit
+(1 row)
+

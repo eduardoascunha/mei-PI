@@ -1,0 +1,4675 @@
+{
+  "transaction_type": "delivery",
+  "num_executions": 8,
+  "executions": [
+    {
+      "execution_number": 1,
+      "input_params": {
+        "in_w_id": 6,
+        "in_o_carrier_id": 1,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.988837"
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "delivery_transaction": [
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101
+          ]
+        },
+        "db_state": {
+          "delivered_orders": [
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 3,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.468000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 1
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 5,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 2
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 6,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 3
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 666,
+              "o_carrier_id": 4,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 4
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 852,
+              "o_carrier_id": 2,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.481000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.481000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.481000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.481000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.481000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 5
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 983,
+              "o_carrier_id": 1,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 6
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1632,
+              "o_carrier_id": 1,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.488000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.488000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.488000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.488000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.488000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.488000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 7
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1323,
+              "o_carrier_id": 7,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 8
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2887,
+              "o_carrier_id": 3,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 9
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 942,
+              "o_carrier_id": 2,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 10
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_oorder",
+            "bmsql_order_line",
+            "bmsql_customer"
+          ],
+          "actual_modified": [
+            "bmsql_order_line",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_customer"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 2,
+      "input_params": {
+        "in_w_id": 10,
+        "in_o_carrier_id": 5,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.988864"
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "delivery_transaction": [
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101
+          ]
+        },
+        "db_state": {
+          "delivered_orders": [
+            {
+              "o_id": 1,
+              "o_c_id": 220,
+              "o_carrier_id": 6,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.626000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.626000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.626000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.626000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.626000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.626000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.626000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.626000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.626000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.626000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.626000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 1
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 144,
+              "o_carrier_id": 7,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.629000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.629000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.629000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.629000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.629000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.629000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.629000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 2
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 5,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.632000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.632000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.632000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.632000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.632000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.632000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.632000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.632000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.632000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.632000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 3
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2974,
+              "o_carrier_id": 7,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.634000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.634000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.634000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.634000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.634000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.634000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.634000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 4
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 161,
+              "o_carrier_id": 3,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.645000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 5
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 9,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.649000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.649000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.649000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.649000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.649000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.649000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.649000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 6
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 414,
+              "o_carrier_id": 10,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.652000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.652000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.652000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.652000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.652000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.652000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.652000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.652000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 7
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2941,
+              "o_carrier_id": 7,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.654000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.654000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.654000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.654000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.654000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.654000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.654000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.654000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 8
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 695,
+              "o_carrier_id": 10,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.662000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.662000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.662000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.662000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.662000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.662000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.662000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 9
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1904,
+              "o_carrier_id": 3,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.668000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 10
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_oorder",
+            "bmsql_order_line",
+            "bmsql_customer"
+          ],
+          "actual_modified": [
+            "bmsql_order_line",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_customer"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 3,
+      "input_params": {
+        "in_w_id": 7,
+        "in_o_carrier_id": 7,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.988867"
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "delivery_transaction": [
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101
+          ]
+        },
+        "db_state": {
+          "delivered_orders": [
+            {
+              "o_id": 1,
+              "o_c_id": 1660,
+              "o_carrier_id": 3,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.502000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 1
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2285,
+              "o_carrier_id": 6,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.506000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.506000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.506000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.506000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.506000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.506000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.506000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.506000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.506000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.506000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.506000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.506000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.506000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 2
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2029,
+              "o_carrier_id": 3,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.509000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.509000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.509000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.509000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.509000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.509000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.509000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.509000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.509000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.509000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.509000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 3
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1602,
+              "o_carrier_id": 5,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.511000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.511000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.511000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.511000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.511000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.511000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.511000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.511000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 4
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2764,
+              "o_carrier_id": 7,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.512000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.512000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.512000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.512000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.512000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.512000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.512000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.512000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.512000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.512000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 5
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 281,
+              "o_carrier_id": 1,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.522000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.522000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.522000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.522000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.522000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.522000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.522000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.522000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.522000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 6
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 4,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.524000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.524000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.524000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.524000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.524000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 7
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2628,
+              "o_carrier_id": 8,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.525000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.525000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.525000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.525000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.525000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.525000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.525000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.525000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.525000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.525000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 8
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 5,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.526000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.526000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.526000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.526000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.526000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.526000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.526000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.526000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.526000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 9
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2306,
+              "o_carrier_id": 9,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.528000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.528000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.528000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.528000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.528000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.528000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.528000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.528000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.528000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 10
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_oorder",
+            "bmsql_order_line",
+            "bmsql_customer"
+          ],
+          "actual_modified": [
+            "bmsql_order_line",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_customer"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 4,
+      "input_params": {
+        "in_w_id": 6,
+        "in_o_carrier_id": 3,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.988869"
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "delivery_transaction": [
+            2102,
+            2102,
+            2102,
+            2102,
+            2102,
+            2102,
+            2102,
+            2102,
+            2102,
+            2102
+          ]
+        },
+        "db_state": {
+          "delivered_orders": [
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 3,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.468000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.469000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 1
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 5,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.470000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 2
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 6,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.474000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 3
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 666,
+              "o_carrier_id": 4,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.478000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 4
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 852,
+              "o_carrier_id": 2,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.481000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.481000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.481000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.481000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.481000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 5
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 983,
+              "o_carrier_id": 1,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.483000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 6
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1632,
+              "o_carrier_id": 1,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.488000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.488000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.488000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.488000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.488000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.488000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 7
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1323,
+              "o_carrier_id": 7,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.493000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 8
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2887,
+              "o_carrier_id": 3,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.495000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 9
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 942,
+              "o_carrier_id": 2,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.498000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 10
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_oorder",
+            "bmsql_order_line",
+            "bmsql_customer"
+          ],
+          "actual_modified": [
+            "bmsql_order_line",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_customer"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 5,
+      "input_params": {
+        "in_w_id": 3,
+        "in_o_carrier_id": 1,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.988881"
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "delivery_transaction": [
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101,
+            2101
+          ]
+        },
+        "db_state": {
+          "delivered_orders": [
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 4,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 1
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2798,
+              "o_carrier_id": 2,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 2
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1412,
+              "o_carrier_id": 10,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 15,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 3
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2408,
+              "o_carrier_id": 4,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 4
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2407,
+              "o_carrier_id": 3,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 5
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1024,
+              "o_carrier_id": 9,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 6
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2985,
+              "o_carrier_id": 4,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 7
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 845,
+              "o_carrier_id": 7,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 8
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 9,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 9
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 602,
+              "o_carrier_id": 10,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 10
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_oorder",
+            "bmsql_order_line",
+            "bmsql_customer"
+          ],
+          "actual_modified": [
+            "bmsql_order_line",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_customer"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 6,
+      "input_params": {
+        "in_w_id": 3,
+        "in_o_carrier_id": 10,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.988882"
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "delivery_transaction": [
+            2102,
+            2102,
+            2102,
+            2102,
+            2102,
+            2102,
+            2102,
+            2102,
+            2102,
+            2102
+          ]
+        },
+        "db_state": {
+          "delivered_orders": [
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 4,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 1
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2798,
+              "o_carrier_id": 2,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 2
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1412,
+              "o_carrier_id": 10,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 15,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 3
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2408,
+              "o_carrier_id": 4,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 4
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2407,
+              "o_carrier_id": 3,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 5
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1024,
+              "o_carrier_id": 9,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 6
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2985,
+              "o_carrier_id": 4,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 7
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 845,
+              "o_carrier_id": 7,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 8
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 9,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 9
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 602,
+              "o_carrier_id": 10,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 10
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_oorder",
+            "bmsql_order_line",
+            "bmsql_customer"
+          ],
+          "actual_modified": [
+            "bmsql_order_line",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_customer"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 7,
+      "input_params": {
+        "in_w_id": 3,
+        "in_o_carrier_id": 5,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.989432"
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "delivery_transaction": [
+            2103,
+            2103,
+            2103,
+            2103,
+            2103,
+            2103,
+            2103,
+            2103,
+            2103,
+            2103
+          ]
+        },
+        "db_state": {
+          "delivered_orders": [
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 4,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.348000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 1
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2798,
+              "o_carrier_id": 2,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.355000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 2
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1412,
+              "o_carrier_id": 10,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 15,
+                  "ol_delivery_d": "2025-11-27 18:03:49.358000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 3
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2408,
+              "o_carrier_id": 4,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.360000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 4
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2407,
+              "o_carrier_id": 3,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.367000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 5
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1024,
+              "o_carrier_id": 9,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 10,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 11,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 12,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 13,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 14,
+                  "ol_delivery_d": "2025-11-27 18:03:49.369000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 6
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 2985,
+              "o_carrier_id": 4,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.378000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 7
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 845,
+              "o_carrier_id": 7,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 8,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 9,
+                  "ol_delivery_d": "2025-11-27 18:03:49.383000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 8
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 1,
+              "o_carrier_id": 9,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.386000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 9
+            },
+            {
+              "o_id": 1,
+              "o_c_id": 602,
+              "o_carrier_id": 10,
+              "still_new": 0,
+              "order_lines": [
+                {
+                  "ol_number": 1,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 2,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 3,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 4,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 5,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 6,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                },
+                {
+                  "ol_number": 7,
+                  "ol_delivery_d": "2025-11-27 18:03:49.388000",
+                  "ol_amount": "0.00"
+                }
+              ],
+              "customer": {
+                "c_balance": "-10.00",
+                "c_delivery_cnt": 1
+              },
+              "district_id": 10
+            }
+          ]
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_oorder",
+            "bmsql_order_line",
+            "bmsql_customer"
+          ],
+          "actual_modified": [
+            "bmsql_order_line",
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_customer"
+          ],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 8,
+      "input_params": {
+        "in_w_id": 999999,
+        "in_o_carrier_id": 5,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.989438"
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "delivery_transaction": []
+        },
+        "db_state": {
+          "delivered_orders": []
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_new_order",
+            "bmsql_oorder",
+            "bmsql_order_line",
+            "bmsql_customer"
+          ],
+          "actual_modified": [],
+          "unexpected_modifications": [],
+          "missing_modifications": [
+            "bmsql_new_order",
+            "bmsql_oorder",
+            "bmsql_order_line",
+            "bmsql_customer"
+          ],
+          "is_valid": false
+        },
+        "error": null
+      }
+    }
+  ]
+}

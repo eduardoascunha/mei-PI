@@ -1,0 +1,4 @@
+psql:llama/results_FS2E_04/q7.sql:31: ERROR:  column n1.nationkey does not exist
+LINE 17:  and s_nationkey = n1.nationkey
+                            ^
+HINT:  Perhaps you meant to reference the column "n1.n_nationkey".

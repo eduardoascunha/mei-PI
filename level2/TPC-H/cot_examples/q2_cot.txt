@@ -1,0 +1,69 @@
+QUESTION:
+This query finds which supplier should be selected to place an order for a given part in a given region.
+The Minimum Cost Supplier Query finds, in a given region, for each part of a certain type and size, the supplier who can  supply  it  at  minimum  cost.  If  several  suppliers  in  that  region  offer  the  desired  part  type  and  size  at  the  same (minimum)  cost,  the  query  lists  the  parts  from  suppliers  with  the  100  highest  account  balances.  For  each  supplier, the  query  lists  the  supplier's  account  balance,  name  and  nation;  the  part's  number  and  manufacturer;  the  supplier's address, phone number and comment information.
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text:
+1. SIZE is randomly selected within [1. 50]; In this case assume SIZE 2
+2. TYPE is randomly selected within the list Syllable 3 defined for Types in Clause 4.2.2.13; In this case assume type '%TIN'
+3. REGION is randomly selected within the list of values defined for R_NAME in 4.2.3. In this case assume REGION 'ASIA'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "cost supplier query finds", columns [partsupp.ps_supplycost] may be used.
+According to "nation the", columns [nation.n_name, nation.n_nationkey] may be used.
+According to "part in", columns [part.p_partkey, partsupp.ps_partkey] may be used.
+According to "part s number", columns [part.p_mfgr, partsupp.ps_suppkey] may be used.
+According to "part type", columns [part.p_type] may be used.
+According to "part type and size", columns [part.p_size] may be used.
+According to "region for", columns [nation.n_regionkey, region.r_name] may be used.
+According to "region the", columns [region.r_regionkey] may be used.
+According to "supplier s", columns [supplier.s_acctbal, supplier.s_comment, supplier.s_name, supplier.s_nationkey, supplier.s_suppkey] may be used.
+According to "supplier s address", columns [supplier.s_address] may be used.
+According to "supplier s address phone", columns [supplier.s_phone] may be used.
+Values [%TIN, 2, ASIA] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	s_acctbal,
+	s_name,
+	n_name,
+	p_partkey,
+	p_mfgr,
+	s_address,
+	s_phone,
+	s_comment
+from
+	part,
+	supplier,
+	partsupp,
+	nation,
+	region
+where
+	p_partkey = ps_partkey
+	and s_suppkey = ps_suppkey
+	and p_size = 2
+	and p_type like '%TIN'
+	and s_nationkey = n_nationkey
+	and n_regionkey = r_regionkey
+	and r_name = 'ASIA'
+	and ps_supplycost = (
+		select
+			min(ps_supplycost)
+		from
+			partsupp,
+			supplier,
+			nation,
+			region
+		where
+			p_partkey = ps_partkey
+			and s_suppkey = ps_suppkey
+			and s_nationkey = n_nationkey
+			and n_regionkey = r_regionkey
+			and r_name = 'ASIA'
+	)
+order by
+	s_acctbal desc,
+	n_name,
+	s_name,
+	p_partkey
+limit 100;

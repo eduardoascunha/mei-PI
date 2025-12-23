@@ -1,0 +1,5 @@
+This query identifies certain suppliers who were not able to ship required parts in a timely manner.
+The Suppliers Who Kept Orders Waiting query identifies suppliers, for a given nation, whose product was part of a multi-supplier order (with current status of 'F') where they were the only supplier who failed to meet the committed delivery date.
+Return the first 100 selected rows
+Substitution Parameters: 
+1. NATION is randomly selected within the list of values defined for N_NAME in Clause 4.2.3. In this case assume NATION 'ETHIOPIA'

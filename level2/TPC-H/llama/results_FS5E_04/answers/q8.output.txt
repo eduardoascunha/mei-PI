@@ -1,0 +1,3 @@
+psql:llama/results_FS5E_04/q8.sql:41: ERROR:  missing FROM-clause entry for table "l"
+LINE 7:       l.orderkey, 
+              ^

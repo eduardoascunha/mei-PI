@@ -1,0 +1,104 @@
+          s_name           |               s_address                |     s_phone     | s_acctbal |                                              s_comment                                              
+---------------------------+----------------------------------------+-----------------+-----------+-----------------------------------------------------------------------------------------------------
+ Supplier#000000002        | 89eJ5ksX3ImxJQBvxObC,                  | 15-679-861-2259 |   4032.68 |  slyly bold instructions. idle dependen
+ Supplier#000000002        | 89eJ5ksX3ImxJQBvxObC,                  | 15-679-861-2259 |   4032.68 |  slyly bold instructions. idle dependen
+ Supplier#000000002        | 89eJ5ksX3ImxJQBvxObC,                  | 15-679-861-2259 |   4032.68 |  slyly bold instructions. idle dependen
+ Supplier#000000002        | 89eJ5ksX3ImxJQBvxObC,                  | 15-679-861-2259 |   4032.68 |  slyly bold instructions. idle dependen
+ Supplier#000000002        | 89eJ5ksX3ImxJQBvxObC,                  | 15-679-861-2259 |   4032.68 |  slyly bold instructions. idle dependen
+ Supplier#000000002        | 89eJ5ksX3ImxJQBvxObC,                  | 15-679-861-2259 |   4032.68 |  slyly bold instructions. idle dependen
+ Supplier#000000002        | 89eJ5ksX3ImxJQBvxObC,                  | 15-679-861-2259 |   4032.68 |  slyly bold instructions. idle dependen
+ Supplier#000000063        | NlV0OQyIoPvPkw5AYuWGomX,hgqm1          | 15-781-401-3047 |   5742.03 | ar deposits. blithely bold accounts against the slyly final pinto beans sleep about the exp
+ Supplier#000000063        | NlV0OQyIoPvPkw5AYuWGomX,hgqm1          | 15-781-401-3047 |   5742.03 | ar deposits. blithely bold accounts against the slyly final pinto beans sleep about the exp
+ Supplier#000000063        | NlV0OQyIoPvPkw5AYuWGomX,hgqm1          | 15-781-401-3047 |   5742.03 | ar deposits. blithely bold accounts against the slyly final pinto beans sleep about the exp
+ Supplier#000000063        | NlV0OQyIoPvPkw5AYuWGomX,hgqm1          | 15-781-401-3047 |   5742.03 | ar deposits. blithely bold accounts against the slyly final pinto beans sleep about the exp
+ Supplier#000000063        | NlV0OQyIoPvPkw5AYuWGomX,hgqm1          | 15-781-401-3047 |   5742.03 | ar deposits. blithely bold accounts against the slyly final pinto beans sleep about the exp
+ Supplier#000000063        | NlV0OQyIoPvPkw5AYuWGomX,hgqm1          | 15-781-401-3047 |   5742.03 | ar deposits. blithely bold accounts against the slyly final pinto beans sleep about the exp
+ Supplier#000000063        | NlV0OQyIoPvPkw5AYuWGomX,hgqm1          | 15-781-401-3047 |   5742.03 | ar deposits. blithely bold accounts against the slyly final pinto beans sleep about the exp
+ Supplier#000000063        | NlV0OQyIoPvPkw5AYuWGomX,hgqm1          | 15-781-401-3047 |   5742.03 | ar deposits. blithely bold accounts against the slyly final pinto beans sleep about the exp
+ Supplier#000000063        | NlV0OQyIoPvPkw5AYuWGomX,hgqm1          | 15-781-401-3047 |   5742.03 | ar deposits. blithely bold accounts against the slyly final pinto beans sleep about the exp
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+ Supplier#000000132        | sU92Jd3aQSbV                           | 15-776-909-1326 |   -812.17 | al, final accounts cajole requests; fluffily pending instruction
+ Supplier#000000132        | sU92Jd3aQSbV                           | 15-776-909-1326 |   -812.17 | al, final accounts cajole requests; fluffily pending instruction
+ Supplier#000000132        | sU92Jd3aQSbV                           | 15-776-909-1326 |   -812.17 | al, final accounts cajole requests; fluffily pending instruction
+ Supplier#000000132        | sU92Jd3aQSbV                           | 15-776-909-1326 |   -812.17 | al, final accounts cajole requests; fluffily pending instruction
+ Supplier#000000132        | sU92Jd3aQSbV                           | 15-776-909-1326 |   -812.17 | al, final accounts cajole requests; fluffily pending instruction
+ Supplier#000000132        | sU92Jd3aQSbV                           | 15-776-909-1326 |   -812.17 | al, final accounts cajole requests; fluffily pending instruction
+ Supplier#000000132        | sU92Jd3aQSbV                           | 15-776-909-1326 |   -812.17 | al, final accounts cajole requests; fluffily pending instruction
+ Supplier#000000132        | sU92Jd3aQSbV                           | 15-776-909-1326 |   -812.17 | al, final accounts cajole requests; fluffily pending instruction
+ Supplier#000000132        | sU92Jd3aQSbV                           | 15-776-909-1326 |   -812.17 | al, final accounts cajole requests; fluffily pending instruction
+ Supplier#000000132        | sU92Jd3aQSbV                           | 15-776-909-1326 |   -812.17 | al, final accounts cajole requests; fluffily pending instruction
+ Supplier#000000132        | sU92Jd3aQSbV                           | 15-776-909-1326 |   -812.17 | al, final accounts cajole requests; fluffily pending instruction
+ Supplier#000000132        | sU92Jd3aQSbV                           | 15-776-909-1326 |   -812.17 | al, final accounts cajole requests; fluffily pending instruction
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA   | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+ Supplier#000000156        | ,KXbCcjqZNjmyHzeqaL4                   | 15-106-692-4998 |   9780.74 | sits cajole carefully instead of the final, ironic requests. furiously ironic deposits abo
+ Supplier#000000156        | ,KXbCcjqZNjmyHzeqaL4                   | 15-106-692-4998 |   9780.74 | sits cajole carefully instead of the final, ironic requests. furiously ironic deposits abo
+ Supplier#000000156        | ,KXbCcjqZNjmyHzeqaL4                   | 15-106-692-4998 |   9780.74 | sits cajole carefully instead of the final, ironic requests. furiously ironic deposits abo
+ Supplier#000000156        | ,KXbCcjqZNjmyHzeqaL4                   | 15-106-692-4998 |   9780.74 | sits cajole carefully instead of the final, ironic requests. furiously ironic deposits abo
+ Supplier#000000156        | ,KXbCcjqZNjmyHzeqaL4                   | 15-106-692-4998 |   9780.74 | sits cajole carefully instead of the final, ironic requests. furiously ironic deposits abo
+ Supplier#000000156        | ,KXbCcjqZNjmyHzeqaL4                   | 15-106-692-4998 |   9780.74 | sits cajole carefully instead of the final, ironic requests. furiously ironic deposits abo
+ Supplier#000000156        | ,KXbCcjqZNjmyHzeqaL4                   | 15-106-692-4998 |   9780.74 | sits cajole carefully instead of the final, ironic requests. furiously ironic deposits abo
+ Supplier#000000156        | ,KXbCcjqZNjmyHzeqaL4                   | 15-106-692-4998 |   9780.74 | sits cajole carefully instead of the final, ironic requests. furiously ironic deposits abo
+ Supplier#000000156        | ,KXbCcjqZNjmyHzeqaL4                   | 15-106-692-4998 |   9780.74 | sits cajole carefully instead of the final, ironic requests. furiously ironic deposits abo
+ Supplier#000000156        | ,KXbCcjqZNjmyHzeqaL4                   | 15-106-692-4998 |   9780.74 | sits cajole carefully instead of the final, ironic requests. furiously ironic deposits abo
+ Supplier#000000156        | ,KXbCcjqZNjmyHzeqaL4                   | 15-106-692-4998 |   9780.74 | sits cajole carefully instead of the final, ironic requests. furiously ironic deposits abo
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                    | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+ Supplier#000000224        | iD7eF,uwQxxPCAFTmdXYV7N                | 15-446-447-2944 |   9036.79 | atelets. regular, ironic gifts eat furiously across the permanently silent instructions. reg
+ Supplier#000000224        | iD7eF,uwQxxPCAFTmdXYV7N                | 15-446-447-2944 |   9036.79 | atelets. regular, ironic gifts eat furiously across the permanently silent instructions. reg
+ Supplier#000000224        | iD7eF,uwQxxPCAFTmdXYV7N                | 15-446-447-2944 |   9036.79 | atelets. regular, ironic gifts eat furiously across the permanently silent instructions. reg
+ Supplier#000000224        | iD7eF,uwQxxPCAFTmdXYV7N                | 15-446-447-2944 |   9036.79 | atelets. regular, ironic gifts eat furiously across the permanently silent instructions. reg
+ Supplier#000000224        | iD7eF,uwQxxPCAFTmdXYV7N                | 15-446-447-2944 |   9036.79 | atelets. regular, ironic gifts eat furiously across the permanently silent instructions. reg
+ Supplier#000000224        | iD7eF,uwQxxPCAFTmdXYV7N                | 15-446-447-2944 |   9036.79 | atelets. regular, ironic gifts eat furiously across the permanently silent instructions. reg
+ Supplier#000000224        | iD7eF,uwQxxPCAFTmdXYV7N                | 15-446-447-2944 |   9036.79 | atelets. regular, ironic gifts eat furiously across the permanently silent instructions. reg
+ Supplier#000000224        | iD7eF,uwQxxPCAFTmdXYV7N                | 15-446-447-2944 |   9036.79 | atelets. regular, ironic gifts eat furiously across the permanently silent instructions. reg
+ Supplier#000000231        | uZfFnyAs9oFJ0No97rtQ OIV1AOYi          | 15-551-432-9958 |   9287.33 | mptotes sleep above the regular dep
+ Supplier#000000231        | uZfFnyAs9oFJ0No97rtQ OIV1AOYi          | 15-551-432-9958 |   9287.33 | mptotes sleep above the regular dep
+ Supplier#000000231        | uZfFnyAs9oFJ0No97rtQ OIV1AOYi          | 15-551-432-9958 |   9287.33 | mptotes sleep above the regular dep
+(100 rows)
+

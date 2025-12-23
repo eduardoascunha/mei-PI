@@ -1,0 +1,387 @@
+
+You are a SQL expert.
+The examples below show reasoning patterns and SQL queries.
+Follow the same step-by-step thinking approach for the new question.
+Return ONLY the SQL code without markdown formatting or explanations.
+
+
+DATABASE SCHEMA:
+Table customer(
+  c_custkey integer,
+  c_name character varying,
+  c_address character varying,
+  c_nationkey integer,
+  c_phone character,
+  c_acctbal numeric,
+  c_mktsegment character,  -- Possible values: 'AUTOMOBILE', 'BUILDING', 'FURNITURE', 'MACHINERY', 'HOUSEHOLD'
+  c_comment character varying
+)
+
+Table lineitem(
+  l_orderkey integer,
+  l_partkey integer,
+  l_suppkey integer,
+  l_linenumber integer,
+  l_quantity numeric,
+  l_extendedprice numeric,
+  l_discount numeric,
+  l_tax numeric,
+  l_returnflag character,  -- Possible values: 'R' (Return), 'A' (Accept), 'N' (No return)
+  l_linestatus character,  -- Possible values: 'O' (Open), 'F' (Filled)
+  l_shipdate date,
+  l_commitdate date,
+  l_receiptdate date,
+  l_shipinstruct character,  -- Possible values: 'DELIVER IN PERSON', 'COLLECT COD', 'NONE', 'TAKE BACK RETURN'
+  l_shipmode character,  -- Possible values: 'AIR REG', 'AIR', 'RAIL', 'SHIP', 'TRUCK', 'MAIL', 'FOB'
+  l_comment character varying
+)
+
+Table nation(
+  n_nationkey integer,
+  n_name character,   -- examples: 'ALGERIA', 'BRAZIL', 'CANADA', 'JAPAN', etc.
+  n_regionkey integer,
+  n_comment character varying
+)
+
+Table orders(
+  o_orderkey integer,
+  o_custkey integer,
+  o_orderstatus character,  -- Possible values: 'O' (Open), 'F' (Filled), 'P' (Partial)
+  o_totalprice numeric,
+  o_orderdate date,
+  o_orderpriority character,  -- Possible values: '1-URGENT', '2-HIGH', '3-MEDIUM', '4-NOT SPECIFIED', '5-LOW'
+  o_clerk character,
+  o_shippriority integer,
+  o_comment character varying
+)
+
+Table part(
+  p_partkey integer,
+  p_name character varying,
+  p_mfgr character,  
+  p_brand character,  
+  p_type character varying,  
+  p_size integer,
+  p_container character, 
+  p_retailprice numeric,
+  p_comment character varying
+)
+
+Table partsupp(
+  ps_partkey integer,
+  ps_suppkey integer,
+  ps_availqty integer,
+  ps_supplycost numeric,
+  ps_comment character varying
+)
+
+Table region(
+  r_regionkey integer,
+  r_name character,  -- Possible values: 'AFRICA', 'AMERICA', 'ASIA', 'EUROPE', 'MIDDLE EAST'
+  r_comment character varying
+)
+
+Table supplier(
+  s_suppkey integer,
+  s_name character varying,
+  s_address character varying,
+  s_nationkey integer,
+  s_phone character,
+  s_acctbal numeric,
+  s_comment character varying
+)
+
+Here are some examples of questions with chain-of-thought reasoning and their SQL queries:
+
+--- Example 1 ---
+QUESTION:
+This  query  finds  out  how  many  suppliers  can  supply  parts  with  given  attributes.  It  might  be  used,  for  example,  to 
+determine whether there is a sufficient number of suppliers for heavily ordered parts. 
+The Parts/Supplier Relationship Query counts the number of suppliers who can supply parts that satisfy a particular customer's requirements. The customer is interested in parts of eight different sizes as long as they are not of a given type, not of a given brand, and not from a supplier who has had complaints registered at the Better Business Bureau. Results must be presented in descending count and ascending brand, type, and size.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. BRAND = Brand#MN where M and N are two single character strings representing two numbers randomly and independently selected within [1 .. 5]; In this case assume BRAND 'Brand#42'
+2. TYPE is made of the  first 2 syllables of a string randomly selected within the list of 3-syllable strings defined for Types in Clause 4.2.2.13; In this case assume TYPE 'LARGE PLATED%'
+3. SIZE1 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE1 = 9
+4. SIZE2 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE2 = 7
+5. SIZE3 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE3 = 14
+6. SIZE4 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE4 = 41
+7. SIZE5 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE5 = 43
+8. SIZE6 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE6 = 38
+9. SIZE7 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE7 = 23
+10. SIZE8 is randomly selected as a set of eight different values within [1 .. 50]. In this case assume SIZE8 = 34
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "parts with", columns [part.p_brand, part.p_partkey, part.p_type, partsupp.ps_partkey, partsupp.ps_suppkey] may be used.
+According to "size substitution parameters values", columns [part.p_size] may be used.
+According to "supplier who", columns [supplier.s_comment, supplier.s_suppkey] may be used.
+Values [%Customer%Complaints%, 14, 23, 34, 38, 41, 43, 7, 9, Brand#42, LARGE PLATED%] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	p_brand,
+	p_type,
+	p_size,
+	count(distinct ps_suppkey) as supplier_cnt
+from
+	partsupp,
+	part
+where
+	p_partkey = ps_partkey
+	and p_brand <> 'Brand#42'
+	and p_type not like 'LARGE PLATED%'
+	and p_size in (9, 7, 14, 41, 43, 38, 23, 34)
+	and ps_suppkey not in (
+		select
+			s_suppkey
+		from
+			supplier
+		where
+			s_comment like '%Customer%Complaints%'
+	)
+group by
+	p_brand,
+	p_type,
+	p_size
+order by
+	supplier_cnt desc,
+	p_brand,
+	p_type,
+	p_size;
+
+--- Example 2 ---
+QUESTION:
+This query determines the top supplier so it can be rewarded, given more business, or identified for special recognition.
+The Top Supplier Query finds the supplier who contributed the most to the overall revenue for parts shipped during a  given  quarter  of  a  given  year.  In  case  of  a  tie,  the  query lists  all  suppliers  whose  contribution  was  equal  to  the maximum, presented in supplier number order. 
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. DATE  is  the  first  day  of  a  randomly  selected  month  between  the  first  month  of  1993  and  the 10th  month of 1997. In this case assume DATE '1997-01-01'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "shipped during a given", columns [lineitem.l_shipdate] may be used.
+According to "supplier number", columns [supplier.s_phone, supplier.s_suppkey] may be used.
+According to "supplier query finds the", columns [supplier.s_address, supplier.s_name] may be used.
+Values [1997-01-01, 3] may be used.
+So the final answer is:
+
+SQL QUERY:
+create view revenue0 (supplier_no, total_revenue) as
+	select
+		l_suppkey,
+		sum(l_extendedprice * (1 - l_discount))
+	from
+		lineitem
+	where
+		l_shipdate >= date '1997-01-01'
+		and l_shipdate < date '1997-01-01' + interval '3' month
+	group by
+		l_suppkey;
+
+
+select
+	s_suppkey,
+	s_name,
+	s_address,
+	s_phone,
+	total_revenue
+from
+	supplier,
+	revenue0
+where
+	s_suppkey = supplier_no
+	and total_revenue = (
+		select
+			max(total_revenue)
+		from
+			revenue0
+	)
+order by
+	s_suppkey;
+
+drop view revenue0;
+
+--- Example 3 ---
+QUESTION:
+This query finds the most important subset of suppliers' stock in a given nation.
+The Important Stock Identification Query finds, from scanning the available stock of suppliers in a given nation, all the parts that represent a significant 
+percentage of the  total value of all available parts. The query displays the part number and the value of those parts in descending order of value.
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. NATION is randomly selected within the list of values defined for N_NAME in Clause 4.2.3; In this case assume NATION 'UNITED STATES'
+2. FRACTION is chosen as 0.0001 / SF. In this case assume FRACTION 0.0001000000
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "available parts the query", columns [partsupp.ps_availqty] may be used.
+According to "nation the", columns [nation.n_name, nation.n_nationkey] may be used.
+According to "of all available parts", columns [partsupp.ps_supplycost] may be used.
+According to "of suppliers", columns [supplier.s_suppkey] may be used.
+According to "parts in", columns [partsupp.ps_suppkey] may be used.
+According to "query displays the part", columns [partsupp.ps_partkey] may be used.
+According to "suppliers in", columns [supplier.s_nationkey] may be used.
+Values [0.0001000000, UNITED STATES] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	ps_partkey,
+	sum(ps_supplycost * ps_availqty) as value
+from
+	partsupp,
+	supplier,
+	nation
+where
+	ps_suppkey = s_suppkey
+	and s_nationkey = n_nationkey
+	and n_name = 'UNITED STATES'
+group by
+	ps_partkey having
+		sum(ps_supplycost * ps_availqty) > (
+			select
+				sum(ps_supplycost * ps_availqty) * 0.0001000000
+			from
+				partsupp,
+				supplier,
+				nation
+			where
+				ps_suppkey = s_suppkey
+				and s_nationkey = n_nationkey
+				and n_name = 'UNITED STATES'
+		)
+order by
+	value desc;
+
+--- Example 4 ---
+QUESTION:
+The Potential Part Promotion Query identifies suppliers in a particular nation having selected parts that may be candidates for a promotional offer.
+The  Potential Part Promotion  query identifies suppliers  who have an excess of a  given part available; an excess is defined  to  be  more  than  50%  of  the  parts  like  the  given  part  that  the  supplier shipped  in  a  given  year  for  a  given nation. Only parts whose names share a certain naming convention are considered.
+Substitution Parameters:
+1. COLOR is randomly selected within the list of values defined for the generation of P_NAME. In this case assume COLOR 'brown%'
+2. DATE is the first of January of a randomly selected year within 1993..1997. In this case assume DATE '1994-01-01'
+3. NATION is randomly selected within the list of values defined for N_NAME in Clause 4.2.3. In this case assume NATION 'SAUDI ARABIA'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "given nation", columns [nation.n_name] may be used.
+According to "given part available", columns [partsupp.ps_availqty] may be used.
+According to "identifies suppliers in a", columns [supplier.s_name] may be used.
+According to "nation only", columns [nation.n_nationkey] may be used.
+According to "p_name in this case", columns [part.p_name] may be used.
+According to "part promotion query identifies", columns [partsupp.ps_partkey, partsupp.ps_suppkey] may be used.
+According to "parts whose names", columns [part.p_partkey] may be used.
+According to "suppliers in a particular", columns [supplier.s_address, supplier.s_nationkey, supplier.s_suppkey] may be used.
+Values [0.5, 1, 1994-01-01, SAUDI ARABIA, brown%] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	s_name,
+	s_address
+from
+	supplier,
+	nation
+where
+	s_suppkey in (
+		select
+			ps_suppkey
+		from
+			partsupp
+		where
+			ps_partkey in (
+				select
+					p_partkey
+				from
+					part
+				where
+					p_name like 'brown%'
+			)
+			and ps_availqty > (
+				select
+					0.5 * sum(l_quantity)
+				from
+					lineitem
+				where
+					l_partkey = ps_partkey
+					and l_suppkey = ps_suppkey
+					and l_shipdate >= date '1994-01-01'
+					and l_shipdate < date '1994-01-01' + interval '1' year
+			)
+	)
+	and s_nationkey = n_nationkey
+	and n_name = 'SAUDI ARABIA'
+order by
+	s_name;
+
+--- Example 5 ---
+QUESTION:
+This query determines how the market share of a given nation within a given region has changed over two years  for a given part type.
+The  market  share  for  a  given  nation  within  a  given  region  is  defined  as  the  fraction  of  the  revenue,  the  sum  of [l_extendedprice * (1-l_discount)], from the products of a specified type in that region that was supplied by suppliers from the given nation. The query determines this for the years 1995 and 1996 presented in this order.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. NATION is randomly selected within the list of values defined for N_NAME in Clause 4.2.3; In this case assume NATION 'KENYA'
+2. REGION is the value defined in Clause 4.2.3 for R_NAME where R_REGIONKEY corresponds to N_REGIONKEY for the selected NATION in item 1 above; In this case assume REGION 'AFRICA'
+3. TYPE is randomly selected within the list of 3-syllable strings defined for Types in Clause 4.2.2.13. In this case assume TYPE 'ECONOMY PLATED BRASS'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "corresponds to n_regionkey", columns [customer.c_custkey] may be used.
+According to "given part type", columns [lineitem.l_partkey, part.p_partkey, part.p_type] may be used.
+According to "l_discount from the", columns [lineitem.l_discount] may be used.
+According to "nation the", columns [nation.n_name, nation.n_nationkey] may be used.
+According to "of l_extendedprice", columns [lineitem.l_extendedprice] may be used.
+According to "r_name where r_regionkey corresponds", columns [region.r_name] may be used.
+According to "r_regionkey corresponds to", columns [region.r_regionkey] may be used.
+According to "suppliers from the given", columns [supplier.s_nationkey, supplier.s_suppkey] may be used.
+According to "this order", columns [lineitem.l_orderkey, orders.o_custkey, orders.o_orderdate, orders.o_orderkey] may be used.
+According to "to n_regionkey", columns [customer.c_nationkey, nation.n_regionkey] may be used.
+Values [1995-01-01, 1996-12-31, AFRICA, ECONOMY PLATED BRASS, KENYA] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	o_year,
+	sum(case
+		when nation = 'KENYA' then volume
+		else 0
+	end) / sum(volume) as mkt_share
+from
+	(
+		select
+			extract(year from o_orderdate) as o_year,
+			l_extendedprice * (1 - l_discount) as volume,
+			n2.n_name as nation
+		from
+			part,
+			supplier,
+			lineitem,
+			orders,
+			customer,
+			nation n1,
+			nation n2,
+			region
+		where
+			p_partkey = l_partkey
+			and s_suppkey = l_suppkey
+			and l_orderkey = o_orderkey
+			and o_custkey = c_custkey
+			and c_nationkey = n1.n_nationkey
+			and n1.n_regionkey = r_regionkey
+			and r_name = 'AFRICA'
+			and s_nationkey = n2.n_nationkey
+			and o_orderdate between date '1995-01-01' and date '1996-12-31'
+			and p_type = 'ECONOMY PLATED BRASS'
+	) as all_nations
+group by
+	o_year
+order by
+	o_year;
+
+--- Your Task ---
+QUESTION:
+This query finds which supplier should be selected to place an order for a given part in a given region.
+The Minimum Cost Supplier Query finds, in a given region, for each part of a certain type and size, the supplier who can  supply  it  at  minimum  cost.  If  several  suppliers  in  that  region  offer  the  desired  part  type  and  size  at  the  same (minimum)  cost,  the  query  lists  the  parts  from  suppliers  with  the  100  highest  account  balances.  For  each  supplier, the  query  lists  the  supplier's  account  balance,  name  and  nation;  the  part's  number  and  manufacturer;  the  supplier's address, phone number and comment information.
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text:
+1. SIZE is randomly selected within [1. 50]; In this case assume SIZE 2
+2. TYPE is randomly selected within the list Syllable 3 defined for Types in Clause 4.2.2.13; In this case assume type '%TIN'
+3. REGION is randomly selected within the list of values defined for R_NAME in 4.2.3. In this case assume REGION 'ASIA'
+
+Think step by step and then return ONLY the SQL query:

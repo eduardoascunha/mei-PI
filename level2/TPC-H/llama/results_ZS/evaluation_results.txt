@@ -1,0 +1,132 @@
+================================================================================
+TEXT-TO-SQL EVALUATION REPORT
+================================================================================
+
+Total queries: 21
+Correct (PASS): 11 (52.38%)
+  - Exact match: 11
+  - With extra columns: 0
+Incorrect (FAIL): 10
+Not found (MISSING): 0
+
+================================================================================
+DETAILS PER QUERY
+================================================================================
+
+Query: q1.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q2.output.txt
+Status: FAIL
+Details:
+    Rows only in original (48): [(48453.0, 5721.91, '19-165-166-7955', 'd2d8inheo5mjzhcd,ru', 'indonesia', 'manufacturer#3', 'regular deposits wake at the silent asymptotes. regular deposits a', 'supplier#000001986'), (42245.0, 5628.86, '31-155-875-3030', 'fz2mzdqnk0sls', 'manufacturer#2', 'supplier#000002538', 'unts sleep slyly! foxes cajole carefully. quickly ironic', 'vietnam'), (23514.0, 6341.48, '28-824-614-4319', '36svkqsscrgnni2cu ejntwf90ztywz8g', 'china', 'e furiously along the quickly unusual deposits. final accounts are slyly after the blithel', 'manufacturer#4', 'supplier#000001786')]
+    Rows only in LLM (48): [(11887.0, 1546.44, '31-571-702-9106', '3atroxbfh6hiba9kdbx,6,ml2szgua', 'accounts above the slyly express requests detec', 'manufacturer#4', 'supplier#000002888', 'vietnam'), (2693.76, 4872.0, '18-632-900-4407', 'ehmo9dnj1prmkblvqcs', 'india', 'manufacturer#5', 'nos are slowly silent accounts. furiously unusual dolphins nag blithely express foxes. carefully fin', 'supplier#000002624'), (-832.44, 1228.0, '31-193-831-8780', 'eodolites sleep quickly furiously ironic pinto beans. special theodolit', 'manufacturer#3', 'supplier#000001979', 'unw7na,ic 5igvvsguha7oall,jozuct', 'vietnam')]
+--------------------------------------------------------------------------------
+
+Query: q3.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q4.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (5, 2) vs (2, 1)
+    Rows only in original (5): [(2946.0, '5-low'), (3159.0, '1-urgent'), (3049.0, '3-medium')]
+    Rows only in LLM (2): [("line 4: where o.o_orderdate >= '1997-01-01' - interval '3 month'",), ('^',)]
+--------------------------------------------------------------------------------
+
+Query: q5.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q6.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q7.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (4, 4) vs (2, 4)
+    Rows only in original (2): [(15968215.735, 1996.0, 'argentina', 'kenya'), (15042622.2672, 1995.0, 'argentina', 'kenya')]
+--------------------------------------------------------------------------------
+
+Query: q8.output.txt
+Status: FAIL
+Details:
+    Rows only in original (2): [(0.038668, 1996.0), (0.052353, 1995.0)]
+    Rows only in LLM (2): [(0.162904, 1996.0), (0.226962, 1995.0)]
+--------------------------------------------------------------------------------
+
+Query: q9.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q10.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (20, 8) vs (4459, 6)
+    Rows only in original (20): [(30865.0, 485604.718, 9624.0, '25-176-205-5657', 'customer#000030865', 'its. quickly bold requests sleep fluffily about the packages. regular, pending packages are about the blithely spe', 'morocco', 'qptlgadld,vwmw5uft'), (1666.61, 41356.0, 479863.6886, '33-884-373-9171', 'customer#000041356', 'quickly against the ironic requests. never unusual excuses', 'united kingdom', 'ypsqh1nnv46brzevcq4sagrednegm7w24mj'), (17266.0, 2166.16, 474044.1399, '22-697-745-9127', 'customer#000017266', 'japan', 'refully across the carefully blithe accounts. permanently bold', 'supjqky67sjpvqetobfmjp0rgh')]
+    Rows only in LLM (4459): [(7739.31, '11-639-167-1633', 'argentina', 'customer#000014743', 't5zy8m3qiddmzkh1v9g', 'ymptotes. ironically express packages haggle across the regular, even she'), (9046.18, '13-228-977-3924', '4i,prdyi5nsy18j6,sbyasnru584p3qpxago', 'ainst the carefully even instructions. furiously even packages al', 'canada', 'customer#000017426'), (6057.25, '27-909-945-3516', 'customer#000002886', 'furiously final requests above the accounts boost alongside of the packages. special, final dependencies hag', 'peru', 'wvcyoh72kytgjlakd0ngvflu8j')]
+--------------------------------------------------------------------------------
+
+Query: q11.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (3874, 2) vs (8087, 2)
+    Rows only in LLM (4213): [(1719346.23, 55586.0), (19817.0, 958163.14), (1350211.8, 8634.0)]
+--------------------------------------------------------------------------------
+
+Query: q12.output.txt
+Status: FAIL
+Details:
+    Rows only in original (2): [(1858.0, 2856.0, 'fob'), (1880.0, 2826.0, 'mail')]
+    Rows only in LLM (2): [(1898.0, 2831.0, 'mail'), (1832.0, 2859.0, 'fob')]
+--------------------------------------------------------------------------------
+
+Query: q13.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q14.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q15.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q16.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q17.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(98562.575714,)]
+    Rows only in LLM (1): [(6411.346603,)]
+--------------------------------------------------------------------------------
+
+Query: q18.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q19.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(1042188.9074,)]
+    Rows only in LLM (1): [(4288066.6866,)]
+--------------------------------------------------------------------------------
+
+Query: q21.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q22.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (7, 3) vs (1, 2)
+    Rows only in original (7): [(2079950.63, 279.0, 33.0), (1965469.24, 269.0, 31.0), (2093651.25, 280.0, 30.0)]
+    Rows only in LLM (1): [(42454469.46, 5664.0)]
+--------------------------------------------------------------------------------
+

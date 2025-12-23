@@ -1,0 +1,7 @@
+The Discounted Revenue Query reports the gross discounted revenue attributed to the sale of selected parts handled in  a  particular  manner. This  query  is  an  example  of  code  such  as  might be  produced  programmatically  by  a  data mining tool.
+The  Discounted  Revenue  query  finds  the  gross  discounted  revenue  for  all  orders  for three  different  types  of  parts that  were  shipped by air  and  delivered in person. Parts are selected based on the  combination of specific brands, a list of containers, and a range of sizes.
+Substitution Parameters:
+1. QUANTITY1 is randomly selected within [1..10]. In this case assume QUANTITY1 = 4
+2. QUANTITY2 is randomly selected within [10..20]. In this case assume QUANTITY2 = 16
+3. QUANTITY3 is randomly selected within [20..30]. In this case assume QUANTITY3 = 29
+4. BRAND1, BRAND2, BRAND3 = 'Brand#MN' where each MN is a two character string representing two numbers randomly and independently selected within [1 .. 5]. In this case assume BRAND1 = 'Brand#11' , BRAND2 = 'Brand#25' , BRAND3 = 'Brand#54'

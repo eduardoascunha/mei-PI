@@ -1,0 +1,65 @@
+= The Order-Status Transaction
+The Order-Status business transaction queries the status of a customer's last order. It represents a mid -weight read - only database transaction with a low frequency of execution and response time requirement to satisfy on -line users. In addition, this table includes non -primary key access to the CUSTOMER table.
+
+== Input Data Generation
+    -> For any given terminal, the home warehouse number (W_ID) is constant over the whole measurement interval.
+    -> The district number (D_ID) is randomly selected within [1 ..10] from the home warehouse. The customer is randomly selected 60% of the time by last name (C_W_ID, C_D_ID, C_LAST) and 40% of the time by number (C_W_ID, C_D_ID, C_ID) from the selected district (C_D_ID = D_ID) and the home warehouse number (C_W_ID = W_ID). This can be implemented by generating a random number y within [1 .. 100];
+        • If y <= 60 a customer last name (C_LAST) is generated from a non-uniform random value using the NURand(255,0,999) function. The customer is using his/ her last name and is one of the, possibly several, customers with that last name.
+        Comment: This case illustrates the situation when a customer does not use his/ her unique customer number.
+        • If y > 60 a non-uniform random customer number (C_ID) is selected using the NURand (1023,1,3000) function. The customer is using his/ her customer number.
+    -> Inputs: (W_ID integer, D_ID integer, C_ID integer, C_LAST varchar(16))
+    -> Outputs: (C_ID integer, C_FIRST varchar(16), C_MIDDLE char(2), C_BALANCE decimal(12,2), O_ID integer, O_ENTRY_D varchar(24), O_CARRIER_ID integer, OL_SUPPLY_W_ID integer[], OL_I_ID integer[], OL_QUANTITY integer[], OL_AMOUNT decimal(12,2)[], OL_DELIVERY_D timestamp[])
+    -> NOTE: If an order contains fewer than 15 items, the output arrays must be padded to 15 elements with default values (0 for integer arrays, 0.0 for decimal arrays, and NULL for timestamp arrays) to accommodate the maximum displayable order lines 
+    
+== Transaction Profile
+    -> Querying for the status of an order is done in a single database transaction with the following steps:
+        1. Find the customer and his/ her last order, comprised of:
+            Case 1, the customer is selected based on customer number:
+                2 row selections with data retrieval.,
+            Case 2, the customer is selected based on customer last name:
+            4 row selections (on average) with data retrieval.
+        2. Check status (delivery date) of each item on the order (average items-per-order = 10), comprised of: (1 * items-per-order) row selections with data retrieval.
+    Note: The above summary is provided for information only. The actual requirement is defined by the detailed transaction profile below.
+
+    -> For a given customer number (C_W_ID , C_D_ID , C_ ID):
+        • The input data are communicated to the SUT.
+        • A database transaction is started.
+        • Case 1, the customer is selected based on customer number: the row in the CUSTOMER table with matching C_W_ID, C_D_ID, and C_ID is selected and C_BALAN CE, C_FIRST, C_MIDDLE, and C_LAST are retrieved. 
+        Case 2, the customer is selected based on customer last name: all rows in the CUSTOMER table with matching C_W_ID, C_D_ID and C_LAST are selected sorted by C_FIRST in ascending order. Let n be the number of rows selected. C_BALANCE, C_FIRST, C_MIDDLE, and C_LAST are retrieved from the row at position n/ 2 rounded up in the sorted set of selected rows from the CUSTOMER table.
+        • The row in the ORDER table with matching O_W_ID (equals C_W_ID), O_D_ID (equals C_D_ID), O_C_ID (equals C_ID), and with the largest existing O_ID, is selected. This is the most recent order placed by that customer. O_ID, O_ENTRY_D, and O_CARRIER_ID are retrieved.
+        • All rows in the ORDER-LINE table with matching OL_W_ID (equals O_W_ID), OL_D_ID (equals O_D_ID), and OL_O_ID (equals O_ID) are selected and the corresponding sets of OL_I_ID, OL_SUPPLY_W_ID, OL_QUANTITY, OL_AMOUNT, and OL_DELIVERY_D are retrieved.
+        • The database transaction is committed .
+            Comment: a commit is not required as long as all ACID properties are satisfied.
+        • The output data are communicated to the terminal.
+
+== Terminal I/O
+    -> For each transaction the originating terminal must display the follow ing input/ output screen with all input and output field s cleared (with either spaces or zeros) except for the Warehouse field which has not changed and must display the fixed W_ID value associated with that terminal.
+    -> The emulated user must enter, in the appropriate field of the input/ output screen, the required input
+    data which is organized as the distinct fields: D_ID and either C_ID or C_LAST.
+    -> The emulated terminal must display, in the approp riate fields of the input/ output screen, all input data and the output data resulting from the execution of the transaction. The display field s are divided in two groups as follows:
+        • One non-repeating group of fields: W_ID, D_ID, C_ID, C_FIRST, C_MIDDLE, C_LAST, C_BALANCE, O_ID, O_ENTRY_D, and O_CARRIER_ID;
+        • One repeating group of fields: OL_SUPPLY_W_ID, OL_I_ID, OL_QUANTITY, OL_AMOUNT, and OL_DELIVERY_D. The group is repeated O_OL_CNT times (once per item in the order).
+    Comment 1: The order of items shown on the Order-Status screen does not need to match the order in which the items were entered in its corresponding New -Order screen.
+    Comment 2: If OL_DELIVERY_D is null (i.e., the order has not been delivered), the terminal must display an implementation specific null date representation (e.g., blanks, 99-99-9999, etc.). The chosen null date representation must not change during the test.
+    Comment 3: If an order contains fewer than 15 items, the output arrays must be padded to 15 elements with default values (0 for integer arrays, 0.0 for decimal arrays, and NULL for timestamp arrays) to accommodate the maximum displayable order lines (rows 8-22 on the terminal screen).
+
+    -> The following table summarizes the terminal I/ O requirements for the Order-Status transaction:
+        Enter Display Coordinates
+        Row/ Column
+        Non-repeating Group W_ID 2/ 12
+        D_ID D_ID 2/ 29
+        C_ID 1 C_ID 3/ 11
+        C_FIRST 3/ 24
+        C_MIDDLE 3/ 41
+        C_LAST 2 C_LAST 3/ 44
+        C_BALANCE 4/ 16
+        O_ID 6/ 15
+        O_ENTRY_D 6/ 38
+        O_CARRIER_ID 6/ 76
+        Repeating Group OL_SUPPLY_W_ID 8-22/ 3
+        OL_I_ID 8-22/ 14
+        OL_QUANTITY 8-22/ 25
+        OL_AMOUNT 8-22/ 33
+        OL_DELIVERY_D 8-22/ 47
+        1 Enter only for query by customer number. 2
+        Enter only for query by customer last name. 

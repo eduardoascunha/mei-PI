@@ -1,0 +1,133 @@
+================================================================================
+TEXT-TO-SQL EVALUATION REPORT
+================================================================================
+
+Total queries: 21
+Correct (PASS): 11 (52.38%)
+  - Exact match: 11
+  - With extra columns: 0
+Incorrect (FAIL): 10
+Not found (MISSING): 0
+
+================================================================================
+DETAILS PER QUERY
+================================================================================
+
+Query: q1.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q2.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q3.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q4.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q5.output.txt
+Status: FAIL
+Details:
+    Rows only in original (5): [(15558778.44, 'russia'), (14751224.2815, 'france'), (13733315.5439, 'united kingdom')]
+    Rows only in LLM (5): [(12492942.0144, 'united kingdom'), (15621845.8187, 'russia'), (17593531.5562, 'germany')]
+--------------------------------------------------------------------------------
+
+Query: q6.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q7.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q8.output.txt
+Status: FAIL
+Details:
+    Rows only in original (2): [(0.038668, 1996.0), (0.052353, 1995.0)]
+    Rows only in LLM (2): [(0.032496, 1995.0), (0.04798, 1996.0)]
+--------------------------------------------------------------------------------
+
+Query: q9.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (175, 3) vs (100, 3)
+    Rows only in original (100): [(12461789.8858, 1995.0, 'france'), (14528016.0757, 1996.0, 'brazil'), (14929371.579, 1997.0, 'brazil')]
+    Rows only in LLM (25): [(1995.0, 4284295.7563, 'china'), (1995.0, 3967393.2588, 'iraq'), (1995.0, 4094578.1052, 'morocco')]
+--------------------------------------------------------------------------------
+
+Query: q10.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (20, 8) vs (20, 7)
+    Rows only in original (20): [(594352.3344, 7894.24, 9388.0, '18-527-677-6583', 'customer#000009388', 'ftrqnszl3gnxx,ve yu', 'india', 'unusual pinto beans cajole? bravely even theodolites sleep furiously around the regular, do'), (-425.09, 1024.0, 496716.2755, '21-508-779-7822', '9wlrrs78uopy7chw', 'carefully regular instructions. furiously final deposits across the carefully special ideas cajole furi', 'customer#000001024', 'iraq'), (2937.77, 464649.6114, 5422.0, '33-771-746-1448', '7rdcblow7iojwexnymgsixp0uowjg8roll', 'customer#000005422', 'hely ironic deposits. carefully ironic deposits are. instructions haggle wh', 'united kingdom')]
+    Rows only in LLM (20): [(2937.77, 464649.6114, '33-771-746-1448', '7rdcblow7iojwexnymgsixp0uowjg8roll', 'customer#000005422', 'hely ironic deposits. carefully ironic deposits are. instructions haggle wh', 'united kingdom'), (1337.89, 462910.0644, '26-864-742-1698', 'customer#000022669', 'd8o1xwpzddm7ta5qbcmgvbu6isoohga,kcoq', 'mozambique', 'ts cajole carefully. blithely silent foxes sublate fluffily. careful'), (477850.019, 7312.11, '33-446-147-1124', 'customer#000003034', 'minoywakqfosqpj87gkrakxk', 'nic, unusual deposits sleep. furiously even theodolites haggle about the furiously even deposits. slyly regular', 'united kingdom')]
+--------------------------------------------------------------------------------
+
+Query: q11.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q12.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q13.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q14.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(16.35514,)]
+    Rows only in LLM (1): [(16.36,)]
+--------------------------------------------------------------------------------
+
+Query: q15.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (1, 5) vs (1, 3)
+    Rows only in original (1): [(1482109.8042, 2516.0, '14-642-300-7682', '4m wg67rdqpzzcajcxepnqhdbong6e60b gky', 'supplier#000002516')]
+    Rows only in LLM (1): [(1482109.8042, 2516.0, 'supplier#000002516')]
+--------------------------------------------------------------------------------
+
+Query: q16.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q17.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(98562.575714,)]
+    Rows only in LLM (1): [(122062.175714,)]
+--------------------------------------------------------------------------------
+
+Query: q18.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q19.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(1042188.9074,)]
+    Rows only in LLM (1): [(1736340.9035,)]
+--------------------------------------------------------------------------------
+
+Query: q21.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (100, 2) vs (100, 1)
+    Rows only in original (100): [(9.0, 'supplier#000002595'), (14.0, 'supplier#000002414'), (9.0, 'supplier#000001550')]
+    Rows only in LLM (100): [('supplier#000002182',), ('supplier#000001817',), ('supplier#000002150',)]
+--------------------------------------------------------------------------------
+
+Query: q22.output.txt
+Status: FAIL
+Details:
+    Rows only in original (7): [(2079950.63, 279.0, 33.0), (1965469.24, 269.0, 31.0), (2093651.25, 280.0, 30.0)]
+    Rows only in LLM (7): [(30.0, 6453928.73, 883.0), (33.0, 6225925.22, 865.0), (26.0, 6526570.63, 903.0)]
+--------------------------------------------------------------------------------
+

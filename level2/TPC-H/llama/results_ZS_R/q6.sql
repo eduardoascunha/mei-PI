@@ -1,0 +1,6 @@
+SELECT SUM(l_extendedprice * l_discount) 
+FROM lineitem 
+WHERE l_shipdate >= DATE '1994-01-01' 
+  AND l_shipdate < DATE '1994-01-01' + INTERVAL '1 year' 
+  AND l_discount BETWEEN 0.02 - 0.01 AND 0.02 + 0.01 
+  AND l_quantity < 25;

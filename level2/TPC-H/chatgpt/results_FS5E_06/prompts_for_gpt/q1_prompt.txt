@@ -1,0 +1,278 @@
+
+You are a SQL expert.
+The examples below show SQL patterns, but DO NOT copy them literally.
+Analyze the current question independently and create the most appropriate query.
+Use example patterns only as inspiration, not as templates.
+Return ONLY the SQL code without markdown formatting or explanations.
+
+
+DATABASE SCHEMA:
+Table customer(
+  c_custkey integer,
+  c_name character varying,
+  c_address character varying,
+  c_nationkey integer,
+  c_phone character,
+  c_acctbal numeric,
+  c_mktsegment character,  -- Possible values: 'AUTOMOBILE', 'BUILDING', 'FURNITURE', 'MACHINERY', 'HOUSEHOLD'
+  c_comment character varying
+)
+
+Table lineitem(
+  l_orderkey integer,
+  l_partkey integer,
+  l_suppkey integer,
+  l_linenumber integer,
+  l_quantity numeric,
+  l_extendedprice numeric,
+  l_discount numeric,
+  l_tax numeric,
+  l_returnflag character,  -- Possible values: 'R' (Return), 'A' (Accept), 'N' (No return)
+  l_linestatus character,  -- Possible values: 'O' (Open), 'F' (Filled)
+  l_shipdate date,
+  l_commitdate date,
+  l_receiptdate date,
+  l_shipinstruct character,  -- Possible values: 'DELIVER IN PERSON', 'COLLECT COD', 'NONE', 'TAKE BACK RETURN'
+  l_shipmode character,  -- Possible values: 'AIR REG', 'AIR', 'RAIL', 'SHIP', 'TRUCK', 'MAIL', 'FOB'
+  l_comment character varying
+)
+
+Table nation(
+  n_nationkey integer,
+  n_name character,   -- examples: 'ALGERIA', 'BRAZIL', 'CANADA', 'JAPAN', etc.
+  n_regionkey integer,
+  n_comment character varying
+)
+
+Table orders(
+  o_orderkey integer,
+  o_custkey integer,
+  o_orderstatus character,  -- Possible values: 'O' (Open), 'F' (Filled), 'P' (Partial)
+  o_totalprice numeric,
+  o_orderdate date,
+  o_orderpriority character,  -- Possible values: '1-URGENT', '2-HIGH', '3-MEDIUM', '4-NOT SPECIFIED', '5-LOW'
+  o_clerk character,
+  o_shippriority integer,
+  o_comment character varying
+)
+
+Table part(
+  p_partkey integer,
+  p_name character varying,
+  p_mfgr character,  
+  p_brand character,  
+  p_type character varying,  
+  p_size integer,
+  p_container character, 
+  p_retailprice numeric,
+  p_comment character varying
+)
+
+Table partsupp(
+  ps_partkey integer,
+  ps_suppkey integer,
+  ps_availqty integer,
+  ps_supplycost numeric,
+  ps_comment character varying
+)
+
+Table region(
+  r_regionkey integer,
+  r_name character,  -- Possible values: 'AFRICA', 'AMERICA', 'ASIA', 'EUROPE', 'MIDDLE EAST'
+  r_comment character varying
+)
+
+Table supplier(
+  s_suppkey integer,
+  s_name character varying,
+  s_address character varying,
+  s_nationkey integer,
+  s_phone character,
+  s_acctbal numeric,
+  s_comment character varying
+)
+
+Here are some examples of questions and their corresponding SQL queries:
+
+--- Example 1 ---
+QUESTION:
+This query retrieves the 10 unshipped orders with the highest value.
+The Shipping Priority Query retrieves the shipping priority and potential revenue, defined as the sum of l_extendedprice * (1-l_discount), of the orders having the largest revenue among those that had not been shipped as of a given date. Orders are listed in decreasing order of revenue. If more than 10 unshipped orders exist, only the 10 orders with the largest revenue are listed.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. SEGMENT is randomly selected within the list of values defined for Segments in Clause 4.2.2.13; In this case assume segment 'FURNITURE'
+2. DATE is a randomly selected day within [1995-03-01 .. 1995-03-31]. In this case assume dates '1995-03-27', '1995-03-27'
+
+SQL QUERY:
+select
+	l_orderkey,
+	sum(l_extendedprice * (1 - l_discount)) as revenue,
+	o_orderdate,
+	o_shippriority
+from
+	customer,
+	orders,
+	lineitem
+where
+	c_mktsegment = 'FURNITURE'
+	and c_custkey = o_custkey
+	and l_orderkey = o_orderkey
+	and o_orderdate < date '1995-03-27'
+	and l_shipdate > date '1995-03-27'
+group by
+	l_orderkey,
+	o_orderdate,
+	o_shippriority
+order by
+	revenue desc,
+	o_orderdate
+limit 10;
+
+--- Example 2 ---
+QUESTION:
+The query identifies customers who might be having problems with the parts that are shipped to them.
+The Returned Item Reporting Query finds the top 20 customers, in terms of their effect on lost revenue for a given quarter,  who  have  returned  parts.  The  query  considers  only  parts  that  were  ordered  in  the  specified  quarter.  The query lists the customer's name, address, nation, phone number, account balance, comment information and revenue lost. The customers are listed in descending order of lost revenue. Revenue lost is defined as sum(l_extendedprice*(1-l_discount)) for all qualifying lineitems.
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text:
+1. DATE is the first day of a randomly selected month from the second month of 1993 to the first month of 1995. In this case assume DATE '1993-08-01'
+
+SQL QUERY:
+select
+	c_custkey,
+	c_name,
+	sum(l_extendedprice * (1 - l_discount)) as revenue,
+	c_acctbal,
+	n_name,
+	c_address,
+	c_phone,
+	c_comment
+from
+	customer,
+	orders,
+	lineitem,
+	nation
+where
+	c_custkey = o_custkey
+	and l_orderkey = o_orderkey
+	and o_orderdate >= date '1993-08-01'
+	and o_orderdate < date '1993-08-01' + interval '3' month
+	and l_returnflag = 'R'
+	and c_nationkey = n_nationkey
+group by
+	c_custkey,
+	c_name,
+	c_acctbal,
+	c_phone,
+	n_name,
+	c_address,
+	c_comment
+order by
+	revenue desc
+limit 20;
+
+--- Example 3 ---
+QUESTION:
+This query determines the top supplier so it can be rewarded, given more business, or identified for special recognition.
+The Top Supplier Query finds the supplier who contributed the most to the overall revenue for parts shipped during a  given  quarter  of  a  given  year.  In  case  of  a  tie,  the  query lists  all  suppliers  whose  contribution  was  equal  to  the maximum, presented in supplier number order. 
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. DATE  is  the  first  day  of  a  randomly  selected  month  between  the  first  month  of  1993  and  the 10th  month of 1997. In this case assume DATE '1997-01-01'
+
+SQL QUERY:
+create view revenue0 (supplier_no, total_revenue) as
+	select
+		l_suppkey,
+		sum(l_extendedprice * (1 - l_discount))
+	from
+		lineitem
+	where
+		l_shipdate >= date '1997-01-01'
+		and l_shipdate < date '1997-01-01' + interval '3' month
+	group by
+		l_suppkey;
+
+
+select
+	s_suppkey,
+	s_name,
+	s_address,
+	s_phone,
+	total_revenue
+from
+	supplier,
+	revenue0
+where
+	s_suppkey = supplier_no
+	and total_revenue = (
+		select
+			max(total_revenue)
+		from
+			revenue0
+	)
+order by
+	s_suppkey;
+
+drop view revenue0;
+
+--- Example 4 ---
+QUESTION:
+This query monitors the market response to a promotion such as TV advertisements or a special campaign.
+The Promotion Effect Query determines what percentage of the revenue in a given year and month was derived from promotional parts. The query considers only parts actually shipped in that month and gives the percentage. Revenue is defined as (l_extendedprice * (1-l_discount)). 
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. DATE is the first day of a month randomly selected from a random year within [1993 .. 1997]. In this case assume DATE '1996-04-01'
+
+SQL QUERY:
+select
+	100.00 * sum(case
+		when p_type like 'PROMO%'
+			then l_extendedprice * (1 - l_discount)
+		else 0
+	end) / sum(l_extendedprice * (1 - l_discount)) as promo_revenue
+from
+	lineitem,
+	part
+where
+	l_partkey = p_partkey
+	and l_shipdate >= date '1996-04-01'
+	and l_shipdate < date '1996-04-01' + interval '1' month;
+
+--- Example 5 ---
+QUESTION:
+This query lists the revenue volume done through local suppliers.
+The Local Supplier Volume Query lists for each nation in a region the revenue  volume that resulted from lineitem transactions  in  which  the  customer  ordering  parts  and  the  supplier  filling  them  were  both  within  that  nation.  The query is run in order to determine whether to institute local distribution centers in a given region. The query considers only parts ordered in a given  year. The  query displays  the  nations and revenue  volume  in descending order by revenue. Revenue volume for all qualifying lineitems in a particular nation is defined as sum(l_extendedprice * (1  - l_discount)).
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. REGION is randomly selected within the list of values defined for R_NAME in C;aise 4.2.3; In this case assume REGION 'EUROPE'
+2. DATE is the first of January of a randomly selected year within [1993 .. 1997]. In this case assume 1994-01-01'
+
+SQL QUERY:
+select
+	n_name,
+	sum(l_extendedprice * (1 - l_discount)) as revenue
+from
+	customer,
+	orders,
+	lineitem,
+	supplier,
+	nation,
+	region
+where
+	c_custkey = o_custkey
+	and l_orderkey = o_orderkey
+	and l_suppkey = s_suppkey
+	and c_nationkey = s_nationkey
+	and s_nationkey = n_nationkey
+	and n_regionkey = r_regionkey
+	and r_name = 'EUROPE'
+	and o_orderdate >= date '1994-01-01'
+	and o_orderdate < date '1994-01-01' + interval '1' year
+group by
+	n_name
+order by
+	revenue desc;
+
+--- Your Task ---
+QUESTION:
+This query reports the amount of business that was billed, shipped, and returned. 
+The Pricing Summary Report Query provides a summary pricing report for all lineitems shipped as of a given date. The  date  is  within  60  -  120  days  of  the  greatest  ship  date  contained  in  the  database.  The  query  lists  totals  for extended  price,  discounted  extended  price,  discounted  extended  price  plus  tax,  average  quantity,  average  extended price,  and  average  discount.  These  aggregates  are  grouped  by  RETURNFLAG  and  LINESTATUS,  and  listed  in  ascending  order  of  RETURNFLAG  and  LINESTATUS.  A  count  of  the  number  of  lineitems  in  each  group  is included. 
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text:  
+1. DELTA is randomly selected within [60. 120]. In this case assume DELTA = '84 days'
+Comment: 1998-12-01 is the highest possible ship date as defined in the database population. (This is ENDDATE - 30).  The  query  will  include  all  lineitems  shipped  before  this  date  minus  DELTA  days.  The  intent  is  to  choose DELTA so that between 95% and 97% of the rows in the table are scanned.
+
+SQL QUERY:

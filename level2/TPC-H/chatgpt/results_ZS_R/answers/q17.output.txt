@@ -1,0 +1,4 @@
+psql:chatgpt/results_ZS_R/queries/q17.sql:20: ERROR:  column "partkey" does not exist
+LINE 10: WHERE l_partkey IN (SELECT partkey FROM target_parts)
+                                    ^
+HINT:  Perhaps you meant to reference the column "target_parts.p_partkey" or the column "lineitem.l_partkey".

@@ -1,0 +1,6 @@
+ l_shipmode | high_priority_late | other_priority_late 
+------------+--------------------+---------------------
+ FOB        |               1858 |                2856
+ MAIL       |               1880 |                2826
+(2 rows)
+

@@ -1,0 +1,101 @@
+
+DATABASE SCHEMA:
+Table customer(
+  c_custkey integer,
+  c_name character varying,
+  c_address character varying,
+  c_nationkey integer,
+  c_phone character,
+  c_acctbal numeric,
+  c_mktsegment character,  -- Possible values: 'AUTOMOBILE', 'BUILDING', 'FURNITURE', 'MACHINERY', 'HOUSEHOLD'
+  c_comment character varying
+)
+
+Table lineitem(
+  l_orderkey integer,
+  l_partkey integer,
+  l_suppkey integer,
+  l_linenumber integer,
+  l_quantity numeric,
+  l_extendedprice numeric,
+  l_discount numeric,
+  l_tax numeric,
+  l_returnflag character,  -- Possible values: 'R' (Return), 'A' (Accept), 'N' (No return)
+  l_linestatus character,  -- Possible values: 'O' (Open), 'F' (Filled)
+  l_shipdate date,
+  l_commitdate date,
+  l_receiptdate date,
+  l_shipinstruct character,  -- Possible values: 'DELIVER IN PERSON', 'COLLECT COD', 'NONE', 'TAKE BACK RETURN'
+  l_shipmode character,  -- Possible values: 'AIR REG', 'AIR', 'RAIL', 'SHIP', 'TRUCK', 'MAIL', 'FOB'
+  l_comment character varying
+)
+
+Table nation(
+  n_nationkey integer,
+  n_name character,   -- examples: 'ALGERIA', 'BRAZIL', 'CANADA', 'JAPAN', etc.
+  n_regionkey integer,
+  n_comment character varying
+)
+
+Table orders(
+  o_orderkey integer,
+  o_custkey integer,
+  o_orderstatus character,  -- Possible values: 'O' (Open), 'F' (Filled), 'P' (Partial)
+  o_totalprice numeric,
+  o_orderdate date,
+  o_orderpriority character,  -- Possible values: '1-URGENT', '2-HIGH', '3-MEDIUM', '4-NOT SPECIFIED', '5-LOW'
+  o_clerk character,
+  o_shippriority integer,
+  o_comment character varying
+)
+
+Table part(
+  p_partkey integer,
+  p_name character varying,
+  p_mfgr character,  
+  p_brand character,  
+  p_type character varying,  
+  p_size integer,
+  p_container character, 
+  p_retailprice numeric,
+  p_comment character varying
+)
+
+Table partsupp(
+  ps_partkey integer,
+  ps_suppkey integer,
+  ps_availqty integer,
+  ps_supplycost numeric,
+  ps_comment character varying
+)
+
+Table region(
+  r_regionkey integer,
+  r_name character,  -- Possible values: 'AFRICA', 'AMERICA', 'ASIA', 'EUROPE', 'MIDDLE EAST'
+  r_comment character varying
+)
+
+Table supplier(
+  s_suppkey integer,
+  s_name character varying,
+  s_address character varying,
+  s_nationkey integer,
+  s_phone character,
+  s_acctbal numeric,
+  s_comment character varying
+)
+
+QUESTION:
+[This query reports the amount of business that was billed, shipped, and returned. 
+The Pricing Summary Report Query provides a summary pricing report for all lineitems shipped as of a given date. The  date  is  within  60  -  120  days  of  the  greatest  ship  date  contained  in  the  database.  The  query  lists  totals  for extended  price,  discounted  extended  price,  discounted  extended  price  plus  tax,  average  quantity,  average  extended price,  and  average  discount.  These  aggregates  are  grouped  by  RETURNFLAG  and  LINESTATUS,  and  listed  in  ascending  order  of  RETURNFLAG  and  LINESTATUS.  A  count  of  the  number  of  lineitems  in  each  group  is included. 
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text:  
+1. DELTA is randomly selected within [60. 120]. In this case assume DELTA = '84 days'
+Comment: 1998-12-01 is the highest possible ship date as defined in the database population. (This is ENDDATE - 30).  The  query  will  include  all  lineitems  shipped  before  this  date  minus  DELTA  days.  The  intent  is  to  choose DELTA so that between 95% and 97% of the rows in the table are scanned. ]
+
+Instructions:
+
+You are a SQL expert.
+Using the database schema and the question provided, generate a valid PostgreSQL query that answers the question.
+Return ONLY the SQL code without any markdown formatting or explanations.
+Let's think step by step!
+

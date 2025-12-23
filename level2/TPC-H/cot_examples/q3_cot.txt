@@ -1,0 +1,43 @@
+QUESTION:
+This query retrieves the 10 unshipped orders with the highest value.
+The Shipping Priority Query retrieves the shipping priority and potential revenue, defined as the sum of l_extendedprice * (1-l_discount), of the orders having the largest revenue among those that had not been shipped as of a given date. Orders are listed in decreasing order of revenue. If more than 10 unshipped orders exist, only the 10 orders with the largest revenue are listed.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. SEGMENT is randomly selected within the list of values defined for Segments in Clause 4.2.2.13; In this case assume segment 'FURNITURE'
+2. DATE is a randomly selected day within [1995-03-01 .. 1995-03-31]. In this case assume dates '1995-03-27', '1995-03-27'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "date orders", columns [orders.o_orderdate] may be used.
+According to "date orders are listed", columns [lineitem.l_shipdate] may be used.
+According to "l_discount of", columns [lineitem.l_discount] may be used.
+According to "of l_extendedprice", columns [lineitem.l_extendedprice] may be used.
+According to "orders are listed in", columns [orders.o_shippriority] may be used.
+According to "orders with", columns [orders.o_custkey, orders.o_orderkey] may be used.
+According to "orders with the highest", columns [lineitem.l_orderkey] may be used.
+Values [1995-03-27, FURNITURE] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	l_orderkey,
+	sum(l_extendedprice * (1 - l_discount)) as revenue,
+	o_orderdate,
+	o_shippriority
+from
+	customer,
+	orders,
+	lineitem
+where
+	c_mktsegment = 'FURNITURE'
+	and c_custkey = o_custkey
+	and l_orderkey = o_orderkey
+	and o_orderdate < date '1995-03-27'
+	and l_shipdate > date '1995-03-27'
+group by
+	l_orderkey,
+	o_orderdate,
+	o_shippriority
+order by
+	revenue desc,
+	o_orderdate
+limit 10;

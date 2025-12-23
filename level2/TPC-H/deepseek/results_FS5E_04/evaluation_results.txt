@@ -1,0 +1,132 @@
+================================================================================
+TEXT-TO-SQL EVALUATION REPORT
+================================================================================
+
+Total queries: 21
+Correct (PASS): 13 (61.90%)
+  - Exact match: 12
+  - With extra columns: 1
+Incorrect (FAIL): 8
+Not found (MISSING): 0
+
+================================================================================
+DETAILS PER QUERY
+================================================================================
+
+Query: q1.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q2.output.txt
+Status: PASS_WITH_EXTRA_COLS
+Details:
+    Data matches but LLM returned 2 extra column(s)
+--------------------------------------------------------------------------------
+
+Query: q3.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q4.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q5.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q6.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q7.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q8.output.txt
+Status: FAIL
+Details:
+    LLM has 1 extra column(s) AND data mismatch
+    Different dimensions: (2, 2) vs (2, 3)
+    Rows only in original (2): [(0.038668, 1996.0), (0.052353, 1995.0)]
+    Rows only in LLM (2): [(1.0, 1996.0, 'kenya'), (1.0, 1995.0, 'kenya')]
+--------------------------------------------------------------------------------
+
+Query: q9.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q10.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (20, 8) vs (20, 3)
+    Rows only in original (20): [(-252.22, 29011.0, 615999.2098, '34-294-644-9687', 'customer#000029011', 'k28ly1ikmpcr55brgm23ykt t6bufhse,tbhb', 'united states', 'y carefully bold excuses. quickly'), (18988.0, 477500.2538, 484.23, '20-213-232-3626', 'carefully. ironic, unusual deposits cajole furiously. accounts nag blithely above the care', 'customer#000018988', 'hsrtghxb5hztaspef1u2tow7riq', 'iran'), (16201.0, 535942.1455, 9106.19, '30-290-670-9014', 'customer#000016201', 'e after the ironic dolphins. slyly even instructions alongside of the regular instr', 'qbbuqlrthqznlz', 'saudi arabia')]
+    Rows only in LLM (20): [(29011.0, 615999.2098, 'customer#000029011'), (18988.0, 477500.2538, 'customer#000018988'), (35386.0, 464162.6788, 'customer#000035386')]
+--------------------------------------------------------------------------------
+
+Query: q11.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q12.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q13.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q14.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q15.output.txt
+Status: FAIL
+Details:
+    LLM has 3 extra column(s) AND data mismatch
+    Different dimensions: (1, 5) vs (1, 8)
+    Rows only in original (1): [(1482109.8042, 2516.0, '14-642-300-7682', '4m wg67rdqpzzcajcxepnqhdbong6e60b gky', 'supplier#000002516')]
+    Rows only in LLM (1): [(1463.0, 5.0, 704607.8481, 8794.09, '15-484-394-3837', 'supplier#000001463', 'xpress excuses use about the fluffily', 'yd5,1wukwuvv4gwrlovvudgeupo03et0')]
+--------------------------------------------------------------------------------
+
+Query: q16.output.txt
+Status: FAIL
+Details:
+    Rows only in original (24): [(3.0, 9.0, 'brand#21', 'medium polished brass'), (23.0, 3.0, 'brand#35', 'large polished brass'), (3.0, 9.0, 'brand#33', 'economy polished tin')]
+    Rows only in LLM (24): [(38.0, 4.0, 'brand#43', 'promo brushed nickel'), (4.0, 7.0, 'brand#35', 'small polished copper'), (4.0, 7.0, 'brand#45', 'large burnished steel')]
+--------------------------------------------------------------------------------
+
+Query: q17.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(98562.575714,)]
+    Rows only in LLM (1): [(122062.175714,)]
+--------------------------------------------------------------------------------
+
+Query: q18.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q19.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(1042188.9074,)]
+    Rows only in LLM (1): [(5228403.2396,)]
+--------------------------------------------------------------------------------
+
+Query: q21.output.txt
+Status: FAIL
+Details:
+    LLM has 4 extra column(s) AND data mismatch
+    Different dimensions: (100, 2) vs (100, 6)
+    Rows only in original (100): [(9.0, 'supplier#000002153'), (8.0, 'supplier#000002580'), (10.0, 'supplier#000001580')]
+    Rows only in LLM (100): [(1018.79, 1550.0, '15-207-965-2975', 'after the even platelets. final ideas wake about the care', 'supplier#000001550', 'wbdqra nxzqjz4e74'), (339.0, 3589.64, '15-967-506-6094', 'esoha53rew5g7z75w5hj', 'supplier#000000339', 'ts snooze carefully express accounts. foxes nag carefully'), (2094.94, 751.0, '15-773-726-6594', '20keocug39iam9t ezquk p7grgp,qd', 'carefully special instructions cajole slow re', 'supplier#000000751')]
+--------------------------------------------------------------------------------
+
+Query: q22.output.txt
+Status: FAIL
+Details:
+    Rows only in original (7): [(2079950.63, 279.0, 33.0), (1965469.24, 269.0, 31.0), (2093651.25, 280.0, 30.0)]
+    Rows only in LLM (7): [(10.0, 7541.213037, 777.0), (26.0, 7485.417033, 819.0), (33.0, 7438.79803, 787.0)]
+--------------------------------------------------------------------------------
+

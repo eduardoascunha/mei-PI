@@ -1,0 +1,104 @@
+ s_suppkey |          s_name           |                s_address                 |     s_phone     | s_acctbal |                                              s_comment                                               
+-----------+---------------------------+------------------------------------------+-----------------+-----------+------------------------------------------------------------------------------------------------------
+         2 | Supplier#000000002        | 89eJ5ksX3ImxJQBvxObC,                    | 15-679-861-2259 |   4032.68 |  slyly bold instructions. idle dependen
+        63 | Supplier#000000063        | NlV0OQyIoPvPkw5AYuWGomX,hgqm1            | 15-781-401-3047 |   5742.03 | ar deposits. blithely bold accounts against the slyly final pinto beans sleep about the exp
+        78 | Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz   | 15-670-998-6860 |   1044.10 | , regular packages wake quickly bold requests. carefully unusual requests about the unusual request
+       132 | Supplier#000000132        | sU92Jd3aQSbV                             | 15-776-909-1326 |   -812.17 | al, final accounts cajole requests; fluffily pending instruction
+       150 | Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA     | 15-169-420-7828 |   4161.22 | l instructions sleep quickly regular requests. final orbits use never furiously ironic reque
+       156 | Supplier#000000156        | ,KXbCcjqZNjmyHzeqaL4                     | 15-106-692-4998 |   9780.74 | sits cajole carefully instead of the final, ironic requests. furiously ironic deposits abo
+       193 | Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                      | 15-872-804-8448 |   9095.64 |  packages. regular ideas sleep about the fluffily even deposits! special dolphins nag sly
+       224 | Supplier#000000224        | iD7eF,uwQxxPCAFTmdXYV7N                  | 15-446-447-2944 |   9036.79 | atelets. regular, ironic gifts eat furiously across the permanently silent instructions. reg
+       231 | Supplier#000000231        | uZfFnyAs9oFJ0No97rtQ OIV1AOYi            | 15-551-432-9958 |   9287.33 | mptotes sleep above the regular dep
+       298 | Supplier#000000298        | oIB13yXjsqGSW                            | 15-790-635-6692 |   -530.05 | egularly unusual accounts 
+       339 | Supplier#000000339        |  ESOHA53rEW5G7Z75w5hJ                    | 15-967-506-6094 |   3589.64 | ts snooze carefully express accounts. foxes nag carefully 
+       360 | Supplier#000000360        | 3avxIDL4YPrZVHie4rOiPrK8Z IJwEPqZaioHK   | 15-671-472-7761 |   4956.01 | uickly regular asymptotes. packages ar
+       372 | Supplier#000000372        | Bdhu5NV4VfPYBxsCmK,YnkoHIaW              | 15-246-325-3001 |   1311.15 | ltipliers. blithely regular deposits was above the furiously even accounts. q
+       393 | Supplier#000000393        | hxGMP2tFry WHEeI5cmEFVF027E              | 15-120-912-1594 |   6686.84 | t the furiously regular deposits. excuses about the ruthless, regular 
+       434 | Supplier#000000434        | endL6N 85uU0NemLv4L3mSEH4LT2BF           | 15-763-277-6054 |   9522.03 | n, final packages. furiously pending c
+       447 | Supplier#000000447        | UHeJiRfImFw1r4MTrBk0vcwUx9               | 15-104-804-3139 |   2108.30 | deas thrash blithely. unusual packages in
+       456 | Supplier#000000456        | iSqve6KC7t69,jX6,HF B8Hbat11O            | 15-951-880-7133 |   5154.37 | e along the slyly bold theodolites. packages detect. regular requests sleep furiously b
+       462 | Supplier#000000462        | Bg,C2gIsljPAG                            | 15-387-146-3147 |   9497.29 | uriously unusual courts. blithely express deposits could run
+       464 | Supplier#000000464        | XwZyuXCVeO5wb5izvhfeX                    | 15-653-204-7643 |   1448.94 | ly. ideas are slyly after the ironic, regular accounts. platelets among t
+       487 | Supplier#000000487        | BvDBcJa,jQPslM                           | 15-551-730-1265 |   2124.86 | ly about the requests. accounts could use blithely? furiously pending accounts nag regular, even ide
+       516 | Supplier#000000516        | z5Mm65PAP4m                              | 15-165-647-2301 |    371.38 | s. idly final theodolites ha
+       526 | Supplier#000000526        | x8r7,jgpBRjq6Ns                          | 15-539-980-8303 |   3477.18 | as kindle ideas. blithely bold requests 
+       542 | Supplier#000000542        | 3yWRklEDbAvfVuidQPgOOe,x7f,4 J5lSp4v     | 15-378-700-5884 |   8142.81 | g requests believe carefully dolphins. quickly pending
+       637 | Supplier#000000637        | V6AMGzXQ7Eqs                             | 15-832-253-5581 |   2002.17 | rses haggle blithely about the carefully silent deposits. slyly pending packages th
+       700 | Supplier#000000700        | K5l3kvvjnRQJJ,                           | 15-648-846-4789 |   4196.26 | es haggle quickly. slyly bold ideas serve at the regular attai
+       723 | Supplier#000000723        | ZFI9Pb HTy,8e,mY0mqP6ThbN                | 15-714-811-1747 |   3117.73 | ests around the deposits cajole enticingly among the slyly express deposits. quick
+       749 | Supplier#000000749        | KxSfaofVZcFWnLsjaNszI5GTrlyAW,           | 15-131-224-8530 |   3839.44 | gular pinto beans. blithely even accounts wake blithely accounts. careful
+       751 | Supplier#000000751        | 20kEocUg39iam9T EzquK P7grgp,QD          | 15-773-726-6594 |   2094.94 | carefully special instructions cajole slow re
+       790 | Supplier#000000790        | HSYD9,gCfAwpsgCLKGhf,Z4SH8GSYOc          | 15-189-744-3618 |   -415.18 | iously ironic packages. final accounts boost blithely aft
+       819 | Supplier#000000819        | n1YA v3IWFGmIP tZr                       | 15-492-900-7246 |   4049.06 | s use blithely. blithely regular ideas according to the pending theodolites haggle above t
+       864 | Supplier#000000864        | D95VTylwusz7OYesg,                       | 15-293-129-4196 |   4089.61 | ites. quickly even ideas wake always express requests. express theodolites are. carefu
+       900 | Supplier#000000900        | ,6RXmcRyA48c0yvZ2I                       | 15-926-534-2005 |    165.26 | counts cajole carefully pending foxes. bold packages mold carefully unusual
+       910 | Supplier#000000910        | 0X S 2E55,maqch                          | 15-960-448-6633 |   4763.20 | arefully unusual deposits. 
+      1026 | Supplier#000001026        | rggfDIM7RY1sdPft                         | 15-655-974-9432 |   4418.65 | fluffily slow requests. accounts grow slyly. carefully final acc
+      1029 | Supplier#000001029        | 6quaw3pjSuzrj5d                          | 15-507-720-2035 |   8476.39 | ly fluffily even pinto beans. bold packages across the doggedly unusual deposits slee
+      1032 | Supplier#000001032        | EAEZHF7prT4nExxWsBPaSsOtWWytNfLdVHcIbIGA | 15-328-403-4879 |    360.76 | ously final instructions nag requests. express foxes detect slyly after the doggedly regular pac
+      1068 | Supplier#000001068        | ,yIRtm8YNahsojbY4zSe57Bs                 | 15-332-440-7893 |   7253.77 | iously ironic packages can haggle fluffily special deposits? carefully regular pains are careful
+      1088 | Supplier#000001088        | 4GAszSHeEDCKAjzBHRsI79Tv                 | 15-493-974-1062 |    -20.28 | ackages should have to ha
+      1114 | Supplier#000001114        | f,UYBv5a7bpz E4v08Z0i                    | 15-513-472-2380 |   3309.30 | quests along the quickly ironic deposits are carefully about the ironic package
+      1132 | Supplier#000001132        | 0rxuQ74Sqy                               | 15-583-125-3480 |   5825.44 | eans-- pinto beans wake above the sly
+      1164 | Supplier#000001164        | 4zRI bPJf5ST2fBFZw,                      | 15-830-566-1096 |    -89.70 | y the blithely bold packages. slyly regular acco
+      1230 | Supplier#000001230        | YTNwF6K9kaxyH8NGGrD9G                    | 15-922-198-8652 |   6068.43 | y final instructions. regular platelets hang bl
+      1237 | Supplier#000001237        | KskDRrC5imTdN0DCTm3BykGJWZzsNumC         | 15-830-628-9526 |   8480.34 | er the fluffily express deposits. ironic requests poach blithely
+      1250 | Supplier#000001250        | uum91lnpIZa9Yv3Z IMXbf7TyYlwPYI1ApCYtx   | 15-552-400-9891 |   3509.03 | counts. ironic deposits haggle
+      1304 | Supplier#000001304        | KlLipfqqkc8Ktz4CwZlYl                    | 15-452-488-8513 |    689.25 | ironic packages. ironic ideas unwind thinly even deposits. bo
+      1354 | Supplier#000001354        | Z3rwfjGIybZu399XSQMDDVMVTzcoakpx5oMfe    | 15-626-165-4902 |   4284.04 | foxes. regular asymptotes x-ray carefully regular, bold request
+      1386 | Supplier#000001386        | iNxyxvmqmNB                              | 15-186-107-2835 |   8082.42 | nstructions nag among the unusual theodol
+      1450 | Supplier#000001450        | nUHaPsG8kBoh6                            | 15-869-845-5599 |   -279.72 | furiously final theodolites. furiously pending requests about the
+      1463 | Supplier#000001463        | yD5,1wUkwuvV4gWRloVVudgeUpO03et0         | 15-484-394-3837 |   8794.09 | xpress excuses use about the fluffily
+      1531 | Supplier#000001531        | SRV0tsqpwsgBHM,0LJRj9NWJ9SBDl4PSL        | 15-945-324-4201 |   2441.49 | detect quickly alongside of
+      1538 | Supplier#000001538        | pB38h5flEq7qC7sFqTYjhMuFvJxoRc6eY        | 15-344-384-1691 |   1062.49 | hely sly ideas according to th
+      1550 | Supplier#000001550        | WbdqrA NXZqJz4e74                        | 15-207-965-2975 |   1018.79 | after the even platelets. final ideas wake about the care
+      1580 | Supplier#000001580        | gqwJchO919h1NPd8IBWvNahMtg               | 15-814-392-7616 |   6505.84 | equests cajole slyly along the furiously pending pinto beans. slyly unusual reques
+      1593 | Supplier#000001593        | nyrNd0vqtRsA2mB8 N0B WGupWrAy9WK3l       | 15-528-294-8640 |   8878.97 | s breach blithely. slyly ironic ideas above the furiously final packages nag slyly along the b
+      1627 | Supplier#000001627        | 74kMjyK1cWzXBtjZK u4n5I4UP               | 15-112-462-8537 |   6981.07 | uickly special pains. express asymptotes wake even pearls. blithely even p
+      1655 | Supplier#000001655        | S4coCIhdb1y,xbBL4NbuTjXaDgB6 hchz0       | 15-449-908-4417 |   7445.36 | oxes-- bold deposits alongside of the slyly ironic pinto beans run furiously slyly even
+      1668 | Supplier#000001668        | oD5tUdEIM5vtt92IQAn2HVQh1QP2BPVNZKNSZCj  | 15-214-784-9215 |     11.13 | slyly final courts use. slyly regular packages are q
+      1727 | Supplier#000001727        | YI0bCXSwEXpz,SUoF iveZ                   | 15-658-818-9847 |   -807.15 | t quickly. ironic foxes wake evenly. pinto beans nag furiously agai
+      1737 | Supplier#000001737        | PYmhWHl0BbjFYyExQIJsL ,6LFobxXaOQPH      | 15-199-724-3432 |   4915.16 |  wake blithely across the slyly express accounts. ideas haggle 
+      1759 | Supplier#000001759        | IMUk7aHEg2sS8PyUqj4FsZS7gR8HX3Ix         | 15-110-929-1862 |   6721.22 | y express packages across the sl
+      1780 | Supplier#000001780        | 5VXXjHsRuGrU HNS2xdoUCPw5LMlrJVcUOd5ED   | 15-148-378-4534 |   9581.63 | counts are boldly furiously even instruction
+      1792 | Supplier#000001792        | YbJ7B5b4NQ6UTAJEKm,vkRSI                 | 15-820-745-6527 |   7448.35 |  quickly regular packages. slyly final pint
+      1817 | Supplier#000001817        | ,te1RWRzZWqPEVE                          | 15-103-734-9639 |   7454.46 | thless theodolites haggle.
+      1820 | Supplier#000001820        | KpXwAkf9mJGAhkUcJUmWO7ggW3lI             | 15-664-895-4843 |   9442.87 | lithely ruthless ideas. regular instructions wake. fluffily furious orbits was slyly acro
+      1847 | Supplier#000001847        | 0GAs3udWD8IfclOsoK22YxTDtHj              | 15-843-949-5894 |   6500.60 | the fluffily bold asymptotes. s
+      1850 | Supplier#000001850        | u8APqIJf3BcRLnul4AsNH7ha                 | 15-547-277-5192 |   3714.48 |  beans. carefully unusual accounts sleep blithely about the careful ins
+      1861 | Supplier#000001861        | LRsUq9GH8A5e                             | 15-867-623-9256 |   -699.78 | mong the accounts. foxes sleep slyly pending Tiresias. regul
+      1935 | Supplier#000001935        | lxfvnpWQ dvSWd6mSA Q1tDjspDq CP7y        | 15-134-339-9047 |   2272.18 | kly even pains sleep against the regularly express pinto beans. fur
+      1970 | Supplier#000001970        | QqyXDIxLNM,fwA8qP1TLxQBA9v               | 15-350-889-1064 |   7705.03 |  slyly at the slyly regular pinto beans. regular, special deposits affix carefully pending asymptote
+      1975 | Supplier#000001975        | nBmdXXmMEmKhYwO2PWWjQur                  | 15-516-365-1831 |   7708.98 | instructions. blithely ironic dependencies alongside of the pinto beans use
+      1978 | Supplier#000001978        | qnOvcc36FOHCHqO0VEWCD                    | 15-541-919-6147 |   3921.11 | l accounts. pinto beans against the blithely special accounts nag slyly even, b
+      2023 | Supplier#000002023        | qofT29jef,Wu4PR75k5 0T8sKKyCu6           | 15-826-899-7652 |   1159.28 | -- slyly silent foxes cajole quickly. doggedly even depths cajole sometimes. final, ir
+      2084 | Supplier#000002084        | ,zeVVYFb6hYoWyJ4kjqm8hT5lzLlW            | 15-241-499-4185 |   9014.90 |  deposits haggle doggedly among the furiously even packages. d
+      2087 | Supplier#000002087        | HGgxYKF0 EkGjGK                          | 15-542-152-7965 |   8153.16 | ven sheaves serve slyly agains
+      2109 | Supplier#000002109        | deW6ISdcFQkhbJqqbHhk9,ADM1SCfrdsvHzSvB   | 15-125-731-1831 |   3755.77 | al instructions nag slyly above the deposits; blith
+      2147 | Supplier#000002147        | ZuMql8hTTEer                             | 15-600-322-9441 |    711.47 | deposits. requests are furiously unusual pinto beans. ironic gifts sleep blithely final 
+      2150 | Supplier#000002150        | 4BB8gg2kf3OSmmFn2kglleRYJ                | 15-313-570-1950 |   2656.11 |  haggle slyly. blithely regular ideas sleep quickly perma
+      2153 | Supplier#000002153        | fvGJKuSkubeTJU8wOG5M                     | 15-747-316-6887 |   2975.60 | ests. special pinto beans unwind furiously above the regular accounts? even, even ideas are bl
+      2182 | Supplier#000002182        | nF,UVhLaYj0B7j bhbKoaf9T                 | 15-415-986-8042 |   2468.90 | ven foxes sleep according to the regular requests. ideas cajole furiously alo
+      2186 | Supplier#000002186        | VKhSL06Ul4kHi4hBkK8Zm3                   | 15-655-903-2294 |   7146.03 | de of the furiously ironic
+      2217 | Supplier#000002217        | OKKxE,bL1tm2olSlad                       | 15-801-159-5004 |   1944.08 | t across the carefully regular pinto beans. carefully ironic requests sleep. ironic cou
+      2219 | Supplier#000002219        | ShNYaJlJuC                               | 15-855-925-7829 |   4082.86 | inst the packages affix furiously according to the stealthy
+      2233 | Supplier#000002233        | pyKMeYFHVDx61EeR                         | 15-509-673-3425 |   1191.31 | pending packages are carefully silent accounts. special ideas print. silently iron
+      2275 | Supplier#000002275        | n95 s1Gp37NuIaefRHIuSolsOtRLPlazF8jLS    | 15-209-306-1486 |   7233.12 | aggle carefully according to the fina
+      2326 | Supplier#000002326        | wTAOL2UlxXNMMWniK6djM0C mT               | 15-143-424-9736 |   -718.89 |  dolphins wake furiously across the fluffily ironic id
+      2346 | Supplier#000002346        | tzwxlyYXGiMe1mk099ty6vn                  | 15-308-126-9449 |   2278.04 | e. slyly permanent hockey players along the ironic, regular deposits solve asymptotes:
+      2347 | Supplier#000002347        | iZjD85P4li3H4zs6,9 ZJYnV81afGp,Yd        | 15-381-519-4927 |   4903.11 | nal requests according to the carefully express deposits are slyly along the ironic, specia
+      2353 | Supplier#000002353        | tJfE2O3Jwt                               | 15-175-686-8133 |   5015.22 | to the slyly even platelets. bli
+      2382 | Supplier#000002382        | otBPUYXGv LZifYiBq1XPTVKn7d              | 15-391-167-3113 |   6714.90 | s boost after the quickly pendin
+      2384 | Supplier#000002384        | LvwNYrJKOqS 4VajSC7ot9CQU2izWIa          | 15-204-993-2671 |   2090.98 | the slyly final deposits-- pending deposits above the slyly pending packages
+      2404 | Supplier#000002404        | g4LXlcHDN4z6DrdiBb0iCyLA                 | 15-366-436-2694 |   2475.73 |  blithely regular requests integrate quickly
+      2414 | Supplier#000002414        | W6uBF44GHsJFPwnG,VBH8a e                 | 15-728-678-4300 |   7075.81 | ep furiously slyly express theodolites. carefully ironic asymp
+      2461 | Supplier#000002461        | 3AxwmIx6iSzuXKNRqSNcSMDS13zWQU           | 15-442-573-5761 |   7260.83 | eas-- even attainments will cajole at the ironic pinto beans. regular, regular pinto b
+      2485 | Supplier#000002485        | k5ho3Qa8Jpuigzwu                         | 15-819-144-9617 |   7322.08 | hins. blithely final excuses boost carefully. slyly ironic accounts accordi
+      2498 | Supplier#000002498        | VvpYr7G6OozCvtkIW6qdEZBi3918Vb           | 15-815-470-5030 |   6008.19 | sits. slyly bold accounts are
+      2509 | Supplier#000002509        | TV cQFJuOUUaJaZGSG                       | 15-163-414-7176 |   5616.71 | c packages. special instructions sleep carefully about the furiously final foxes. blithely special
+      2510 | Supplier#000002510        | J3xtZTxnkUrG0KjE 9ru76PJGpGINiciqU31     | 15-761-995-7298 |   7055.81 | ly final accounts around the final a
+      2551 | Supplier#000002551        | VXntNh4UX,Z8dJ                           | 15-457-583-6333 |   9418.87 | excuses cajole requests. ironic, ironic waters use
+      2554 | Supplier#000002554        | tFdJFJR46eF3X tG0xnfsTQ                  | 15-739-167-4541 |   8245.77 |  the ironically unusual patterns. blithely express foxes poach slyly carefully iro
+      2580 | Supplier#000002580        | qrs2ub3wSjbzv1kc0a4k                     | 15-284-495-3109 |   9888.26 | sias. carefully even orbits wake blithe
+(100 rows)
+

@@ -1,0 +1,34 @@
+QUESTION:
+This  query  determines  how  much  average  yearly  revenue  would  be  lost  if  orders  were  no longer  filled  for  small quantities of certain parts. This may reduce overhead expenses by concentrating sales on larger shipments.
+The  Small-Quantity-Order  Revenue  Query  considers  parts  of  a  given  brand  and  with  a given  container  type  and determines the average lineitem quantity of such parts ordered for all orders (past and pending) in the 7 -year database. What would be the average yearly gross (undiscounted) loss in revenue if orders for these parts with a quantity of less than 20% of this average were no longer taken?
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. BRAND = 'Brand#MN' where MN is a  two character string representing two numbers randomly and independently selected within [1 .. 5]; In this case assume BRAND 'Brand#23'
+2. CONTAINER  is  randomly  selected  within  the  list  of  2-syllable  strings  defined  for Containers  in  Clause 4.2.2.13. In this case assume CONTAINER 'SM CAN'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "given container type", columns [part.p_container] may be used.
+According to "lineitem quantity", columns [lineitem.l_extendedprice, lineitem.l_quantity] may be used.
+According to "lineitem quantity of", columns [lineitem.l_partkey] may be used.
+According to "parts with", columns [part.p_brand, part.p_partkey] may be used.
+Values [0.2, 7.0, Brand#23, SM CAN] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	sum(l_extendedprice) / 7.0 as avg_yearly
+from
+	lineitem,
+	part
+where
+	p_partkey = l_partkey
+	and p_brand = 'Brand#23'
+	and p_container = 'SM CAN'
+	and l_quantity < (
+		select
+			0.2 * avg(l_quantity)
+		from
+			lineitem
+		where
+			l_partkey = p_partkey
+	);

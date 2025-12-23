@@ -1,0 +1,5 @@
+This query retrieves the 10 unshipped orders with the highest value.
+The Shipping Priority Query retrieves the shipping priority and potential revenue, defined as the sum of l_extendedprice * (1-l_discount), of the orders having the largest revenue among those that had not been shipped as of a given date. Orders are listed in decreasing order of revenue. If more than 10 unshipped orders exist, only the 10 orders with the largest revenue are listed.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. SEGMENT is randomly selected within the list of values defined for Segments in Clause 4.2.2.13; In this case assume segment 'FURNITURE'
+2. DATE is a randomly selected day within [1995-03-01 .. 1995-03-31]. In this case assume dates '1995-03-27', '1995-03-27'

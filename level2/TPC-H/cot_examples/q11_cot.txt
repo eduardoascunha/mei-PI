@@ -1,0 +1,48 @@
+QUESTION:
+This query finds the most important subset of suppliers' stock in a given nation.
+The Important Stock Identification Query finds, from scanning the available stock of suppliers in a given nation, all the parts that represent a significant 
+percentage of the  total value of all available parts. The query displays the part number and the value of those parts in descending order of value.
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. NATION is randomly selected within the list of values defined for N_NAME in Clause 4.2.3; In this case assume NATION 'UNITED STATES'
+2. FRACTION is chosen as 0.0001 / SF. In this case assume FRACTION 0.0001000000
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "available parts the query", columns [partsupp.ps_availqty] may be used.
+According to "nation the", columns [nation.n_name, nation.n_nationkey] may be used.
+According to "of all available parts", columns [partsupp.ps_supplycost] may be used.
+According to "of suppliers", columns [supplier.s_suppkey] may be used.
+According to "parts in", columns [partsupp.ps_suppkey] may be used.
+According to "query displays the part", columns [partsupp.ps_partkey] may be used.
+According to "suppliers in", columns [supplier.s_nationkey] may be used.
+Values [0.0001000000, UNITED STATES] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	ps_partkey,
+	sum(ps_supplycost * ps_availqty) as value
+from
+	partsupp,
+	supplier,
+	nation
+where
+	ps_suppkey = s_suppkey
+	and s_nationkey = n_nationkey
+	and n_name = 'UNITED STATES'
+group by
+	ps_partkey having
+		sum(ps_supplycost * ps_availqty) > (
+			select
+				sum(ps_supplycost * ps_availqty) * 0.0001000000
+			from
+				partsupp,
+				supplier,
+				nation
+			where
+				ps_suppkey = s_suppkey
+				and s_nationkey = n_nationkey
+				and n_name = 'UNITED STATES'
+		)
+order by
+	value desc;

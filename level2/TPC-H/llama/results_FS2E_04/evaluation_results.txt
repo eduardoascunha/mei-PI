@@ -1,0 +1,138 @@
+================================================================================
+TEXT-TO-SQL EVALUATION REPORT
+================================================================================
+
+Total queries: 21
+Correct (PASS): 11 (52.38%)
+  - Exact match: 11
+  - With extra columns: 0
+Incorrect (FAIL): 10
+Not found (MISSING): 0
+
+================================================================================
+DETAILS PER QUERY
+================================================================================
+
+Query: q1.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q2.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q3.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (10, 4) vs (2, 1)
+    Rows only in original (10): [(0.0, 366229.5302, 460066.0, '1995-03-22'), (0.0, 181414.0, 351235.9929, '1995-03-08'), (0.0, 1083941.0, 432164.0053, '1995-02-21')]
+    Rows only in LLM (2): [('^',), ("line 11:  and c_mktsegment = 'furniture'",)]
+--------------------------------------------------------------------------------
+
+Query: q4.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q5.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q6.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q7.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (4, 4) vs (3, 1)
+    Rows only in original (4): [(15968215.735, 1996.0, 'argentina', 'kenya'), (13331202.777, 1995.0, 'argentina', 'kenya'), (15042622.2672, 1995.0, 'argentina', 'kenya')]
+    Rows only in LLM (3): [('^',), ('hint:  perhaps you meant to reference the column "n1.n_nationkey".',), ('line 17:  and s_nationkey = n1.nationkey',)]
+--------------------------------------------------------------------------------
+
+Query: q8.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (2, 2) vs (2, 1)
+    Rows only in original (2): [(0.038668, 1996.0), (0.052353, 1995.0)]
+    Rows only in LLM (2): [('^',), ('line 14:   type t',)]
+--------------------------------------------------------------------------------
+
+Query: q9.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q10.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (20, 8) vs (2, 1)
+    Rows only in original (20): [(-425.09, 1024.0, 496716.2755, '21-508-779-7822', '9wlrrs78uopy7chw', 'carefully regular instructions. furiously final deposits across the carefully special ideas cajole furi', 'customer#000001024', 'iraq'), (21590.0, 5203.5, 611401.0122, '13-352-974-8608', '77cqbojtyayl9yu5,wwbnejr7q6un4xbf0', 'canada', 'customer#000021590', 'the slyly unusual pinto beans. furiously final deposits haggle of the f'), (33091.0, 518380.5519, 9823.77, '30-786-624-6904', 'customer#000033091', 'nyfp1vl4,jsfk', 'saudi arabia', 'unts boost carefully unusual, unusual deposits. quickly ironic accounts do wake furiously. quickly re')]
+    Rows only in LLM (2): [('^',), ('line 2:  c_name,',)]
+--------------------------------------------------------------------------------
+
+Query: q11.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q12.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q13.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (41, 2) vs (2, 1)
+    Rows only in original (41): [(24.0, 814.0), (24.0, 33.0), (1945.0, 9.0)]
+    Rows only in LLM (2): [('^',), ('line 5:     customers c',)]
+--------------------------------------------------------------------------------
+
+Query: q14.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q15.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (1, 5) vs (1, 3)
+    Rows only in original (1): [(1482109.8042, 2516.0, '14-642-300-7682', '4m wg67rdqpzzcajcxepnqhdbong6e60b gky', 'supplier#000002516')]
+    Rows only in LLM (1): [(1524222.4765, 2990.0, 'supplier#000002990')]
+--------------------------------------------------------------------------------
+
+Query: q16.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q17.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(98562.575714,)]
+    Rows only in LLM (1): [(4315.329444,)]
+--------------------------------------------------------------------------------
+
+Query: q18.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q19.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(1042188.9074,)]
+    Rows only in LLM (1): [(1682319.9592,)]
+--------------------------------------------------------------------------------
+
+Query: q21.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (100, 2) vs (3, 1)
+    Rows only in original (100): [(13.0, 'supplier#000002858'), (10.0, 'supplier#000002592'), (7.0, 'supplier#000000231')]
+    Rows only in LLM (3): [('hint:  perhaps you meant to reference the column "s.s_acctbal".',), ('^',), ('line 13:     and s.s_acctkey = c.c_custkey',)]
+--------------------------------------------------------------------------------
+
+Query: q22.output.txt
+Status: FAIL
+Details:
+    LLM has 3 extra column(s) AND data mismatch
+    Different dimensions: (7, 3) vs (8206, 6)
+    Rows only in original (7): [(2079950.63, 279.0, 33.0), (1965469.24, 269.0, 31.0), (2093651.25, 280.0, 30.0)]
+    Rows only in LLM (8206): [(35658.0, 9529.97, '23-271-855-5004', 'customer#000035658', 'e slowly. carefully final accounts after the blithely silent ideas boost furiously carefully ironic dolphins! furiou', 'jrxj6zp3kjxtqkghs'), (4429.81, 527.0, '23-139-567-9286', 'customer#000000527', 'ending, ironic instructions. blithely regular deposits about the deposits wake pinto beans. closely silent', 'gijaujnttxx,hxiy0adwwvg,uu5y3rvp'), (26898.0, 7678.26, '14-692-313-9988', '5t9eywwzw2w meo,m89zbjzwhvy7a', 'customer#000026898', 'press packages nag requests. carefully sly accounts doubt slyly above the unusual,')]
+--------------------------------------------------------------------------------
+

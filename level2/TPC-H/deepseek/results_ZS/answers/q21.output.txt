@@ -1,0 +1,104 @@
+          s_name           |                s_address                 |     s_phone     
+---------------------------+------------------------------------------+-----------------
+ Supplier#000000002        | 89eJ5ksX3ImxJQBvxObC,                    | 15-679-861-2259
+ Supplier#000000063        | NlV0OQyIoPvPkw5AYuWGomX,hgqm1            | 15-781-401-3047
+ Supplier#000000078        | 9y3OZ2CV hGrsrQxzB7V3zTtygHVHlG3SD6yrz   | 15-670-998-6860
+ Supplier#000000132        | sU92Jd3aQSbV                             | 15-776-909-1326
+ Supplier#000000150        | kZajmmtJB4g,nNlaHxUvXLfZW0hVtnR35LKA     | 15-169-420-7828
+ Supplier#000000156        | ,KXbCcjqZNjmyHzeqaL4                     | 15-106-692-4998
+ Supplier#000000193        | 0HvoBt,qEF EaKzYNCl                      | 15-872-804-8448
+ Supplier#000000224        | iD7eF,uwQxxPCAFTmdXYV7N                  | 15-446-447-2944
+ Supplier#000000231        | uZfFnyAs9oFJ0No97rtQ OIV1AOYi            | 15-551-432-9958
+ Supplier#000000298        | oIB13yXjsqGSW                            | 15-790-635-6692
+ Supplier#000000339        |  ESOHA53rEW5G7Z75w5hJ                    | 15-967-506-6094
+ Supplier#000000360        | 3avxIDL4YPrZVHie4rOiPrK8Z IJwEPqZaioHK   | 15-671-472-7761
+ Supplier#000000372        | Bdhu5NV4VfPYBxsCmK,YnkoHIaW              | 15-246-325-3001
+ Supplier#000000393        | hxGMP2tFry WHEeI5cmEFVF027E              | 15-120-912-1594
+ Supplier#000000434        | endL6N 85uU0NemLv4L3mSEH4LT2BF           | 15-763-277-6054
+ Supplier#000000447        | UHeJiRfImFw1r4MTrBk0vcwUx9               | 15-104-804-3139
+ Supplier#000000456        | iSqve6KC7t69,jX6,HF B8Hbat11O            | 15-951-880-7133
+ Supplier#000000462        | Bg,C2gIsljPAG                            | 15-387-146-3147
+ Supplier#000000464        | XwZyuXCVeO5wb5izvhfeX                    | 15-653-204-7643
+ Supplier#000000487        | BvDBcJa,jQPslM                           | 15-551-730-1265
+ Supplier#000000516        | z5Mm65PAP4m                              | 15-165-647-2301
+ Supplier#000000526        | x8r7,jgpBRjq6Ns                          | 15-539-980-8303
+ Supplier#000000542        | 3yWRklEDbAvfVuidQPgOOe,x7f,4 J5lSp4v     | 15-378-700-5884
+ Supplier#000000637        | V6AMGzXQ7Eqs                             | 15-832-253-5581
+ Supplier#000000700        | K5l3kvvjnRQJJ,                           | 15-648-846-4789
+ Supplier#000000723        | ZFI9Pb HTy,8e,mY0mqP6ThbN                | 15-714-811-1747
+ Supplier#000000749        | KxSfaofVZcFWnLsjaNszI5GTrlyAW,           | 15-131-224-8530
+ Supplier#000000751        | 20kEocUg39iam9T EzquK P7grgp,QD          | 15-773-726-6594
+ Supplier#000000790        | HSYD9,gCfAwpsgCLKGhf,Z4SH8GSYOc          | 15-189-744-3618
+ Supplier#000000819        | n1YA v3IWFGmIP tZr                       | 15-492-900-7246
+ Supplier#000000864        | D95VTylwusz7OYesg,                       | 15-293-129-4196
+ Supplier#000000900        | ,6RXmcRyA48c0yvZ2I                       | 15-926-534-2005
+ Supplier#000000910        | 0X S 2E55,maqch                          | 15-960-448-6633
+ Supplier#000001026        | rggfDIM7RY1sdPft                         | 15-655-974-9432
+ Supplier#000001029        | 6quaw3pjSuzrj5d                          | 15-507-720-2035
+ Supplier#000001032        | EAEZHF7prT4nExxWsBPaSsOtWWytNfLdVHcIbIGA | 15-328-403-4879
+ Supplier#000001068        | ,yIRtm8YNahsojbY4zSe57Bs                 | 15-332-440-7893
+ Supplier#000001088        | 4GAszSHeEDCKAjzBHRsI79Tv                 | 15-493-974-1062
+ Supplier#000001114        | f,UYBv5a7bpz E4v08Z0i                    | 15-513-472-2380
+ Supplier#000001132        | 0rxuQ74Sqy                               | 15-583-125-3480
+ Supplier#000001164        | 4zRI bPJf5ST2fBFZw,                      | 15-830-566-1096
+ Supplier#000001230        | YTNwF6K9kaxyH8NGGrD9G                    | 15-922-198-8652
+ Supplier#000001237        | KskDRrC5imTdN0DCTm3BykGJWZzsNumC         | 15-830-628-9526
+ Supplier#000001250        | uum91lnpIZa9Yv3Z IMXbf7TyYlwPYI1ApCYtx   | 15-552-400-9891
+ Supplier#000001304        | KlLipfqqkc8Ktz4CwZlYl                    | 15-452-488-8513
+ Supplier#000001354        | Z3rwfjGIybZu399XSQMDDVMVTzcoakpx5oMfe    | 15-626-165-4902
+ Supplier#000001386        | iNxyxvmqmNB                              | 15-186-107-2835
+ Supplier#000001450        | nUHaPsG8kBoh6                            | 15-869-845-5599
+ Supplier#000001463        | yD5,1wUkwuvV4gWRloVVudgeUpO03et0         | 15-484-394-3837
+ Supplier#000001531        | SRV0tsqpwsgBHM,0LJRj9NWJ9SBDl4PSL        | 15-945-324-4201
+ Supplier#000001538        | pB38h5flEq7qC7sFqTYjhMuFvJxoRc6eY        | 15-344-384-1691
+ Supplier#000001550        | WbdqrA NXZqJz4e74                        | 15-207-965-2975
+ Supplier#000001580        | gqwJchO919h1NPd8IBWvNahMtg               | 15-814-392-7616
+ Supplier#000001593        | nyrNd0vqtRsA2mB8 N0B WGupWrAy9WK3l       | 15-528-294-8640
+ Supplier#000001627        | 74kMjyK1cWzXBtjZK u4n5I4UP               | 15-112-462-8537
+ Supplier#000001655        | S4coCIhdb1y,xbBL4NbuTjXaDgB6 hchz0       | 15-449-908-4417
+ Supplier#000001668        | oD5tUdEIM5vtt92IQAn2HVQh1QP2BPVNZKNSZCj  | 15-214-784-9215
+ Supplier#000001727        | YI0bCXSwEXpz,SUoF iveZ                   | 15-658-818-9847
+ Supplier#000001737        | PYmhWHl0BbjFYyExQIJsL ,6LFobxXaOQPH      | 15-199-724-3432
+ Supplier#000001759        | IMUk7aHEg2sS8PyUqj4FsZS7gR8HX3Ix         | 15-110-929-1862
+ Supplier#000001780        | 5VXXjHsRuGrU HNS2xdoUCPw5LMlrJVcUOd5ED   | 15-148-378-4534
+ Supplier#000001792        | YbJ7B5b4NQ6UTAJEKm,vkRSI                 | 15-820-745-6527
+ Supplier#000001817        | ,te1RWRzZWqPEVE                          | 15-103-734-9639
+ Supplier#000001820        | KpXwAkf9mJGAhkUcJUmWO7ggW3lI             | 15-664-895-4843
+ Supplier#000001847        | 0GAs3udWD8IfclOsoK22YxTDtHj              | 15-843-949-5894
+ Supplier#000001850        | u8APqIJf3BcRLnul4AsNH7ha                 | 15-547-277-5192
+ Supplier#000001861        | LRsUq9GH8A5e                             | 15-867-623-9256
+ Supplier#000001935        | lxfvnpWQ dvSWd6mSA Q1tDjspDq CP7y        | 15-134-339-9047
+ Supplier#000001970        | QqyXDIxLNM,fwA8qP1TLxQBA9v               | 15-350-889-1064
+ Supplier#000001975        | nBmdXXmMEmKhYwO2PWWjQur                  | 15-516-365-1831
+ Supplier#000001978        | qnOvcc36FOHCHqO0VEWCD                    | 15-541-919-6147
+ Supplier#000002023        | qofT29jef,Wu4PR75k5 0T8sKKyCu6           | 15-826-899-7652
+ Supplier#000002084        | ,zeVVYFb6hYoWyJ4kjqm8hT5lzLlW            | 15-241-499-4185
+ Supplier#000002087        | HGgxYKF0 EkGjGK                          | 15-542-152-7965
+ Supplier#000002109        | deW6ISdcFQkhbJqqbHhk9,ADM1SCfrdsvHzSvB   | 15-125-731-1831
+ Supplier#000002147        | ZuMql8hTTEer                             | 15-600-322-9441
+ Supplier#000002150        | 4BB8gg2kf3OSmmFn2kglleRYJ                | 15-313-570-1950
+ Supplier#000002153        | fvGJKuSkubeTJU8wOG5M                     | 15-747-316-6887
+ Supplier#000002182        | nF,UVhLaYj0B7j bhbKoaf9T                 | 15-415-986-8042
+ Supplier#000002186        | VKhSL06Ul4kHi4hBkK8Zm3                   | 15-655-903-2294
+ Supplier#000002217        | OKKxE,bL1tm2olSlad                       | 15-801-159-5004
+ Supplier#000002219        | ShNYaJlJuC                               | 15-855-925-7829
+ Supplier#000002233        | pyKMeYFHVDx61EeR                         | 15-509-673-3425
+ Supplier#000002275        | n95 s1Gp37NuIaefRHIuSolsOtRLPlazF8jLS    | 15-209-306-1486
+ Supplier#000002326        | wTAOL2UlxXNMMWniK6djM0C mT               | 15-143-424-9736
+ Supplier#000002346        | tzwxlyYXGiMe1mk099ty6vn                  | 15-308-126-9449
+ Supplier#000002347        | iZjD85P4li3H4zs6,9 ZJYnV81afGp,Yd        | 15-381-519-4927
+ Supplier#000002353        | tJfE2O3Jwt                               | 15-175-686-8133
+ Supplier#000002382        | otBPUYXGv LZifYiBq1XPTVKn7d              | 15-391-167-3113
+ Supplier#000002384        | LvwNYrJKOqS 4VajSC7ot9CQU2izWIa          | 15-204-993-2671
+ Supplier#000002404        | g4LXlcHDN4z6DrdiBb0iCyLA                 | 15-366-436-2694
+ Supplier#000002414        | W6uBF44GHsJFPwnG,VBH8a e                 | 15-728-678-4300
+ Supplier#000002461        | 3AxwmIx6iSzuXKNRqSNcSMDS13zWQU           | 15-442-573-5761
+ Supplier#000002485        | k5ho3Qa8Jpuigzwu                         | 15-819-144-9617
+ Supplier#000002498        | VvpYr7G6OozCvtkIW6qdEZBi3918Vb           | 15-815-470-5030
+ Supplier#000002509        | TV cQFJuOUUaJaZGSG                       | 15-163-414-7176
+ Supplier#000002510        | J3xtZTxnkUrG0KjE 9ru76PJGpGINiciqU31     | 15-761-995-7298
+ Supplier#000002551        | VXntNh4UX,Z8dJ                           | 15-457-583-6333
+ Supplier#000002554        | tFdJFJR46eF3X tG0xnfsTQ                  | 15-739-167-4541
+ Supplier#000002580        | qrs2ub3wSjbzv1kc0a4k                     | 15-284-495-3109
+(100 rows)
+

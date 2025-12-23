@@ -1,0 +1,259 @@
+
+You are a SQL expert.
+The examples below show SQL patterns, but DO NOT copy them literally.
+Analyze the current question independently and create the most appropriate query.
+Use example patterns only as inspiration, not as templates.
+Return ONLY the SQL code without markdown formatting or explanations.
+
+
+DATABASE SCHEMA:
+Table customer(
+  c_custkey integer,
+  c_name character varying,
+  c_address character varying,
+  c_nationkey integer,
+  c_phone character,
+  c_acctbal numeric,
+  c_mktsegment character,  -- Possible values: 'AUTOMOBILE', 'BUILDING', 'FURNITURE', 'MACHINERY', 'HOUSEHOLD'
+  c_comment character varying
+)
+
+Table lineitem(
+  l_orderkey integer,
+  l_partkey integer,
+  l_suppkey integer,
+  l_linenumber integer,
+  l_quantity numeric,
+  l_extendedprice numeric,
+  l_discount numeric,
+  l_tax numeric,
+  l_returnflag character,  -- Possible values: 'R' (Return), 'A' (Accept), 'N' (No return)
+  l_linestatus character,  -- Possible values: 'O' (Open), 'F' (Filled)
+  l_shipdate date,
+  l_commitdate date,
+  l_receiptdate date,
+  l_shipinstruct character,  -- Possible values: 'DELIVER IN PERSON', 'COLLECT COD', 'NONE', 'TAKE BACK RETURN'
+  l_shipmode character,  -- Possible values: 'AIR REG', 'AIR', 'RAIL', 'SHIP', 'TRUCK', 'MAIL', 'FOB'
+  l_comment character varying
+)
+
+Table nation(
+  n_nationkey integer,
+  n_name character,   -- examples: 'ALGERIA', 'BRAZIL', 'CANADA', 'JAPAN', etc.
+  n_regionkey integer,
+  n_comment character varying
+)
+
+Table orders(
+  o_orderkey integer,
+  o_custkey integer,
+  o_orderstatus character,  -- Possible values: 'O' (Open), 'F' (Filled), 'P' (Partial)
+  o_totalprice numeric,
+  o_orderdate date,
+  o_orderpriority character,  -- Possible values: '1-URGENT', '2-HIGH', '3-MEDIUM', '4-NOT SPECIFIED', '5-LOW'
+  o_clerk character,
+  o_shippriority integer,
+  o_comment character varying
+)
+
+Table part(
+  p_partkey integer,
+  p_name character varying,
+  p_mfgr character,  
+  p_brand character,  
+  p_type character varying,  
+  p_size integer,
+  p_container character, 
+  p_retailprice numeric,
+  p_comment character varying
+)
+
+Table partsupp(
+  ps_partkey integer,
+  ps_suppkey integer,
+  ps_availqty integer,
+  ps_supplycost numeric,
+  ps_comment character varying
+)
+
+Table region(
+  r_regionkey integer,
+  r_name character,  -- Possible values: 'AFRICA', 'AMERICA', 'ASIA', 'EUROPE', 'MIDDLE EAST'
+  r_comment character varying
+)
+
+Table supplier(
+  s_suppkey integer,
+  s_name character varying,
+  s_address character varying,
+  s_nationkey integer,
+  s_phone character,
+  s_acctbal numeric,
+  s_comment character varying
+)
+
+Here are some examples of questions and their corresponding SQL queries:
+
+--- Example 1 ---
+QUESTION:
+This  query  determines  how  much  average  yearly  revenue  would  be  lost  if  orders  were  no longer  filled  for  small quantities of certain parts. This may reduce overhead expenses by concentrating sales on larger shipments.
+The  Small-Quantity-Order  Revenue  Query  considers  parts  of  a  given  brand  and  with  a given  container  type  and determines the average lineitem quantity of such parts ordered for all orders (past and pending) in the 7 -year database. What would be the average yearly gross (undiscounted) loss in revenue if orders for these parts with a quantity of less than 20% of this average were no longer taken?
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. BRAND = 'Brand#MN' where MN is a  two character string representing two numbers randomly and independently selected within [1 .. 5]; In this case assume BRAND 'Brand#23'
+2. CONTAINER  is  randomly  selected  within  the  list  of  2-syllable  strings  defined  for Containers  in  Clause 4.2.2.13. In this case assume CONTAINER 'SM CAN'
+
+SQL QUERY:
+select
+	sum(l_extendedprice) / 7.0 as avg_yearly
+from
+	lineitem,
+	part
+where
+	p_partkey = l_partkey
+	and p_brand = 'Brand#23'
+	and p_container = 'SM CAN'
+	and l_quantity < (
+		select
+			0.2 * avg(l_quantity)
+		from
+			lineitem
+		where
+			l_partkey = p_partkey
+	);
+
+--- Example 2 ---
+QUESTION:
+This  query  quantifies  the  amount  of  revenue  increase  that  would  have  resulted  from  eliminating  certain  company-wide discounts in a given percentage range in a given year. Asking this type of "what if" query can be used to look for ways to increase revenues.
+The Forecasting Revenue Change Query considers all the lineitems shipped in a given year with discounts between DISCOUNT-0.01  and  DISCOUNT+0.01.  The  query  lists  the  amount  by  which  the  total  revenue  would  have increased  if  these  discounts  had  been  eliminated  for  lineitems  with  l_quantity  less  than  quantity.  Note  that  the potential revenue increase is equal to the sum of [l_extendedprice * l_discount] for all lineitems with discounts and quantities in the qualifying range.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. DATE is the first of January of a randomly selected year within [1993 .. 1997]; In this case assume DATE '1994-01-01'
+2. DISCOUNT is randomly selected within [0.02 .. 0.09]; In this case assume DISCOUNT 0.02
+3. QUANTITY is randomly selected within [24 .. 25]. In this case assume QUANTITY 25
+
+SQL QUERY:
+select
+	sum(l_extendedprice * l_discount) as revenue
+from
+	lineitem
+where
+	l_shipdate >= date '1994-01-01'
+	and l_shipdate < date '1994-01-01' + interval '1' year
+	and l_discount between 0.02 - 0.01 and 0.02 + 0.01
+	and l_quantity < 25;
+
+--- Example 3 ---
+QUESTION:
+This query determines the value of goods shipped between certain nations to help in the  re-negotiation of shipping 
+contracts. 
+The Volume  Shipping Query finds, for two given nations, the  gross discounted revenues derived from lineitems in which parts  were  shipped from a  supplier in either nation to a  customer in the  other nation during 1995 and 1996. The query lists the supplier nation, the customer nation, the year, and the revenue from shipments that took place  in that year. The query orders the answer by Supplier nation, Customer nation, and year (all ascending).
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. NATION1 is randomly selected within the list of values defined for N_NAME in Clause 4.2.3; In this case assume NATION1 'ARGENTINA'
+2. NATION2 is randomly selected within the list of values defined for N_NAME in Clause 4.2.3 and must be different from the value selected for NATION1 in item 1 above. In this case assume NATION2 'KENYA'
+
+SQL QUERY:
+select
+	supp_nation,
+	cust_nation,
+	l_year,
+	sum(volume) as revenue
+from
+	(
+		select
+			n1.n_name as supp_nation,
+			n2.n_name as cust_nation,
+			extract(year from l_shipdate) as l_year,
+			l_extendedprice * (1 - l_discount) as volume
+		from
+			supplier,
+			lineitem,
+			orders,
+			customer,
+			nation n1,
+			nation n2
+		where
+			s_suppkey = l_suppkey
+			and o_orderkey = l_orderkey
+			and c_custkey = o_custkey
+			and s_nationkey = n1.n_nationkey
+			and c_nationkey = n2.n_nationkey
+			and (
+				(n1.n_name = 'ARGENTINA' and n2.n_name = 'KENYA')
+				or (n1.n_name = 'KENYA' and n2.n_name = 'ARGENTINA')
+			)
+			and l_shipdate between date '1995-01-01' and date '1996-12-31'
+	) as shipping
+group by
+	supp_nation,
+	cust_nation,
+	l_year
+order by
+	supp_nation,
+	cust_nation,
+	l_year;
+
+--- Example 4 ---
+QUESTION:
+This query monitors the market response to a promotion such as TV advertisements or a special campaign.
+The Promotion Effect Query determines what percentage of the revenue in a given year and month was derived from promotional parts. The query considers only parts actually shipped in that month and gives the percentage. Revenue is defined as (l_extendedprice * (1-l_discount)). 
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. DATE is the first day of a month randomly selected from a random year within [1993 .. 1997]. In this case assume DATE '1996-04-01'
+
+SQL QUERY:
+select
+	100.00 * sum(case
+		when p_type like 'PROMO%'
+			then l_extendedprice * (1 - l_discount)
+		else 0
+	end) / sum(l_extendedprice * (1 - l_discount)) as promo_revenue
+from
+	lineitem,
+	part
+where
+	l_partkey = p_partkey
+	and l_shipdate >= date '1996-04-01'
+	and l_shipdate < date '1996-04-01' + interval '1' month;
+
+--- Example 5 ---
+QUESTION:
+This query retrieves the 10 unshipped orders with the highest value.
+The Shipping Priority Query retrieves the shipping priority and potential revenue, defined as the sum of l_extendedprice * (1-l_discount), of the orders having the largest revenue among those that had not been shipped as of a given date. Orders are listed in decreasing order of revenue. If more than 10 unshipped orders exist, only the 10 orders with the largest revenue are listed.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. SEGMENT is randomly selected within the list of values defined for Segments in Clause 4.2.2.13; In this case assume segment 'FURNITURE'
+2. DATE is a randomly selected day within [1995-03-01 .. 1995-03-31]. In this case assume dates '1995-03-27', '1995-03-27'
+
+SQL QUERY:
+select
+	l_orderkey,
+	sum(l_extendedprice * (1 - l_discount)) as revenue,
+	o_orderdate,
+	o_shippriority
+from
+	customer,
+	orders,
+	lineitem
+where
+	c_mktsegment = 'FURNITURE'
+	and c_custkey = o_custkey
+	and l_orderkey = o_orderkey
+	and o_orderdate < date '1995-03-27'
+	and l_shipdate > date '1995-03-27'
+group by
+	l_orderkey,
+	o_orderdate,
+	o_shippriority
+order by
+	revenue desc,
+	o_orderdate
+limit 10;
+
+--- Your Task ---
+QUESTION:
+The Discounted Revenue Query reports the gross discounted revenue attributed to the sale of selected parts handled in  a  particular  manner. This  query  is  an  example  of  code  such  as  might be  produced  programmatically  by  a  data mining tool.
+The  Discounted  Revenue  query  finds  the  gross  discounted  revenue  for  all  orders  for three  different  types  of  parts that  were  shipped by air  and  delivered in person. Parts are selected based on the  combination of specific brands, a list of containers, and a range of sizes.
+Substitution Parameters:
+1. QUANTITY1 is randomly selected within [1..10]. In this case assume QUANTITY1 = 4
+2. QUANTITY2 is randomly selected within [10..20]. In this case assume QUANTITY2 = 16
+3. QUANTITY3 is randomly selected within [20..30]. In this case assume QUANTITY3 = 29
+4. BRAND1, BRAND2, BRAND3 = 'Brand#MN' where each MN is a two character string representing two numbers randomly and independently selected within [1 .. 5]. In this case assume BRAND1 = 'Brand#11' , BRAND2 = 'Brand#25' , BRAND3 = 'Brand#54'
+
+SQL QUERY:

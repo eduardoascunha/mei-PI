@@ -1,0 +1,4 @@
+psql:llama/results_FS2E_04/q21.sql:15: ERROR:  column s.s_acctkey does not exist
+LINE 13:     AND s.s_acctkey = c.c_custkey 
+                 ^
+HINT:  Perhaps you meant to reference the column "s.s_acctbal".

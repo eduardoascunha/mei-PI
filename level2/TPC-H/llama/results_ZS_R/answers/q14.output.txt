@@ -1,0 +1,5 @@
+ total_revenue | total_quantity | total_orders 
+---------------+----------------+--------------
+               |                |            0
+(1 row)
+

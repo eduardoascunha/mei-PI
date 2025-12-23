@@ -1,0 +1,8 @@
+select
+100.0 * sum(case when p_type like '%PROMO%' then l_extendedprice * (1 - l_discount) else 0 end) / nullif(sum(l_extendedprice * (1 - l_discount)),0) as promo_revenue_percentage
+from
+lineitem
+join part on l_partkey = p_partkey
+where
+l_shipdate >= date '1996-04-01'
+and l_shipdate < date '1996-04-01' + interval '1' month;

@@ -1,0 +1,132 @@
+{
+  "transaction_type": "new_order",
+  "num_executions": 3,
+  "executions": [
+    {
+      "execution_number": 1,
+      "input_params": {
+        "in_w_id": 5,
+        "in_d_id": 3,
+        "in_c_id": 330,
+        "in_ol_supply_w_id": [
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "in_ol_i_id": [
+          90516,
+          43118,
+          15961,
+          29601,
+          62698
+        ],
+        "in_ol_quantity": [
+          4,
+          5,
+          2,
+          9,
+          5
+        ]
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"d_tax\" is ambiguous\nLINE 4:     RETURNING d_tax, d_next_o_id - 1\n                      ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_district\n    SET d_next_o_id = d_next_o_id + 1\n    WHERE d_w_id = w_id_in AND d_id = d_id_in\n    RETURNING d_tax, d_next_o_id - 1\nCONTEXT:  PL/pgSQL function new_order(integer,integer,integer,integer[],integer[],integer[]) line 44 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 2,
+      "input_params": {
+        "in_w_id": 9,
+        "in_d_id": 2,
+        "in_c_id": 2784,
+        "in_ol_supply_w_id": [
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9
+        ],
+        "in_ol_i_id": [
+          65858,
+          61329,
+          64529,
+          54824,
+          45404,
+          62527,
+          72761,
+          17365,
+          60158
+        ],
+        "in_ol_quantity": [
+          5,
+          8,
+          6,
+          4,
+          6,
+          1,
+          2,
+          9,
+          1
+        ]
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"d_tax\" is ambiguous\nLINE 4:     RETURNING d_tax, d_next_o_id - 1\n                      ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_district\n    SET d_next_o_id = d_next_o_id + 1\n    WHERE d_w_id = w_id_in AND d_id = d_id_in\n    RETURNING d_tax, d_next_o_id - 1\nCONTEXT:  PL/pgSQL function new_order(integer,integer,integer,integer[],integer[],integer[]) line 44 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 3,
+      "input_params": {
+        "in_w_id": 2,
+        "in_d_id": 2,
+        "in_c_id": 496,
+        "in_ol_supply_w_id": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "in_ol_i_id": [
+          51430,
+          71120,
+          97697,
+          30958,
+          15163,
+          9000,
+          5267
+        ],
+        "in_ol_quantity": [
+          7,
+          5,
+          2,
+          7,
+          7,
+          2,
+          3
+        ]
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"d_tax\" is ambiguous\nLINE 4:     RETURNING d_tax, d_next_o_id - 1\n                      ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_district\n    SET d_next_o_id = d_next_o_id + 1\n    WHERE d_w_id = w_id_in AND d_id = d_id_in\n    RETURNING d_tax, d_next_o_id - 1\nCONTEXT:  PL/pgSQL function new_order(integer,integer,integer,integer[],integer[],integer[]) line 44 at SQL statement\n"
+      }
+    }
+  ]
+}

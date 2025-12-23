@@ -1,0 +1,6 @@
+This query determines how the market share of a given nation within a given region has changed over two years  for a given part type.
+The  market  share  for  a  given  nation  within  a  given  region  is  defined  as  the  fraction  of  the  revenue,  the  sum  of [l_extendedprice * (1-l_discount)], from the products of a specified type in that region that was supplied by suppliers from the given nation. The query determines this for the years 1995 and 1996 presented in this order.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. NATION is randomly selected within the list of values defined for N_NAME in Clause 4.2.3; In this case assume NATION 'KENYA'
+2. REGION is the value defined in Clause 4.2.3 for R_NAME where R_REGIONKEY corresponds to N_REGIONKEY for the selected NATION in item 1 above; In this case assume REGION 'AFRICA'
+3. TYPE is randomly selected within the list of 3-syllable strings defined for Types in Clause 4.2.2.13. In this case assume TYPE 'ECONOMY PLATED BRASS'

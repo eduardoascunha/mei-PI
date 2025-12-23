@@ -1,0 +1,8 @@
+      supplier_nation      |      customer_nation      | l_year |    revenue    
+---------------------------+---------------------------+--------+---------------
+ ARGENTINA                 | KENYA                     |   1995 | 13331202.7770
+ ARGENTINA                 | KENYA                     |   1996 | 14829230.3370
+ KENYA                     | ARGENTINA                 |   1995 | 15042622.2672
+ KENYA                     | ARGENTINA                 |   1996 | 15968215.7350
+(4 rows)
+

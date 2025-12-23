@@ -1,0 +1,4 @@
+psql:deepseek/results_FS5E_06/q11.sql:15: ERROR:  column "p_partkey" does not exist
+LINE 1: SELECT p_partkey, 
+               ^
+HINT:  Perhaps you meant to reference the column "partsupp.ps_partkey".

@@ -1,0 +1,126 @@
+================================================================================
+TEXT-TO-SQL EVALUATION REPORT
+================================================================================
+
+Total queries: 21
+Correct (PASS): 14 (66.67%)
+  - Exact match: 13
+  - With extra columns: 1
+Incorrect (FAIL): 7
+Not found (MISSING): 0
+
+================================================================================
+DETAILS PER QUERY
+================================================================================
+
+Query: q1.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q2.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q3.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q4.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q5.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q6.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q7.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q8.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (2, 2) vs (2, 1)
+    Rows only in original (2): [(0.038668, 1996.0), (0.052353, 1995.0)]
+    Rows only in LLM (2): [('^',), ('line 2: extract(year from li.l_shipdate) as l_year,',)]
+--------------------------------------------------------------------------------
+
+Query: q9.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (175, 3) vs (100, 3)
+    Rows only in original (100): [(12413748.8157, 1997.0, 'france'), (12905729.6519, 1997.0, 'algeria'), (1998.0, 7944810.044, 'japan')]
+    Rows only in LLM (25): [(1995.0, 3500362.0151, 'united states'), (1995.0, 4283382.1065, 'germany'), (1995.0, 3142915.8876, 'united kingdom')]
+--------------------------------------------------------------------------------
+
+Query: q10.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (20, 8) vs (20, 7)
+    Rows only in original (20): [(-252.22, 29011.0, 615999.2098, '34-294-644-9687', 'customer#000029011', 'k28ly1ikmpcr55brgm23ykt t6bufhse,tbhb', 'united states', 'y carefully bold excuses. quickly'), (16201.0, 535942.1455, 9106.19, '30-290-670-9014', 'customer#000016201', 'e after the ironic dolphins. slyly even instructions alongside of the regular instr', 'qbbuqlrthqznlz', 'saudi arabia'), (33091.0, 518380.5519, 9823.77, '30-786-624-6904', 'customer#000033091', 'nyfp1vl4,jsfk', 'saudi arabia', 'unts boost carefully unusual, unusual deposits. quickly ironic accounts do wake furiously. quickly re')]
+    Rows only in LLM (20): [(-425.09, 496716.2755, '21-508-779-7822', '9wlrrs78uopy7chw', 'carefully regular instructions. furiously final deposits across the carefully special ideas cajole furi', 'customer#000001024', 'iraq'), (264.57, 480975.0187, '30-926-410-8409', 'accounts. slyly ironic requests wake about the final, thin deposits', 'customer#000010648', 'saudi arabia', 't0sn,imeqmp7tgma7'), (-252.22, 615999.2098, '34-294-644-9687', 'customer#000029011', 'k28ly1ikmpcr55brgm23ykt t6bufhse,tbhb', 'united states', 'y carefully bold excuses. quickly')]
+--------------------------------------------------------------------------------
+
+Query: q11.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q12.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q13.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q14.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q15.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (1, 5) vs (1, 3)
+    Rows only in original (1): [(1482109.8042, 2516.0, '14-642-300-7682', '4m wg67rdqpzzcajcxepnqhdbong6e60b gky', 'supplier#000002516')]
+    Rows only in LLM (1): [(1482109.8042, 2516.0, 'supplier#000002516')]
+--------------------------------------------------------------------------------
+
+Query: q16.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q17.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(98562.575714,)]
+    Rows only in LLM (1): [(122062.175714,)]
+--------------------------------------------------------------------------------
+
+Query: q18.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q19.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(1042188.9074,)]
+    Rows only in LLM (1): [(7557426.5684,)]
+--------------------------------------------------------------------------------
+
+Query: q21.output.txt
+Status: PASS_WITH_EXTRA_COLS
+Details:
+    Data matches but LLM returned 4 extra column(s)
+--------------------------------------------------------------------------------
+
+Query: q22.output.txt
+Status: FAIL
+Details:
+    Rows only in original (7): [(2079950.63, 279.0, 33.0), (1965469.24, 269.0, 31.0), (2093651.25, 280.0, 30.0)]
+    Rows only in LLM (7): [(26.0, 6130556.55, 819.0), (28.0, 6231797.88, 829.0), (30.0, 6074438.55, 803.0)]
+--------------------------------------------------------------------------------
+

@@ -1,0 +1,4 @@
+This query determines the top supplier so it can be rewarded, given more business, or identified for special recognition.
+The Top Supplier Query finds the supplier who contributed the most to the overall revenue for parts shipped during a  given  quarter  of  a  given  year.  In  case  of  a  tie,  the  query lists  all  suppliers  whose  contribution  was  equal  to  the maximum, presented in supplier number order. 
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. DATE  is  the  first  day  of  a  randomly  selected  month  between  the  first  month  of  1993  and  the 10th  month of 1997. In this case assume DATE '1997-01-01'

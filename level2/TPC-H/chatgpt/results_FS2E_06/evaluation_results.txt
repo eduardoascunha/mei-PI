@@ -1,0 +1,128 @@
+================================================================================
+TEXT-TO-SQL EVALUATION REPORT
+================================================================================
+
+Total queries: 21
+Correct (PASS): 13 (61.90%)
+  - Exact match: 13
+  - With extra columns: 0
+Incorrect (FAIL): 8
+Not found (MISSING): 0
+
+================================================================================
+DETAILS PER QUERY
+================================================================================
+
+Query: q1.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (4, 10) vs (4, 9)
+    Rows only in original (4): [(0.049626, 11688.0, 25.351814, 296312.0, 36220.890517, 402345151.4805, 418435691.636924, 423349768.36, 'f', 'n'), (0.050058, 11321265.0, 15376728124.1092, 15992061362.111364, 16187380514.88, 25.52243, 36492.501967, 443581.0, 'a', 'f'), (0.05001, 11319030.0, 15372070812.7449, 15986642478.336952, 16180527512.21, 25.510145, 36466.694265, 443707.0, 'f', 'r')]
+    Rows only in LLM (4): [(0.05001, 15372070812.7449, 15986642478.336952, 16180527512.21, 25.510145, 36466.694265, 443707.0, 'f', 'r'), (0.050035, 25.52121, 30471149836.2444, 31691181507.69457, 32075170070.01, 36497.706682, 878827.0, 'n', 'o'), (0.050058, 15376728124.1092, 15992061362.111364, 16187380514.88, 25.52243, 36492.501967, 443581.0, 'a', 'f')]
+--------------------------------------------------------------------------------
+
+Query: q2.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q3.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q4.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q5.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q6.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q7.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q8.output.txt
+Status: FAIL
+Details:
+    Rows only in original (2): [(0.038668, 1996.0), (0.052353, 1995.0)]
+    Rows only in LLM (2): [(0.162904, 1996.0), (0.226962, 1995.0)]
+--------------------------------------------------------------------------------
+
+Query: q9.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q10.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (20, 8) vs (20, 7)
+    Rows only in original (20): [(-252.22, 29011.0, 615999.2098, '34-294-644-9687', 'customer#000029011', 'k28ly1ikmpcr55brgm23ykt t6bufhse,tbhb', 'united states', 'y carefully bold excuses. quickly'), (3692.0, 569717.6682, 93.27, '24-584-374-9329', 'customer#000003692', 'ending requests poach furiously after the blithely quick foxes. f', 'kenya', 'tbh,q9q8cwc2u,yxu'), (1017.31, 23902.0, 505502.941, '30-691-568-6088', '4dbiz6q28jhi2v', 'customer#000023902', 'final requests. carefully regular platelets boost quickly about the ironic theodolites. bold accounts are', 'saudi arabia')]
+    Rows only in LLM (20): [(4151.85, 464162.6788, '22-580-709-9154', '7ktkbbyq,rhmni7b5wamlrhbiylqlzl0ulrjx', 'atelets. slyly pending theodolites sleep blithely bold gifts. slowly final packages alongside of the careful', 'customer#000035386', 'japan'), (569717.6682, 93.27, '24-584-374-9329', 'customer#000003692', 'ending requests poach furiously after the blithely quick foxes. f', 'kenya', 'tbh,q9q8cwc2u,yxu'), (5203.5, 611401.0122, '13-352-974-8608', '77cqbojtyayl9yu5,wwbnejr7q6un4xbf0', 'canada', 'customer#000021590', 'the slyly unusual pinto beans. furiously final deposits haggle of the f')]
+--------------------------------------------------------------------------------
+
+Query: q11.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q12.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q13.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q14.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q15.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (1, 5) vs (1, 3)
+    Rows only in original (1): [(1482109.8042, 2516.0, '14-642-300-7682', '4m wg67rdqpzzcajcxepnqhdbong6e60b gky', 'supplier#000002516')]
+    Rows only in LLM (1): [(1482109.8042, 2516.0, 'supplier#000002516')]
+--------------------------------------------------------------------------------
+
+Query: q16.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q17.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(98562.575714,)]
+    Rows only in LLM (1): [(24412.435143,)]
+--------------------------------------------------------------------------------
+
+Query: q18.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q19.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(1042188.9074,)]
+    Rows only in LLM (1): [(5080489.6959,)]
+--------------------------------------------------------------------------------
+
+Query: q21.output.txt
+Status: FAIL
+Details:
+    LLM has 1 extra column(s) AND data mismatch
+    Different dimensions: (100, 2) vs (100, 3)
+    Rows only in original (100): [(15.0, 'supplier#000002147'), (10.0, 'supplier#000001655'), (10.0, 'supplier#000000464')]
+    Rows only in LLM (100): [(2414.0, 'ethiopia', 'supplier#000002414'), (2510.0, 'ethiopia', 'supplier#000002510'), (2182.0, 'ethiopia', 'supplier#000002182')]
+--------------------------------------------------------------------------------
+
+Query: q22.output.txt
+Status: FAIL
+Details:
+    Rows only in original (7): [(2079950.63, 279.0, 33.0), (1965469.24, 269.0, 31.0), (2093651.25, 280.0, 30.0)]
+    Rows only in LLM (7): [(26.0, 6130556.55, 819.0), (28.0, 6231797.88, 829.0), (30.0, 6074438.55, 803.0)]
+--------------------------------------------------------------------------------
+

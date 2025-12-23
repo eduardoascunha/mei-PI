@@ -1,0 +1,139 @@
+================================================================================
+TEXT-TO-SQL EVALUATION REPORT
+================================================================================
+
+Total queries: 21
+Correct (PASS): 11 (52.38%)
+  - Exact match: 11
+  - With extra columns: 0
+Incorrect (FAIL): 10
+Not found (MISSING): 0
+
+================================================================================
+DETAILS PER QUERY
+================================================================================
+
+Query: q1.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q2.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q3.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q4.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q5.output.txt
+Status: FAIL
+Details:
+    Rows only in original (5): [(12248028.4038, 'romania'), (13733315.5439, 'united kingdom'), (17086762.9356, 'germany')]
+    Rows only in LLM (5): [(14571817.1485, 'france'), (17593531.5562, 'germany'), (15621845.8187, 'russia')]
+--------------------------------------------------------------------------------
+
+Query: q6.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q7.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q8.output.txt
+Status: FAIL
+Details:
+    LLM has 2 extra column(s) AND data mismatch
+    Different dimensions: (2, 2) vs (2, 4)
+    Rows only in original (2): [(0.038668, 1996.0), (0.052353, 1995.0)]
+    Rows only in LLM (2): [(0.162904, 11254520.115, 1833408.9338, 1996.0), (0.226962, 12462810.1343, 1995.0, 2828589.5072)]
+--------------------------------------------------------------------------------
+
+Query: q9.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (175, 3) vs (100, 3)
+    Rows only in original (100): [(14929371.579, 1997.0, 'brazil'), (11008593.7959, 1995.0, 'united states'), (1998.0, 5956297.0216, 'romania')]
+    Rows only in LLM (25): [(1995.0, 3340719.1495, 'russia'), (1995.0, 4283382.1065, 'germany'), (1995.0, 3500362.0151, 'united states')]
+--------------------------------------------------------------------------------
+
+Query: q10.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (20, 8) vs (20, 7)
+    Rows only in original (20): [(30865.0, 485604.718, 9624.0, '25-176-205-5657', 'customer#000030865', 'its. quickly bold requests sleep fluffily about the packages. regular, pending packages are about the blithely spe', 'morocco', 'qptlgadld,vwmw5uft'), (10648.0, 264.57, 480975.0187, '30-926-410-8409', 'accounts. slyly ironic requests wake about the final, thin deposits', 'customer#000010648', 'saudi arabia', 't0sn,imeqmp7tgma7'), (33091.0, 518380.5519, 9823.77, '30-786-624-6904', 'customer#000033091', 'nyfp1vl4,jsfk', 'saudi arabia', 'unts boost carefully unusual, unusual deposits. quickly ironic accounts do wake furiously. quickly re')]
+    Rows only in LLM (20): [(535942.1455, 9106.19, '30-290-670-9014', 'customer#000016201', 'e after the ironic dolphins. slyly even instructions alongside of the regular instr', 'qbbuqlrthqznlz', 'saudi arabia'), (594352.3344, 7894.24, '18-527-677-6583', 'customer#000009388', 'ftrqnszl3gnxx,ve yu', 'india', 'unusual pinto beans cajole? bravely even theodolites sleep furiously around the regular, do'), (569717.6682, 93.27, '24-584-374-9329', 'customer#000003692', 'ending requests poach furiously after the blithely quick foxes. f', 'kenya', 'tbh,q9q8cwc2u,yxu')]
+--------------------------------------------------------------------------------
+
+Query: q11.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q12.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q13.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (41, 2) vs (12, 2)
+    Rows only in original (30): [(24.0, 814.0), (24.0, 33.0), (26.0, 518.0)]
+    Rows only in LLM (1): [(20884.0, '10+')]
+--------------------------------------------------------------------------------
+
+Query: q14.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q15.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (1, 5) vs (1, 3)
+    Rows only in original (1): [(1482109.8042, 2516.0, '14-642-300-7682', '4m wg67rdqpzzcajcxepnqhdbong6e60b gky', 'supplier#000002516')]
+    Rows only in LLM (1): [(1482109.8042, 2516.0, 'supplier#000002516')]
+--------------------------------------------------------------------------------
+
+Query: q16.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q17.output.txt
+Status: FAIL
+Details:
+    LLM has 1 extra column(s) AND data mismatch
+    Different dimensions: (1, 1) vs (7, 2)
+    Rows only in original (1): [(98562.575714,)]
+    Rows only in LLM (7): [(142488.9684, 1993.0), (1998.0, 61933.8442), (138293.0783, 1997.0)]
+--------------------------------------------------------------------------------
+
+Query: q18.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q19.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(1042188.9074,)]
+    Rows only in LLM (1): [(3074434.7891,)]
+--------------------------------------------------------------------------------
+
+Query: q21.output.txt
+Status: FAIL
+Details:
+    LLM has 1 extra column(s) AND data mismatch
+    Different dimensions: (100, 2) vs (100, 3)
+    Rows only in original (100): [(15.0, 'supplier#000000700'), (10.0, 'supplier#000000464'), (7.0, 'supplier#000000487')]
+    Rows only in LLM (100): [('15-820-745-6527', 'supplier#000001792', 'ybj7b5b4nq6utajekm,vkrsi'), ('15-366-436-2694', 'g4lxlchdn4z6drdibb0icyla', 'supplier#000002404'), ('15-284-495-3109', 'qrs2ub3wsjbzv1kc0a4k', 'supplier#000002580')]
+--------------------------------------------------------------------------------
+
+Query: q22.output.txt
+Status: FAIL
+Details:
+    Rows only in original (7): [(2079950.63, 279.0, 33.0), (1965469.24, 269.0, 31.0), (2093651.25, 280.0, 30.0)]
+    Rows only in LLM (7): [(26.0, 6130556.55, 819.0), (28.0, 6231797.88, 829.0), (30.0, 6074438.55, 803.0)]
+--------------------------------------------------------------------------------
+

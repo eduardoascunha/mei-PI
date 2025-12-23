@@ -1,0 +1,15 @@
+psql:llama/results_FS5E_COT_06/q18.sql:65: ERROR:  syntax error at or near "ON"
+LINE 46:             ) AS subquery ON c.c_custkey = subquery.c_custke...
+                                   ^
+psql:llama/results_FS5E_COT_06/q18.sql:85: ERROR:  syntax error at or near "```"
+LINE 1: ```
+        ^
+psql:llama/results_FS5E_COT_06/q18.sql:108: ERROR:  syntax error at or near "```"
+LINE 1: ```
+        ^
+psql:llama/results_FS5E_COT_06/q18.sql:125: ERROR:  syntax error at or near "```"
+LINE 1: ```
+        ^
+psql:llama/results_FS5E_COT_06/q18.sql:166: ERROR:  syntax error at or near "```"
+LINE 1: ```
+        ^

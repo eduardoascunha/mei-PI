@@ -1,0 +1,26 @@
+select
+c.c_name,
+c.c_custkey,
+o.o_orderkey,
+o.o_orderdate,
+o.o_totalprice,
+sum(l.l_quantity) as quantity
+from
+customer c,
+orders o,
+lineitem l
+where
+c.c_custkey = o.o_custkey
+and o.o_orderkey = l.l_orderkey
+group by
+c.c_name,
+c.c_custkey,
+o.o_orderkey,
+o.o_orderdate,
+o.o_totalprice
+having
+sum(l.l_quantity) > 314
+order by
+quantity desc,
+o.o_totalprice desc
+limit 100;

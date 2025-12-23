@@ -1,0 +1,55 @@
+QUESTION:
+This  query  finds  out  how  many  suppliers  can  supply  parts  with  given  attributes.  It  might  be  used,  for  example,  to 
+determine whether there is a sufficient number of suppliers for heavily ordered parts. 
+The Parts/Supplier Relationship Query counts the number of suppliers who can supply parts that satisfy a particular customer's requirements. The customer is interested in parts of eight different sizes as long as they are not of a given type, not of a given brand, and not from a supplier who has had complaints registered at the Better Business Bureau. Results must be presented in descending count and ascending brand, type, and size.
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. BRAND = Brand#MN where M and N are two single character strings representing two numbers randomly and independently selected within [1 .. 5]; In this case assume BRAND 'Brand#42'
+2. TYPE is made of the  first 2 syllables of a string randomly selected within the list of 3-syllable strings defined for Types in Clause 4.2.2.13; In this case assume TYPE 'LARGE PLATED%'
+3. SIZE1 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE1 = 9
+4. SIZE2 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE2 = 7
+5. SIZE3 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE3 = 14
+6. SIZE4 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE4 = 41
+7. SIZE5 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE5 = 43
+8. SIZE6 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE6 = 38
+9. SIZE7 is randomly selected as a set of eight different values within [1 .. 50]; In this case assume SIZE7 = 23
+10. SIZE8 is randomly selected as a set of eight different values within [1 .. 50]. In this case assume SIZE8 = 34
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "parts with", columns [part.p_brand, part.p_partkey, part.p_type, partsupp.ps_partkey, partsupp.ps_suppkey] may be used.
+According to "size substitution parameters values", columns [part.p_size] may be used.
+According to "supplier who", columns [supplier.s_comment, supplier.s_suppkey] may be used.
+Values [%Customer%Complaints%, 14, 23, 34, 38, 41, 43, 7, 9, Brand#42, LARGE PLATED%] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	p_brand,
+	p_type,
+	p_size,
+	count(distinct ps_suppkey) as supplier_cnt
+from
+	partsupp,
+	part
+where
+	p_partkey = ps_partkey
+	and p_brand <> 'Brand#42'
+	and p_type not like 'LARGE PLATED%'
+	and p_size in (9, 7, 14, 41, 43, 38, 23, 34)
+	and ps_suppkey not in (
+		select
+			s_suppkey
+		from
+			supplier
+		where
+			s_comment like '%Customer%Complaints%'
+	)
+group by
+	p_brand,
+	p_type,
+	p_size
+order by
+	supplier_cnt desc,
+	p_brand,
+	p_type,
+	p_size;

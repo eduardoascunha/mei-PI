@@ -1,0 +1,182 @@
+{
+  "transaction_type": "stock_level",
+  "num_executions": 8,
+  "executions": [
+    {
+      "execution_number": 1,
+      "input_params": {
+        "in_w_id": 6,
+        "in_d_id": 1,
+        "in_threshold": 15
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "stock_level_transaction": 14
+        },
+        "db_state": {},
+        "table_modifications": {
+          "expected": [],
+          "actual_modified": [],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 2,
+      "input_params": {
+        "in_w_id": 5,
+        "in_d_id": 3,
+        "in_threshold": 18
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "stock_level_transaction": 18
+        },
+        "db_state": {},
+        "table_modifications": {
+          "expected": [],
+          "actual_modified": [],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 3,
+      "input_params": {
+        "in_w_id": 10,
+        "in_d_id": 6,
+        "in_threshold": 14
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "stock_level_transaction": 6
+        },
+        "db_state": {},
+        "table_modifications": {
+          "expected": [],
+          "actual_modified": [],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 4,
+      "input_params": {
+        "in_w_id": 2,
+        "in_d_id": 9,
+        "in_threshold": 16
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "stock_level_transaction": 14
+        },
+        "db_state": {},
+        "table_modifications": {
+          "expected": [],
+          "actual_modified": [],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 5,
+      "input_params": {
+        "in_w_id": 8,
+        "in_d_id": 5,
+        "in_threshold": 10
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "stock_level_transaction": 0
+        },
+        "db_state": {},
+        "table_modifications": {
+          "expected": [],
+          "actual_modified": [],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 6,
+      "input_params": {
+        "in_w_id": 8,
+        "in_d_id": 5,
+        "in_threshold": 20
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "stock_level_transaction": 15
+        },
+        "db_state": {},
+        "table_modifications": {
+          "expected": [],
+          "actual_modified": [],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 7,
+      "input_params": {
+        "in_w_id": 8,
+        "in_d_id": 5,
+        "in_threshold": 15
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "stock_level_transaction": 8
+        },
+        "db_state": {},
+        "table_modifications": {
+          "expected": [],
+          "actual_modified": [],
+          "unexpected_modifications": [],
+          "missing_modifications": [],
+          "is_valid": true
+        },
+        "error": null
+      }
+    },
+    {
+      "execution_number": 8,
+      "input_params": {
+        "in_w_id": 999999,
+        "in_d_id": 5,
+        "in_threshold": 15
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "District not found for w_id=999999 d_id=5\nCONTEXT:  PL/pgSQL function stock_level_transaction(integer,integer,integer) line 16 at RAISE\n"
+      }
+    }
+  ]
+}

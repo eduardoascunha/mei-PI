@@ -1,0 +1,48 @@
+QUESTION:
+This query lists the revenue volume done through local suppliers.
+The Local Supplier Volume Query lists for each nation in a region the revenue  volume that resulted from lineitem transactions  in  which  the  customer  ordering  parts  and  the  supplier  filling  them  were  both  within  that  nation.  The query is run in order to determine whether to institute local distribution centers in a given region. The query considers only parts ordered in a given  year. The  query displays  the  nations and revenue  volume  in descending order by revenue. Revenue volume for all qualifying lineitems in a particular nation is defined as sum(l_extendedprice * (1  - l_discount)).
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. REGION is randomly selected within the list of values defined for R_NAME in C;aise 4.2.3; In this case assume REGION 'EUROPE'
+2. DATE is the first of January of a randomly selected year within [1993 .. 1997]. In this case assume 1994-01-01'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "l_extendedprice 1", columns [lineitem.l_extendedprice] may be used.
+According to "l_extendedprice 1 l_discount", columns [lineitem.l_discount] may be used.
+According to "lineitems in", columns [lineitem.l_orderkey, lineitem.l_suppkey] may be used.
+According to "nation in a region", columns [nation.n_regionkey] may be used.
+According to "nation the", columns [nation.n_name, nation.n_nationkey] may be used.
+According to "order to", columns [orders.o_custkey, orders.o_orderdate, orders.o_orderkey] may be used.
+According to "particular nation is defined", columns [customer.c_nationkey] may be used.
+According to "region is", columns [region.r_name] may be used.
+According to "region the", columns [region.r_regionkey] may be used.
+According to "suppliers the", columns [supplier.s_suppkey] may be used.
+According to "suppliers the local supplier", columns [supplier.s_nationkey] may be used.
+Values [1, 1994-01-01, EUROPE] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	n_name,
+	sum(l_extendedprice * (1 - l_discount)) as revenue
+from
+	customer,
+	orders,
+	lineitem,
+	supplier,
+	nation,
+	region
+where
+	c_custkey = o_custkey
+	and l_orderkey = o_orderkey
+	and l_suppkey = s_suppkey
+	and c_nationkey = s_nationkey
+	and s_nationkey = n_nationkey
+	and n_regionkey = r_regionkey
+	and r_name = 'EUROPE'
+	and o_orderdate >= date '1994-01-01'
+	and o_orderdate < date '1994-01-01' + interval '1' year
+group by
+	n_name
+order by
+	revenue desc;

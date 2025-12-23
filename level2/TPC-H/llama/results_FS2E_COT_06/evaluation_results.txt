@@ -1,0 +1,130 @@
+================================================================================
+TEXT-TO-SQL EVALUATION REPORT
+================================================================================
+
+Total queries: 21
+Correct (PASS): 13 (61.90%)
+  - Exact match: 13
+  - With extra columns: 0
+Incorrect (FAIL): 8
+Not found (MISSING): 0
+
+================================================================================
+DETAILS PER QUERY
+================================================================================
+
+Query: q1.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q2.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q3.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (10, 4) vs (2, 1)
+    Rows only in original (10): [(0.0, 1241793.0, 330090.0905, '1995-02-06'), (0.0, 181414.0, 351235.9929, '1995-03-08'), (0.0, 311266.0, 326380.8682, '1995-02-17')]
+    Rows only in LLM (2): [('^',), ("line 11:  and c_mktsegment = 'furniture'",)]
+--------------------------------------------------------------------------------
+
+Query: q4.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q5.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q6.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q7.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q8.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q9.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q10.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (20, 8) vs (20, 7)
+    Rows only in original (20): [(-425.09, 1024.0, 496716.2755, '21-508-779-7822', '9wlrrs78uopy7chw', 'carefully regular instructions. furiously final deposits across the carefully special ideas cajole furi', 'customer#000001024', 'iraq'), (16201.0, 535942.1455, 9106.19, '30-290-670-9014', 'customer#000016201', 'e after the ironic dolphins. slyly even instructions alongside of the regular instr', 'qbbuqlrthqznlz', 'saudi arabia'), (1017.31, 23902.0, 505502.941, '30-691-568-6088', '4dbiz6q28jhi2v', 'customer#000023902', 'final requests. carefully regular platelets boost quickly about the ironic theodolites. bold accounts are', 'saudi arabia')]
+    Rows only in LLM (20): [(264.57, 480975.0187, '30-926-410-8409', 'accounts. slyly ironic requests wake about the final, thin deposits', 'customer#000010648', 'saudi arabia', 't0sn,imeqmp7tgma7'), (469549.8449, 4997.51, '27-156-724-8786', 'a wahr5zcjddyhxm4', 'customer#000012112', 'peru', 'refully regular deposits run carefully ir'), (4151.85, 464162.6788, '22-580-709-9154', '7ktkbbyq,rhmni7b5wamlrhbiylqlzl0ulrjx', 'atelets. slyly pending theodolites sleep blithely bold gifts. slowly final packages alongside of the careful', 'customer#000035386', 'japan')]
+--------------------------------------------------------------------------------
+
+Query: q11.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q12.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q13.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q14.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(16.35514,)]
+    Rows only in LLM (1): [(783393780.8445,)]
+--------------------------------------------------------------------------------
+
+Query: q15.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (1, 5) vs (1, 2)
+    Rows only in original (1): [(1482109.8042, 2516.0, '14-642-300-7682', '4m wg67rdqpzzcajcxepnqhdbong6e60b gky', 'supplier#000002516')]
+    Rows only in LLM (1): [(1482109.8042, 2516.0)]
+--------------------------------------------------------------------------------
+
+Query: q16.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (7653, 4) vs (24, 4)
+    Rows only in original (7653): [(4.0, 43.0, 'brand#33', 'medium anodized steel'), (23.0, 8.0, 'brand#45', 'economy brushed copper'), (14.0, 4.0, 'brand#14', 'large brushed copper')]
+    Rows only in LLM (24): [(1.0, 14.0, 'brand#12', 'large burnished nickel'), (1.0, 43.0, 'brand#13', 'standard burnished steel'), (1.0, 41.0, 'brand#33', 'small burnished brass')]
+--------------------------------------------------------------------------------
+
+Query: q17.output.txt
+Status: FAIL
+Details:
+    LLM has 1 extra column(s) AND data mismatch
+    Different dimensions: (1, 1) vs (1, 2)
+    Rows only in original (1): [(98562.575714,)]
+    Rows only in LLM (1): [(25.273652, 36335.444044)]
+--------------------------------------------------------------------------------
+
+Query: q18.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q19.output.txt
+Status: FAIL
+Details:
+    Rows only in original (1): [(1042188.9074,)]
+    Rows only in LLM (1): [(1682319.9592,)]
+--------------------------------------------------------------------------------
+
+Query: q21.output.txt
+Status: PASS
+--------------------------------------------------------------------------------
+
+Query: q22.output.txt
+Status: FAIL
+Details:
+    Different dimensions: (7, 3) vs (1, 2)
+    Rows only in original (7): [(2079950.63, 279.0, 33.0), (1965469.24, 269.0, 31.0), (2093651.25, 280.0, 30.0)]
+    Rows only in LLM (1): [(42454469.46, 5664.0)]
+--------------------------------------------------------------------------------
+

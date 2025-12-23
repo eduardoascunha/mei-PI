@@ -1,0 +1,28 @@
+ supplier_cnt |  p_brand   |          p_type          | p_size 
+--------------+------------+--------------------------+--------
+            1 | Brand#12   | LARGE BURNISHED NICKEL   |     14
+            1 | Brand#13   | ECONOMY ANODIZED COPPER  |     43
+            1 | Brand#13   | STANDARD BURNISHED STEEL |     43
+            1 | Brand#14   | ECONOMY BRUSHED NICKEL   |      7
+            1 | Brand#14   | STANDARD BRUSHED COPPER  |     34
+            1 | Brand#15   | SMALL BRUSHED NICKEL     |     23
+            1 | Brand#21   | MEDIUM POLISHED BRASS    |      9
+            1 | Brand#21   | SMALL PLATED COPPER      |     43
+            1 | Brand#22   | ECONOMY ANODIZED NICKEL  |     34
+            1 | Brand#24   | PROMO ANODIZED COPPER    |     34
+            1 | Brand#25   | ECONOMY BURNISHED STEEL  |     23
+            1 | Brand#25   | SMALL PLATED NICKEL      |     43
+            1 | Brand#33   | ECONOMY POLISHED TIN     |      9
+            1 | Brand#33   | SMALL BURNISHED BRASS    |     41
+            1 | Brand#34   | STANDARD POLISHED COPPER |      9
+            1 | Brand#35   | LARGE POLISHED BRASS     |     23
+            1 | Brand#35   | SMALL POLISHED COPPER    |      7
+            1 | Brand#41   | MEDIUM BRUSHED TIN       |      7
+            1 | Brand#43   | PROMO BRUSHED NICKEL     |     38
+            1 | Brand#45   | LARGE BURNISHED STEEL    |      7
+            1 | Brand#45   | LARGE POLISHED COPPER    |     23
+            1 | Brand#45   | PROMO POLISHED TIN       |      9
+            1 | Brand#55   | ECONOMY POLISHED COPPER  |     43
+            1 | Brand#55   | MEDIUM BRUSHED TIN       |     34
+(24 rows)
+

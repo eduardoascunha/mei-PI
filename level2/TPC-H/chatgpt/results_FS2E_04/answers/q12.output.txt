@@ -1,0 +1,8 @@
+ l_shipmode | priority_group | late_lineitems 
+------------+----------------+----------------
+ FOB        | OTHER          |           2856
+ FOB        | URGENT/HIGH    |           1858
+ MAIL       | OTHER          |           2826
+ MAIL       | URGENT/HIGH    |           1880
+(4 rows)
+

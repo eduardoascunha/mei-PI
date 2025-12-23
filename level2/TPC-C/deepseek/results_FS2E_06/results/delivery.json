@@ -1,0 +1,146 @@
+{
+  "transaction_type": "delivery",
+  "num_executions": 8,
+  "executions": [
+    {
+      "execution_number": 1,
+      "input_params": {
+        "in_w_id": 6,
+        "in_o_carrier_id": 1,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.988837"
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"o_carrier_id\" is ambiguous\nLINE 2:                 SET o_carrier_id = o_carrier_id\n                                           ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_oorder\n                SET o_carrier_id = o_carrier_id\n                WHERE o_w_id = w_id_in AND o_d_id = d_id_val AND o_id = no_o_id_val\n                RETURNING o_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_delivery(integer,integer,timestamp without time zone) line 23 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 2,
+      "input_params": {
+        "in_w_id": 10,
+        "in_o_carrier_id": 5,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.988864"
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"o_carrier_id\" is ambiguous\nLINE 2:                 SET o_carrier_id = o_carrier_id\n                                           ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_oorder\n                SET o_carrier_id = o_carrier_id\n                WHERE o_w_id = w_id_in AND o_d_id = d_id_val AND o_id = no_o_id_val\n                RETURNING o_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_delivery(integer,integer,timestamp without time zone) line 23 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 3,
+      "input_params": {
+        "in_w_id": 7,
+        "in_o_carrier_id": 7,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.988867"
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"o_carrier_id\" is ambiguous\nLINE 2:                 SET o_carrier_id = o_carrier_id\n                                           ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_oorder\n                SET o_carrier_id = o_carrier_id\n                WHERE o_w_id = w_id_in AND o_d_id = d_id_val AND o_id = no_o_id_val\n                RETURNING o_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_delivery(integer,integer,timestamp without time zone) line 23 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 4,
+      "input_params": {
+        "in_w_id": 6,
+        "in_o_carrier_id": 3,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.988869"
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"o_carrier_id\" is ambiguous\nLINE 2:                 SET o_carrier_id = o_carrier_id\n                                           ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_oorder\n                SET o_carrier_id = o_carrier_id\n                WHERE o_w_id = w_id_in AND o_d_id = d_id_val AND o_id = no_o_id_val\n                RETURNING o_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_delivery(integer,integer,timestamp without time zone) line 23 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 5,
+      "input_params": {
+        "in_w_id": 3,
+        "in_o_carrier_id": 1,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.988881"
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"o_carrier_id\" is ambiguous\nLINE 2:                 SET o_carrier_id = o_carrier_id\n                                           ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_oorder\n                SET o_carrier_id = o_carrier_id\n                WHERE o_w_id = w_id_in AND o_d_id = d_id_val AND o_id = no_o_id_val\n                RETURNING o_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_delivery(integer,integer,timestamp without time zone) line 23 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 6,
+      "input_params": {
+        "in_w_id": 3,
+        "in_o_carrier_id": 10,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.988882"
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"o_carrier_id\" is ambiguous\nLINE 2:                 SET o_carrier_id = o_carrier_id\n                                           ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_oorder\n                SET o_carrier_id = o_carrier_id\n                WHERE o_w_id = w_id_in AND o_d_id = d_id_val AND o_id = no_o_id_val\n                RETURNING o_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_delivery(integer,integer,timestamp without time zone) line 23 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 7,
+      "input_params": {
+        "in_w_id": 3,
+        "in_o_carrier_id": 5,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.989432"
+      },
+      "output": {
+        "success": false,
+        "result": null,
+        "db_state": null,
+        "table_modifications": null,
+        "error": "column reference \"o_carrier_id\" is ambiguous\nLINE 2:                 SET o_carrier_id = o_carrier_id\n                                           ^\nDETAIL:  It could refer to either a PL/pgSQL variable or a table column.\nQUERY:  UPDATE bmsql_oorder\n                SET o_carrier_id = o_carrier_id\n                WHERE o_w_id = w_id_in AND o_d_id = d_id_val AND o_id = no_o_id_val\n                RETURNING o_c_id\nCONTEXT:  PL/pgSQL function bmsql_proc_delivery(integer,integer,timestamp without time zone) line 23 at SQL statement\n"
+      }
+    },
+    {
+      "execution_number": 8,
+      "input_params": {
+        "in_w_id": 999999,
+        "in_o_carrier_id": 5,
+        "in_ol_delivery_d": "2025-11-27T18:06:51.989438"
+      },
+      "output": {
+        "success": true,
+        "result": {
+          "delivered_o_id": []
+        },
+        "db_state": {
+          "delivered_orders": []
+        },
+        "table_modifications": {
+          "expected": [
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_customer",
+            "bmsql_order_line"
+          ],
+          "actual_modified": [],
+          "unexpected_modifications": [],
+          "missing_modifications": [
+            "bmsql_oorder",
+            "bmsql_new_order",
+            "bmsql_customer",
+            "bmsql_order_line"
+          ],
+          "is_valid": false
+        },
+        "error": null
+      }
+    }
+  ]
+}

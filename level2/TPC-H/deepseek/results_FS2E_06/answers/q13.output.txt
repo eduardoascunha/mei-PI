@@ -1,0 +1,3 @@
+psql:deepseek/results_FS2E_06/q13.sql:18: ERROR:  column "order_count_bucket" does not exist
+LINE 2:     order_count_bucket, 
+            ^

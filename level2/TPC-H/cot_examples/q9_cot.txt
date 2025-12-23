@@ -1,0 +1,58 @@
+QUESTION:
+This query determines how much profit is made on a given line of parts, broken out by supplier nation and year.
+The Product Type Profit Measure Query finds, for each nation and each year, the profit for all parts ordered in that year that contain a specified substring in their names and that were filled by a supplier in that nation. The profit is defined as the  sum of [(l_extendedprice*(1-l_discount))  -  (ps_supplycost  * l_quantity)] for all lineitems describing parts in the specified line. The query lists the nations in ascending alphabetical order and, for each nation, the  year 
+and profit in descending order by year (most recent first).
+Substitution Parameters: Values for the following substitution parameter must be generated and used to build the executable query text: 
+1. COLOR is randomly selected within the list of values defined for the generation of P_NAME in Clause 4.2.3. In this case assume COLOR '%red%'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "for all lineitems", columns [lineitem.l_orderkey, lineitem.l_suppkey] may be used.
+According to "l_extendedprice 1 l_discount", columns [lineitem.l_discount] may be used.
+According to "l_quantity for all lineitems", columns [lineitem.l_quantity] may be used.
+According to "lineitems describing parts in", columns [lineitem.l_partkey] may be used.
+According to "nation the", columns [nation.n_name, nation.n_nationkey] may be used.
+According to "of l_extendedprice", columns [lineitem.l_extendedprice] may be used.
+According to "order and", columns [orders.o_orderkey] may be used.
+According to "ordered in that year", columns [orders.o_orderdate] may be used.
+According to "p_name in", columns [part.p_name] may be used.
+According to "parts in the specified", columns [part.p_partkey, partsupp.ps_partkey] may be used.
+According to "ps_supplycost l_quantity", columns [partsupp.ps_suppkey, partsupp.ps_supplycost] may be used.
+According to "supplier in", columns [supplier.s_suppkey] may be used.
+According to "supplier nation and", columns [supplier.s_nationkey] may be used.
+Values [%red%] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	nation,
+	o_year,
+	sum(amount) as sum_profit
+from
+	(
+		select
+			n_name as nation,
+			extract(year from o_orderdate) as o_year,
+			l_extendedprice * (1 - l_discount) - ps_supplycost * l_quantity as amount
+		from
+			part,
+			supplier,
+			lineitem,
+			partsupp,
+			orders,
+			nation
+		where
+			s_suppkey = l_suppkey
+			and ps_suppkey = l_suppkey
+			and ps_partkey = l_partkey
+			and p_partkey = l_partkey
+			and o_orderkey = l_orderkey
+			and s_nationkey = n_nationkey
+			and p_name like '%red%'
+	) as profit
+group by
+	nation,
+	o_year
+order by
+	nation,
+	o_year desc;

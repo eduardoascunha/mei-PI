@@ -1,0 +1,5 @@
+CREATE VIEW
+DROP VIEW
+psql:deepseek/results_FS2E_COT_05/q10.sql:33: ERROR:  column reference "c_custkey" is ambiguous
+LINE 14:  c_custkey = revenue_loss.c_custkey
+          ^

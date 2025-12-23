@@ -1,0 +1,59 @@
+QUESTION:
+The Potential Part Promotion Query identifies suppliers in a particular nation having selected parts that may be candidates for a promotional offer.
+The  Potential Part Promotion  query identifies suppliers  who have an excess of a  given part available; an excess is defined  to  be  more  than  50%  of  the  parts  like  the  given  part  that  the  supplier shipped  in  a  given  year  for  a  given nation. Only parts whose names share a certain naming convention are considered.
+Substitution Parameters:
+1. COLOR is randomly selected within the list of values defined for the generation of P_NAME. In this case assume COLOR 'brown%'
+2. DATE is the first of January of a randomly selected year within 1993..1997. In this case assume DATE '1994-01-01'
+3. NATION is randomly selected within the list of values defined for N_NAME in Clause 4.2.3. In this case assume NATION 'SAUDI ARABIA'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "given nation", columns [nation.n_name] may be used.
+According to "given part available", columns [partsupp.ps_availqty] may be used.
+According to "identifies suppliers in a", columns [supplier.s_name] may be used.
+According to "nation only", columns [nation.n_nationkey] may be used.
+According to "p_name in this case", columns [part.p_name] may be used.
+According to "part promotion query identifies", columns [partsupp.ps_partkey, partsupp.ps_suppkey] may be used.
+According to "parts whose names", columns [part.p_partkey] may be used.
+According to "suppliers in a particular", columns [supplier.s_address, supplier.s_nationkey, supplier.s_suppkey] may be used.
+Values [0.5, 1, 1994-01-01, SAUDI ARABIA, brown%] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	s_name,
+	s_address
+from
+	supplier,
+	nation
+where
+	s_suppkey in (
+		select
+			ps_suppkey
+		from
+			partsupp
+		where
+			ps_partkey in (
+				select
+					p_partkey
+				from
+					part
+				where
+					p_name like 'brown%'
+			)
+			and ps_availqty > (
+				select
+					0.5 * sum(l_quantity)
+				from
+					lineitem
+				where
+					l_partkey = ps_partkey
+					and l_suppkey = ps_suppkey
+					and l_shipdate >= date '1994-01-01'
+					and l_shipdate < date '1994-01-01' + interval '1' year
+			)
+	)
+	and s_nationkey = n_nationkey
+	and n_name = 'SAUDI ARABIA'
+order by
+	s_name;

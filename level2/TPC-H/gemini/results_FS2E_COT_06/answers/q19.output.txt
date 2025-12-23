@@ -1,0 +1,3 @@
+psql:gemini/results_FS2E_COT_06/q19.sql:53: ERROR:  syntax error at or near "Let"
+LINE 1: Let's think step by step.
+        ^

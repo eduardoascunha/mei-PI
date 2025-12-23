@@ -1,0 +1,3 @@
+psql:chatgpt/results_FS5E_06/queries/q8.sql:25: ERROR:  missing FROM-clause entry for table "li"
+LINE 2: extract(year from li.l_shipdate) as l_year,
+                          ^

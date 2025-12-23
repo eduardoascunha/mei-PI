@@ -1,0 +1,62 @@
+QUESTION:
+This query determines the value of goods shipped between certain nations to help in the  re-negotiation of shipping 
+contracts. 
+The Volume  Shipping Query finds, for two given nations, the  gross discounted revenues derived from lineitems in which parts  were  shipped from a  supplier in either nation to a  customer in the  other nation during 1995 and 1996. The query lists the supplier nation, the customer nation, the year, and the revenue from shipments that took place  in that year. The query orders the answer by Supplier nation, Customer nation, and year (all ascending).
+Substitution Parameters: Values for the following substitution parameters must be generated and used to build the executable query text: 
+1. NATION1 is randomly selected within the list of values defined for N_NAME in Clause 4.2.3; In this case assume NATION1 'ARGENTINA'
+2. NATION2 is randomly selected within the list of values defined for N_NAME in Clause 4.2.3 and must be different from the value selected for NATION1 in item 1 above. In this case assume NATION2 'KENYA'
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "customer nation the", columns [customer.c_custkey] may be used.
+According to "derived from lineitems in", columns [lineitem.l_extendedprice] may be used.
+According to "from lineitems in", columns [lineitem.l_shipdate] may be used.
+According to "lineitems in", columns [lineitem.l_discount, lineitem.l_orderkey, lineitem.l_suppkey] may be used.
+According to "nation customer", columns [customer.c_nationkey] may be used.
+According to "nation1 in", columns [nation.n_name, nation.n_nationkey] may be used.
+According to "query orders", columns [orders.o_custkey, orders.o_orderkey] may be used.
+According to "supplier in", columns [supplier.s_suppkey] may be used.
+According to "supplier nation", columns [supplier.s_nationkey] may be used.
+Values [1995-01-01, 1996-12-31, ARGENTINA, KENYA] may be used.
+So the final answer is:
+
+SQL QUERY:
+select
+	supp_nation,
+	cust_nation,
+	l_year,
+	sum(volume) as revenue
+from
+	(
+		select
+			n1.n_name as supp_nation,
+			n2.n_name as cust_nation,
+			extract(year from l_shipdate) as l_year,
+			l_extendedprice * (1 - l_discount) as volume
+		from
+			supplier,
+			lineitem,
+			orders,
+			customer,
+			nation n1,
+			nation n2
+		where
+			s_suppkey = l_suppkey
+			and o_orderkey = l_orderkey
+			and c_custkey = o_custkey
+			and s_nationkey = n1.n_nationkey
+			and c_nationkey = n2.n_nationkey
+			and (
+				(n1.n_name = 'ARGENTINA' and n2.n_name = 'KENYA')
+				or (n1.n_name = 'KENYA' and n2.n_name = 'ARGENTINA')
+			)
+			and l_shipdate between date '1995-01-01' and date '1996-12-31'
+	) as shipping
+group by
+	supp_nation,
+	cust_nation,
+	l_year
+order by
+	supp_nation,
+	cust_nation,
+	l_year;

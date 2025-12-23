@@ -1,0 +1,83 @@
+QUESTION:
+= The Stock-Level Transaction
+The Stock-Level business transaction determines the number of recently sold items that have a stock level below a specified threshold. It represents a heavy read -only database transaction with a low frequency of execution, a relaxed response time requirement, and relaxed consistency requirements.
+
+== Input Data Generation
+-> Each terminal must use a unique value of (W_ID, D_ID) that is constant over the whole measurement, i.e., D_IDs cannot be re-used within a warehouse.
+-> The threshold of minimum quantity in stock (threshold ) is selected at random within [10 .. 20].
+-> Inputs: (W_ID integer, D_ID integer, threshold integer)
+-> Output: (low_stock integer)
+
+== Transaction Profile
+    -> Examining the level of stock for items on the last 20 orders is done in one or more database transactions with the following steps:
+        1. Examine the next available order number, comprised of:
+            1 row selection with data retrieval.
+        2. Examine all items on the last 20 orders (average items-per-order = 10) for the district, comprised of: (20 * items-per-order) row selections with data retrieval.
+        3. Examine, for each distinct item selected, if the level of stock available at the home warehouse is be low the threshold, comprised of:
+        At most (20 * items-per-order) row selections with data retrieval.
+        Note: The above summary is provided for information only. The actual requirement is defined by the detailed transaction profile below.
+    -> For a given warehouse number (W_ID), district num ber (D_W_ID , D_ID), and stock level threshold (threshold):
+        • The input data are communicated to the SUT.
+        • A database transaction is started.
+        • The row in the DISTRICT table with matching D_W_ID and D_ID is selected and D_NEXT_O_ID is retrieved. 
+        • All rows in the ORDER-LINE table with matching OL_W_ID (equals W_ID), OL_D_ID (equals D_ID), and OL_O_ID (lower than D_NEXT_O_ID and greater than or equal to D_NEXT_O_ID minus 20) are selected. They are the items for 20 recent orders of the district.
+        • All rows in the STOCK table with matching S_I_ID (equals OL_I_ID) and S_W_ID (equals W_ID) from the list of distinct item numbers and with S_QUANTITY lower than threshold are counted (giving low_stock). 
+        Comment: Stocks must be counted only for distinct items. Thus, items that have been ordered more than once in the 20 selected orders must be aggregated into a single summary count for t hat item.
+        • The current database transaction is committed.
+        Comment: A commit is not needed as long as all the required ACID properties are satisfied.
+        • The output data are communicated to the terminal.
+    -> Full serializability and repeatable reads are not required for the Stock -Level business transaction. All data read must be committed and no older than the most recently committed d ata prior to the time this business transaction was initiated. All other ACID properties must be maintained.
+    Comment: This clause allows the business transaction to be broken down into more than one database transaction.
+
+==  Terminal I/O
+    -> For each transaction the originating terminal must display the following input/ output screen with all input and output field s cleared (with either spaces or zeros) except for the Warehouse and District fields which have not changed and must display the fixed W_ID and D_ID values associated with that terminal.
+    -> The emulated user must enter, in the appropriate field of the input/ output screen, the required input data which is organized as the distinct field: threshold. 
+    -> The emulated terminal must display, in the appropriate field of the input/ output screen, all input data and the output data which results from the execution of the transaction. The following fields are displayed: W_ID, D_ID, threshold, and low_stock.
+
+    -> The following table summarizes the terminal I/ O requirements for the Stock-Level transaction:
+        Enter Display Coordinates
+        Row/ Column
+        Non-repeating Group W_ID 2/ 12
+        D_ID 2/ 29
+        threshold threshold 4/ 24
+        low_stock 6/ 12
+
+CHAIN OF THOUGHT:
+Let's think step by step.
+According to "d_id and stock", columns [bmsql_stock.s_i_id, bmsql_stock.s_w_id] may be used.
+According to "d_next_o_id and", columns [bmsql_district.d_next_o_id] may be used.
+According to "order line", columns [bmsql_order_line.ol_d_id, bmsql_order_line.ol_o_id, bmsql_order_line.ol_w_id] may be used.
+According to "order line table", columns [bmsql_order_line.ol_i_id] may be used.
+According to "quantity in stock", columns [bmsql_stock.s_quantity] may be used.
+According to "w_id district", columns [bmsql_district.d_id, bmsql_district.d_w_id] may be used.
+Values [20] may be used.
+So the final answer is:
+
+SQL QUERY:
+CREATE OR REPLACE FUNCTION bmsql_proc_stock_level(
+    IN in_w_id integer,
+    IN in_d_id integer,
+    IN in_threshold integer,
+    OUT out_low_stock integer
+) AS
+$$
+BEGIN
+    SELECT INTO out_low_stock
+			count(*) AS low_stock
+		FROM (
+			SELECT s_w_id, s_i_id, s_quantity
+			FROM bmsql_stock
+			WHERE s_w_id = in_w_id AND s_quantity < in_threshold
+			  AND s_i_id IN (
+				SELECT ol_i_id
+					FROM bmsql_district
+					JOIN bmsql_order_line ON ol_w_id = d_w_id
+					 AND ol_d_id = d_id
+					 AND ol_o_id >= d_next_o_id - 20
+					 AND ol_o_id < d_next_o_id
+					WHERE d_w_id = in_w_id AND d_id = in_d_id
+				)
+			) AS L;
+END;
+$$
+LANGUAGE plpgsql;
